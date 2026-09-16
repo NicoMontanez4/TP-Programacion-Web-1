@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang ="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title> PoliLingo - Iniciar Sesión </title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+
+<body>
+
+    <main>
+
+        <header class="header-registro">
+
+            <h2>
+                Registrate y comenza a aprender el idioma que más te guste.
+            </h2>
+
+        </header>
+
+        <section class="contenedor-registro">
+
+            <img class="imagen-3" src="imagenes/Poli2.png" alt="Imagen de Poli interrogante">
+
+            <form class="form-registro" action="/procesar-datos" method="POST">
+
+                <label class="campo" for="usuario" > 
+
+                    <span>Usuario / Email:</span>
+                    <input type="text" id="usuario" name="username" required>
+
+                </label>
+
+                <label class="campo" for="contraseña" > 
+
+                    <span>Contraseña:</span>
+                    <input type="password" id="contraseña" name="password" required>
+
+                </label>
+
+                <label class="campo" for="contraseña" > 
+
+                    <span>Repetí la Contraseña:</span>
+                    <input type="password" id="contraseña" name="password" required>
+
+                </label>     
+
+                <a class="boton-login" href="Dashboard.html">Registrarse</a>
+                <a class="boton-login" href="index.html">Cancelar</a>
+
+            </form>
+
+        </section>
+
+
+
+    </main>
+
+</body>
+
+
+
+</html>

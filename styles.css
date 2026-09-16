@@ -1,7 +1,19 @@
+
 body{
     margin: 0;
     font-size: 1rem;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.pagina-centrada{
+    height: 100vh;
+}
+
+.pagina-centrada main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
 
 .contenedor-logo{
@@ -12,7 +24,7 @@ body{
     text-align: center;
 }
 
-.imagen{
+.imagen-logo{
     width: 12rem;
     height: auto;
 }
@@ -22,9 +34,10 @@ body{
     border-top: solid gray;
     width: 50rem;
     text-align: center;
+    padding:2rem;
 }
 
-.login-box{
+.contenedor-login{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,7 +67,7 @@ body{
     color: #000000;
     border: 0.1rem solid gray;
     box-sizing: border-box;
-    margin: 3rem auto 0;
+    margin: 1.5rem auto 0;
 }
 
 .registro{
@@ -80,3 +93,87 @@ body{
     width: 12rem;
     height: auto;
 }
+
+.imagen-3{
+    width: 12rem;
+    height: auto;
+}
+
+.header-registro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+}
+
+.contenedor-registro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:row;
+    width: 40rem;
+    margin: 3rem auto 0;
+    gap: 1rem;
+}
+
+.form-registro{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 1rem;
+    border: solid rgb(14, 131, 119);
+    padding: 2rem;
+    background-color: rgb(246, 178, 33);
+    
+}
+
+.form-registro h5{
+    grid-column: 1 / -1;
+    margin: 0.5rem 0 0 0;
+    text-align: left;
+}
+
+.contenedor-recuperar-contraseña{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column;
+    width: 40rem;
+    margin: 3rem auto 0;
+    gap: 1rem;
+}
+
+.contenedor-codigo-recuperacion{
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 0.5rem;
+}
+
+.grupo-inputs-codigo{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 0.8rem;
+}
+
+.grupo-inputs-codigo input{
+    width: 2.5rem;
+    height: 3rem;
+    text-align: center;
+    font-size: 1.2rem;
+    box-sizing: border-box;
+    border: 0.1rem solid gray;
+}
+
+.botones-cod-recuperacion{
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+
