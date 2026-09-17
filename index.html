@@ -1,49 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
     <meta charset="UTF-8">
-    <title> PoliLingo - Iniciar Sesión </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>PoliLingo - Iniciar Sesión</title>
     <link rel="stylesheet" href="styles.css">
 
 </head>
 
 <body> 
+    <header class="contenedor-logo">
+        <img class="imagen-logo" src="imagenes/Logo.png" alt="Imagen del logo">
+
+        <h2 class="lema">Aprendé Inglés, Alemán y Chino gratis, y de forma divertida</h2>
+    </header>
 
     <main>
-
-        <header class="contenedor-logo">
-
-            <img class="imagen-logo" src="imagenes/Logo.png" alt="Imagen del logo">
-
-            <h2 class="lema"> Aprendé Inglés, Alemán y Chino gratis y de forma divertida</h2>
-
-        </header>
-
         <section class="contenedor-login">
-
             <form class="form-login" action="/procesar-datos" method="POST">
-
                 <label class="campo" for="usuario" > 
-
                     <span>Usuario / Email:</span>
                     <input type="text" id="usuario" name="username" required>
-
                 </label>
 
-                <label class="campo" for="contraseña" > 
-
+                <label class="campo" for="contrasenia" > 
                     <span>Contraseña:</span>
-                    <input type="password" id="contraseña" name="password" required>
-
+                    <input type="password" id="contrasenia" name="contrasenia" required>
                 </label>
-
             </form>
 
             <br>
             
-
             <a class="boton-login" href="Dashboard.html">Iniciar Sesión</a>
 
         </section>
@@ -54,16 +41,14 @@
 
             <section class="opciones">
         
-                <a href="RecuperacionContraseña.html">¿Olvidaste tu contraseña?</a>
+                <a href="recuperar_contrasenia.html">¿Olvidaste tu contraseña?</a>
 
-                <a href="Registro.html">¿No tienes cuenta? Créala aquí</a>
+                <a href="registro.html">¿No tienes cuenta? Créala aquí</a>
 
             </section>
 
         </section>
-
     </main>
-
 </body>
 
 </html>

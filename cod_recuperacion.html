@@ -1,53 +1,41 @@
 <!DOCTYPE html>
 <html lang ="es">
-
 <head>
-
     <meta charset="UTF-8">
-    <title> PoliLingo - Recuperacion de cuenta </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>PoliLingo - Código de recuperación</title>
     <link rel="stylesheet" href="styles.css">
-
 </head>
 
-
-<body class="pagina-centrada">
+<body>
+    <header class="header-registro">
+        <h2>Verificá tu identidad</h2>
+        <h3>Ingresá el código de 4 dígitos que enviamos a tu email</h3>
+    </header>
 
     <main>
-
         <section class="contenedor-codigo-recuperacion">
-
             <form class="form-registro" action="/procesar-datos" method="POST">
 
-                <label class="campo-codigo-recuperacion" for="numero1"> 
-
-                    <span>Codigo de recuperación: </span>
+                <section class="campo-codigo-recuperacion" for="numero1"> 
+                    <span>Código de recuperación: </span>
                     
-                    <section class="grupo-inputs-codigo">
-
+                    <div class="grupo-inputs-codigo">
                         <input type="text" inputmode="numeric" maxlength="1" id="numero1" name="numero1" required>
                         <input type="text" inputmode="numeric" maxlength="1" id="numero2" name="numero2" required>
                         <input type="text" inputmode="numeric" maxlength="1" id="numero3" name="numero3" required>
                         <input type="text" inputmode="numeric" maxlength="1" id="numero4" name="numero4" required>
-                    
-                    </section>
-
-                </label>
+                    </div>
+                </section>
 
                 <section class="botones-cod-recuperacion">
-                    <a class="boton-login" href="cod_recuperacion_aceptado.html">Enviar</a>
+                    <a class="boton-login" href="nueva_contrasenia.html">Enviar</a>
                     <a class="boton-login" href="index.html">Cancelar</a>
                 </section>
                 
             </form>
-
         </section>
-
-
-
     </main>
-
 </body>
-
-
 
 </html>

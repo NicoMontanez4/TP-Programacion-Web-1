@@ -5,17 +5,6 @@ body{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.pagina-centrada{
-    height: 100vh;
-}
-
-.pagina-centrada main{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-}
-
 .contenedor-logo{
     display: flex;
     flex-direction: column;
@@ -134,7 +123,7 @@ body{
     text-align: left;
 }
 
-.contenedor-recuperar-contraseña{
+.contenedor-recuperar-contrasenia{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -145,11 +134,20 @@ body{
 }
 
 .contenedor-codigo-recuperacion{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column;
+    width: 40rem;
+    margin: 3rem auto 0;
+    gap: 1rem;
+}
+
+.campo-codigo-recuperacion {
     grid-column: 1 / -1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
     gap: 0.5rem;
 }
 
