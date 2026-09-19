@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Cursos</title>
+    <link rel='stylesheet' href='../global.css'>
+    <link rel="stylesheet" href="cursos.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <img src="../../imagenes/Logo.png" alt="Imagen del lorito">
+            <a href="cursos.html">Cursos</a>
+            <a href="../perfil/perfil.html">Perfil</a>
+            <a href="../ranking/ranking.html">Ranking</a>
+            <a href="../tienda/tienda.html">Tienda</a>
+            <p>5 días</p> <!--Icon-->
+            <p>350 XP</p> <!--Icon-->
+            <p>550</p> <!--Icon-->
+            <p>3</p> <!--Icon-->
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>Mis cursos de idiomas</h1>
+            <p>PoliLingo es tu espacio para aprender inglés, alemán y chino de forma gratuita y divertida. Elegí un curso, completá lecciones, sumá XP y subí de liga.</p>
+            <img src="../../imagenes/Poli2.png" alt="Imagen del lorito">
+        </section>
+        
+        <section>
+            <h2>Seleccioná el curso con el que deseas continuar aprendiendo.</h2>
+
+            <a href="./mapaUnidades/mapaUnidadesIngles.html">
+            <article class="ingles">
+                <img src="../../imagenes/Curso-Ingles.png" alt="Curso Inglés">
+                <p>Inglés desde Español</p>
+                <label for="progreso-ingles">Progreso: 45%</label>
+                <progress id="progreso-ingles" value="45" max="100">45%</progress>
+                <p>Nivel: Intermedio (B1)</p>
+                <span>Continuar</span>
+            </article>
+            </a>
+
+            <a href="./mapaUnidades/mapaUnidadesAleman.html">
+            <article class="aleman">
+                <img src="../../imagenes/Curso-Aleman.png" alt="Curso Alemán">
+                <p>Alemán desde Español</p>
+                <label for="progreso-aleman">Progreso: 12%</label>
+                <progress id="progreso-aleman" value="12" max="100">12%</progress>
+                <p>Nivel: Principiante (A1)</p>
+                <span>Continuar</span>
+            </article>
+            </a>
+
+            <a href="./mapaUnidades/mapaUnidadesChino.html">
+            <article class="chino">
+                <img src="../../imagenes/Curso-Chino.png" alt="Curso Chino">
+                <p>Chino desde Español</p>
+                <label for="progreso-chino">Progreso: 0%</label>
+                <progress id="progreso-chino" value="0" max="100">0%</progress>
+                <p>Nivel: Inicial (HSK 1)</p>
+                <span>Empezar</span>
+            </article>
+            </a>  
+        </section>
+    </main>
+</body>
+</html>
