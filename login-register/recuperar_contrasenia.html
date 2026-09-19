@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>PoliLingo - Recuperación de Contraseña</title>
+        <link rel="stylesheet" href="../login-register.css" />
+    </head>
+
+    <body>
+        <main>
+            <form class="form-registro" action="/procesar-datos" method="POST">
+                <h2>¿Olvidaste tu contraseña?</h2>
+                <h3>
+                    No te preocupes, don't worry, mach dir keine Sorgen,
+                    别担心...
+                </h3>
+                <label class="campo" for="email">
+                    <span>Email:</span>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="ejemplo@email.com"
+                    />
+                </label>
+
+                <h5>
+                    <i
+                        >(Ingresa el mail para recibir el código de
+                        recuperación)</i
+                    >
+                </h5>
+
+                <a class="boton-login" href="cod_recuperacion.html">Aceptar</a>
+                <a class="boton-login" href="../index.html">Cancelar</a>
+            </form>
+        </main>
+    </body>
+</html>

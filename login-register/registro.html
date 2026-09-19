@@ -4,16 +4,27 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>PoliLingo - Registrarse</title>
-        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="../login-register.css" />
     </head>
 
     <body>
         <main>
             <section class="contenedor-registro">
-                <form class="form-registro" action="/procesar-datos" method="POST">
+                <form
+                    class="form-registro"
+                    action="/procesar-datos"
+                    method="POST"
+                >
                     <fieldset class="logo">
-                        <img class="imagen-3" src="imagenes/Poli2.png" alt="Imagen de Poli interrogante"/>
-                        <h2>Registrate y comenzá a aprender el idioma que más te guste.</h2>
+                        <img
+                            class="imagen-3"
+                            src="../imagenes/Poli2.png"
+                            alt="Imagen de Poli interrogante"
+                        />
+                        <h2>
+                            Registrate y comenzá a aprender el idioma que más te
+                            guste.
+                        </h2>
                     </fieldset>
 
                     <label class="campo" for="usuario">
@@ -48,15 +59,22 @@
 
                     <fieldset class="campo campo-checkbox">
                         <input
-                        type="checkbox"
-                        id="recordarme"
-                        name="recordarme"
+                            type="checkbox"
+                            id="recordarme"
+                            name="recordarme"
                         />
-                        <label for="recordarme">Acepto los Términos y la Política de Privacidad</label>
+                        <label for="recordarme"
+                            >Acepto los Términos y la Política de
+                            Privacidad</label
+                        >
                     </fieldset>
 
-                    <a class="boton-login" href="Dashboard.html">Registrarse</a>
-                    <a class="boton-login" href="index.html">Cancelar</a>
+                    <a class="boton-login" href="../dashboard/Dashboard.html"
+                        >Registrarse</a
+                    >
+                    <a class="boton-login" href="../index.html"
+                        >Tengo una cuenta</a
+                    >
                 </form>
             </section>
         </main>

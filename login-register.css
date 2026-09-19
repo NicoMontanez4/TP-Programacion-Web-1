@@ -32,10 +32,10 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: min(80%, 40rem);
-    height: auto;
     padding: 2rem;
     gap: 2rem;
+    width: min(80%, 38rem);
+    height: auto;
     border-radius: 2rem;
     background-color: #dbe7ff;
 }
@@ -50,9 +50,9 @@ fieldset {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
     padding: 0;
     width: 100%;
+    text-align: center;
     box-sizing: border-box;
 }
 
@@ -65,7 +65,7 @@ fieldset {
 .logo h2 {
     box-sizing: border-box;
     text-align: center;
-    font-size: clamp(1rem, 2.2vw, 1.9rem);
+    font-size: clamp(1rem, 2.2vw, 1.6rem);
 }
 
 /*Lo que sería el "body" del form*/
@@ -98,7 +98,7 @@ fieldset {
     width: 90%;
 }
 
-.campo.campo-checkbox label{
+.campo.campo-checkbox label {
     margin: 0;
     font-size: 1rem;
 }
@@ -183,7 +183,7 @@ fieldset {
     background-color: #509992;
 }
 
-/*-------------ACÁ ARRANCA EL REGISTER-------*/
+/*-------------ACÁ ARRANCA EL REGISTRO-------*/
 .imagen-3 {
     width: 12rem;
     height: auto;
@@ -209,7 +209,7 @@ fieldset {
 }
 
 /*Lo usa el registro, recuperar_contrasenia, cod_recuperacion y nueva_contrasenia*/
-.form-registro { 
+.form-registro {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -222,14 +222,7 @@ fieldset {
     background-color: #dbe7ff;
 }
 
-.form-registro h5 {
-    grid-column: 1 / -1;
-    margin: 0.5rem 0 0 0;
-    text-align: left;
-}
-
 /*-------------ACÁ ARRANCA RECUPERAR CONTRASEÑA-------*/
-
 .contenedor-recuperar-contrasenia {
     display: flex;
     align-items: center;
@@ -250,14 +243,6 @@ fieldset {
     gap: 1rem;
 }
 
-.campo-codigo-recuperacion {
-    grid-column: 1 / -1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-}
-
 .grupo-inputs-codigo {
     display: flex;
     justify-content: center;
@@ -272,11 +257,4 @@ fieldset {
     font-size: 1.2rem;
     box-sizing: border-box;
     border: 0.1rem solid gray;
-}
-
-.botones-cod-recuperacion {
-    grid-column: 1 / -1;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
 }

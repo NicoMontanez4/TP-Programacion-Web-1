@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>PoliLingo - Nueva Contraseña</title>
+        <link rel="stylesheet" href="..//login-register.css" />
+    </head>
+
+    <body>
+        <header class="header-registro">
+            <h2>Código Verificado</h2>
+            <h3>Elegí tu nueva contraseña</h3>
+        </header>
+
+        <main>
+            <section class="contenedor-recuperar-contrasenia">
+                <form
+                    class="form-registro"
+                    action="/procesar-datos"
+                    method="post"
+                >
+                    <label class="campo" for="nueva-contrasenia">
+                        <span>Nueva contraseña:</span>
+                        <input
+                            type="password"
+                            id="nueva-contrasenia"
+                            name="nueva-contrasenia"
+                            required
+                        />
+                    </label>
+
+                    <label class="campo" for="confirmar-nueva-contrasenia">
+                        <span>Confirmar nueva contraseña:</span>
+                        <input
+                            type="password"
+                            id="confirmar-nueva-contrasenia"
+                            name="confirmar-nueva-contrasenia"
+                            required
+                        />
+                    </label>
+
+                    <a class="boton-login" href="../index.html"
+                        >Guardar y Volver a Iniciar Sesión</a
+                    >
+                    <a class="boton-login" href="../index.html">Cancelar</a>
+                </form>
+            </section>
+        </main>
+    </body>
+</html>
