@@ -7,16 +7,15 @@ body{
 /* Seccion Introductoria*/
 
 .encabezado-curso{
-
-    display:flex;
+    display: flex;
     align-items: center;
-    justify-content: space-between; /* bloque de texto a la izquierda , imagen a la derecha*/
+    justify-content: space-between;   /* texto a la izquierda, Poli a la derecha */
     gap: 1.5rem;
-    max-width: 60rem;
-    margir: 2rem auto;
-    padding: 0.1rem;
     box-sizing: border-box;
-
+    max-width: 55rem;                 /* mismo ancho que las unidades */
+    margin: 2rem auto;                /* auto a los lados = centrado */
+    padding: 0 1rem 2rem;
+    border-bottom: 0.2rem solid #8fc97f;
 }
 
 .info-curso{
@@ -152,4 +151,14 @@ body{
     margin: 0.2rem 0 0;
     font-size: 0.85rem;
     font-weight: 700;
+}
+
+.flecha-leccion{
+    flex-shrink: 0;
+}
+
+.flecha-leccion img{
+    display: block;               
+    width: 2rem;
+    height: 2rem;
 }
