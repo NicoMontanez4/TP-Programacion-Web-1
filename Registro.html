@@ -8,23 +8,14 @@
     </head>
 
     <body>
-        <header class="header-registro">
-            <h2>Registrate y comenzá a aprender el idioma que más te guste.</h2>
-        </header>
-
         <main>
             <section class="contenedor-registro">
-                <img
-                    class="imagen-3"
-                    src="imagenes/Poli2.png"
-                    alt="Imagen de Poli interrogante"
-                />
+                <form class="form-registro" action="/procesar-datos" method="POST">
+                    <fieldset class="logo">
+                        <img class="imagen-3" src="imagenes/Poli2.png" alt="Imagen de Poli interrogante"/>
+                        <h2>Registrate y comenzá a aprender el idioma que más te guste.</h2>
+                    </fieldset>
 
-                <form
-                    class="form-registro"
-                    action="/procesar-datos"
-                    method="POST"
-                >
                     <label class="campo" for="usuario">
                         <span>Usuario / Email:</span>
                         <input
@@ -54,6 +45,15 @@
                             required
                         />
                     </label>
+
+                    <fieldset class="campo campo-checkbox">
+                        <input
+                        type="checkbox"
+                        id="recordarme"
+                        name="recordarme"
+                        />
+                        <label for="recordarme">Acepto los Términos y la Política de Privacidad</label>
+                    </fieldset>
 
                     <a class="boton-login" href="Dashboard.html">Registrarse</a>
                     <a class="boton-login" href="index.html">Cancelar</a>
