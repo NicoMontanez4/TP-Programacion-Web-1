@@ -1,54 +1,67 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>PoliLingo - Iniciar Sesión</title>
-    <link rel="stylesheet" href="styles.css">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>PoliLingo - Iniciar Sesión</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
 
-</head>
-
-<body> 
-    <header class="contenedor-logo">
-        <img class="imagen-logo" src="imagenes/Logo.png" alt="Imagen del logo">
-
-        <h2 class="lema">Aprendé Inglés, Alemán y Chino gratis, y de forma divertida</h2>
-    </header>
-
-    <main>
-        <section class="contenedor-login">
+    <body>
+        <main>
             <form class="form-login" action="/procesar-datos" method="POST">
-                <label class="campo" for="usuario" > 
-                    <span>Usuario / Email:</span>
-                    <input type="text" id="usuario" name="username" required>
-                </label>
+                <fieldset class="logo">
+                    <img src="imagenes/Logo.png" alt="Imagen del lorito" />
+                    <h2>
+                        Aprendé Inglés, Alemán y Chino gratis, y de forma
+                        divertida!
+                    </h2>
+                </fieldset>
+                <fieldset class="campo">
+                    <label for="usuario">Usuario / Email:</label>
+                    <input
+                        id="usuario"
+                        name="username"
+                        type="text"
+                        placeholder="ejemplo@email.com"
+                    />
+                </fieldset>
 
-                <label class="campo" for="contrasenia" > 
-                    <span>Contraseña:</span>
-                    <input type="password" id="contrasenia" name="contrasenia" required>
-                </label>
+                <fieldset class="campo">
+                    <label for="contrasenia">Contraseña:</label>
+                    <input
+                        id="contrasenia"
+                        name="contrasenia"
+                        type="password"
+                        placeholder="Mínimo 8 caracteres"
+                        required
+                    />
+                </fieldset>
+
+                <input
+                    type="submit"
+                    class="boton-login"
+                    value="Iniciar Sesión"
+                />
+
+                <fieldset class="olvidado">
+                    <img
+                        src="imagenes/Poli1.png"
+                        alt="Imagen de Poli interrogante"
+                    />
+
+                    <fieldset>
+                        <a href="recuperar_contrasenia.html" b
+                            >Olvidaste tu contraseña?</a
+                        >
+
+                        <a href="registro.html"
+                            >No tenés cuenta?<br />
+                            Loggeate acá!</a
+                        >
+                    </fieldset>
+                </fieldset>
             </form>
-
-            <br>
-            
-            <a class="boton-login" href="Dashboard.html">Iniciar Sesión</a>
-
-        </section>
-
-        <section class="registro">
-
-            <img class="imagen-2" src="imagenes/Poli1.png" alt="Imagen de Poli interrogante">
-
-            <section class="opciones">
-        
-                <a href="recuperar_contrasenia.html">¿Olvidaste tu contraseña?</a>
-
-                <a href="registro.html">¿No tienes cuenta? Créala aquí</a>
-
-            </section>
-
-        </section>
-    </main>
-</body>
-
+        </main>
+    </body>
 </html>

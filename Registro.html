@@ -1,61 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>PoliLingo - Registrarse</title>
-    <link rel="stylesheet" href="styles.css">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>PoliLingo - Registrarse</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
 
-</head>
-
-
-<body>
-
-     <header class="header-registro">
-            <h2>
-                Registrate y comenzá a aprender el idioma que más te guste.
-            </h2>
+    <body>
+        <header class="header-registro">
+            <h2>Registrate y comenzá a aprender el idioma que más te guste.</h2>
         </header>
 
-    <main>
-        <section class="contenedor-registro">
+        <main>
+            <section class="contenedor-registro">
+                <img
+                    class="imagen-3"
+                    src="imagenes/Poli2.png"
+                    alt="Imagen de Poli interrogante"
+                />
 
-            <img class="imagen-3" src="imagenes/Poli2.png" alt="Imagen de Poli interrogante">
+                <form
+                    class="form-registro"
+                    action="/procesar-datos"
+                    method="POST"
+                >
+                    <label class="campo" for="usuario">
+                        <span>Usuario / Email:</span>
+                        <input
+                            type="text"
+                            id="usuario"
+                            name="username"
+                            required
+                        />
+                    </label>
 
-            <form class="form-registro" action="/procesar-datos" method="POST">
+                    <label class="campo" for="contrasenia">
+                        <span>Contraseña:</span>
+                        <input
+                            type="password"
+                            id="contrasenia"
+                            name="contrasenia"
+                            required
+                        />
+                    </label>
 
-                <label class="campo" for="usuario" > 
+                    <label class="campo" for="confirmar-contrasenia">
+                        <span>Repetí la Contraseña:</span>
+                        <input
+                            type="password"
+                            id="confirmar-contrasenia"
+                            name="confirmar-contrasenia"
+                            required
+                        />
+                    </label>
 
-                    <span>Usuario / Email:</span>
-                    <input type="text" id="usuario" name="username" required>
-
-                </label>
-
-                <label class="campo" for="contrasenia" > 
-
-                    <span>Contraseña:</span>
-                    <input type="password" id="contrasenia" name="contrasenia" required>
-
-                </label>
-
-                <label class="campo" for="confirmar-contrasenia" > 
-
-                    <span>Repetí la Contraseña:</span>
-                    <input type="password" id="confirmar-contrasenia" name="confirmar-contrasenia" required>
-
-                </label>     
-
-                <a class="boton-login" href="Dashboard.html">Registrarse</a>
-                <a class="boton-login" href="index.html">Cancelar</a>
-
-            </form>
-
-        </section>
-
-    </main>
-
-</body>
-
-
-
+                    <a class="boton-login" href="Dashboard.html">Registrarse</a>
+                    <a class="boton-login" href="index.html">Cancelar</a>
+                </form>
+            </section>
+        </main>
+    </body>
 </html>

@@ -1,74 +1,169 @@
-
-body{
+* {
     margin: 0;
-    font-size: 1rem;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.contenedor-logo{
+html,
+body {
+    min-height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #b8b8c4;
+    font-family: sans-serif;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    padding: 2.5rem 0;
+    width: 100%;
+    gap: 2rem;
+}
+
+/*Acá arranca el logim*/
+.form-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    max-width: 80%;
+    height: auto;
+    padding: 2rem;
+    gap: 2rem;
+    border-radius: 2rem;
+    background-color: #dbe7ff;
+}
+
+fieldset {
+    border: none;
+}
+
+/*Lo que sería el "header" del form*/
+.logo {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.imagen-logo{
-    width: 12rem;
+.logo img {
+    min-inline-size: 127px;
+    max-inline-size: 30%;
     height: auto;
 }
 
-.lema{
+.logo h2 {
     box-sizing: border-box;
-    border-top: solid gray;
-    width: 50rem;
     text-align: center;
-    padding:2rem;
+    font-size: clamp(1rem, 2.2vw, 2rem);
 }
 
-.contenedor-login{
+/*Lo que sería el "body" del form*/
+.campo {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 20rem;
-    margin: 3rem auto 0;
-    gap: 1rem;
-}
-
-.form-login{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem 1rem;
     width: 100%;
 }
 
-.campo{
-    display: contents;
+.campo label {
+    font-size: clamp(0.9rem, 3vw, 1.7rem);
+    margin-bottom: 0.3rem;
 }
 
-.boton-login{
+.campo input {
+    padding: 0 0.5rem;
+    width: 100%;
+    height: 2.5rem;
+    border-radius: 2rem;
+    border: 0.1rem solid gray;
+}
+
+.boton-login {
     display: block;
-    width: 12rem;
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 1rem;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    background-color: #fcd994;
+    color: #000000;
+    border-radius: 2rem;
+    border: 0.1rem solid gray;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/*El olvidado del login*/
+.olvidado {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    width: 100%;
+    gap: 1.5rem;
+}
+
+.olvidado img {
+    min-inline-size: 100px;
+    max-inline-size: 30%;
+    height: auto;
+}
+
+.olvidado a {
+    display: flex;
+    flex-direction: column;
+    padding: 0.4rem 1rem;
     text-align: center;
     text-decoration: none;
     background-color: #e0e0e0;
-    color: #000000;
+    color: rgb(247, 250, 253);
+    border-radius: 0.2rem;
     border: 0.1rem solid gray;
     box-sizing: border-box;
-    margin: 1.5rem auto 0;
+    cursor: pointer;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: clamp(0.79rem, 2.2vw, 2rem);
 }
 
-.registro{
+.olvidado a:first-child {
+    color: #000000;
+    background-color: #60b8af;
+}
+
+.olvidado a:last-child {
+    background-color: #60b8af;
+}
+
+.olvidado:hover {
+    color: #fff;
+    background-color: #509992;
+}
+-----
+/*ACÁ ARRANCA EL REGISTER*/
+.registro {
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     margin: 3rem auto 0;
     gap: 0.2rem;
+    background-color: transparent;
 }
 
-.opciones{
+.opciones {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -78,17 +173,12 @@ body{
     gap: 1rem;
 }
 
-.imagen-2{
+.imagen-3 {
     width: 12rem;
     height: auto;
 }
 
-.imagen-3{
-    width: 12rem;
-    height: auto;
-}
-
-.header-registro{
+.header-registro {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -97,47 +187,46 @@ body{
     padding: 1rem;
 }
 
-.contenedor-registro{
+.contenedor-registro {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction:row;
+    flex-direction: row;
     width: 40rem;
     margin: 3rem auto 0;
     gap: 1rem;
 }
 
-.form-registro{
+.form-registro {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem 1rem;
     border: solid rgb(14, 131, 119);
     padding: 2rem;
     background-color: rgb(246, 178, 33);
-    
 }
 
-.form-registro h5{
+.form-registro h5 {
     grid-column: 1 / -1;
     margin: 0.5rem 0 0 0;
     text-align: left;
 }
 
-.contenedor-recuperar-contrasenia{
+.contenedor-recuperar-contrasenia {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction:column;
+    flex-direction: column;
     width: 40rem;
     margin: 3rem auto 0;
     gap: 1rem;
 }
 
-.contenedor-codigo-recuperacion{
+.contenedor-codigo-recuperacion {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction:column;
+    flex-direction: column;
     width: 40rem;
     margin: 3rem auto 0;
     gap: 1rem;
@@ -151,14 +240,14 @@ body{
     gap: 0.5rem;
 }
 
-.grupo-inputs-codigo{
+.grupo-inputs-codigo {
     display: flex;
     justify-content: center;
     width: 100%;
     gap: 0.8rem;
 }
 
-.grupo-inputs-codigo input{
+.grupo-inputs-codigo input {
     width: 2.5rem;
     height: 3rem;
     text-align: center;
@@ -167,11 +256,9 @@ body{
     border: 0.1rem solid gray;
 }
 
-.botones-cod-recuperacion{
+.botones-cod-recuperacion {
     grid-column: 1 / -1;
     display: flex;
     justify-content: center;
     gap: 1rem;
 }
-
-
