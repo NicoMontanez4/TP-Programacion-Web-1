@@ -9,74 +9,56 @@
 
     <body>
         <main>
-            <section class="contenedor-registro">
-                <form
-                    class="form-registro"
-                    action="/procesar-datos"
-                    method="POST"
+            <form class="form-registro" action="/procesar-datos" method="POST">
+                <fieldset class="logo">
+                    <img
+                        class="imagen-3"
+                        src="../imagenes/Poli2.png"
+                        alt="Imagen de Poli interrogante"
+                    />
+                    <h2>
+                        Registrate y comenzá a aprender el idioma que más te
+                        guste.
+                    </h2>
+                </fieldset>
+
+                <label class="campo" for="usuario">
+                    <span>Usuario / Email:</span>
+                    <input type="text" id="usuario" name="username" required />
+                </label>
+
+                <label class="campo" for="contrasenia">
+                    <span>Contraseña:</span>
+                    <input
+                        type="password"
+                        id="contrasenia"
+                        name="contrasenia"
+                        required
+                    />
+                </label>
+
+                <label class="campo" for="confirmar-contrasenia">
+                    <span>Repetí la Contraseña:</span>
+                    <input
+                        type="password"
+                        id="confirmar-contrasenia"
+                        name="confirmar-contrasenia"
+                        required
+                    />
+                </label>
+
+                <fieldset class="campo campo-checkbox">
+                    <input type="checkbox" id="recordarme" name="recordarme" />
+                    <label for="recordarme"
+                        >Acepto los Términos y la Política de Privacidad</label
+                    >
+                </fieldset>
+
+                <a class="boton-login" href="../dashboard/Dashboard.html"
+                    >Registrarse</a
                 >
-                    <fieldset class="logo">
-                        <img
-                            class="imagen-3"
-                            src="../imagenes/Poli2.png"
-                            alt="Imagen de Poli interrogante"
-                        />
-                        <h2>
-                            Registrate y comenzá a aprender el idioma que más te
-                            guste.
-                        </h2>
-                    </fieldset>
-
-                    <label class="campo" for="usuario">
-                        <span>Usuario / Email:</span>
-                        <input
-                            type="text"
-                            id="usuario"
-                            name="username"
-                            required
-                        />
-                    </label>
-
-                    <label class="campo" for="contrasenia">
-                        <span>Contraseña:</span>
-                        <input
-                            type="password"
-                            id="contrasenia"
-                            name="contrasenia"
-                            required
-                        />
-                    </label>
-
-                    <label class="campo" for="confirmar-contrasenia">
-                        <span>Repetí la Contraseña:</span>
-                        <input
-                            type="password"
-                            id="confirmar-contrasenia"
-                            name="confirmar-contrasenia"
-                            required
-                        />
-                    </label>
-
-                    <fieldset class="campo campo-checkbox">
-                        <input
-                            type="checkbox"
-                            id="recordarme"
-                            name="recordarme"
-                        />
-                        <label for="recordarme"
-                            >Acepto los Términos y la Política de
-                            Privacidad</label
-                        >
-                    </fieldset>
-
-                    <a class="boton-login" href="../dashboard/Dashboard.html"
-                        >Registrarse</a
-                    >
-                    <a class="boton-login" href="../index.html"
-                        >Tengo una cuenta</a
-                    >
-                </form>
-            </section>
+                <a class="boton-login" href="../index.html">Tengo una cuenta</a>
+            </form>
         </main>
     </body>
 </html>

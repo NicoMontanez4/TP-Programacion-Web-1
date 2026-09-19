@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Recuperar Contraseña</title>
+        <link rel="stylesheet" href="../login-register.css" />
+    </head>
+
+    <body>
+        <main>
+            <form class="form-login" action="/procesar-datos" method="POST">
+                <fieldset class="logo">
+                    <h2>¿Olvidaste tu contraseña?</h2>
+                    <h3>
+                        No te preocupes, don't worry, mach dir keine Sorgen,
+                        别担心...
+                    </h3>
+                </fieldset>
+
+                <fieldset class="campo">
+                    <label for="email">Email:</label>
+                    <input
+                        id="email"
+                        name="username"
+                        type="text"
+                        placeholder="ejemplo@email.com"
+                        required
+                    />
+                    <p>
+                        (Ingresa el mail para recibir el código de recuperación)
+                    </p>
+                </fieldset>
+
+                <a class="boton-login" href="cod_recuperacion.html">Aceptar</a>
+                <a class="boton-login" href="../index.html">Cancelar</a>
+            </form>
+        </main>
+    </body>
+</html>
