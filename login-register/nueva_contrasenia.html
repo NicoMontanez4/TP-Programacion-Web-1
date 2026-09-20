@@ -3,45 +3,44 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>PoliLingo - Nueva Contraseña</title>
+        <title>Nueva Contraseña</title>
         <link rel="stylesheet" href="..//login-register.css" />
     </head>
 
     <body>
-        <header class="header-registro">
-            <h2>Código Verificado</h2>
-            <h3>Elegí tu nueva contraseña</h3>
-        </header>
-
         <main>
-            <section class="contenedor-recuperar-contrasenia">
                 <form
-                    class="form-registro"
+                    class="form-login"
                     action="/procesar-datos"
                     method="post"
                 >
-                    <label class="campo" for="nueva-contrasenia">
-                        <span>Nueva contraseña:</span>
+                    <fieldset class="logo">
+                        <h2>Código Verificado</h2>
+                        <h3>Elegí tu nueva contraseña</h3>
+                    </fieldset>
+
+                    <fieldset class="campo">
+                        <label for="nueva-contrasenia">Nueva contraseña:</label>
                         <input
                             type="password"
                             id="nueva-contrasenia"
                             name="nueva-contrasenia"
                             required
                         />
-                    </label>
+                    </fieldset>
 
-                    <label class="campo" for="confirmar-nueva-contrasenia">
-                        <span>Confirmar nueva contraseña:</span>
+                    <fieldset class="campo" for="confirmar-nueva-contrasenia">
+                        <label>Confirmar nueva contraseña:</label>
                         <input
                             type="password"
                             id="confirmar-nueva-contrasenia"
                             name="confirmar-nueva-contrasenia"
                             required
                         />
-                    </label>
+                    </fieldset>
 
                     <a class="boton-login" href="../index.html"
-                        >Guardar y Volver a Iniciar Sesión</a
+                        >Guardar y volver a Iniciar Sesión</a
                     >
                     <a class="boton-login" href="../index.html">Cancelar</a>
                 </form>

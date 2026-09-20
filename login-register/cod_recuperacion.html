@@ -3,72 +3,63 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>PoliLingo - Código de recuperación</title>
+        <title>Código de recuperación</title>
         <link rel="stylesheet" href="../login-register.css" />
     </head>
 
     <body>
-        <header class="header-registro">
-            <h2>Verificá tu identidad</h2>
-            <h3>Ingresá el código de 4 dígitos que enviamos a tu email</h3>
-        </header>
-
         <main>
-            <section class="contenedor-codigo-recuperacion">
-                <form
-                    class="form-registro"
-                    action="/procesar-datos"
-                    method="POST"
+            <form class="form-login" action="/procesar-datos" method="POST">
+                <fieldset class="logo">
+                    <h2>Verificá tu identidad</h2>
+                    <h3>
+                        Ingresá el código de 4 dígitos que enviamos a tu email
+                    </h3>
+                </fieldset>
+
+                <h3>Código de recuperación:</h3>
+
+                <fieldset class="grupo-inputs-codigo">
+                    <input
+                        type="text"
+                        inputmode="numeric"
+                        maxlength="1"
+                        id="numero1"
+                        name="numero1"
+                        required
+                    />
+                    <input
+                        type="text"
+                        inputmode="numeric"
+                        maxlength="1"
+                        id="numero2"
+                        name="numero2"
+                        required
+                    />
+                    <input
+                        type="text"
+                        inputmode="numeric"
+                        maxlength="1"
+                        id="numero3"
+                        name="numero3"
+                        required
+                    />
+                    <input
+                        type="text"
+                        inputmode="numeric"
+                        maxlength="1"
+                        id="numero4"
+                        name="numero4"
+                        required
+                    />
+                </fieldset>
+                <a class="boton-login" href="nueva_contrasenia.html">Enviar</a>
+                <a
+                    class="boton-login"
+                    href="/login-register/olvidaste_contra.html"
+                    >Cancelar</a
                 >
-                    <section class="campo-codigo-recuperacion" for="numero1">
-                        <span>Código de recuperación: </span>
-
-                        <div class="grupo-inputs-codigo">
-                            <input
-                                type="text"
-                                inputmode="numeric"
-                                maxlength="1"
-                                id="numero1"
-                                name="numero1"
-                                required
-                            />
-                            <input
-                                type="text"
-                                inputmode="numeric"
-                                maxlength="1"
-                                id="numero2"
-                                name="numero2"
-                                required
-                            />
-                            <input
-                                type="text"
-                                inputmode="numeric"
-                                maxlength="1"
-                                id="numero3"
-                                name="numero3"
-                                required
-                            />
-                            <input
-                                type="text"
-                                inputmode="numeric"
-                                maxlength="1"
-                                id="numero4"
-                                name="numero4"
-                                required
-                            />
-                        </div>
-                    </section>
-
-                    <a class="boton-login" href="nueva_contrasenia.html"
-                        >Enviar</a
-                    >
-                    <a
-                        class="boton-login"
-                        href="/login-register/recuperar_contrasenia.html"
-                        >Cancelar</a
-                    >
-                </form>
-            </section>
+            </form>
         </main>
     </body>
 </html>
