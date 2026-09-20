@@ -128,6 +128,17 @@ body{
     color: #222;                   
 }
 
+.leccion-completada:hover{
+    background-color: rgb(41, 104, 4);
+    border-color: rgb(41, 104, 4);;
+}
+
+.leccion-en-curso:hover{
+    background-color: #f06c00;
+    border-color: #f06c00;
+}
+
+
 .leccion-completada{ background-color: #8fc97f; }
 .leccion-en-curso{ background-color: #f5c063; }
 .leccion-bloqueada{ background-color: #d0d0d0; }
@@ -151,14 +162,4 @@ body{
     margin: 0.2rem 0 0;
     font-size: 0.85rem;
     font-weight: 700;
-}
-
-.flecha-leccion{
-    flex-shrink: 0;
-}
-
-.flecha-leccion img{
-    display: block;               
-    width: 2rem;
-    height: 2rem;
 }
