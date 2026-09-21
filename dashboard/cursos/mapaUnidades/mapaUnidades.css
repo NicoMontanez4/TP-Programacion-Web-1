@@ -148,10 +148,6 @@ a{
     color: #222;                   
 }
 
-.leccion-completada:hover{
-    background-color: rgb(41, 104, 4);
-    border-color: rgb(41, 104, 4);
-}
 
 .leccion-en-curso:hover{
     background-color: #f06c00;

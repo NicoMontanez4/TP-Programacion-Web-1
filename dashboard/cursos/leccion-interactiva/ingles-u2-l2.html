@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PoliLingo - Lección interactiva</title>
+    <link rel="stylesheet" href="leccion-interactiva.css" />
+</head>
+
+<body>
+
+    <header class="barra-leccion">
+
+        <a class="boton-salir" href="../mapaUnidades/mapaUnidadesIngles.html" aria-label="Salir de la lección">✕</a>
+
+        <img class="bandera-leccion" src="../../../imagenes/BanderaReinoUnido.png" alt="Bandera del Reino Unido" />
+
+        <section class="titulo-leccion">
+            <h1>Inglés</h1>
+            <p>Unidad 1: Saludos</p>
+        </section>
+
+        <ul class="estado-leccion">
+            <li>Cantidad de vidas: ❤️❤️❤️</li>
+            <li>
+                <label for="progreso-leccion">Progreso de la lección: 60%</label>
+                <progress id="progreso-leccion" value="60" max="100">60%</progress>
+            </li>
+        </ul>
+
+    </header>
+
+    <main class="ejercicio">
+
+        <article class="tarjeta-ejercicio">
+
+            <!-- Casilleros escondidos: DEBEN ir antes de .pregunta y .banco-palabras.
+                 Guardan qué palabras están elegidas. -->
+            <input class="selector" type="checkbox" id="p-buenos">
+            <input class="selector" type="checkbox" id="p-dias">
+            <input class="selector" type="checkbox" id="p-como">
+            <input class="selector" type="checkbox" id="p-estas">
+            <input class="selector" type="checkbox" id="p-hola">
+            <input class="selector" type="checkbox" id="p-gracias">
+            <input class="selector" type="checkbox" id="p-adios">
+
+            <!-- Bloque 1: Poli + pregunta + respuesta que se va armando -->
+            <header class="pregunta">
+
+                <img class="imagen-poli" src="../../../imagenes/Poli-hablando.png" alt="Poli hablando" />
+
+                <section class="enunciado">
+
+                    <h2>Traducí la siguiente oración:</h2>
+                    <p class="frase"><strong>“Guten Tag, wie geht es dir?”</strong></p>
+
+                    <!-- Empieza vacía. Cada palabra aparece cuando se elige en el banco.
+                         El orden en pantalla es el de esta lista. -->
+                    <ol class="respuesta" aria-label="Tu respuesta">
+                        <li class="slot slot-buenos"><label for="p-buenos">Buenos</label></li>
+                        <li class="slot slot-dias"><label for="p-dias">días</label></li>
+                        <li class="slot slot-como"><label for="p-como">¿Cómo</label></li>
+                        <li class="slot slot-estas"><label for="p-estas">estás?</label></li>
+                        <li class="slot slot-hola"><label for="p-hola">Hola</label></li>
+                        <li class="slot slot-gracias"><label for="p-gracias">Gracias</label></li>
+                        <li class="slot slot-adios"><label for="p-adios">Adiós</label></li>
+                    </ol>
+
+                </section>
+
+            </header>
+
+            <!-- Bloque 2: banco de palabras (lleva la línea verde arriba) -->
+            <section class="banco-palabras">
+
+                <h3>Banco de palabras disponibles:</h3>
+
+                <ul class="banco">
+                    <li><label class="ficha" for="p-hola">Hola</label></li>
+                    <li><label class="ficha" for="p-dias">días</label></li>
+                    <li><label class="ficha" for="p-estas">estás?</label></li>
+                    <li><label class="ficha" for="p-gracias">Gracias</label></li>
+                    <li><label class="ficha" for="p-como">¿Cómo</label></li>
+                    <li><label class="ficha" for="p-adios">Adiós</label></li>
+                    <li><label class="ficha" for="p-buenos">Buenos</label></li>
+                </ul>
+
+            </section>
+
+        </article>
+
+        <a class="boton-comprobar" href="#correcto">Comprobar respuesta</a>
+
+    </main>
+
+    <!-- Estados de corrección: escondidos. El botón lleva a #correcto y el CSS
+         muestra éxito o error según las palabras elegidas. -->
+    <section class="resultado exito" id="correcto">
+        <h2>¡Correcto!</h2>
+        <p>Buen trabajo.</p>
+        <a href="ingles-u1-l2.html">Continuar</a>
+    </section>
+
+    <section class="resultado error" id="incorrecto">
+        <h2>Incorrecto</h2>
+        <p>Solución: Buenos días, ¿cómo estás?</p>
+        <a href="#">Reintentar</a>
+    </section>
+
+</body>
+
+</html>

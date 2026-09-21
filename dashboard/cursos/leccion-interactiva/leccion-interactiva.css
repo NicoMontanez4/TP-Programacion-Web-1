@@ -1,0 +1,449 @@
+/* =====================================================
+   LECCIÓN INTERACTIVA - PoliLingo
+   Archivo: leccion-interactiva.css
+   ===================================================== */
+
+/* ================= VARIABLES ================= */
+:root{
+    --verde: #8fc97f;
+    --verde-oscuro: #2f7d3b;
+    --gris-tarjeta: #f0eeec;
+    --gris-barra: #a0a0a0;
+    --petroleo: #0b4a4f;
+    --rojo: #e53935;
+    --texto: #222;
+}
+
+/* ================= BASE ================= */
+body{
+    margin: 0;
+    padding: 1.5rem 1rem 8rem;          /* abajo: aire para el panel de corrección */
+    font-family: 'Nunito', 'Segoe UI', Tahoma, sans-serif;
+    color: var(--texto);
+    background-color: white;
+}
+
+/* ================= BARRA SUPERIOR ================= */
+.barra-leccion{
+    position: relative;                 /* referencia para la X */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.5rem;
+    box-sizing: border-box;
+    max-width: 55rem;
+    margin: 0 auto 1rem;
+    padding: 1rem 1.5rem 1rem 3.5rem;   /* a la izquierda: lugar para la X */
+    border-radius: 1.2rem;
+    background-color: var(--verde);
+}
+
+/* botón de salida: círculo rojo con la X blanca, en la esquina */
+.boton-salir{
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    display: grid;
+    place-items: center;
+    width: 2.5rem;                      /* tamaño cómodo para tocar */
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: var(--rojo);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.boton-salir:hover{
+    filter: brightness(0.9);
+}
+
+.bandera-leccion{
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    object-fit: cover;                  /* recorta sin deformar */
+    flex-shrink: 0;
+}
+
+.titulo-leccion h1{
+    margin: 0;
+    font-size: 2rem;
+    line-height: 1.1;
+}
+
+.titulo-leccion p{
+    margin: 0.2rem 0 0;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+/* vidas + progreso: dos filas, la barra ocupa el espacio que sobra */
+.estado-leccion{
+    flex: 1;
+    min-width: 16rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;                   /* sin viñetas */
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.estado-leccion li{
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+/* ---- barra de progreso ---- */
+.estado-leccion progress{
+    flex: 1;
+    height: 0.6rem;
+    border: none;
+    border-radius: 1rem;
+    overflow: hidden;
+    appearance: none;
+}
+
+/* cada navegador usa pseudo-elementos distintos: van separados */
+.estado-leccion progress::-webkit-progress-bar{
+    background-color: var(--gris-barra);
+}
+
+.estado-leccion progress::-webkit-progress-value{
+    background-color: white;
+    border-radius: 1rem;
+}
+
+.estado-leccion progress::-moz-progress-bar{
+    background-color: white;
+    border-radius: 1rem;
+}
+
+/* ================= CONTENEDOR PRINCIPAL ================= */
+.ejercicio{
+    display: flex;
+    flex-direction: column;             /* tarjeta arriba, botón abajo */
+    gap: 1rem;
+    max-width: 55rem;
+    margin: 0 auto;
+}
+
+/* ================= TARJETA ================= */
+.tarjeta-ejercicio{
+    position: relative;
+    box-sizing: border-box;
+    padding: 1.5rem;
+    border-radius: 1.2rem;
+    background-color: var(--gris-tarjeta);
+}
+
+/* bloque 1: Poli a la izquierda, enunciado a la derecha */
+.pregunta{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.imagen-poli{
+    width: 10rem;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.enunciado{
+    flex: 1;                            /* ocupa el espacio que deja Poli */
+}
+
+.enunciado h2{
+    margin: 0 0 0.8rem;
+    font-size: 1.15rem;
+}
+
+.frase{
+    margin: 0 0 1rem;
+    font-size: 0.95rem;
+}
+
+/* bloque 2: banco de palabras, con la línea verde arriba */
+.banco-palabras{
+    margin-top: 1.2rem;
+    padding-top: 1.2rem;
+    border-top: 0.15rem solid var(--verde);
+}
+
+.banco-palabras h3{
+    margin: 0 0 0.8rem;
+    font-size: 1.05rem;
+}
+
+/* ================= LISTAS DE FICHAS ================= */
+.respuesta,
+.banco{
+    display: flex;
+    flex-wrap: wrap;                    /* bajan de línea si no entran */
+    gap: 0.6rem;                        /* misma distancia entre todas */
+    margin: 0;
+    padding: 0;
+    list-style: none;                   /* sin números ni viñetas */
+}
+
+/* ================= RESPUESTA QUE SE VA ARMANDO ================= */
+
+/* casilleros escondidos: guardan qué palabras están elegidas */
+.selector{
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* zona de respuesta: arranca vacía, con una línea de guía */
+.respuesta{
+    min-height: 3rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 0.12rem solid #cfcfcf;
+    align-content: flex-start;
+}
+
+/* cada palabra de la respuesta está escondida hasta que se elige */
+.slot{
+    display: none;
+}
+
+.slot label{
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border: 0.12rem solid var(--verde);
+    border-radius: 1rem;
+    background-color: white;
+    font-weight: 800;
+    cursor: pointer;                    /* al tocarla, vuelve al banco */
+}
+
+/* cuando el casillero está marcado, la palabra aparece en la respuesta */
+#p-buenos:checked ~ .pregunta .slot-buenos,
+#p-dias:checked ~ .pregunta .slot-dias,
+#p-como:checked ~ .pregunta .slot-como,
+#p-estas:checked ~ .pregunta .slot-estas,
+#p-hola:checked ~ .pregunta .slot-hola,
+#p-gracias:checked ~ .pregunta .slot-gracias,
+#p-adios:checked ~ .pregunta .slot-adios{
+    display: block;
+}
+
+/* ================= FICHAS DEL BANCO ================= */
+.ficha{
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border: 0.12rem solid transparent;
+    border-radius: 1rem;
+    background-color: white;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.ficha:hover{
+    border-color: var(--verde);
+}
+
+/* palabra ya usada: queda el hueco vacío en el banco */
+#p-buenos:checked ~ .banco-palabras label[for="p-buenos"],
+#p-dias:checked ~ .banco-palabras label[for="p-dias"],
+#p-como:checked ~ .banco-palabras label[for="p-como"],
+#p-estas:checked ~ .banco-palabras label[for="p-estas"],
+#p-hola:checked ~ .banco-palabras label[for="p-hola"],
+#p-gracias:checked ~ .banco-palabras label[for="p-gracias"],
+#p-adios:checked ~ .banco-palabras label[for="p-adios"]{
+    background-color: #dcdad7;
+    color: transparent;                 /* se oculta el texto, queda la forma */
+    border-color: transparent;
+}
+
+/* foco visible al navegar con la tecla Tab */
+#p-buenos:focus-visible ~ .banco-palabras label[for="p-buenos"],
+#p-dias:focus-visible ~ .banco-palabras label[for="p-dias"],
+#p-como:focus-visible ~ .banco-palabras label[for="p-como"],
+#p-estas:focus-visible ~ .banco-palabras label[for="p-estas"],
+#p-hola:focus-visible ~ .banco-palabras label[for="p-hola"],
+#p-gracias:focus-visible ~ .banco-palabras label[for="p-gracias"],
+#p-adios:focus-visible ~ .banco-palabras label[for="p-adios"]{
+    outline: 0.15rem solid var(--texto);
+    outline-offset: 0.1rem;
+}
+
+/* ================= BOTÓN COMPROBAR ================= */
+.boton-comprobar{
+    display: block;
+    padding: 0.7rem 1rem;
+    border-radius: 2rem;
+    background-color: var(--petroleo);
+    color: white;
+    font-size: 1.15rem;
+    font-weight: 800;
+    text-align: center;
+    text-decoration: none;
+}
+
+.boton-comprobar:hover{
+    filter: brightness(1.25);
+}
+
+.boton-comprobar:focus-visible{
+    outline: 0.2rem solid var(--texto);
+    outline-offset: 0.15rem;
+}
+
+/* ================= PANELES DE CORRECCIÓN ================= */
+.resultado{
+    display: none;                      /* escondido por defecto */
+    position: fixed;                    /* pegado al borde inferior de la pantalla */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    box-sizing: border-box;
+    padding: 1.2rem 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    border-top: 0.2rem solid;
+}
+
+/* El botón "Comprobar respuesta" lleva siempre a #correcto (activa el :target).
+   Qué panel se muestra depende de las palabras elegidas:
+
+   RESPUESTA CORRECTA = Buenos + días + ¿Cómo + estás? marcadas,
+                        y Hola, Gracias y Adiós SIN marcar. */
+
+/* panel de éxito: solo si se comprobó Y la respuesta es correcta */
+body:has(#p-buenos:checked):has(#p-dias:checked):has(#p-como:checked):has(#p-estas:checked):not(:has(#p-hola:checked)):not(:has(#p-gracias:checked)):not(:has(#p-adios:checked)) #correcto:target{
+    display: flex;
+}
+
+/* panel de error: si se comprobó Y la respuesta NO es correcta */
+body:has(#correcto:target):not(:has(#p-buenos:checked):has(#p-dias:checked):has(#p-como:checked):has(#p-estas:checked):not(:has(#p-hola:checked)):not(:has(#p-gracias:checked)):not(:has(#p-adios:checked))) #incorrecto{
+    display: flex;
+}
+
+.resultado h2{
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.resultado p{
+    flex: 1;                            /* empuja el botón hacia la derecha */
+    margin: 0;
+    font-weight: 700;
+}
+
+.resultado a{
+    padding: 0.6rem 1.8rem;
+    border-radius: 2rem;
+    color: white;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+/* éxito */
+.exito{
+    background-color: #d7f5d0;
+    border-color: var(--verde);
+}
+
+.exito h2{
+    color: var(--verde-oscuro);
+}
+
+.exito a{
+    background-color: var(--petroleo);
+}
+
+/* error */
+.error{
+    background-color: #fbd5d5;
+    border-color: var(--rojo);
+}
+
+.error h2{
+    color: #b71c1c;
+}
+
+.error a{
+    background-color: var(--rojo);
+}
+
+/* ================= CELULAR ================= */
+@media (max-width: 40rem){
+
+    .barra-leccion{
+        padding: 3.5rem 1rem 1rem;      /* arriba: lugar para la X */
+        justify-content: center;
+        text-align: center;
+    }
+
+    .estado-leccion{
+        min-width: 100%;                /* la barra ocupa su propia línea */
+    }
+
+    .pregunta{
+        flex-direction: column;         /* Poli arriba, enunciado abajo */
+        text-align: center;
+    }
+
+    .imagen-poli{
+        width: 7rem;
+    }
+
+    .respuesta{
+        justify-content: center;
+    }
+
+    .resultado{
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .resultado a{
+        text-align: center;
+    }
+}
+
+/* =====================================================
+   MODO "LECCIÓN COMPLETADA" (solo lectura)
+   Se activa con <body class="completada">.
+   No modifica nada del modo interactivo normal.
+   ===================================================== */
+ 
+/* Ya no hay nada para elegir: se esconde el banco de palabras */
+body.completada .banco-palabras{
+    display: none;
+}
+ 
+/* Las fichas de la respuesta ya no son clickeables */
+body.completada .slot label{
+    cursor: default;
+}
+ 
+/* Insignia que reemplaza al botón "Comprobar respuesta" */
+.insignia-completada{
+    display: block;
+    padding: 0.7rem 1rem;
+    border-radius: 2rem;
+    background-color: #d7f5d0;
+    color: var(--verde-oscuro);
+    font-size: 1.05rem;
+    font-weight: 800;
+    text-align: center;
+    margin: 0;
+}
+ 
+/* El panel de éxito se muestra directo, sin esperar click ni :target */
+body.completada #correcto{
+    display: flex;
+}
+ 
