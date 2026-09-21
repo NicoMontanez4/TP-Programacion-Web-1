@@ -23,48 +23,139 @@
     </header>
 
     <main>
-        <section>
+        <section class="mis-cursos">
             <h1>Mis cursos de idiomas</h1>
             <p>PoliLingo es tu espacio para aprender inglés, alemán y chino de forma gratuita y divertida. Elegí un curso, completá lecciones, sumá XP y subí de liga.</p>
             <img src="../../imagenes/Poli2.png" alt="Imagen del lorito">
         </section>
         
-        <section>
-            <h2>Seleccioná el curso con el que deseas continuar aprendiendo.</h2>
+        <section class="seleccionar-cursos">
+            <header>
+                <h2>Seleccioná el curso con el que deseas continuar aprendiendo.</h2>
+            </header>
 
             <a href="./mapaUnidades/mapaUnidadesIngles.html">
-            <article class="ingles">
-                <img src="../../imagenes/Curso-Ingles.png" alt="Curso Inglés">
-                <p>Inglés desde Español</p>
-                <label for="progreso-ingles">Progreso: 45%</label>
-                <progress id="progreso-ingles" value="45" max="100">45%</progress>
-                <p>Nivel: Intermedio (B1)</p>
-                <span>Continuar</span>
-            </article>
+                <article class="ingles">
+                    <header>
+                        <img src="../../imagenes/Curso-Ingles.png" alt="Curso Inglés">
+                        <p>Inglés desde Español</p>
+                    </header>
+                        <label for="progreso-ingles">Progreso: 45%</label>
+                        <progress id="progreso-ingles" value="45" max="100">45%</progress>
+                        <p>Nivel: Intermedio (B1)</p>
+                        <span>Continuar</span>
+                </article>
             </a>
 
             <a href="./mapaUnidades/mapaUnidadesAleman.html">
-            <article class="aleman">
-                <img src="../../imagenes/Curso-Aleman.png" alt="Curso Alemán">
-                <p>Alemán desde Español</p>
-                <label for="progreso-aleman">Progreso: 12%</label>
-                <progress id="progreso-aleman" value="12" max="100">12%</progress>
-                <p>Nivel: Principiante (A1)</p>
-                <span>Continuar</span>
-            </article>
+                <article class="aleman">
+                    <header>
+                        <img src="../../imagenes/Curso-Aleman.png" alt="Curso Alemán">
+                        <p>Alemán desde Español</p>
+                    </header>
+                        <label for="progreso-aleman">Progreso: 12%</label>
+                        <progress id="progreso-aleman" value="12" max="100">12%</progress>
+                        <p>Nivel: Principiante (A1)</p>
+                        <span>Continuar</span>
+                </article>
             </a>
 
             <a href="./mapaUnidades/mapaUnidadesChino.html">
-            <article class="chino">
-                <img src="../../imagenes/Curso-Chino.png" alt="Curso Chino">
-                <p>Chino desde Español</p>
-                <label for="progreso-chino">Progreso: 0%</label>
-                <progress id="progreso-chino" value="0" max="100">0%</progress>
-                <p>Nivel: Inicial (HSK 1)</p>
-                <span>Empezar</span>
-            </article>
-            </a>  
+                <article class="chino">
+                    <header>
+                        <img src="../../imagenes/Curso-Chino.png" alt="Curso Chino">
+                        <p>Chino desde Español</p>
+                    </header>
+                        <label for="progreso-chino">Progreso: 0%</label>
+                        <progress id="progreso-chino" value="0" max="100">0%</progress>
+                        <p>Nivel: Inicial (HSK 1)</p>
+                        <span>Empezar</span>
+                </article>
+            </a> 
+        </section>
+
+        <section class="actividad-hoy">
+            <header>
+                <h2>Tu actividad de hoy</h2>
+            </header>
+                <p>Racha: 5 días</p> <!--Icon-->
+                <p>Meta diaría: 50 XP</p> <!--Icon-->
+                <label for="progreso-meta-diaria">35/50 XP</label>
+                <progress id="progreso-meta-diaria" value="35" max="50">35/50 XP</progress>
+        </section>
+        
+        <section class="actividad-semanal">
+            <header>
+                <h2>Tu actividad semanal</h2>
+            </header>
+                <ul>
+                    <li>
+                        <span>Lunes</span>
+                        <progress value="80" max="100">80%</progress>
+                    </li>
+                    <li>
+                        <span>Martes</span>
+                        <progress value="70" max="100">70%</progress>
+                    </li>
+                    <li>
+                        <span>Miercoles</span>
+                        <progress value="90" max="100">90%</progress>
+                    </li>
+                    <li>
+                        <span>Jueves</span>
+                        <progress value="100" max="100">100%</progress>
+                    </li>
+                    <li>
+                        <span>Viernes</span>
+                        <progress value="50" max="100">50%</progress>
+                    </li>
+                    <li>
+                        <span>Sabado</span>
+                        <progress value="50" max="100">50%</progress>
+                    </li>
+                    <li>
+                        <span>Domingo</span>
+                        <progress value="10" max="100">10%</progress>
+                    </li>
+                </ul>
+        </section>
+
+        <section class="logros-conseguir">
+            <header>
+                <h2>Logros por conseguir</h2>
+            </header>
+                <article class="logro">
+                    <p>Completa 50 lecciones de inglés</p> <!--Icon-->
+                    <label for="progreso-lecciones-ingles">40/50</label>
+                    <progress id="progreso-lecciones-ingles" value="40" max="50">40/50</progress>
+                </article>
+                
+                <article class="logro">
+                    <p>Gana 600 Poligemas</p> <!--Icon-->
+                    <label for="progreso-poligemas">550/600</label>
+                    <progress id="progreso-poligemas" value="550" max="600">550/600</progress>
+                </article>
+
+                <article class="logro">
+                    <p>Realiza 2 compras en la tienda</p> <!--Icon-->
+                    <label for="progreso-compras">1/2</label>
+                    <progress id="progreso-compras" value="1" max="2">1/2</progress>
+                </article>
+        </section>
+
+        <section class="bienvenida">
+            <header>
+                <img src="../../imagenes/PoliSaluda.png" alt="Poli saluda">
+                <h2>¡Hola Carlos! Te saluda Poli</h2>
+                <h2>Ya llevás 5 días aprendiendo</h2>
+            </header>
+                <p>¡Completá una lección más para mantener tu racha!</p>
+                <a href="" class="boton-continuar">Continuar aprendiendo</a>
         </section>
     </main>
+
+    <footer>
+        <p>©2026 PoliLingo - Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>
