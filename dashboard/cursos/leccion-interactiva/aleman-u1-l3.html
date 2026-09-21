@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Lección interactiva - PoliLingo</title>
+        <link rel="stylesheet" href="leccion-interactiva.css" />
+    </head>
+
+    <!--EN EL STYLE TENÉS QUE AGREGAR:
+
+    fieldset {
+        border: none;
+    }
+    
+    Es para sacarle los bordes feos que están ahora y dejarlo impecable como antes-->
+    <body>
+        <header>
+            <nav class="navbar">
+                <img src="../imagenes/Logo.png" alt="PoliLingo Logo" />
+                <a href="cursos/cursos.html">Cursos</a>
+                <a href="perfil/perfil.html">Perfil</a>
+                <a href="ranking/ranking.html">Ranking</a>
+                <a href="tienda/tienda.html">Tienda</a>
+
+                <!-- Uso de span/ul para datos que no son párrafos narrativos -->
+                <ul class="usuario-stats">
+                    <li><span>5 días</span></li>
+                    <li><span>350 XP</span></li>
+                    <li><span>550</span></li>
+                    <li><span>3</span></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="ejercicio">
+            <section class="leccion-container">
+                <!-- CABECERA DE LA SECCIÓN (Header correcto) -->
+                <header class="barra-leccion">
+                    <a
+                        class="boton-salir"
+                        href="../mapaUnidades/mapaUnidadesAleman.html"
+                        aria-label="Salir de la lección"
+                        >✕</a
+                    >
+
+                    <img
+                        class="bandera-leccion"
+                        src="../../../imagenes/BanderaAlemania.png"
+                        alt="Bandera de Alemania"
+                    />
+
+                    <!-- hgroup agrupa correctamente Título + Subtítulo -->
+                    <hgroup class="titulo-leccion">
+                        <h1>Alemán</h1>
+                        <p>Unidad 1: Saludos</p>
+                    </hgroup>
+
+                    <ul class="estado-leccion">
+                        <li>Cantidad de vidas: ❤️❤️❤️</li>
+                        <li>
+                            <label for="progreso-leccion"
+                                >Progreso de la lección: 60%</label
+                            >
+                            <progress
+                                id="progreso-leccion"
+                                value="60"
+                                max="100"
+                            >
+                                60%
+                            </progress>
+                        </li>
+                    </ul>
+                </header>
+
+                <!-- FORMULARIO DE EJERCICIO (No es un article, es una interacción) -->
+                <form class="tarjeta-ejercicio">
+                    <!-- Checkboxes de control -->
+                    <input class="selector" type="checkbox" id="p-buenos" />
+                    <input class="selector" type="checkbox" id="p-dias" />
+                    <input class="selector" type="checkbox" id="p-como" />
+                    <input class="selector" type="checkbox" id="p-estas" />
+                    <input class="selector" type="checkbox" id="p-hola" />
+                    <input class="selector" type="checkbox" id="p-gracias" />
+                    <input class="selector" type="checkbox" id="p-adios" />
+
+                    <!-- BLOQUE 1: Pregunta y Construcción de respuesta -->
+                    <section class="pregunta">
+                        <img
+                            class="imagen-poli"
+                            src="../../../imagenes/Poli-hablando.png"
+                            alt="Mascota Poli hablando"
+                        />
+
+                        <fieldset class="enunciado">
+                            <h2>Traducí la siguiente oración:</h2>
+                            <p class="frase">
+                                <strong>“Guten Tag, wie geht es dir?”</strong>
+                            </p>
+
+                            <ol class="respuesta" aria-label="Tu respuesta">
+                                <li class="slot slot-buenos">
+                                    <label for="p-buenos">Buenos</label>
+                                </li>
+                                <li class="slot slot-dias">
+                                    <label for="p-dias">días</label>
+                                </li>
+                                <li class="slot slot-como">
+                                    <label for="p-como">¿Cómo</label>
+                                </li>
+                                <li class="slot slot-estas">
+                                    <label for="p-estas">estás?</label>
+                                </li>
+                                <li class="slot slot-hola">
+                                    <label for="p-hola">Hola</label>
+                                </li>
+                                <li class="slot slot-gracias">
+                                    <label for="p-gracias">Gracias</label>
+                                </li>
+                                <li class="slot slot-adios">
+                                    <label for="p-adios">Adiós</label>
+                                </li>
+                            </ol>
+                        </fieldset>
+                    </section>
+
+                    <!-- BLOQUE 2: Banco de palabras -->
+                    <section class="banco-palabras">
+                        <h3>Banco de palabras disponibles:</h3>
+
+                        <ul class="banco">
+                            <li>
+                                <label class="ficha" for="p-hola">Hola</label>
+                            </li>
+                            <li>
+                                <label class="ficha" for="p-dias">días</label>
+                            </li>
+                            <li>
+                                <label class="ficha" for="p-estas"
+                                    >estás?</label
+                                >
+                            </li>
+                            <li>
+                                <label class="ficha" for="p-gracias">
+                                    Gracias
+                                </label>
+                            </li>
+                            <li>
+                                <label class="ficha" for="p-como">¿Cómo</label>
+                            </li>
+                            <li>
+                                <label class="ficha" for="p-adios">Adiós</label>
+                            </li>
+                            <li>
+                                <label class="ficha" for="p-buenos">
+                                    Buenos
+                                </label>
+                            </li>
+                        </ul>
+                    </section>
+                </form>
+            </section>
+
+            <a class="boton-comprobar" href="#correcto">Comprobar respuesta</a>
+        </main>
+    </body>
+</html>
