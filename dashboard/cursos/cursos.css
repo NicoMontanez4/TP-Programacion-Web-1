@@ -214,6 +214,7 @@
 .logros-conseguir {
     box-sizing: border-box;
     max-width: 55rem;
+    width: calc(100% - 2rem); /* le resta 2rem al ancho total: 1rem de aire a cada lado */
     margin: 0 auto 2rem;
     padding: 1.5rem;
     border-radius: 1rem;
@@ -305,4 +306,19 @@
 
 .boton-continuar:hover {
     background-color: rgb(25, 105, 140); /* versión más oscura del mismo azul, feedback visual de interactividad */
+}
+
+@media screen and (max-width: 768px) {
+    .mis-cursos {
+        grid-template-columns: 1fr; /*ordena el texto en una sola columna*/
+        text-align: center; /*centra el texto*/
+    }
+
+    .mis-cursos img {
+        margin: 0 auto; /*centra la imagen*/
+    }
+    
+    .boton-continuar {
+        text-align: center;
+    }
 }
