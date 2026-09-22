@@ -26,6 +26,62 @@ img {
     display: block;
 }
 
+
+/* DASHBOARD DE BIENVENIDA */
+
+.bienvenida{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    max-width: 60rem;
+    margin: 4rem auto;
+    padding: 2rem;
+}
+
+
+.poli-bienvenida{
+    width: 16rem;
+    height: auto;
+}
+
+.texto-bienvenida{
+    max-width: 26rem;
+}
+
+.texto-bienvenida h1{
+    margin: 0 0 1rem;
+    font-size: 2.2rem;
+    line-height: 1.2;
+    color: #0A4148;
+}
+
+.texto-bienvenida h1 .lingo{
+    color: #0e9384; /* turquesa, ajustá el tono a tu paleta */
+}
+
+.texto-bienvenida p{
+    margin: 0 0 0.5rem;
+    font-size: 1.05rem;
+    color: #333;
+}
+
+.boton-ir-a-cursos{
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.8rem 1.8rem;
+    border-radius: 2rem;
+    background-color: #0e9384;
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.boton-ir-a-cursos:hover{
+    filter: brightness(1.1);
+}
+
 /*Barra de navegacion*/
 .navbar {
     display: flex;
