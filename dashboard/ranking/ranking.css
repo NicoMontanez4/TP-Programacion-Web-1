@@ -63,16 +63,16 @@ h2 {
 }
 
 
-/* Contenedor con scroll, como la barra de tu diseño */
+
 .tabla-ranking {
-  max-height: 18rem;
+  max-height: 15rem;
   overflow-y: auto;
   scrollbar-color: #000 #ffffff;
 }
 
 table {
   width: 100%;
-  border-collapse: collapse;   /* junta los bordes de las celdas */
+  border-collapse: collapse;   
   text-align: center;
 }
 
@@ -82,7 +82,7 @@ th {
 }
 
 td {
-  padding: 1.5rem;
+  padding: 1rem;
   font-size: 0.85rem;
 }
 .avatar{
