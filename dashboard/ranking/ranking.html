@@ -7,10 +7,32 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Mi perfil</title>
+        <link rel="stylesheet" href="../global.css" />
         <link rel="stylesheet" href="ranking.css" />
+        
     </head>
 
 <body>
+
+    <header>
+        <nav class="navbar">
+            <img src="../../imagenes/Logo.png" alt="Imagen del lorito">
+
+            <div class="navbar-links"> <!--Los separo en div asi los puedo ordenar por separado en el navbar-->
+                <a href="../cursos/cursos.html">Cursos</a>
+                <a href="../perfil/perfil.html">Perfil</a>
+                <a href="../ranking/ranking.html">Ranking</a>
+                <a href="../tienda/tienda.html">Tienda</a>
+            </div>
+
+            <div class="navbar-estadisticas">
+                <p>5 días</p> <!--Icon-->
+                <p>350 XP</p> <!--Icon-->
+                <p>550</p> <!--Icon-->
+                <p>3</p> <!--Icon-->
+            </div>
+        </nav>
+    </header>
 
     <main>
 
@@ -26,9 +48,8 @@
 
                         <article class="liga-actual">
 
-                            <h2> ¡Felicidades,<strong>Carlos</strong>! Estás en la liga de bronce</h2>
+                            <h2> ¡Felicidades,<strong>Carlos</strong>! Estás en la liga de <strong>bronce</strong>.</h2>
 
-                            
 
                         </article>
 
@@ -37,7 +58,7 @@
                             <header class="titulo-liga">
 
                                 <h2>Ranking Liga de bronce</h2>
-                                <p>Los primero ascienden a la Liga de Plata ésta semana</p>
+                                <p>Los primeros ascienden a la Liga de Plata ésta semana.</p>
 
                             </header>
                             
@@ -132,13 +153,19 @@
 
                         </section>
 
+                        <nav class="volver">
+
+                            <a class="volver-a-cursos" href="../cursos/cursos.html"> Volver a cursos</a>
+
+                        </nav>
+
         </section>
 
 
     </main>
 
     <footer>
-        <p>©2026 <span>PoliLingo</span> - Todos los derechos reservados.</p>
+        <p>©2026 PoliLingo - Todos los derechos reservados.</p>
     </footer>
 
 </body>

@@ -6,6 +6,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Mapa de Unidades - Aleman</title>
+        <link rel="stylesheet" href="../../global.css" />
         <link rel="stylesheet" href="mapaUnidades.css" />
 
     </head>
@@ -14,7 +15,25 @@
     
     <body>
 
-        <header>  </header>
+        <header>
+        <nav class="navbar">
+            <img src="../../../imagenes/Logo.png" alt="Imagen del lorito">
+
+            <div class="navbar-links"> <!--Los separo en div asi los puedo ordenar por separado en el navbar-->
+                <a href="../../cursos/cursos.html">Cursos</a>
+                <a href="../../perfil/perfil.html">Perfil</a>
+                <a href="../../ranking/ranking.html">Ranking</a>
+                <a href="../../tienda/tienda.html">Tienda</a>
+            </div>
+
+            <div class="navbar-estadisticas">
+                <p>5 días</p> <!--Icon-->
+                <p>350 XP</p> <!--Icon-->
+                <p>550</p> <!--Icon-->
+                <p>3</p> <!--Icon-->
+            </div>
+        </nav>
+    </header>
     
 
 
@@ -186,11 +205,22 @@
                 
         </article>
 
+        <nav class="volver">
+
+            <a class="volver-a-cursos" href="../cursos.html"> Volver a cursos</a>
+
+        </nav>
+
+        <br>
 
 
         </main>
 
-        
+        <footer>
+            <p>©2026 <span>PoliLingo</span> - Todos los derechos reservados.</p>
+        </footer>
 
 
     </body>
+
+</html>
