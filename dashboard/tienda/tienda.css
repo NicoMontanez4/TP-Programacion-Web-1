@@ -1,0 +1,328 @@
+.tienda-contenedor{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tienda-introduccion{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 50rem;   
+    margin: 3rem 0;      
+}
+
+.imagen-tienda-titulo{
+    width: 10rem;
+    height: auto;
+    padding-left:2rem;
+    
+}
+
+/*OFERTAS*/
+/*--------------------------------*/
+
+.ofertas-tienda{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;   /* para que ambas tarjetas tengan la misma altura */
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 50rem;
+}
+
+.contenedor-oferta-del-dia,
+.contenedor-oferta-super{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;              
+    box-sizing: border-box;
+    padding: 1.2rem;
+    background-color: #4dd0c8; 
+    border-radius: 1.5rem;
+}
+
+.imagen-oferta{
+    width: 6rem;  
+    height: auto;
+    flex-shrink: 0;
+}
+
+.oferta-del-dia,
+.oferta-super{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.oferta-del-dia h2,
+.oferta-super h2{
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ffffff;
+
+}
+
+.oferta-del-dia h3,
+.oferta-super p{
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #000000;
+}
+
+.oferta-del-dia a,
+.oferta-super a{
+    display: inline-block;
+    margin-top: 0.3rem;
+    padding: 0.4rem 1rem;
+    border-radius: 1.5rem;
+    background-color: #ffb020;  /* el naranja del botón */
+    color: white;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+}
+
+.oferta-del-dia a:hover,
+.oferta-super a:hover{
+    filter: brightness(1.05);
+}
+
+
+/*TIENDA*/
+/*--------------------------------*/
+
+.seccion-tienda{
+    width: 100%;
+    max-width: 50rem;
+    margin: 2rem 0 0;
+}
+
+.seccion-tienda h2{
+    margin: 0 0 0.6rem;
+    padding-bottom: 0.5rem;
+    font-size: 1.3rem;
+    border-bottom: 0.12rem solid #0e9384;
+}
+
+.icono-item{
+    width: 6rem;  
+    height: auto;
+    flex-shrink: 0;
+}
+
+/* ================= FILAS DE ÍTEMS (vidas, potenciadores, paquetes) ================= */
+.fila-item{
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1rem 0;
+}
+
+.icono-item{
+    width: 3rem;
+    height: 3rem;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.icono-paquete{
+    width: 4rem;
+    height: 4rem;
+}
+
+.texto-item{
+    flex: 1;
+}
+
+.texto-item h3{
+    margin: 0 0 0.2rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.texto-item p{
+    margin: 0;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.contador-equipados{
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #0e9384;
+}
+
+/* ================= BOTONES DE LA TIENDA ================= */
+.boton-item{
+    flex-shrink: 0;
+    padding: 0.6rem 1.2rem;
+    border-radius: 1.5rem;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #ffb020;
+    color: white;
+}
+
+.boton-item{
+    filter: brightness(1.05);
+}
+
+
+.boton-deshabilitado{
+    background-color: #f0eeec;
+    color: #999;
+    border: 0.08rem solid #ccc;
+    cursor: default;
+}
+
+/* ================= MÉTODO DE PAGO ================= */
+.metodo-pago-subtitulo{
+    margin: 0.5rem 0 1rem;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.formulario-pago{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 2rem;
+}
+
+/* el encabezado (ícono + h1) ocupa las dos columnas y no debe verse como un campo más */
+.pago-encabezado{
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    border: none;
+    padding: 0;
+    margin: 0 0 0.5rem;
+}
+
+.pago-encabezado img{
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.pago-encabezado h1{
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.campo-pago{
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.campo-pago label{
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.campo-pago input{
+    padding: 0.5rem 0.7rem;
+    border: 0.08rem solid #ccc;
+    border-radius: 0.4rem;
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+
+.campo-pago input:focus{
+    outline: none;
+    border-color: #0e9384;
+}
+
+/* ================= COMPRA REALIZADA ================= */
+
+.fondo-compra-realizada{
+    background-color: #ffffff;
+}
+
+.compra-realizada{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height:50rem;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.tarjeta-compra-realizada{
+    position: relative;
+    box-sizing: border-box;
+    max-width: 24rem;
+    width: 100%;
+    margin-top: 5rem; /* deja lugar arriba para que el loro sobresalga */
+    padding: 4.5rem 2rem 2.5rem;
+    background-color: #f0eeec;
+    border-radius: 1.5rem;
+    text-align: center;
+}
+
+.imagen-compra-realizada{
+    position: absolute;
+    top: -5rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.poli-compra-realizada{
+    width: 10rem;
+    height: auto;
+}
+
+.check-compra-realizada{
+    position: absolute;
+    top: 1rem;
+    right: -2rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    
+}
+
+.tarjeta-compra-realizada h1{
+    margin: 0 0 1rem;
+    font-size: 1.6rem;
+    color: #0b4a4f;
+}
+
+.tarjeta-compra-realizada p{
+    margin: 0 0 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #444;
+}
+
+.boton-volver-tienda{
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border-radius: 2rem;
+    background-color: #8fc97f;
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.boton-volver-tienda:hover{
+    filter: brightness(1.05);
+}
