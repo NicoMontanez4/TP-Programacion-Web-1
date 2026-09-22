@@ -8,8 +8,7 @@
 }
 
 html,
-body,
-{
+body {
     font-family: sans-serif;
     background-color: #fff;
    
@@ -58,6 +57,7 @@ img {
     gap: 1rem;
     margin: 0;
     color: black;
+    font-weight: 700;
 }
 
 /*Barra de progreso*/
@@ -103,4 +103,17 @@ footer p {
   font-weight: 700;
   text-decoration: none; /* saca el subrayado */
   background-color: rgb(143, 58, 58);
+}
+
+@media screen and (max-width: 768px){
+    .navbar {
+        flex-wrap: wrap; /* los links en una fila y las estadisticas en otra */
+        justify-content: center; /* centra las filas resultantes */
+        gap: 0.75rem; /* achica el espacio general entre logo/links/stats */
+    }
+
+    .navbar {
+        margin: 0; /* achica el espacio general entre logo/links/stats */
+        gap: 1rem;  /* achico el espacio entre CURSOS / PERFIL / RANKING / TIENDA */
+    }
 }
