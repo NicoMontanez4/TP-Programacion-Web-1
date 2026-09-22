@@ -1,82 +1,88 @@
-/*Mis cursos*/
+/* ============================================
+   MIS CURSOS (sección hero de la página)
+   ============================================ */
 .mis-cursos {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 1.5rem;
-    box-sizing: border-box;
-    max-width: 55rem;
-    margin: 2rem auto;
-    padding: 0 1rem 2rem;
-    border-bottom: 0.2rem solid #8fc97f;
+    display: grid; /* uso grid porque quiero dos columnas fijas: texto e imagen */
+    grid-template-columns: 1fr 1fr; /* divide el ancho disponible en 2 partes iguales */
+    align-items: center; /* centra verticalmente el texto y la imagen entre sí */
+    gap: 1.5rem; /* separación entre columnas sin usar margin (evita problemas de colapso) */
+    box-sizing: border-box; /* el padding se descuenta del ancho total, no se suma */
+    max-width: 55rem; /* limita el ancho del contenido para que no se estire en pantallas grandes */
+    margin: 2rem auto; /* "auto" en los laterales centra el bloque horizontalmente en la página */
+    padding: 0 1rem 2rem; /* aire interno a los costados y abajo */
+    border-bottom: 0.2rem solid #8fc97f; /* línea divisoria que separa la intro del resto del contenido */
 }
 
 .texto-mis-cursos {
     display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
+    flex-direction: column; /* apila el título y el párrafo uno debajo del otro */
+    gap: 0.75rem; /* espacio entre título y párrafo sin usar margin-bottom */
 }
 
 .texto-mis-cursos h1 {
-    margin: 0;
+    margin: 0; /* saco el margin por defecto del h1 para controlar el espaciado solo con gap */
     font-size: 2rem;
-    color: rgb(35, 140, 182);
+    color: rgb(35, 140, 182); /* color institucional del sitio, se repite en botones y textos clave */
 }
 
 .texto-mis-cursos p {
     margin: 0;
     font-size: 1.1rem;
-    line-height: 1.4;
+    line-height: 1.4; /* mejora la legibilidad del párrafo, separa más las líneas entre sí */
 }
 
 .mis-cursos img {
     width: 14rem;
-    max-width: 40%;
-    height: auto;
-    transform: scaleX(-1); /*Voltea al loro en modo espejo*/
+    max-width: 40%; /* evita que la imagen se agrande demasiado en pantallas anchas */
+    height: auto; /* mantiene la proporción original de la imagen al escalarla */
+    transform: scaleX(-1); /* invierte la imagen horizontalmente (espejo) para que el loro mire hacia el texto */
 }
 
-/*Seleccionar cursos*/
+/* ============================================
+   SELECCIONAR CURSOS (las 3 tarjetas de idiomas)
+   ============================================ */
 .seleccionar-cursos {
     box-sizing: border-box;
-    max-width: 55rem;
-    margin: 0 auto 2rem;
+    max-width: 55rem; /* mismo ancho que .mis-cursos para que todo quede alineado verticalmente */
+    margin: 0 auto 2rem; /* centrado horizontal + separación con la sección siguiente */
     padding: 0 1rem;
 }
 
 .tarjetas-cursos {
     display: grid;
+    /* auto-fit + minmax: crea tantas columnas de al menos 15rem como entren,
+       y si no entran 3, las achica o las baja de línea automáticamente (responsive sin media queries) */
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     gap: 1.5rem;
     align-items: center;
 }
 
 .seleccionar-cursos header {
-    text-align: center;
+    text-align: center; /* centra el título de la sección, a diferencia del hero que va a la izquierda */
     margin: 1rem;
 }
 
 .tarjetas-cursos a {
-    display: block;
-    color: inherit;
-    text-decoration: none;
+    display: block; /* un <a> es inline por defecto; block hace que ocupe toda la tarjeta como área clickeable */
+    color: inherit; /* evita que el texto de adentro se vea azul (color por defecto de los links) */
+    text-decoration: none; /* saca el subrayado por defecto del link */
 }
 
 .seleccionar-cursos article {
     box-sizing: border-box;
     padding: 1.25rem;
-    border-radius: 1rem;
+    border-radius: 1rem; /* bordes redondeados, estilo consistente con el resto del sitio */
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column; /* apila ícono, texto, barra de progreso y botón */
+    align-items: center; /* centra todo horizontalmente dentro de la tarjeta */
     gap: 0.5rem;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease; /* suaviza el cambio de color cuando se pasa el mouse */
 }
 
 .seleccionar-cursos article header {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.75rem; /* separa la bandera/ícono del nombre del idioma */
 }
 
 .seleccionar-cursos article img {
@@ -92,31 +98,36 @@
 .seleccionar-cursos article progress {
     width: 100%;
     height: 0.6rem;
-    border: none;
-    border-radius: 1rem;
-    overflow: hidden;
-    appearance: none;
+    border: none; /* saca el borde feo que trae el <progress> por defecto en algunos navegadores */
+    border-radius: 1rem; /* redondea la barra */
+    overflow: hidden; /* recorta el relleno interno para que respete el border-radius */
+    appearance: none; /* resetea el estilo nativo del navegador para poder personalizarlo con CSS */
 }
 
 .seleccionar-cursos article span {
     margin-top: 0.5rem;
     padding: 0.4rem 1rem;
-    border-radius: 999px;
+    border-radius: 999px; /* valor bien alto = siempre queda como una "píldora" sin importar el tamaño */
     background-color: rgb(35, 140, 182);
     color: #fff;
     font-weight: 700;
 }
 
-.seleccionar-cursos .chino span { background-color: #f5c063; }
+/* Colores por curso: por defecto todos los cursos son verdes... */
 .chino, .ingles, .aleman { background-color: #8fc97f; }
+/* ...pero el botón de "Empezar" en Chino se distingue en amarillo porque todavía no se arrancó ese curso */
+.seleccionar-cursos .chino span { background-color: #f5c063; }
 
-.ingles:hover, .aleman:hover { background-color: rgb(41, 104, 4); }
-.chino:hover { background-color: #f5c063; }
+/* Estados hover: le dan feedback visual al usuario de que la tarjeta es clickeable */
+.ingles:hover, .aleman:hover { background-color: rgb(41, 104, 4); } /* verde más oscuro */
+.chino:hover { background-color: #f5c063; } /* mismo amarillo del botón para reforzar que es el curso a "empezar" */
 
-/*Actividad de hoy + semanal */
+/* ============================================
+   ACTIVIDAD DE HOY + ACTIVIDAD SEMANAL
+   ============================================ */
 .fila-actividad {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* si no entran las dos tarjetas lado a lado, la segunda baja de línea sola */
     gap: 1.5rem;
     box-sizing: border-box;
     max-width: 55rem;
@@ -127,7 +138,7 @@
 
 .actividad-hoy,
 .actividad-semanal {
-    flex: 1 1 22rem;
+    flex: 1 1 22rem; /* pueden crecer y achicarse, pero arrancan con una base de 22rem de ancho */
     box-sizing: border-box;
     padding: 1.5rem;
     border-radius: 1rem;
@@ -140,10 +151,10 @@
 }
 
 .texto-actividad-hoy {
-    flex: 1;
+    flex: 1; /* ocupa todo el espacio vertical restante dentro de la tarjeta */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between; /* empuja la racha arriba y la barra de progreso abajo */
     gap: 0.75rem;
     font-weight: 700;
 }
@@ -155,12 +166,12 @@
 
 .barra-hoy {
     display: flex;
-    align-items: center;
+    align-items: center; /* alinea la barra y el texto "35/50 XP" en la misma línea */
     gap: 0.75rem;
 }
 
 .barra-hoy progress {
-    flex: 1;
+    flex: 1; /* la barra ocupa todo el ancho disponible, el label solo el que necesita su texto */
     height: 0.6rem;
     border: none;
     border-radius: 1rem;
@@ -169,9 +180,9 @@
 }
 
 .actividad-semanal ul {
-    list-style: none;
+    list-style: none; /* saca los puntos de lista por defecto */
     margin: 0;
-    padding: 0;
+    padding: 0; /* saca la sangría por defecto del <ul> */
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
@@ -179,12 +190,12 @@
 
 .actividad-semanal li {
     display: flex;
-    align-items: center;
+    align-items: center; /* alinea el nombre del día con su barra de progreso */
     gap: 0.75rem;
 }
 
 .actividad-semanal li span {
-    width: 5rem;
+    width: 5rem; /* ancho fijo para que todas las barras arranquen alineadas en la misma columna */
     font-weight: 700;
 }
 
@@ -197,7 +208,9 @@
     appearance: none;
 }
 
-/*Logros por conseguir*/
+/* ============================================
+   LOGROS POR CONSEGUIR
+   ============================================ */
 .logros-conseguir {
     box-sizing: border-box;
     max-width: 55rem;
@@ -212,28 +225,28 @@
     align-items: center;
     gap: 1rem;
     padding: 0.75rem 0;
-    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.15);
+    border-bottom: 0.1rem solid rgba(0, 0, 0, 0.15); /* separador sutil entre logros */
 }
 
 .logro:last-child {
-    border-bottom: none;
+    border-bottom: none; /* al último logro no le pongo línea abajo para que no quede pegada al borde de la tarjeta */
 }
 
 .logro p {
-    flex: 1;
+    flex: 1; /* el texto ocupa el espacio libre, empujando la barra de progreso a la derecha */
     margin: 0;
     font-weight: 700;
 }
 
 .barra-logro {
-    position: relative;
+    position: relative; /* necesario para poder ubicar el label encima con position: absolute */
     flex: 1;
 }
 
 .barra-logro progress {
     width: 100%;
     display: block;
-    height: 1.2rem;
+    height: 1.2rem; /* más alta que las otras barras porque el texto tiene que entrar visualmente adentro */
     border: none;
     border-radius: 1rem;
     overflow: hidden;
@@ -241,21 +254,25 @@
 }
 
 .barra-logro label {
+    /* "position: absolute" + "inset: 0" hacen que el label ocupe exactamente el mismo espacio que la barra,
+       quedando superpuesto arriba de ella en vez de aparecer debajo como elemento aparte */
     position: absolute;
     inset: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; /* centra el texto "40/50" tanto horizontal como verticalmente sobre la barra */
     font-weight: 700;
     font-size: 0.85rem;
-    color: #fff;
+    color: #fff; /* blanco para que se lea sobre el fondo de color de la barra */
 }
 
-/*Bienvenida*/
+/* ============================================
+   BIENVENIDA (saludo de Poli al final de la página)
+   ============================================ */
 .bienvenida {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: center; /* centra verticalmente la imagen de Poli con el bloque de texto */
+    justify-content: center; /* centra todo el conjunto horizontalmente en la página */
     gap: 1.5rem;
     box-sizing: border-box;
     max-width: 55rem;
@@ -271,21 +288,21 @@
 
 .texto-bienvenida {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: column; /* apila los dos h2, el párrafo y el botón en una sola columna */
+    align-items: flex-start; /* evita que el botón se estire a todo el ancho del contenedor flex */
     gap: 0.5rem;
 }
 
 .boton-continuar {
-    display: inline-block;
+    display: inline-block; /* permite darle padding y que respete su propio ancho de contenido */
     padding: 0.75rem 1.5rem;
-    border-radius: 999px;
+    border-radius: 999px; /* botón en forma de píldora, mismo criterio que el badge de las tarjetas de curso */
     background-color: rgb(35, 140, 182);
     color: #fff;
     font-weight: 700;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease; /* transición suave al pasar el mouse */
 }
 
 .boton-continuar:hover {
-    background-color: rgb(25, 105, 140);
+    background-color: rgb(25, 105, 140); /* versión más oscura del mismo azul, feedback visual de interactividad */
 }
