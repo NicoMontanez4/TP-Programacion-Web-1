@@ -32,7 +32,7 @@ body{
     gap: 1rem 1.5rem;
     box-sizing: border-box;
     max-width: 55rem;
-    margin: 0 auto 1rem;
+    margin: 5rem auto 1rem;
     padding: 1rem 1.5rem 1rem 3.5rem;   /* a la izquierda: lugar para la X */
     border-radius: 1.2rem;
     background-color: var(--verde);
@@ -45,12 +45,12 @@ body{
     left: 0.5rem;
     display: grid;
     place-items: center;
-    width: 2.5rem;                      /* tamaño cómodo para tocar */
-    height: 2.5rem;
+    width: 1.2rem;                      /* tamaño cómodo para tocar */
+    height: 1.2rem;
     border-radius: 50%;
     background-color: var(--rojo);
     color: white;
-    font-size: 1.2rem;
+    font-size: 0.7rem;
     font-weight: 800;
     text-decoration: none;
 }
@@ -66,6 +66,7 @@ body{
     object-fit: cover;                  /* recorta sin deformar */
     flex-shrink: 0;
 }
+
 
 .titulo-leccion h1{
     margin: 0;
@@ -224,16 +225,6 @@ body{
     cursor: pointer;                    /* al tocarla, vuelve al banco */
 }
 
-/* cuando el casillero está marcado, la palabra aparece en la respuesta */
-#p-buenos:checked ~ .pregunta .slot-buenos,
-#p-dias:checked ~ .pregunta .slot-dias,
-#p-como:checked ~ .pregunta .slot-como,
-#p-estas:checked ~ .pregunta .slot-estas,
-#p-hola:checked ~ .pregunta .slot-hola,
-#p-gracias:checked ~ .pregunta .slot-gracias,
-#p-adios:checked ~ .pregunta .slot-adios{
-    display: block;
-}
 
 /* ================= FICHAS DEL BANCO ================= */
 .ficha{
@@ -251,26 +242,149 @@ body{
 }
 
 /* palabra ya usada: queda el hueco vacío en el banco */
+
+/* ---------------------------------------------------
+   Alemán: "Er ist mein Großvater."
+   Correcta: Él + es + mi + abuelo (sin Ella/su/abuela)
+   --------------------------------------------------- */
+#p-el:checked ~ .pregunta .slot-el,
+#p-es:checked ~ .pregunta .slot-es,
+#p-mi:checked ~ .pregunta .slot-mi,
+#p-abuelo:checked ~ .pregunta .slot-abuelo,
+#p-ella:checked ~ .pregunta .slot-ella,
+#p-su:checked ~ .pregunta .slot-su,
+#p-abuela:checked ~ .pregunta .slot-abuela{
+    display: block;
+}
+
+#p-el:checked ~ .banco-palabras label[for="p-el"],
+#p-es:checked ~ .banco-palabras label[for="p-es"],
+#p-mi:checked ~ .banco-palabras label[for="p-mi"],
+#p-abuelo:checked ~ .banco-palabras label[for="p-abuelo"],
+#p-ella:checked ~ .banco-palabras label[for="p-ella"],
+#p-su:checked ~ .banco-palabras label[for="p-su"],
+#p-abuela:checked ~ .banco-palabras label[for="p-abuela"]{
+    background-color: #dcdad7;
+    color: transparent;
+    border-color: transparent;
+}
+
+body.leccion-aleman:has(#p-el:checked):has(#p-es:checked):has(#p-mi:checked):has(#p-abuelo:checked):not(:has(#p-ella:checked)):not(:has(#p-su:checked)):not(:has(#p-abuela:checked)) #correcto:target{
+    display: flex;
+}
+
+body.leccion-aleman:has(#correcto:target):not(:has(#p-el:checked):has(#p-es:checked):has(#p-mi:checked):has(#p-abuelo:checked):not(:has(#p-ella:checked)):not(:has(#p-su:checked)):not(:has(#p-abuela:checked))) #incorrecto{
+    display: flex;
+}
+
+
+/* foco visible al navegar con la tecla Tab */
+#p-el:focus-visible ~ .banco-palabras label[for="p-el"],
+#p-es:focus-visible ~ .banco-palabras label[for="p-es"],
+#p-mi:focus-visible ~ .banco-palabras label[for="p-mi"],
+#p-abuelo:focus-visible ~ .banco-palabras label[for="p-abuelo"],
+#p-ella:focus-visible ~ .banco-palabras label[for="p-ella"],
+#p-su:focus-visible ~ .banco-palabras label[for="p-su"],
+#p-abuela:focus-visible ~ .banco-palabras label[for="p-abuela"]{
+    outline: 0.15rem solid var(--texto);
+    outline-offset: 0.1rem;
+}
+
+
+/* ---------------------------------------------------
+   Inglés: "Can I see the menu, please?"
+   Correcta: ¿Puedo + ver + el + menú, + por + favor?
+             (sin cuenta/agua/mesa)
+   --------------------------------------------------- */
+#p-puedo:checked ~ .pregunta .slot-puedo,
+#p-ver:checked ~ .pregunta .slot-ver,
+#p-elmenu:checked ~ .pregunta .slot-elmenu,
+#p-menu:checked ~ .pregunta .slot-menu,
+#p-por:checked ~ .pregunta .slot-por,
+#p-favor:checked ~ .pregunta .slot-favor,
+#p-cuenta:checked ~ .pregunta .slot-cuenta,
+#p-agua:checked ~ .pregunta .slot-agua,
+#p-mesa:checked ~ .pregunta .slot-mesa{
+    display: block;
+}
+
+#p-puedo:checked ~ .banco-palabras label[for="p-puedo"],
+#p-ver:checked ~ .banco-palabras label[for="p-ver"],
+#p-elmenu:checked ~ .banco-palabras label[for="p-elmenu"],
+#p-menu:checked ~ .banco-palabras label[for="p-menu"],
+#p-por:checked ~ .banco-palabras label[for="p-por"],
+#p-favor:checked ~ .banco-palabras label[for="p-favor"],
+#p-cuenta:checked ~ .banco-palabras label[for="p-cuenta"],
+#p-agua:checked ~ .banco-palabras label[for="p-agua"],
+#p-mesa:checked ~ .banco-palabras label[for="p-mesa"]{
+    background-color: #dcdad7;
+    color: transparent;
+    border-color: transparent;
+}
+
+body.leccion-ingles:has(#p-puedo:checked):has(#p-ver:checked):has(#p-elmenu:checked):has(#p-menu:checked):has(#p-por:checked):has(#p-favor:checked):not(:has(#p-cuenta:checked)):not(:has(#p-agua:checked)):not(:has(#p-mesa:checked)) #correcto:target{
+    display: flex;
+}
+
+body.leccion-ingles:has(#correcto:target):not(:has(#p-puedo:checked):has(#p-ver:checked):has(#p-elmenu:checked):has(#p-menu:checked):has(#p-por:checked):has(#p-favor:checked):not(:has(#p-cuenta:checked)):not(:has(#p-agua:checked)):not(:has(#p-mesa:checked))) #incorrecto{
+    display: flex;
+}
+
+#p-puedo:focus-visible ~ .banco-palabras label[for="p-puedo"],
+#p-ver:focus-visible ~ .banco-palabras label[for="p-ver"],
+#p-elmenu:focus-visible ~ .banco-palabras label[for="p-elmenu"],
+#p-menu:focus-visible ~ .banco-palabras label[for="p-menu"],
+#p-por:focus-visible ~ .banco-palabras label[for="p-por"],
+#p-favor:focus-visible ~ .banco-palabras label[for="p-favor"],
+#p-cuenta:focus-visible ~ .banco-palabras label[for="p-cuenta"],
+#p-agua:focus-visible ~ .banco-palabras label[for="p-agua"],
+#p-mesa:focus-visible ~ .banco-palabras label[for="p-mesa"]{
+    outline: 0.15rem solid var(--texto);
+    outline-offset: 0.1rem;
+}
+
+/* ---------------------------------------------------
+   Chino: "早上好，你好吗？"
+   Correcta: Buenos + días, + ¿cómo + estás?
+             (sin Buenas/noches/Gracias)
+   --------------------------------------------------- */
+#p-buenos:checked ~ .pregunta .slot-buenos,
+#p-dias:checked ~ .pregunta .slot-dias,
+#p-como:checked ~ .pregunta .slot-como,
+#p-estas:checked ~ .pregunta .slot-estas,
+#p-buenas:checked ~ .pregunta .slot-buenas,
+#p-noches:checked ~ .pregunta .slot-noches,
+#p-gracias:checked ~ .pregunta .slot-gracias{
+    display: block;
+}
+
 #p-buenos:checked ~ .banco-palabras label[for="p-buenos"],
 #p-dias:checked ~ .banco-palabras label[for="p-dias"],
 #p-como:checked ~ .banco-palabras label[for="p-como"],
 #p-estas:checked ~ .banco-palabras label[for="p-estas"],
-#p-hola:checked ~ .banco-palabras label[for="p-hola"],
-#p-gracias:checked ~ .banco-palabras label[for="p-gracias"],
-#p-adios:checked ~ .banco-palabras label[for="p-adios"]{
+#p-buenas:checked ~ .banco-palabras label[for="p-buenas"],
+#p-noches:checked ~ .banco-palabras label[for="p-noches"],
+#p-gracias:checked ~ .banco-palabras label[for="p-gracias"]{
     background-color: #dcdad7;
-    color: transparent;                 /* se oculta el texto, queda la forma */
+    color: transparent;
     border-color: transparent;
 }
 
-/* foco visible al navegar con la tecla Tab */
+body.leccion-chino:has(#p-buenos:checked):has(#p-dias:checked):has(#p-como:checked):has(#p-estas:checked):not(:has(#p-buenas:checked)):not(:has(#p-noches:checked)):not(:has(#p-gracias:checked)) #correcto:target{
+    display: flex;
+}
+
+body.leccion-chino:has(#correcto:target):not(:has(#p-buenos:checked):has(#p-dias:checked):has(#p-como:checked):has(#p-estas:checked):not(:has(#p-buenas:checked)):not(:has(#p-noches:checked)):not(:has(#p-gracias:checked))) #incorrecto{
+    display: flex;
+}
+
 #p-buenos:focus-visible ~ .banco-palabras label[for="p-buenos"],
 #p-dias:focus-visible ~ .banco-palabras label[for="p-dias"],
 #p-como:focus-visible ~ .banco-palabras label[for="p-como"],
 #p-estas:focus-visible ~ .banco-palabras label[for="p-estas"],
-#p-hola:focus-visible ~ .banco-palabras label[for="p-hola"],
-#p-gracias:focus-visible ~ .banco-palabras label[for="p-gracias"],
-#p-adios:focus-visible ~ .banco-palabras label[for="p-adios"]{
+#p-buenas:focus-visible ~ .banco-palabras label[for="p-buenas"],
+#p-noches:focus-visible ~ .banco-palabras label[for="p-noches"],
+#p-gracias:focus-visible ~ .banco-palabras label[for="p-gracias"]{
     outline: 0.15rem solid var(--texto);
     outline-offset: 0.1rem;
 }
@@ -320,14 +434,7 @@ body{
                         y Hola, Gracias y Adiós SIN marcar. */
 
 /* panel de éxito: solo si se comprobó Y la respuesta es correcta */
-body:has(#p-buenos:checked):has(#p-dias:checked):has(#p-como:checked):has(#p-estas:checked):not(:has(#p-hola:checked)):not(:has(#p-gracias:checked)):not(:has(#p-adios:checked)) #correcto:target{
-    display: flex;
-}
 
-/* panel de error: si se comprobó Y la respuesta NO es correcta */
-body:has(#correcto:target):not(:has(#p-buenos:checked):has(#p-dias:checked):has(#p-como:checked):has(#p-estas:checked):not(:has(#p-hola:checked)):not(:has(#p-gracias:checked)):not(:has(#p-adios:checked))) #incorrecto{
-    display: flex;
-}
 
 .resultado h2{
     margin: 0;
