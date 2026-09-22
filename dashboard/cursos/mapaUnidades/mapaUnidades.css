@@ -6,6 +6,12 @@ body{
 
 /* Seccion Introductoria*/
 
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
 .encabezado-curso{
     display: flex;
     align-items: center;
@@ -88,7 +94,9 @@ body{
 /* Seccion Unidades*/
 
 .unidad-completada,
+.unidad1-completada,
 .unidad-en-progreso,
+.unidad2-en-progreso,
 .unidad-bloqueada{
     display: flex;
     align-items: center;
@@ -102,8 +110,20 @@ body{
 }
 
 .unidad-completada{ background-color: #8fc97f; }
+.unidad1-completada{ background-color: #8fc97f; }
 .unidad-en-progreso{ background-color: #f5c063; }
+.unidad2-en-progreso{ background-color: #f5c063; }
 .unidad-bloqueada{ background-color: #d0d0d0; }
+
+.unidad-completada:hover{
+    background-color: rgb(41, 104, 4);
+    border-color: rgb(41, 104, 4);
+}
+
+.unidad2-en-progreso:hover{
+    background-color: #f06c00;
+    border-color: #f06c00;
+}
 
 /* Seccion de lecciones de la unidad actual */
 
@@ -128,10 +148,6 @@ body{
     color: #222;                   
 }
 
-.leccion-completada:hover{
-    background-color: rgb(41, 104, 4);
-    border-color: rgb(41, 104, 4);;
-}
 
 .leccion-en-curso:hover{
     background-color: #f06c00;

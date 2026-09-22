@@ -1,0 +1,194 @@
+body{
+
+    margin:0;
+    font-family: 'Nunito', 'Segoe UI', Tahoma, sans-serif;
+}
+
+main {
+  max-width: 70rem;      /* en pantallas grandes no se estira de más */
+  margin: 0 auto;        /* centrado */
+  padding: 1.5rem 2rem;  /* aire a los costados y arriba */
+}
+
+
+h1 {
+  margin: 0 0 0.5rem;
+  color: #0e7f96;        /* el turquesa de tu diseño */
+}
+
+h2 {
+  margin: 1.5rem 0 1rem;
+}
+
+
+.ranking-liga-bronce{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(206,137,70);
+    border-radius: 3rem;
+    padding: 0.5rem 0.75rem;
+    margin:2rem;
+
+}
+
+.ranking-liga-plata{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: silver;
+    border-radius: 3rem;
+    padding: 0.5rem 0.75rem;
+    margin:2rem;
+
+}
+
+.ranking-liga-oro{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: gold;
+    border-radius: 3rem;
+    padding: 0.5rem 0.75rem;
+    margin:2rem;
+
+}
+
+
+.Poli-ranking{
+    width: 8rem;
+    padding-left:5rem;
+
+}
+
+
+/* Contenedor con scroll, como la barra de tu diseño */
+.tabla-ranking {
+  max-height: 18rem;
+  overflow-y: auto;
+  scrollbar-color: #000 #ffffff;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;   /* junta los bordes de las celdas */
+  text-align: center;
+}
+
+th {
+  padding: 0.75rem;
+  font-size: 1.1rem;
+}
+
+td {
+  padding: 1.5rem;
+  font-size: 0.85rem;
+}
+.avatar{
+    width: 2rem ;
+    height: 2rem;
+    vertical-align: middle;
+    border-radius: 50%;               
+    object-fit: cover; 
+    
+}
+
+.medalla {
+  width: 1rem;
+  vertical-align: middle;
+}
+
+.tu-fila td {
+  background-color: #8fc97f;
+  font-weight: 700;
+}
+
+.zona-top td {
+  background-color: #fdae02;
+  font-weight: 700;
+
+}
+
+.zona-descenso td {
+  background-color: #ff9999;
+  color: rgb(255, 0, 0);
+  font-weight: 700;
+
+}
+
+
+/* Bordes redondeados en la fila resaltada */
+.tu-fila td:first-child {
+  border-radius: 1rem 0 0 1rem;
+}
+
+.tu-fila td:last-child {
+  border-radius: 0 1rem 1rem 0;
+}
+
+.zona-descenso td:first-child {
+  border-radius: 1rem 0 0 1rem;
+}
+
+.zona-descenso td:last-child {
+  border-radius: 0 1rem 1rem 0;
+}
+
+.zona-top td:first-child {
+  border-radius: 1rem 0 0 1rem;
+}
+
+.zona-top td:last-child {
+  border-radius: 0 1rem 1rem 0;
+}
+
+footer {
+  background-color: #0b8a7a;
+  color: white;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+footer span {
+  /* lo que quieras destacar, por ejemplo: */
+  text-decoration: underline;
+}
+
+.otras-ligas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:2rem;
+}
+
+.otras-ligas nav {
+  display: flex;       
+  flex-wrap: wrap;      
+  gap: 1rem;
+}
+
+.otras-ligas a {
+  padding: 0.6rem 1.75rem;
+  border-radius: 1rem;          
+  color: #000000;
+  font-weight: 700;
+  text-decoration: none; /* saca el subrayado */
+}
+
+/* Un color para cada liga */
+
+.liga-bronce   { background-color: rgb(206,137,70); }
+.liga-plata { background-color: #c9d1d6; }
+.liga-oro   { background-color: #ffc93c; }
+
+
+.otras-ligas a:hover {
+  background-color: #0e7f96;
+  color: white;
+}
+
