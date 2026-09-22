@@ -1,0 +1,80 @@
+/*General*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: sans-serif;
+    background-color: #fff;
+
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/*Barra de navegacion*/
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    box-sizing: border-box;
+    padding: 0.6rem 1.5rem;
+    background-color: #8fc97f;
+}
+
+.navbar img {
+    width: 3rem;
+    height: 3rem;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin: 0 auto;
+    text-transform: uppercase; /*Convierte el texto en mayusculas*/
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.navbar-estadisticas {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0;
+    color: black;
+}
+
+/*Barra de progreso*/
+progress {
+    appearance: auto;
+    box-sizing: border-box;
+    display: inline-block;
+    block-size: 1em;
+    inline-size: 10em;
+    vertical-align: -0.2em;
+}
+
+/*Footer*/
+footer {
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    background-color: #8fc97f;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.85rem;
+}
