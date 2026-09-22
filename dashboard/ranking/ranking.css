@@ -1,3 +1,4 @@
+
 body{
 
     margin:0;
@@ -24,44 +25,41 @@ h2 {
 .ranking-liga-bronce{
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     background-color: rgb(206,137,70);
     border-radius: 3rem;
-    padding: 0.5rem 0.75rem;
-    margin:2rem;
-
+    padding: 0.5rem 1.5rem;
+    margin: 2rem;
 }
 
 .ranking-liga-plata{
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     background-color: silver;
     border-radius: 3rem;
-    padding: 0.5rem 0.75rem;
-    margin:2rem;
+    padding: 0.5rem 1.5rem;
+    margin: 2rem;
 
 }
 
 .ranking-liga-oro{
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     background-color: gold;
     border-radius: 3rem;
-    padding: 0.5rem 0.75rem;
-    margin:2rem;
+    padding: 0.5rem 1.5rem;
+    margin: 2rem;
 
 }
 
 
 .Poli-ranking{
     width: 8rem;
-    padding-left:5rem;
-
 }
 
 
@@ -88,16 +86,17 @@ td {
   font-size: 0.85rem;
 }
 .avatar{
-    width: 2rem ;
+    width: 2rem;
     height: 2rem;
+    display: inline-block;
     vertical-align: middle;
     border-radius: 50%;               
     object-fit: cover; 
-    
 }
 
 .medalla {
   width: 1rem;
+  display: inline-block;
   vertical-align: middle;
 }
 
@@ -145,20 +144,6 @@ td {
   border-radius: 0 1rem 1rem 0;
 }
 
-footer {
-  background-color: #0b8a7a;
-  color: white;
-  text-align: center;
-  padding: 0.75rem 1rem;
-  font-size: 0.8rem;
-  font-weight: 700;
-}
-
-footer span {
-  /* lo que quieras destacar, por ejemplo: */
-  text-decoration: underline;
-}
-
 .otras-ligas{
     display: flex;
     flex-direction: column;
@@ -192,3 +177,21 @@ footer span {
   color: white;
 }
 
+.volver{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin:0;
+  display: flex;       
+  flex-wrap: wrap;      
+  gap: 1rem;
+}
+
+.volver-a-cursos {
+  padding: 0.6rem 1.75rem;
+  border-radius: 1rem;          
+  color: #000000;
+  font-weight: 700;
+  text-decoration: none; /* saca el subrayado */
+  background-color: rgb(143, 58, 58);
+}
