@@ -6,7 +6,8 @@
 }
 
 html,
-body {
+body,
+body.leccion-chino {
     font-family: sans-serif;
     background-color: #fff;
 

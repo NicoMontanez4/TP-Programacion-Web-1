@@ -15,7 +15,9 @@
 }
 
 /* ================= BASE ================= */
-body{
+body leccion-chino,
+leccion-aleman,
+leccion-ingles{
     margin: 0;
     padding: 1.5rem 1rem 8rem;          /* abajo: aire para el panel de corrección */
     font-family: 'Nunito', 'Segoe UI', Tahoma, sans-serif;
