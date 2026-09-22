@@ -28,6 +28,7 @@ img {
 
 
 /* DASHBOARD DE BIENVENIDA */
+/*------------------------------------------*/
 
 .bienvenida{
     display: flex;
@@ -37,9 +38,8 @@ img {
     gap: 3rem;
     max-width: 60rem;
     margin: 4rem auto;
-    padding: 2rem;
+    padding: 12.6rem;
 }
-
 
 .poli-bienvenida{
     width: 16rem;
@@ -66,6 +66,9 @@ img {
     font-size: 1.05rem;
     color: #333;
 }
+
+
+/*-----------------------------------------------*/
 
 .boton-ir-a-cursos{
     display: inline-block;
@@ -155,8 +158,8 @@ footer p {
 .volver-a-cursos {
   padding: 0.6rem 1.75rem;
   border-radius: 1rem;          
-  color: #000000;
+  color: #ffffff;
   font-weight: 700;
   text-decoration: none; /* saca el subrayado */
-  background-color: rgb(143, 58, 58);
+  background-color: rgb(141, 26, 26);
 }
