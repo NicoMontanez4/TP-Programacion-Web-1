@@ -1,20 +1,21 @@
 .encabezado-curso{
     display: flex;
+    flex-wrap: wrap;    /*permite que se acomode solo en pantallas chicas */
     align-items: center;
-    justify-content: space-between;   /* texto a la izquierda, Poli a la derecha */
+    justify-content: space-between;
     gap: 1.5rem;
     box-sizing: border-box;
-    max-width: 55rem;                 /* mismo ancho que las unidades */
-    margin: 2rem auto;                /* auto a los lados = centrado */
+    max-width: 55rem;
+    margin: 2rem auto;
     padding: 0 1rem 2rem;
     border-bottom: 0.2rem solid #8fc97f;
 }
 
 .info-curso{
-
     flex: 1;
+    min-width: min(100%, 18rem);      /* evita que el texto se comprima demasiado antes de wrappear */
     display: flex;
-    flex-direction: column; /* título, mensaje y progreso, uno debajo del otro */
+    flex-direction: column;
     gap: 1rem;
 }
 
@@ -27,26 +28,25 @@
 }
 
 .imagen-bandera{
-    width: 5rem;
-    height: 5rem;
-    border-radius: 50%;               
-    object-fit: cover; 
+    width: clamp(3rem, 8vw, 5rem);
+    height: clamp(3rem, 8vw, 5rem);
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 .imagen-unidad-Poli{
-    width: 10rem;
-    height: 10rem;              
-   
+    width: clamp(6rem, 20vw, 10rem);
+    height: clamp(6rem, 20vw, 10rem);
 }
 
 .titulo-curso h1{
-    margin:0;
-    font-size: 2rem;
+    margin: 0;
+    font-size: clamp(1.4rem, 4vw, 2rem);
 }
 
 .mensaje{
     margin: 0;
-    font-size: 1.1rem;
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
     font-weight: 700;
     line-height: 1.4;
 }
@@ -55,18 +55,16 @@
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
-    width: fit-content;
+    width: min(100%, 20rem);
 }
 
 .progreso-curso progress{
-
-    width: 100%;      
+    width: 100%;
     height: 0.6rem;
     border: none;
     border-radius: 1rem;
     overflow: hidden;
-    appearance: none;  
-
+    appearance: none;
 }
 
 .imagen-poli{
@@ -85,14 +83,20 @@
 .unidad2-en-progreso,
 .unidad-bloqueada{
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 1rem;
     box-sizing: border-box;
     width: 100%;
     max-width: 50rem;
     margin: 1.5rem auto;
-    padding: 0.8rem;
+    padding: clamp(0.6rem, 2vw, 0.8rem);
     border-radius: 1rem;
+}
+
+.info-unidad{
+    flex: 1;
+    min-width: min(100%, 12rem);      /* fuerza el wrap del texto antes de que se aplaste */
 }
 
 .unidad-completada{ background-color: #8fc97f; }
@@ -125,13 +129,14 @@
 .leccion-en-curso,
 .leccion-bloqueada{
     display: flex;
-    align-items: center;           
+    flex-wrap: wrap;
+    align-items: center;
     gap: 1rem;
     box-sizing: border-box;
     padding: 0.1rem 1rem;
     border: 0.1rem solid #999;
     border-radius: 1rem;
-    color: #222;                   
+    color: #222;
 }
 
 
@@ -146,22 +151,23 @@
 .leccion-bloqueada{ background-color: #d0d0d0; }
 
 .icono-leccion{
-    width: 2.5rem;
-    height: 2.5rem;
-    flex-shrink: 0; 
-}               
+    width: clamp(2rem, 6vw, 2.5rem);
+    height: clamp(2rem, 6vw, 2.5rem);
+    flex-shrink: 0;
+}              
 
 .info-leccion{
-    flex: 1;                     
+    flex: 1;
+    min-width: min(100%, 10rem);
 }
 
 .info-leccion h3{
     margin: 0;
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
 }
 
 .info-leccion p{
     margin: 0.2rem 0 0;
-    font-size: 0.85rem;
+    font-size: clamp(0.75rem, 2vw, 0.85rem);
     font-weight: 700;
 }
