@@ -180,9 +180,7 @@ p,
 small {
     color: #363434;
 }
-/* ==========================================================================
-   4. DATOS DE LA CUENTA (Lista de definición fluida)
-   ========================================================================== */
+/*--------Datos de la cuenta-------------------*/
 .datos-cuenta h2,
 .ajustes-cuenta h2 {
     font-size: clamp(1.1rem, 2vw, 1.35rem);
@@ -209,9 +207,7 @@ small {
     word-break: break-word;
 }
 
-/* ==========================================================================
-   5. AJUSTES Y FORMULARIO
-   ========================================================================== */
+/* ------------Ajustes y formulario-------------*/
 .form-ajustes {
     display: flex;
     flex-direction: column;
@@ -271,8 +267,9 @@ small {
 .acciones-form {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.2rem;
     margin-top: 1rem;
+    gap: 1.2rem;
+    border: none;
 }
 
 .btn-guardar,
