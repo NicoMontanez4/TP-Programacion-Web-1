@@ -78,7 +78,7 @@
     color: #000000;
 }
 
-.oferta-del-dia a,
+.oferta-del-dia a
 {
     display: inline-block;
     margin-top: 0.3rem;
@@ -93,7 +93,7 @@
     cursor: pointer;
 }
 
-.oferta-del-dia a:hover,
+.oferta-del-dia a:hover
 {
     filter: brightness(1.05);
 }
