@@ -26,7 +26,7 @@ h2 {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: space-between;
     background-color: rgb(206,137,70);
     border-radius: 3rem;
     padding: 0.5rem 1.5rem;
@@ -68,6 +68,7 @@ h2 {
   max-height: 15rem;
   overflow-y: auto;
   scrollbar-color: #000 #ffffff;
+  background-color: rgb(247, 242, 242);
 }
 
 table {
@@ -177,3 +178,38 @@ td {
   color: white;
 }
 
+@media screen and (max-width: 768px) {
+    .ranking-liga-bronce {
+        flex-direction: column-reverse; /* invierte el orden visual: la imagen (último hijo) va arriba */
+        align-items: center;    /* en column, align-items pasa a controlar el eje horizontal */
+        gap: 1rem;               /* separación entre el texto y la imagen al apilarse */
+    }
+
+    .ranking-liga-oro {
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .ranking-liga-plata {
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .titulo-liga {
+        text-align: center; /* centra el h2 y el p de una sola vez */
+    }
+
+    .otras-ligas h2 {
+      text-align: center;
+    }
+
+    .otras-ligas nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;       
+      flex-wrap: wrap;      
+      gap: 1rem;
+    }
+}
