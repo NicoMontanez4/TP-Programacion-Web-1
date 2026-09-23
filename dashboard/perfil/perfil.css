@@ -116,11 +116,11 @@ main header h1 {
     font-size: clamp(0.85rem, 1.1vw, 1rem);
     font-weight: 600;
     color: #ffffff;
-    background-color: #4db6ac;
+    background-color: #8fc97f;
     flex: 1;
 }
 
-.lista-pills-stats li img {
+.lista-pills-stats li svg {
     object-fit: contain;
     width: clamp(1.2rem, 2vw, 1.6rem);
     height: clamp(1.2rem, 2vw, 1.6rem);
@@ -168,7 +168,7 @@ main header h1 {
 
 /*CAMBIAR POR OTRO COLOOR*/
 .item-logro hgroup p small {
-    color: #26a69a;
+    color: #54754b;
 }
 
 .tarjeta-logros.bloqueados {
@@ -252,7 +252,7 @@ small {
     height: min(5vh, 2.6rem);
     padding: 0 0.75rem;
     border: 0.0625rem solid #b2dfdb;
-    background-color: #26a69a;
+    background-color: #8fc97f;
     color: #ffffff;
     border-radius: 0.3rem;
     font-weight: 600;

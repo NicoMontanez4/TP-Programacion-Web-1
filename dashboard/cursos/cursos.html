@@ -1,109 +1,246 @@
-<!DOCTYPE html>
-<html lang='es'>
-<head>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>Cursos</title>
-    <link rel='stylesheet' href='../global.css'>
-    <link rel="stylesheet" href="cursos.css">
-</head>
-<body>
-    <header>
-        <nav class="navbar">
-            <img src="../../imagenes/Logo.png" alt="Imagen del lorito">
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Cursos</title>
+        <link rel="stylesheet" href="../global.css" />
+        <link rel="stylesheet" href="cursos.css" />
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <img src="../../imagenes/Logo.png" alt="Logo poliLingo" />
 
-            <div class="navbar-links"> <!--Los separo en div asi los puedo ordenar por separado en el navbar-->
-                <a href="cursos.html">Cursos</a>
-                <a href="../perfil/perfil.html">Perfil</a>
-                <a href="../ranking/ranking.html">Ranking</a>
-                <a href="../tienda/tienda.html">Tienda</a>
-            </div>
+                <ul class="navbar-links">
+                    <li>
+                        <a href="cursos.html" aria-current="page">Cursos</a>
+                    </li>
+                    <li>
+                        <a href="../perfil/perfil.html">Perfil</a>
+                    </li>
+                    <li><a href="../ranking/ranking.html">Ranking</a></li>
+                    <li><a href="../tienda/tienda.html">Tienda</a></li>
+                </ul>
 
-            <div class="navbar-estadisticas">
-                <p>5 días</p> <!--Icon-->
-                <p>350 XP</p> <!--Icon-->
-                <p>550</p> <!--Icon-->
-                <p>3</p> <!--Icon-->
-            </div>
-        </nav>
-    </header>
+                <ul class="navbar-estadisticas">
+                    <li>
+                        <span>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                fill="#eca60b"
+                                viewBox="0 0 24 24"
+                            >
+                                <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                                <path
+                                    d="M18.78 7.39a1 1 0 0 0-.83.32c-.77.84-1.82 1.31-2.94 1.31-2.21 0-4.01-1.8-4.01-4.01 0-.27.03-.56.1-.87a.99.99 0 0 0-.39-1.02c-.32-.23-.75-.26-1.09-.06-2.48 1.42-6.63 4.61-6.63 9.95 0 4.96 4.04 9 9 9s9-4.04 9-9c0-1.82-.49-3.55-1.47-5.14a.98.98 0 0 0-.76-.47ZM9.5 17.5c0-1.77 1.71-2.93 2.5-3.38.79.45 2.5 1.61 2.5 3.38a2.5 2.5 0 0 1-5 0m6.9.94c.06-.3.1-.62.1-.94 0-3.62-3.94-5.35-4.11-5.42a1 1 0 0 0-.79 0c-.17.07-4.11 1.8-4.11 5.42 0 .32.04.64.1.94A6.96 6.96 0 0 1 4.99 13c0-3.36 2.12-5.72 4.06-7.18.4 2.93 2.92 5.19 5.95 5.19 1.22 0 2.38-.37 3.37-1.05.41.97.62 1.98.62 3.04a7.02 7.02 0 0 1-2.6 5.44Z"
+                                ></path>
+                            </svg>
+                            5 días
+                        </span>
+                    </li>
+                    <li>
+                        <span>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                fill="#00baff"
+                                viewBox="0 0 24 24"
+                            >
+                                <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                                <path
+                                    d="M9.5 22c-2 0-3.89-.78-5.3-2.2-2.92-2.92-2.92-7.68 0-10.61l8.15-6.95c.33-.28.79-.32 1.16-.1s.56.64.47 1.06l-.58 2.88 7.11-3.95c.39-.22.88-.15 1.19.17s.38.8.17 1.19L17.7 11H21a1.004 1.004 0 0 1 .72 1.7l-6.9 7.1a7.45 7.45 0 0 1-5.31 2.21Zm1.95-16.37-5.9 5.03c-2.09 2.09-2.09 5.58.06 7.72 1.04 1.04 2.42 1.61 3.89 1.61s2.85-.57 3.89-1.61l5.24-5.39H16c-.35 0-.68-.19-.86-.49a1 1 0 0 1-.01-.99l3.3-5.94-5.94 3.3c-.34.19-.76.16-1.08-.07s-.47-.62-.39-1z"
+                                ></path>
+                                <path
+                                    d="M10.98 11.34c0 .05.02.1.02.16 0 .83-.67 1.5-1.5 1.5S8 12.33 8 11.5c0-.05.01-.11.02-.16A3.5 3.5 0 0 0 6 14.5C6 16.43 7.57 18 9.5 18s3.5-1.57 3.5-3.5c0-1.4-.83-2.6-2.02-3.16"
+                                ></path>
+                            </svg>
+                            350 XP
+                        </span>
+                    </li>
+                    <li>
+                        <span>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                fill="#ff63d8"
+                                viewBox="0 0 24 24"
+                            >
+                                <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                                <path
+                                    d="M18.16 3.01A2.02 2.02 0 0 0 16.42 2H7.58c-.72 0-1.38.39-1.74 1.01l-3.37 5.9c-.41.71-.33 1.62.19 2.26l7.79 9.52c.38.47.95.73 1.55.73s1.17-.27 1.55-.73l7.79-9.52c.52-.64.6-1.54.19-2.26zM16.42 4l2.86 5h-3.07l-1.79-5zm-8.63 7 2 5.73L5.11 11zm6.3 0L12 16.97 9.91 11zM9.92 9l1.79-5h.59l1.79 5H9.93Zm6.29 2h2.68l-4.68 5.73zM7.58 4V3zh2L7.79 9H4.72z"
+                                ></path>
+                            </svg>
+                            550</span
+                        >
+                    </li>
+                    <li>
+                        <span>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                fill="#ff0000"
+                                viewBox="0 0 24 24"
+                            >
+                                <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                                <path
+                                    d="M11.29 20.66c.2.2.45.29.71.29s.51-.1.71-.29l7.5-7.5c2.35-2.35 2.35-6.05 0-8.41-2.3-2.28-5.85-2.35-8.21-.2-2.36-2.15-5.91-2.09-8.21.2-2.35 2.36-2.35 6.06 0 8.41zM5.21 6.16C6 5.38 7 4.99 8.01 4.99s2.01.39 2.79 1.17l.5.5c.39.39 1.02.39 1.41 0l.5-.5c1.56-1.56 4.02-1.56 5.59 0 1.56 1.57 1.56 4.02 0 5.58l-6.79 6.79-6.79-6.79a3.91 3.91 0 0 1 0-5.58Z"
+                                ></path>
+                            </svg>
+                            3</span
+                        >
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
-    <main>
-        <section class="mis-cursos">
-            <header class="texto-mis-cursos">
-                <h1>Mis cursos de idiomas</h1>
-                <p>PoliLingo es tu espacio para aprender inglés, alemán y chino de forma gratuita y divertida. Elegí un curso, completá lecciones, sumá XP y subí de liga.</p>
-            </header>
-            <img src="../../imagenes/Poli2.png" alt="Imagen del lorito">
-        </section>
-        
-        <section class="seleccionar-cursos">
-            <header>
-                <h2>Seleccioná el curso con el que deseas continuar aprendiendo.</h2>
-            </header>
+        <main>
+            <section class="mis-cursos">
+                <header class="texto-mis-cursos">
+                    <h1>Mis cursos de idiomas</h1>
+                    <p>
+                        PoliLingo es tu espacio para aprender inglés, alemán y
+                        chino de forma gratuita y divertida. Elegí un curso,
+                        completá lecciones, sumá XP y subí de liga.
+                    </p>
+                </header>
+                <img src="../../imagenes/Poli2.png" alt="Imagen del lorito" />
+            </section>
 
-            <div class="tarjetas-cursos"> <!--los separamos en un div para poder trabajar en css aparte del header-->
-                <a href="./mapaUnidades/mapaUnidadesIngles.html">
-                    <article class="ingles">
-                        <header>
-                            <img src="../../imagenes/Curso-Ingles.png" alt="Curso Inglés">
-                            <p>Inglés desde Español</p>
-                        </header>
+            <section class="seleccionar-cursos">
+                <header>
+                    <h2>
+                        Seleccioná el curso con el que deseas continuar
+                        aprendiendo.
+                    </h2>
+                </header>
+
+                <div class="tarjetas-cursos">
+                    <!--los separamos en un div para poder trabajar en css aparte del header-->
+                    <a href="./mapaUnidades/mapaUnidadesIngles.html">
+                        <article class="ingles">
+                            <header>
+                                <img
+                                    src="../../imagenes/Curso-Ingles.png"
+                                    alt="Curso Inglés"
+                                />
+                                <p>Inglés desde Español</p>
+                            </header>
                             <label for="progreso-ingles">Progreso: 45%</label>
-                            <progress id="progreso-ingles" value="45" max="100">45%</progress>
+                            <progress id="progreso-ingles" value="45" max="100">
+                                45%
+                            </progress>
                             <p>Nivel: Intermedio (B1)</p>
                             <span>Continuar</span>
-                    </article>
-                </a>
+                        </article>
+                    </a>
 
-                <a href="./mapaUnidades/mapaUnidadesAleman.html">
-                    <article class="aleman">
-                        <header>
-                            <img src="../../imagenes/Curso-Aleman.png" alt="Curso Alemán">
-                            <p>Alemán desde Español</p>
-                        </header>
+                    <a href="./mapaUnidades/mapaUnidadesAleman.html">
+                        <article class="aleman">
+                            <header>
+                                <img
+                                    src="../../imagenes/Curso-Aleman.png"
+                                    alt="Curso Alemán"
+                                />
+                                <p>Alemán desde Español</p>
+                            </header>
                             <label for="progreso-aleman">Progreso: 12%</label>
-                            <progress id="progreso-aleman" value="12" max="100">12%</progress>
+                            <progress id="progreso-aleman" value="12" max="100">
+                                12%
+                            </progress>
                             <p>Nivel: Principiante (A1)</p>
                             <span>Continuar</span>
-                    </article>
-                </a>
+                        </article>
+                    </a>
 
-                <a href="./mapaUnidades/mapaUnidadesChino.html">
-                    <article class="chino">
-                        <header>
-                            <img src="../../imagenes/Curso-Chino.png" alt="Curso Chino">
-                            <p>Chino desde Español</p>
-                        </header>
+                    <a href="./mapaUnidades/mapaUnidadesChino.html">
+                        <article class="chino">
+                            <header>
+                                <img
+                                    src="../../imagenes/Curso-Chino.png"
+                                    alt="Curso Chino"
+                                />
+                                <p>Chino desde Español</p>
+                            </header>
                             <label for="progreso-chino">Progreso: 0%</label>
-                            <progress id="progreso-chino" value="0" max="100">0%</progress>
+                            <progress id="progreso-chino" value="0" max="100">
+                                0%
+                            </progress>
                             <p>Nivel: Inicial (HSK 1)</p>
                             <span>Empezar</span>
-                    </article>
-                </a> 
-            </div>
-            
-        </section>
-
-        <div class="fila-actividad"> <!--Envuelvo los dos section en un div para poder ponerlos lado a lado en un flexbox en el css-->
-            <section class="actividad-hoy">
-                <header>
-                <h2>Tu actividad de hoy</h2>
-                </header>
-                    <div class="texto-actividad-hoy">
-                        <p>Racha: 5 días</p> <!--Icon-->
-                        <p>Meta diaría: 50 XP</p> <!--Icon-->
-                            <div class="barra-hoy">
-                                <progress id="progreso-meta-diaria" value="35" max="50">35/50 XP</progress>
-                                <label for="progreso-meta-diaria">35/50 XP</label>
-                            </div>
-                    </div> 
+                        </article>
+                    </a>
+                </div>
             </section>
-        
-            <section class="actividad-semanal">
-                <header>
-                    <h2>Tu actividad semanal</h2>
-                </header>
+
+            <div class="fila-actividad">
+                <!--Envuelvo los dos section en un div para poder ponerlos lado a lado en un flexbox en el css-->
+                <section class="actividad-hoy">
+                    <header>
+                        <h2>Tu actividad</h2>
+                    </header>
+                    <div class="texto-actividad">
+                        <p class="racha">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                fill="#eca60b"
+                                viewBox="0 0 24 24"
+                            >
+                                <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                                <path
+                                    d="M18.78 7.39a1 1 0 0 0-.83.32c-.77.84-1.82 1.31-2.94 1.31-2.21 0-4.01-1.8-4.01-4.01 0-.27.03-.56.1-.87a.99.99 0 0 0-.39-1.02c-.32-.23-.75-.26-1.09-.06-2.48 1.42-6.63 4.61-6.63 9.95 0 4.96 4.04 9 9 9s9-4.04 9-9c0-1.82-.49-3.55-1.47-5.14a.98.98 0 0 0-.76-.47ZM9.5 17.5c0-1.77 1.71-2.93 2.5-3.38.79.45 2.5 1.61 2.5 3.38a2.5 2.5 0 0 1-5 0m6.9.94c.06-.3.1-.62.1-.94 0-3.62-3.94-5.35-4.11-5.42a1 1 0 0 0-.79 0c-.17.07-4.11 1.8-4.11 5.42 0 .32.04.64.1.94A6.96 6.96 0 0 1 4.99 13c0-3.36 2.12-5.72 4.06-7.18.4 2.93 2.92 5.19 5.95 5.19 1.22 0 2.38-.37 3.37-1.05.41.97.62 1.98.62 3.04a7.02 7.02 0 0 1-2.6 5.44Z"
+                                ></path>
+                            </svg>
+                            Racha: 5 días</p>
+                        <p class="meta">
+                            <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24"  
+                                fill="#cd1717" viewBox="0 0 24 24" >
+                                <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                                <path d="M12 9a3 3 0 1 0 0 6 3 3 0 1 0 0-6"></path><path d="M13 4.07V2h-2v2.07A8 8 0 0 0 4.07 11H2v2h2.07A8 8 0 0 0 11 19.93V22h2v-2.07A8 8 0 0 0 19.93 13H22v-2h-2.07A8 8 0 0 0 13 4.07M12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6"></path>
+                            </svg>
+                            Meta diaría: 50 XP</p>
+                        <p class="liga">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                fill="#CE8946"
+                                viewBox="0 0 24 24"
+                            >
+                                <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                                <path
+                                    d="m10.15 11.62 1.85-.97 1.85.97-.35-2.06L15 8.09l-2.07-.3L12 5.92l-.93 1.87-2.07.3 1.5 1.47z"
+                                ></path>
+                                <path
+                                    d="M21 4h-3V3c0-.55-.45-1-1-1H7c-.55 0-1 .45-1 1v1H3c-.55 0-1 .45-1 1v3c0 4.29 1.79 6.88 4.81 6.99A6 6 0 0 0 11 17.91V20H8v2h8v-2h-3v-2.09a5.98 5.98 0 0 0 4.19-2.92C20.2 14.88 22 12.29 22 8V5c0-.55-.45-1-1-1M4 8V6h2v6c0 .28.03.56.06.83C4.22 12.12 4 9.31 4 8m12 4c0 2.21-1.79 4-4 4s-4-1.79-4-4V4h8zm4-4c0 1.31-.22 4.12-2.06 4.83.04-.27.06-.55.06-.83V6h2z"
+                                ></path>
+                            </svg>
+                            Liga: Bronce
+                        </p>
+                        <div class="barra-xp">
+                            <progress
+                                id="progreso-meta-diaria"
+                                value="35"
+                                max="50"
+                            >
+                                35/50 XP
+                            </progress>
+                            <label for="progreso-meta-diaria">35/50 XP</label>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="actividad-semanal">
+                    <header>
+                        <h2>Tu actividad semanal</h2>
+                    </header>
                     <ul>
                         <li>
                             <span>Lunes</span>
@@ -134,51 +271,64 @@
                             <progress value="10" max="100">10%</progress>
                         </li>
                     </ul>
-            </section>
-        </div>
-
-        <section class="logros-conseguir">
-            <header>
-                <h2>Logros por conseguir</h2>
-            </header>
-                <article class="logro">
-                    <p>Completa 50 lecciones de inglés</p> <!--Icon-->
-                        <div class="barra-logro">
-                            <progress id="progreso-lecciones-ingles" value="40" max="50">40/50</progress>
-                            <label for="progreso-lecciones-ingles">40/50</label>
-                        </div>
-                </article>
-                
-                <article class="logro">
-                    <p>Gana 600 Poligemas</p> <!--Icon-->
-                        <div class="barra-logro">
-                            <progress id="progreso-poligemas" value="550" max="600">550/600</progress>
-                            <label for="progreso-poligemas">550/600</label>
-                        </div>
-                </article>
-
-                <article class="logro">
-                    <p>Realiza 2 compras en la tienda</p> <!--Icon-->
-                        <div class="barra-logro">
-                            <progress id="progreso-compras" value="1" max="2">1/2</progress>
-                            <label for="progreso-compras">1/2</label>
-                        </div>
-                </article>
-        </section>
-
-        <section class="bienvenida">
-            <img src="../../imagenes/PoliSaluda.png" alt="Poli saluda">
-            <div class="texto-bienvenida">
-                <h2>¡Hola Carlos! Te saluda Poli</h2>
-                <h2>Ya llevás 5 días aprendiendo</h2>
-                <p>¡Completá una lección más para mantener tu racha!</p>
-                <a href="" class="boton-continuar">Continuar aprendiendo</a>
+                </section>
             </div>
-        </section>
-    </main>
 
-    <footer>
-        <p>©2026 PoliLingo - Todos los derechos reservados.</p>
-    </footer>
-</body>
+            <section class="logros-conseguir">
+                <header>
+                    <h2>Logros por conseguir</h2>
+                </header>
+                <article class="logro">
+                    <p>Completa 50 lecciones de inglés</p>
+                    <!--Icon-->
+                    <div class="barra-logro">
+                        <progress
+                            id="progreso-lecciones-ingles"
+                            value="40"
+                            max="50"
+                        >
+                            40/50
+                        </progress>
+                        <label for="progreso-lecciones-ingles">40/50</label>
+                    </div>
+                </article>
+
+                <article class="logro">
+                    <p>Gana 600 Poligemas</p>
+                    <!--Icon-->
+                    <div class="barra-logro">
+                        <progress id="progreso-poligemas" value="550" max="600">
+                            550/600
+                        </progress>
+                        <label for="progreso-poligemas">550/600</label>
+                    </div>
+                </article>
+
+                <article class="logro">
+                    <p>Realiza 2 compras en la tienda</p>
+                    <!--Icon-->
+                    <div class="barra-logro">
+                        <progress id="progreso-compras" value="1" max="2">
+                            1/2
+                        </progress>
+                        <label for="progreso-compras">1/2</label>
+                    </div>
+                </article>
+            </section>
+
+            <section class="bienvenida">
+                <img src="../../imagenes/PoliSaluda.png" alt="Poli saluda" />
+                <div class="texto-bienvenida">
+                    <h2>¡Hola Carlos! Te saluda Poli</h2>
+                    <h2>Ya llevás 5 días aprendiendo</h2>
+                    <p>¡Completá una lección más para mantener tu racha!</p>
+                    <a href="" class="boton-continuar">Continuar aprendiendo</a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>©2026 PoliLingo - Todos los derechos reservados.</p>
+        </footer>
+    </body>
 </html>
