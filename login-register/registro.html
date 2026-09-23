@@ -56,15 +56,19 @@
                 </fieldset>
 
                 <fieldset class="campo campo-checkbox">
-                    <input type="checkbox" id="recordarme" name="recordarme" />
+                    <input
+                        type="checkbox"
+                        id="recordarme"
+                        name="recordarme"
+                        required
+                    />
                     <label for="recordarme"
                         >Acepto los Términos y la Política de Privacidad</label
                     >
                 </fieldset>
 
-                <a class="boton-login" href="../dashboard/Dashboard.html"
-                    >Registrarse</a
-                >
+                <!-- Se usa submit para procesar y validar todos los campos required -->
+                <button type="submit" class="boton-login">Registrarse</button>
                 <a class="boton-login" href="../index.html">Tengo una cuenta</a>
             </form>
         </main>
