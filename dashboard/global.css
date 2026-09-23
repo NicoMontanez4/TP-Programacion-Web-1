@@ -3,16 +3,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Nunito', 'Segoe UI', Tahoma, sans-serif;
-    
+    font-family: "Nunito", "Segoe UI", Tahoma, sans-serif;
 }
 
 html,
 body {
     font-family: sans-serif;
     background-color: #fff;
-   
-
 }
 
 a {
@@ -25,11 +22,10 @@ img {
     display: block;
 }
 
-
 /* DASHBOARD DE BIENVENIDA */
 /*------------------------------------------*/
 
-.bienvenida{
+.bienvenida {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -40,36 +36,35 @@ img {
     padding: 12.6rem;
 }
 
-.poli-bienvenida{
+.poli-bienvenida {
     width: 16rem;
     height: auto;
 }
 
-.texto-bienvenida{
+.texto-bienvenida {
     max-width: 26rem;
 }
 
-.texto-bienvenida h1{
+.texto-bienvenida h1 {
     margin: 0 0 1rem;
     font-size: 2.2rem;
     line-height: 1.2;
-    color: #0A4148;
+    color: #0a4148;
 }
 
-.texto-bienvenida h1 .lingo{
+.texto-bienvenida h1 .lingo {
     color: #0e9384; /* turquesa, ajustá el tono a tu paleta */
 }
 
-.texto-bienvenida p{
+.texto-bienvenida p {
     margin: 0 0 0.5rem;
     font-size: 1.05rem;
     color: #333;
 }
 
-
 /*-----------------------------------------------*/
 
-.boton-ir-a-cursos{
+.boton-ir-a-cursos {
     display: inline-block;
     margin-top: 1.5rem;
     padding: 0.8rem 1.8rem;
@@ -80,43 +75,62 @@ img {
     text-decoration: none;
 }
 
-.boton-ir-a-cursos:hover{
+.boton-ir-a-cursos:hover {
     filter: brightness(1.1);
 }
 
-/*Barra de navegacion*/
 .navbar {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 1.5rem;
-    box-sizing: border-box;
-    padding: 0.6rem 1.5rem;
+    justify-content: space-between;
+    gap: calc(0.5rem + 1vw); /* Ajuste fluido usando calc */
+    padding: clamp(0.75rem, 2vw, 1.25rem) clamp(1rem, 4vw, 3rem);
+    width: 100%;
     background-color: #8fc97f;
 }
 
-.navbar img {
-    width: 3rem;
-    height: 3rem;
+nav img {
+    width: clamp(2.5rem, 5vw, 3.5rem);
 }
 
-.navbar-links {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-    margin: 0 auto;
-    text-transform: uppercase; /*Convierte el texto en mayusculas*/
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: #fff;
+ul,
+menu {
+    list-style: none;
 }
 
+.navbar-links,
 .navbar-estadisticas {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 1rem;
-    margin: 0;
-    color: black;
+    gap: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+.navbar-links a {
+    font-weight: 600;
+    font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease;
+}
+
+.navbar-estadisticas li span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem 0.8rem;
+    border-radius: 2rem;
     font-weight: 700;
+    font-size: 0.95rem;
+    gap: 0.3rem;
+    background-color: #f3f4f6;
+}
+
+.navbar-links a:hover,
+.navbar-links a[aria-current="page"] {
+    background-color: #e0f2fe;
+    color: #0284c7;
 }
 
 /*Barra de progreso*/
@@ -142,29 +156,28 @@ footer p {
     font-size: 0.85rem;
 }
 
-
 /* BOTON DE VOLVER A CURSOS*/
 
-.volver{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin:2rem;
-  display: flex;       
-  flex-wrap: wrap;      
-  gap: 1rem;
+.volver {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .volver-a-cursos {
-  padding: 0.6rem 1.75rem;
-  border-radius: 1rem;          
-  color: #ffffff;
-  font-weight: 700;
-  text-decoration: none; /* saca el subrayado */
-  background-color: rgb(143, 58, 58);
+    padding: 0.6rem 1.75rem;
+    border-radius: 1rem;
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none; /* saca el subrayado */
+    background-color: rgb(143, 58, 58);
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
     .navbar {
         flex-wrap: wrap; /* los links en una fila y las estadisticas en otra */
         justify-content: center; /* centra las filas resultantes */
@@ -173,6 +186,6 @@ footer p {
 
     .navbar {
         margin: 0; /* achica el espacio general entre logo/links/stats */
-        gap: 1rem;  /* achico el espacio entre CURSOS / PERFIL / RANKING / TIENDA */
+        gap: 1rem; /* achico el espacio entre CURSOS / PERFIL / RANKING / TIENDA */
     }
 }
