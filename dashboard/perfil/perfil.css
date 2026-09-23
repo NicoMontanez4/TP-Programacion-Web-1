@@ -79,11 +79,17 @@ main header h1 {
 /*----------------Estadísticas, logros y logros bloqueados-----------------------*/
 .panel-resumen {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
     gap: clamp(1rem, 2vw, 1.75rem);
     background: transparent;
     border: none;
     padding: 0;
+    align-items: stretch;
+}
+
+.columna-resumen {
+    display: flex;
+    flex-direction: column;
 }
 
 .columna-resumen h2 {
@@ -93,23 +99,25 @@ main header h1 {
     padding-bottom: 0.25rem;
 }
 
-/* --- Columna 1: Pills de Estadísticas --- */
+/*------Estadísticas----------*/
 .lista-pills-stats {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    height: 100%;
 }
 
 .lista-pills-stats li {
     display: flex;
     align-items: center;
-    padding: calc(0.4rem + 0.3vh) 1rem;
+    padding: 0.75rem 1rem;
     gap: 0.75rem;
+    border-radius: 0.7rem;
     font-size: clamp(0.85rem, 1.1vw, 1rem);
     font-weight: 600;
-    border-radius: 0.7rem;
     color: #ffffff;
     background-color: #4db6ac;
+    flex: 1;
 }
 
 .lista-pills-stats li img {
@@ -118,15 +126,18 @@ main header h1 {
     height: clamp(1.2rem, 2vw, 1.6rem);
 }
 
-/* --- Logros --- */
+/*-----Logros y Logros Bloqueados (Scrolleables)---------*/
 .lista-logros-scroll {
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    padding-right: 0.5rem;
-    gap: 0.75rem;
-    border-radius: 0.7rem;
+    padding: clamp(0.8rem, 1.5vw, 1.25rem);
+    gap: 0.85rem;
+    border-radius: 1.2rem;
+    height: 20rem; /* Alto de referencia cómodo tanto para scroll como para estadísticas */
 }
+
+/* Ajuste específico para Desktop / Landscape (cuando las 3 columnas entran en fila) */
 
 .tarjeta-logros.alcanzados {
     color: #3e2723;
@@ -155,9 +166,19 @@ main header h1 {
     font-size: clamp(0.75rem, 1vw, 0.85rem);
 }
 
+/*CAMBIAR POR OTRO COLOOR*/
+.item-logro hgroup p small {
+    color: #26a69a;
+}
+
 .tarjeta-logros.bloqueados {
-    color: #1a237e;
     background-color: #90a4ae;
+}
+
+.tarjeta-logros.bloqueados hgroup h3,
+p,
+small {
+    color: #363434;
 }
 /* ==========================================================================
    4. DATOS DE LA CUENTA (Lista de definición fluida)

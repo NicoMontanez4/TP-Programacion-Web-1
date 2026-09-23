@@ -95,6 +95,7 @@
                                 <p>Alcanzaste una racha de 5 días</p>
                             </hgroup>
                         </li>
+
                         <li class="item-logro">
                             <img src="../../imagenes/logro-mago.png" alt="" />
                             <hgroup>
@@ -132,10 +133,18 @@
                     <h2>Logros Bloqueados</h2>
                     <ul class="lista-logros-scroll tarjeta-logros bloqueados">
                         <li class="item-logro desactivado">
-                            <img
-                                src="../../imagenes/icono-candado.png"
-                                alt="Bloqueado"
-                            />
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                fill="#363434"
+                                viewBox="0 0 24 24"
+                            >
+                                <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                                <path
+                                    d="M6 22h12c1.1 0 2-.9 2-2v-9c0-1.1-.9-2-2-2h-1V7c0-2.76-2.24-5-5-5S7 4.24 7 7v2H6c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2M9 7c0-1.65 1.35-3 3-3s3 1.35 3 3v2H9zm-3 4h12v9H6z"
+                                ></path>
+                            </svg>
                             <hgroup>
                                 <h3>?</h3>
                                 <p><small>Bloqueado</small></p>
@@ -143,10 +152,18 @@
                             </hgroup>
                         </li>
                         <li class="item-logro desactivado">
-                            <img
-                                src="../../imagenes/icono-candado.png"
-                                alt="Bloqueado"
-                            />
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                fill="#363434"
+                                viewBox="0 0 24 24"
+                            >
+                                <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                                <path
+                                    d="M6 22h12c1.1 0 2-.9 2-2v-9c0-1.1-.9-2-2-2h-1V7c0-2.76-2.24-5-5-5S7 4.24 7 7v2H6c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2M9 7c0-1.65 1.35-3 3-3s3 1.35 3 3v2H9zm-3 4h12v9H6z"
+                                ></path>
+                            </svg>
                             <hgroup>
                                 <h3>?</h3>
                                 <p><small>Bloqueado</small></p>
@@ -154,10 +171,18 @@
                             </hgroup>
                         </li>
                         <li class="item-logro desactivado">
-                            <img
-                                src="../../imagenes/icono-candado.png"
-                                alt="Bloqueado"
-                            />
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                fill="#363434"
+                                viewBox="0 0 24 24"
+                            >
+                                <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                                <path
+                                    d="M6 22h12c1.1 0 2-.9 2-2v-9c0-1.1-.9-2-2-2h-1V7c0-2.76-2.24-5-5-5S7 4.24 7 7v2H6c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2M9 7c0-1.65 1.35-3 3-3s3 1.35 3 3v2H9zm-3 4h12v9H6z"
+                                ></path>
+                            </svg>
                             <hgroup>
                                 <h3>?</h3>
                                 <p><small>Bloqueado</small></p>
@@ -165,10 +190,18 @@
                             </hgroup>
                         </li>
                         <li class="item-logro desactivado">
-                            <img
-                                src="../../imagenes/icono-candado.png"
-                                alt="Bloqueado"
-                            />
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                fill="#363434"
+                                viewBox="0 0 24 24"
+                            >
+                                <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                                <path
+                                    d="M6 22h12c1.1 0 2-.9 2-2v-9c0-1.1-.9-2-2-2h-1V7c0-2.76-2.24-5-5-5S7 4.24 7 7v2H6c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2M9 7c0-1.65 1.35-3 3-3s3 1.35 3 3v2H9zm-3 4h12v9H6z"
+                                ></path>
+                            </svg>
                             <hgroup>
                                 <h3>?</h3>
                                 <p><small>Bloqueado</small></p>
@@ -219,8 +252,6 @@
                     class="form-ajustes"
                 >
                     <fieldset class="campo-grupo">
-                        <legend class="sr-only">Preferencias generales</legend>
-
                         <p class="campo horizontal">
                             <label for="idioma-interfaz"
                                 >Idioma principal de interfaz:</label
@@ -284,18 +315,20 @@
                         </p>
                     </fieldset>
 
-                    <menu class="acciones-form">
-                        <li>
-                            <button type="submit" class="btn-guardar">
-                                Guardar cambios
-                            </button>
-                        </li>
-                        <li>
-                            <button type="button" class="btn-cerrar-sesion">
-                                Cerrar Sesión
-                            </button>
-                        </li>
-                    </menu>
+                    <fieldset class="acciones-form">
+                        <input
+                            type="submit"
+                            class="boton-login btn-guardar"
+                            value="Guardar cambios"
+                        />
+
+                        <button
+                            type="button"
+                            class="boton-login btn-cerrar-sesion"
+                        >
+                            Cerrar Sesión
+                        </button>
+                    </fieldset>
                 </form>
             </section>
         </main>
