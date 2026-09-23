@@ -182,14 +182,49 @@
                 <!--Envuelvo los dos section en un div para poder ponerlos lado a lado en un flexbox en el css-->
                 <section class="actividad-hoy">
                     <header>
-                        <h2>Tu actividad de hoy</h2>
+                        <h2>Tu actividad</h2>
                     </header>
-                    <div class="texto-actividad-hoy">
-                        <p>Racha: 5 días</p>
-                        <!--Icon-->
-                        <p>Meta diaría: 50 XP</p>
-                        <!--Icon-->
-                        <div class="barra-hoy">
+                    <div class="texto-actividad">
+                        <p class="racha">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                fill="#eca60b"
+                                viewBox="0 0 24 24"
+                            >
+                                <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                                <path
+                                    d="M18.78 7.39a1 1 0 0 0-.83.32c-.77.84-1.82 1.31-2.94 1.31-2.21 0-4.01-1.8-4.01-4.01 0-.27.03-.56.1-.87a.99.99 0 0 0-.39-1.02c-.32-.23-.75-.26-1.09-.06-2.48 1.42-6.63 4.61-6.63 9.95 0 4.96 4.04 9 9 9s9-4.04 9-9c0-1.82-.49-3.55-1.47-5.14a.98.98 0 0 0-.76-.47ZM9.5 17.5c0-1.77 1.71-2.93 2.5-3.38.79.45 2.5 1.61 2.5 3.38a2.5 2.5 0 0 1-5 0m6.9.94c.06-.3.1-.62.1-.94 0-3.62-3.94-5.35-4.11-5.42a1 1 0 0 0-.79 0c-.17.07-4.11 1.8-4.11 5.42 0 .32.04.64.1.94A6.96 6.96 0 0 1 4.99 13c0-3.36 2.12-5.72 4.06-7.18.4 2.93 2.92 5.19 5.95 5.19 1.22 0 2.38-.37 3.37-1.05.41.97.62 1.98.62 3.04a7.02 7.02 0 0 1-2.6 5.44Z"
+                                ></path>
+                            </svg>
+                            Racha: 5 días</p>
+                        <p class="meta">
+                            <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24"  
+                                fill="#cd1717" viewBox="0 0 24 24" >
+                                <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                                <path d="M12 9a3 3 0 1 0 0 6 3 3 0 1 0 0-6"></path><path d="M13 4.07V2h-2v2.07A8 8 0 0 0 4.07 11H2v2h2.07A8 8 0 0 0 11 19.93V22h2v-2.07A8 8 0 0 0 19.93 13H22v-2h-2.07A8 8 0 0 0 13 4.07M12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6"></path>
+                            </svg>
+                            Meta diaría: 50 XP</p>
+                        <p class="liga">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="24"
+                                height="24"
+                                fill="#CE8946"
+                                viewBox="0 0 24 24"
+                            >
+                                <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                                <path
+                                    d="m10.15 11.62 1.85-.97 1.85.97-.35-2.06L15 8.09l-2.07-.3L12 5.92l-.93 1.87-2.07.3 1.5 1.47z"
+                                ></path>
+                                <path
+                                    d="M21 4h-3V3c0-.55-.45-1-1-1H7c-.55 0-1 .45-1 1v1H3c-.55 0-1 .45-1 1v3c0 4.29 1.79 6.88 4.81 6.99A6 6 0 0 0 11 17.91V20H8v2h8v-2h-3v-2.09a5.98 5.98 0 0 0 4.19-2.92C20.2 14.88 22 12.29 22 8V5c0-.55-.45-1-1-1M4 8V6h2v6c0 .28.03.56.06.83C4.22 12.12 4 9.31 4 8m12 4c0 2.21-1.79 4-4 4s-4-1.79-4-4V4h8zm4-4c0 1.31-.22 4.12-2.06 4.83.04-.27.06-.55.06-.83V6h2z"
+                                ></path>
+                            </svg>
+                            Liga: Bronce
+                        </p>
+                        <div class="barra-xp">
                             <progress
                                 id="progreso-meta-diaria"
                                 value="35"

@@ -150,7 +150,7 @@
     flex-direction: column;
 }
 
-.texto-actividad-hoy {
+.texto-actividad {
     flex: 1; /* ocupa todo el espacio vertical restante dentro de la tarjeta */
     display: flex;
     flex-direction: column;
@@ -164,13 +164,31 @@
     margin-bottom: 1rem;
 }
 
-.barra-hoy {
+.racha {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.3rem;
+}
+
+.meta {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.3rem;
+}
+
+.liga {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.3rem;
+}
+
+.barra-xp {
     display: flex;
     align-items: center; /* alinea la barra y el texto "35/50 XP" en la misma línea */
     gap: 0.75rem;
 }
 
-.barra-hoy progress {
+.barra-xp progress {
     flex: 1; /* la barra ocupa todo el ancho disponible, el label solo el que necesita su texto */
     height: 0.6rem;
     border: none;
