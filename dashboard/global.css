@@ -149,7 +149,7 @@ footer p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin:0;
+  margin:2rem;
   display: flex;       
   flex-wrap: wrap;      
   gap: 1rem;

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Dashboard</title>
+    <link rel='stylesheet' href='../global.css'>
+    <link rel='stylesheet' href='tienda.css'>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <img src="../../imagenes/Logo.png" alt="Imagen del lorito">
+
+            <div class="navbar-links"> <!--Los separo en div asi los puedo ordenar por separado en el navbar-->
+                <a href="../cursos/cursos.html">Cursos</a>
+                <a href="../perfil/perfil.html">Perfil</a>
+                <a href="../ranking/ranking.html">Ranking</a>
+                <a href="../tienda/tienda.html">Tienda</a>
+            </div>
+
+            <div class="navbar-estadisticas">
+                <p>5 días</p> <!--Icon-->
+                <p>350 XP</p> <!--Icon-->
+                <p>550</p> <!--Icon-->
+                <p>3</p> <!--Icon-->
+            </div>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+         <section class= "tienda-contenedor">
+
+            <header class="tienda-introduccion"> 
+
+                <section class="tienda-titulo">
+                
+                    <h1> Tienda</h1>
+                    <p>¡Canjeá tus gemas!</p>
+                    <p>Conseguí recompensas y personalizá tu experiencia en PoliLingo. </p>
+
+                </section>
+
+                <img class="imagen-tienda-titulo" src="../../imagenes/PoliTienda.png" alt="Imagen de poli en la tienda">
+
+            </header>
+
+            <article class="ofertas-tienda">
+
+                <article class="contenedor-oferta-del-dia">
+
+
+                    <img class="imagen-oferta" src="../../imagenes/ProtectorDeRacha.png" alt="Imagen de la oferta del dia">
+
+                    <section class="oferta-del-dia">
+
+                        <h2>Oferta del día</h2>
+                        <h3>Protector de racha</h3>
+                        <h3>250 💎</h3>
+                        <a class="boton-item" href="compra-realizada.html">Obtener Ahora</a>
+
+                    </section>
+
+                </article>
+
+                <article class="contenedor-oferta-super">
+
+
+                    <img class="imagen-oferta" src="../../imagenes/SuperPoli.png" alt="Imagen de la oferta del dia">
+
+                    <section class="oferta-super">
+
+                        <h2>Súper</h2>
+                        <p>¿Querés ser un superheroe? Empieza una prueba gratis de 1 semana para disfrutar de los beneficios exclusivos de Súper</p>
+                        
+
+                    </section>
+                    
+
+                </article>
+
+            </article>
+
+            <!-- Vidas -->
+             <section class="seccion-tienda">
+                    
+                    <h2>Vidas</h2>
+
+                    <article class="fila-item">
+
+                        <img class="icono-item" src="../../imagenes/vidas.png" alt="Corazón de vida" />
+                        
+                        <section class="texto-item">
+
+                            <h3>Recupera tus vidas</h3>
+                            <p>Recarga tu set de vidas y aumenta las posibilidades de terminar una lección.</p>
+                            
+                        </section>
+
+                        <a class="boton-item" href="compra-realizada.html">Obtener por 💎 350</a>
+
+                    </article>
+
+                    <article class="fila-item">
+
+                        <img class="icono-item" src="../../imagenes/vidas-infinitas.png" alt="Vidas ilimitadas" />
+                        
+                        <section class="texto-item">
+                        
+                            <h3>Vidas ilimitadas</h3>
+                            <p>¡Con Súper no te quedarás sin vidas!</p>
+                        
+                        </section>
+                        
+                        <a class="boton-item" href="#metodo-de-pago">Obtener por USD 15</a>
+                    
+                    </article>
+
+                </section>
+
+                <!-- Potenciadores -->
+                <section class="seccion-tienda">
+
+                    <h2>Potenciadores</h2>
+
+                    <article class="fila-item">
+
+                        <img class="icono-item" src="../../imagenes/ProtectorDeRacha.png" alt="Protector de racha" />
+                       
+                        <section class="texto-item">
+
+                            <h3>Protector de racha <span class="contador-equipados">2/2 equipados</span></h3>
+                            <p>Te permite mantener tu racha cuando no usas la app por un día.</p>
+                       
+                        </section>
+                        
+                        <a class="boton-item boton-deshabilitado" href="#metodo-de-pago">Equipado</a>
+                    
+                    </article>
+
+                </section>
+
+                <!-- Paquetes-->
+                <section class="seccion-tienda">
+                    
+                    <h2>Paquetes</h2>
+
+                    <article class="fila-item">
+
+                        <img class="icono-item icono-paquete" src="../../imagenes/Cofre1.png" alt="Paquete de refuerzo" />
+                        
+                        <section class="texto-item">
+                            <h3>Paquete de refuerzo</h3>
+                            <p>300 Gemas + 50 gemas de regalo + 3 Protectores de racha</p>
+                        </section>
+
+                        <a class="boton-item" href="#metodo-de-pago">Obtener por USD 3.00</a>
+                   
+                    </article>
+
+                    <article class="fila-item">
+
+                        <img class="icono-item icono-paquete" src="../../imagenes/Cofre2.png" alt="Paquete de gemas" />
+                        
+                        <section class="texto-item">
+                            <h3>Paquete de GEMAS</h3>
+                            <p>1500 gemas + 200 de regalo</p>
+                        </section>
+
+                        <a class="boton-item" href="#metodo-de-pago">Obtener por USD 10.00</a>
+                    
+                    </article>
+
+                </section>
+
+                <!-- MÉTODO DE PAGO -->
+                <section id="metodo-de-pago" class="seccion-tienda">
+
+                    <h2>Método de pago</h2>
+
+                    <p class="metodo-pago-subtitulo">Completá el método de pago</p>
+
+                    <form class="formulario-pago">
+
+                        <fieldset class="campo-pago">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" name="nombre" />
+                        </fieldset>
+
+                        <fieldset class="campo-pago">
+                            <label for="numero-tarjeta">Número de tarjeta:</label>
+                            <input type="text" id="numero-tarjeta" name="numero-tarjeta" />
+                        </fieldset>
+
+                        <fieldset class="campo-pago">
+                            <label for="apellido">Apellido:</label>
+                            <input type="text" id="apellido" name="apellido" />
+                        </fieldset>
+
+                        <fieldset class="campo-pago">
+                            <label for="vencimiento">Vencimiento:</label>
+                            <input type="text" id="vencimiento" name="vencimiento" placeholder="MM/AA" />
+                        </fieldset>
+
+                        <fieldset class="campo-pago">
+                            <label for="dni">DNI:</label>
+                            <input type="text" id="dni" name="dni" />
+                        </fieldset>
+
+                        <fieldset class="campo-pago">
+                            <label for="codigo-seguridad">Código de seguridad:</label>
+                            <input type="text" id="codigo-seguridad" name="codigo-seguridad" />
+                        </fieldset>
+
+                    </form>
+
+                    
+
+                </section>
+
+                        <a class="boton-realizar-compra" href="compra-realizada.html">Realizar compra</a>
+    
+        </section>
+    
+    </main>
+
+    
+
+    <nav class="volver">
+
+     <a class="volver-a-cursos" href="../cursos/cursos.html"> Volver a cursos</a>
+
+     </nav>
+
+    <footer>
+        <p>©2026 PoliLingo - Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
