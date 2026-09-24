@@ -179,13 +179,15 @@ footer p {
 
 @media screen and (max-width: 768px) {
     .navbar {
-        flex-wrap: wrap; /* los links en una fila y las estadisticas en otra */
+        flex-direction: column;
+        align-items: center;
         justify-content: center; /* centra las filas resultantes */
-        gap: 0.75rem; /* achica el espacio general entre logo/links/stats */
+        gap: 1rem; /* achica el espacio general entre logo/links/stats */
     }
 
-    .navbar {
-        margin: 0; /* achica el espacio general entre logo/links/stats */
-        gap: 1rem; /* achico el espacio entre CURSOS / PERFIL / RANKING / TIENDA */
+    .navbar-links,
+    .navbar-estadisticas {
+        width: 100%;
+        justify-content: center;
     }
 }
