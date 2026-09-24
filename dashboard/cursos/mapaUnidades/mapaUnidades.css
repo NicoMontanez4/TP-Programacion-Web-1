@@ -1,22 +1,20 @@
 .encabezado-curso{
     display: flex;
-    flex-wrap: wrap;    /*permite que se acomode solo en pantallas chicas */
+    flex-wrap: nowrap;    /*permite que se acomode solo en pantallas chicas */
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 1.5rem;
     box-sizing: border-box;
     max-width: 55rem;
     margin: 2rem auto;
     padding: 0 1rem 2rem;
     border-bottom: 0.2rem solid #8fc97f;
+    zoom: 0.85;
 }
 
-.info-curso{
-    flex: 1;
-    min-width: min(100%, 18rem);      /* evita que el texto se comprima demasiado antes de wrappear */
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+.info-curso {
+    flex: 0 0 auto;      /* ocupa solo lo que mide bandera + título */
+    min-width: 0;
 }
 
 .titulo-curso{
