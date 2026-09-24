@@ -4,47 +4,46 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Nueva Contraseña</title>
-        <link rel="stylesheet" href="..//login-register.css" />
+        <link rel="stylesheet" href="../login-register.css" />
     </head>
 
     <body>
         <main>
-                <form
-                    class="form-login"
-                    action="/procesar-datos"
-                    method="post"
-                >
-                    <fieldset class="logo">
-                        <h2>Código Verificado</h2>
-                        <h3>Elegí tu nueva contraseña</h3>
-                    </fieldset>
+            <!-- El action apunta al destino al que se enviará el formulario tras validarse -->
+            <form class="form-login" action="../index.html" method="post">
+                <fieldset class="logo">
+                    <h2>Código Verificado</h2>
+                    <h3>Elegí tu nueva contraseña</h3>
+                </fieldset>
 
-                    <fieldset class="campo">
-                        <label for="nueva-contrasenia">Nueva contraseña:</label>
-                        <input
-                            type="password"
-                            id="nueva-contrasenia"
-                            name="nueva-contrasenia"
-                            required
-                        />
-                    </fieldset>
+                <fieldset class="campo">
+                    <label for="nueva-contrasenia">Nueva contraseña:</label>
+                    <input
+                        type="password"
+                        id="nueva-contrasenia"
+                        name="nueva-contrasenia"
+                        required
+                    />
+                </fieldset>
 
-                    <fieldset class="campo" for="confirmar-nueva-contrasenia">
-                        <label>Confirmar nueva contraseña:</label>
-                        <input
-                            type="password"
-                            id="confirmar-nueva-contrasenia"
-                            name="confirmar-nueva-contrasenia"
-                            required
-                        />
-                    </fieldset>
-
-                    <a class="boton-login" href="../index.html"
-                        >Guardar y volver a Iniciar Sesión</a
+                <fieldset class="campo">
+                    <label for="confirmar-nueva-contrasenia"
+                        >Confirmar nueva contraseña:</label
                     >
-                    <a class="boton-login" href="../index.html">Cancelar</a>
-                </form>
-            </section>
+                    <input
+                        type="password"
+                        id="confirmar-nueva-contrasenia"
+                        name="confirmar-nueva-contrasenia"
+                        required
+                    />
+                </fieldset>
+
+                <!-- Botón de envío que activa la validación required -->
+                <button type="submit" class="boton-login">
+                    Guardar y volver a Iniciar Sesión
+                </button>
+                <a class="boton-login" href="../index.html">Cancelar</a>
+            </form>
         </main>
     </body>
 </html>

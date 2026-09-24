@@ -8,8 +8,19 @@
 
 html,
 body {
+    height: 100%;              
     font-family: sans-serif;
     background-color: #fff;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;         /* nunca menos que la pantalla, pero puede crecer si hay más contenido */
+}
+
+main {
+    flex: 1;                   /* ocupa todo el espacio sobrante y empuja el footer hacia abajo */
 }
 
 a {
@@ -27,29 +38,31 @@ img {
 
 .bienvenida {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;                          /* clave: permite que Poli baje debajo del texto */
     align-items: center;
     justify-content: center;
-    gap: 3rem;
+    gap: clamp(1.5rem, 4vw, 3rem);            /* el gap también se achica en pantallas chicas */
     max-width: 60rem;
-    margin: 4rem auto;
-    padding: 12.6rem;
+    margin: clamp(2rem, 6vw, 4rem) auto;
+    padding: clamp(1rem, 5vw, 3rem);          /* reemplaza el 12.6rem fijo */
 }
 
 .poli-bienvenida {
-    width: 16rem;
+    width: clamp(8rem, 25vw, 16rem);
     height: auto;
-}
-
-.texto-bienvenida {
-    max-width: 26rem;
 }
 
 .texto-bienvenida h1 {
     margin: 0 0 1rem;
-    font-size: 2.2rem;
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
     line-height: 1.2;
     color: #0a4148;
+}
+
+.texto-bienvenida p {
+    margin: 0 0 0.5rem;
+    font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+    color: #333;
 }
 
 .texto-bienvenida h1 .lingo {
@@ -80,14 +93,21 @@ img {
 }
 
 .navbar {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* izquierda flexible / centro ajustado al contenido / derecha flexible */
     align-items: center;
-    justify-content: space-between;
     gap: calc(0.5rem + 1vw); /* Ajuste fluido usando calc */
     padding: clamp(0.75rem, 2vw, 1.25rem) clamp(1rem, 4vw, 3rem);
     width: 100%;
     background-color: #8fc97f;
+}
+
+.navbar-links {
+    justify-self: center; /* centra el bloque de links en su propia columna, el del medio */
+}
+
+.navbar-estadisticas {
+    justify-self: end; /* pega las estadísticas contra el borde derecho de su columna */
 }
 
 nav img {

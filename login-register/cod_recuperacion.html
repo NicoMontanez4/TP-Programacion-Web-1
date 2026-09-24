@@ -9,7 +9,11 @@
 
     <body>
         <main>
-            <form class="form-login" action="/procesar-datos" method="POST">
+            <form
+                class="form-login"
+                action="nueva_contrasenia.html"
+                method="POST"
+            >
                 <fieldset class="logo">
                     <h2>Verificá tu identidad</h2>
                     <h3>
@@ -24,6 +28,7 @@
                         type="text"
                         inputmode="numeric"
                         maxlength="1"
+                        pattern="[0-9]"
                         id="numero1"
                         name="numero1"
                         required
@@ -32,6 +37,7 @@
                         type="text"
                         inputmode="numeric"
                         maxlength="1"
+                        pattern="[0-9]"
                         id="numero2"
                         name="numero2"
                         required
@@ -40,6 +46,7 @@
                         type="text"
                         inputmode="numeric"
                         maxlength="1"
+                        pattern="[0-9]"
                         id="numero3"
                         name="numero3"
                         required
@@ -48,17 +55,16 @@
                         type="text"
                         inputmode="numeric"
                         maxlength="1"
+                        pattern="[0-9]"
                         id="numero4"
                         name="numero4"
                         required
                     />
                 </fieldset>
-                <a class="boton-login" href="nueva_contrasenia.html">Enviar</a>
-                <a
-                    class="boton-login"
-                    href="/login-register/olvidaste_contra.html"
-                    >Cancelar</a
-                >
+
+                <!-- Cambiado de <a> a <button type="submit"> para forzar validación -->
+                <button type="submit" class="boton-login">Enviar</button>
+                <a class="boton-login" href="olvidaste_contra.html">Cancelar</a>
             </form>
         </main>
     </body>
