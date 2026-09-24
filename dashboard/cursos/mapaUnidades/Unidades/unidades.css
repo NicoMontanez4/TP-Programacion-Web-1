@@ -5,7 +5,7 @@
     flex-direction: column;
     flex-wrap: wrap; 
     align-items: center;
-    
+   
     
 }
 
@@ -35,7 +35,7 @@
     flex-direction: row;
     align-items: center;
     gap:2rem;
-    zoom: 0.65;
+    zoom: 0.75;
 
 }
 
@@ -48,25 +48,29 @@
 }
 
 .titulo-leccion {
-    margin: 0 0 0.5rem;
-    font-size: 1.1rem;
+    margin: 0 0 0.6rem;
+    font-size: 0.95rem;
+    font-family: inherit;
     font-weight: 800;
     text-align: center;
     color: #10151b;
 }
 
 .recorrido-lecciones-unidad {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-    
+    max-height: 35rem;          /* alto de la zona visible */
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 1.5rem 1rem;       /* aire para que no se corten sombras ni burbuja */
+    scrollbar-width: thin;      /* scroll más discreto (Firefox) */
+    scrollbar-color: #8fc97f transparent;
 }
 
 .contenedor {
     display: flex;
     flex-direction: column;
+    flex-shrink: 0;
     align-items: center;
+    position: relative;
     width: 15rem;
 }
 
@@ -75,9 +79,24 @@
     height: auto;
 }
 
+.cofre-abierto {
+    width: 7rem;
+    height: auto;
+}
+
 .flecha-recorrido {
-    
-    line-height: 0;  /* saca el espacio fantasma que dejan los SVG inline */
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    width: 100%;
+    line-height: 0;          /* saca el espacio fantasma del SVG inline */
+    flex-shrink: 0;          /* no se aplasta dentro del scroll */
+}
+
+.flecha-recorrido svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    transform: rotate(180deg);   /* apunta hacia abajo */
 }
 
 
@@ -100,13 +119,15 @@
 
 /* --- Globo de texto burbuja emergente (cartelito) --- */
 .burbuja-emergente {
-    position: relative;
+    position: absolute;
     background: #10151b;
     color: #fff;
     font-weight: 800;
     font-size: 0.95rem;
     letter-spacing: 0.03rem;
     padding: 0.5rem 1.1rem;
+    position: absolute;
+    top: -0.6rem; /* Que tan arriba del boton aparece la burbuja*/
     border-radius: 0.9rem;
     margin-bottom: 0.6rem;
     opacity: 0;
