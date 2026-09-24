@@ -210,14 +210,15 @@ fieldset {
     display: none;
 }
 
-.slot label{
+.slot label,
+.slot span{
     display: inline-block;
     padding: 0.4rem 1rem;
     border: 0.12rem solid var(--verde);
     border-radius: 1rem;
     background-color: white;
     font-weight: 800;
-    cursor: pointer;                    /* al tocarla, vuelve al banco */
+    cursor: pointer;
 }
 
 
@@ -521,6 +522,21 @@ body.leccion-chino:has(#correcto:target):not(:has(#p-buenos:checked):has(#p-dias
    No modifica nada del modo interactivo normal.
    ===================================================== */
  
+   .barra-leccion-completada{
+    position: relative;                 /* referencia para la X */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.5rem;
+    box-sizing: border-box;
+    max-width: 55rem;
+    margin: 2rem auto 1rem;
+    padding: 1rem 1.5rem 1rem 3.5rem;   /* a la izquierda: lugar para la X */
+    border-radius: 1.2rem;
+    background-color: var(--verde);
+    zoom: 0.85;
+    
+}
 /* Ya no hay nada para elegir: se esconde el banco de palabras */
 body.completada .banco-palabras{
     display: none;
@@ -529,6 +545,19 @@ body.completada .banco-palabras{
 /* Las fichas de la respuesta ya no son clickeables */
 body.completada .slot label{
     cursor: default;
+}
+
+body.completada .slot{
+    display: block;
+}
+
+.palabra {
+    padding: 0.5rem 1rem;
+    background: #fff;
+    border: 0.1rem solid #8fc97f;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 1rem;
 }
  
 /* Insignia que reemplaza al botón "Comprobar respuesta" */
