@@ -4,25 +4,22 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Lección interactiva - PoliLingo</title>
-        <link rel="stylesheet" href="../../global.css" />
-        <link rel="stylesheet" href="leccion-interactiva.css" />
+        <link rel="stylesheet" href="../../../global.css" />
+        <link rel="stylesheet" href="../leccion-interactiva.css" />
     </head>
 
-    <body class="leccion-aleman">
+    <body class="leccion-ingles-nivel3">
         <header>
             <nav class="navbar">
-                <img src="../../../imagenes/Logo.png" alt="Logo poliLingo" />
+                <img src="../../../../imagenes/Logo.png" alt="Logo poliLingo" />
 
                 <ul class="navbar-links">
-                    <li><a href="../cursos.html">Cursos</a></li>
-
-                    <li>
-                        <a href="../../perfil/perfil.html" aria-current="page"
-                            >Perfil</a
-                        >
+                    <li><a href="../../cursos.html" aria-current="page">
+                        Cursos</a>
                     </li>
-                    <li><a href="../../ranking/ranking.html">Ranking</a></li>
-                    <li><a href="../../tienda/tienda.html">Tienda</a></li>
+                    <li><a href="../../../perfil/perfil.html">Perfil</a></li>
+                    <li><a href="../../../ranking/ranking.html">Ranking</a></li>
+                    <li><a href="../../../tienda/tienda.html">Tienda</a></li>
                 </ul>
 
                 <ul class="navbar-estadisticas">
@@ -107,87 +104,99 @@
                 <header class="barra-leccion">
                     <a
                         class="boton-salir"
-                        href="../mapaUnidades/mapaUnidadesAleman.html"
+                        href="../../mapaUnidades/mapaUnidadesIngles.html"
                         aria-label="Salir de la lección"
                         >✕</a
                     >
 
                     <img
                         class="bandera-leccion"
-                        src="../../../imagenes/BanderaAlemania.png"
-                        alt="Bandera de Alemania"
+                        src="../../../../imagenes/BanderaReinoUnido.png"
+                        alt="Bandera de Reino Unido"
                     />
 
                     <!-- hgroup agrupa correctamente Título + Subtítulo -->
                     <hgroup class="titulo-leccion">
-                        <h1>Alemán</h1>
-                        <p>Unidad 1: Saludos</p>
-                        <p>Lección 3 - Vocabulario de Familia</p>
+                        <h1>Inglés</h1>
+                        <p>Unidad 3 - Viajes</p>
+                        <p>Lección 1 - Transporte</p>
+                    
                     </hgroup>
 
                     <ul class="estado-leccion">
                         <li>Cantidad de vidas: ❤️❤️❤️</li>
+                        
                         <li>
                             <label for="progreso-leccion"
-                                >Progreso de la lección: 60%</label
+                                >Progreso de la lección: 50%</label
                             >
                             <progress
                                 id="progreso-leccion"
-                                value="60"
+                                value="50"
                                 max="100"
                             >
-                                60%
+                                50%
                             </progress>
+                            
                         </li>
+ 
                     </ul>
                 </header>
 
                 <!-- FORMULARIO DE EJERCICIO (No es un article, es una interacción) -->
                 <form class="tarjeta-ejercicio">
                     <!-- Checkboxes de control -->
-                    <input class="selector" type="checkbox" id="p-el" />
-                    <input class="selector" type="checkbox" id="p-es" />
-                    <input class="selector" type="checkbox" id="p-mi" />
-                    <input class="selector" type="checkbox" id="p-abuelo" />
-                    <input class="selector" type="checkbox" id="p-ella" />
-                    <input class="selector" type="checkbox" id="p-su" />
-                    <input class="selector" type="checkbox" id="p-abuela" />
+                    <input class="selector" type="checkbox" id="p-me" />
+                    <input class="selector" type="checkbox" id="p-gusta" />
+                    <input class="selector" type="checkbox" id="p-andar" />
+                    <input class="selector" type="checkbox" id="p-en" />
+                    <input class="selector" type="checkbox" id="p-moto" />
+                    <input class="selector" type="checkbox" id="p-no" />
+                    <input class="selector" type="checkbox" id="p-cuatriciclo" />
+                    <input class="selector" type="checkbox" id="p-lavar" />
+                    <input class="selector" type="checkbox" id="p-odio" />
 
                     <!-- BLOQUE 1: Pregunta y Construcción de respuesta -->
                     <section class="pregunta">
                         <img
                             class="imagen-poli"
-                            src="../../../imagenes/Poli-hablando.png"
+                            src="../../../../imagenes/Poli-hablando.png"
                             alt="Mascota Poli hablando"
                         />
 
                         <fieldset class="enunciado">
                             <h2>Traducí la siguiente oración:</h2>
                             <p class="frase">
-                                <strong>“Er ist mein Großvater..”</strong>
+                                <strong>“I like riding a motorcycle.”</strong>
                             </p>
 
                             <ol class="respuesta" aria-label="Tu respuesta">
-                                <li class="slot slot-el">
-                                    <label for="p-el">Él</label>
+                                <li class="slot slot-me">
+                                    <label for="p-me">Me</label>
                                 </li>
-                                <li class="slot slot-es">
-                                    <label for="p-es">es</label>
+                                <li class="slot slot-gusta">
+                                    <label for="p-gusta">gusta</label>
                                 </li>
-                                <li class="slot slot-mi">
-                                    <label for="p-mi">mi</label>
+                                <li class="slot slot-andar">
+                                    <label for="p-andar">andar</label>
                                 </li>
-                                <li class="slot slot-abuelo">
-                                    <label for="p-abuelo">abuelo.</label>
+                                <li class="slot slot-en">
+                                    <label for="p-en">en</label>
                                 </li>
-                                <li class="slot slot-ella">
-                                    <label for="p-ella">Ella</label>
+                                <li class="slot slot-moto">
+                                    <label for="p-moto">moto</label>
                                 </li>
-                                <li class="slot slot-su">
-                                    <label for="p-su">su</label>
+                                <li class="slot slot-no">
+                                    <label for="p-no">no</label>
                                 </li>
-                                <li class="slot slot-abuela">
-                                    <label for="p-abuela">abuela</label>
+                                <li class="slot slot-cuatriciclo">
+                                    <label for="p-cuatriciclo">cuatriciclo</label>
+                                </li>
+                                <li class="slot slot-lavar">
+                                    <label for="p-lavar">lavar</label>
+                                </li>
+                                <li class="slot slot-odio">
+                                    <label for="p-odio">odio</label>
                                 </li>
                             </ol>
                         </fieldset>
@@ -199,29 +208,31 @@
 
                         <ul class="banco">
                             <li>
-                                <label class="ficha" for="p-su">su</label>
+                                <label class="ficha" for="p-odio">odio</label>
                             </li>
                             <li>
-                                <label class="ficha" for="p-abuelo"
-                                    >abuelo</label
-                                >
+                                <label class="ficha" for="p-cuatriciclo">cuatriciclo</label>
                             </li>
                             <li>
-                                <label class="ficha" for="p-ella">ella</label>
+                                <label class="ficha" for="p-moto">moto</label>
                             </li>
                             <li>
-                                <label class="ficha" for="p-mi">mi</label>
+                                <label class="ficha" for="p-me">Me</label>
                             </li>
                             <li>
-                                <label class="ficha" for="p-abuela"
-                                    >abuela</label
-                                >
+                                <label class="ficha" for="p-lavar">lavar</label>
                             </li>
                             <li>
-                                <label class="ficha" for="p-el">el</label>
+                                <label class="ficha" for="p-no">no</label>
                             </li>
                             <li>
-                                <label class="ficha" for="p-es">es</label>
+                                <label class="ficha" for="p-andar">andar</label>
+                            </li>
+                            <li>
+                                <label class="ficha" for="p-en">en</label>
+                            </li>
+                            <li>
+                                <label class="ficha" for="p-gusta">gusta</label>
                             </li>
                         </ul>
                     </section>
@@ -234,8 +245,8 @@
                 <p>¡Muy bien! Sumaste 10 XP.</p>
                 <a
                     class="boton-comprobar"
-                    href="../mapaUnidades/mapaUnidadesAleman.html"
-                    >Continuar</a
+                    href="ingles-u3-l1-nivel4.html"
+                    >Siguiente nivel</a
                 >
             </section>
 

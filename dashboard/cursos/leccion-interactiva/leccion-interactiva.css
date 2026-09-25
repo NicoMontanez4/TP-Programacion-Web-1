@@ -61,7 +61,7 @@
 
 .titulo-leccion h1{
     margin: 0;
-    font-size: 2rem;
+    font-size: clamp(1.4rem, 6vw, 2rem);
     line-height: 1.1;
 }
 
@@ -241,6 +241,7 @@ fieldset {
 
 /* ---------------------------------------------------
    Alemán: "Er ist mein Großvater."
+   Unidad 1- Saludos / Leccion 3 - Vocabulario Familiar / Nivel 1
    Correcta: Él + es + mi + abuelo (sin Ella/su/abuela)
    --------------------------------------------------- */
 #p-el:checked ~ .pregunta .slot-el,
@@ -265,11 +266,11 @@ fieldset {
     border-color: transparent;
 }
 
-body.leccion-aleman:has(#p-el:checked):has(#p-es:checked):has(#p-mi:checked):has(#p-abuelo:checked):not(:has(#p-ella:checked)):not(:has(#p-su:checked)):not(:has(#p-abuela:checked)) #correcto:target{
+body.leccion-aleman-nivel1:has(#p-el:checked):has(#p-es:checked):has(#p-mi:checked):has(#p-abuelo:checked):not(:has(#p-ella:checked)):not(:has(#p-su:checked)):not(:has(#p-abuela:checked)) #correcto:target{
     display: flex;
 }
 
-body.leccion-aleman:has(#correcto:target):not(:has(#p-el:checked):has(#p-es:checked):has(#p-mi:checked):has(#p-abuelo:checked):not(:has(#p-ella:checked)):not(:has(#p-su:checked)):not(:has(#p-abuela:checked))) #incorrecto{
+body.leccion-aleman-nivel1:has(#correcto:target):not(:has(#p-el:checked):has(#p-es:checked):has(#p-mi:checked):has(#p-abuelo:checked):not(:has(#p-ella:checked)):not(:has(#p-su:checked)):not(:has(#p-abuela:checked))) #incorrecto{
     display: flex;
 }
 
@@ -286,61 +287,360 @@ body.leccion-aleman:has(#correcto:target):not(:has(#p-el:checked):has(#p-es:chec
     outline-offset: 0.1rem;
 }
 
-
 /* ---------------------------------------------------
-   Inglés: "Can I see the menu, please?"
-   Correcta: ¿Puedo + ver + el + menú, + por + favor?
-             (sin cuenta/agua/mesa)
+   Alemán: "Meine Mutter ist die Beste."
+   Unidad 1- Saludos / Leccion 3 - Vocabulario Familiar / Nivel 2
+   Correcta: Mi + madre + es + la + mejor (sin Su/padre)
    --------------------------------------------------- */
-#p-puedo:checked ~ .pregunta .slot-puedo,
-#p-ver:checked ~ .pregunta .slot-ver,
-#p-elmenu:checked ~ .pregunta .slot-elmenu,
-#p-menu:checked ~ .pregunta .slot-menu,
-#p-por:checked ~ .pregunta .slot-por,
-#p-favor:checked ~ .pregunta .slot-favor,
-#p-cuenta:checked ~ .pregunta .slot-cuenta,
-#p-agua:checked ~ .pregunta .slot-agua,
-#p-mesa:checked ~ .pregunta .slot-mesa{
+#p-mi:checked ~ .pregunta .slot-mi,
+#p-madre:checked ~ .pregunta .slot-madre,
+#p-es:checked ~ .pregunta .slot-es,
+#p-la:checked ~ .pregunta .slot-la,
+#p-mejor:checked ~ .pregunta .slot-mejor,
+#p-su:checked ~ .pregunta .slot-su,
+#p-padre:checked ~ .pregunta .slot-padre{
     display: block;
 }
 
-#p-puedo:checked ~ .banco-palabras label[for="p-puedo"],
-#p-ver:checked ~ .banco-palabras label[for="p-ver"],
-#p-elmenu:checked ~ .banco-palabras label[for="p-elmenu"],
-#p-menu:checked ~ .banco-palabras label[for="p-menu"],
-#p-por:checked ~ .banco-palabras label[for="p-por"],
-#p-favor:checked ~ .banco-palabras label[for="p-favor"],
-#p-cuenta:checked ~ .banco-palabras label[for="p-cuenta"],
-#p-agua:checked ~ .banco-palabras label[for="p-agua"],
-#p-mesa:checked ~ .banco-palabras label[for="p-mesa"]{
+#p-mi:checked ~ .banco-palabras label[for="p-mi"],
+#p-madre:checked ~ .banco-palabras label[for="p-madre"],
+#p-es:checked ~ .banco-palabras label[for="p-es"],
+#p-la:checked ~ .banco-palabras label[for="p-la"],
+#p-mejor:checked ~ .banco-palabras label[for="p-mejor"],
+#p-su:checked ~ .banco-palabras label[for="p-su"],
+#p-padre:checked ~ .banco-palabras label[for="p-padre"]{
     background-color: #dcdad7;
     color: transparent;
     border-color: transparent;
 }
 
-body.leccion-ingles:has(#p-puedo:checked):has(#p-ver:checked):has(#p-elmenu:checked):has(#p-menu:checked):has(#p-por:checked):has(#p-favor:checked):not(:has(#p-cuenta:checked)):not(:has(#p-agua:checked)):not(:has(#p-mesa:checked)) #correcto:target{
+body.leccion-aleman-nivel2:has(#p-mi:checked):has(#p-madre:checked):has(#p-es:checked):has(#p-la:checked):has(#p-mejor:checked):not(:has(#p-su:checked)):not(:has(#p-padre:checked)) #correcto:target{
     display: flex;
 }
 
-body.leccion-ingles:has(#correcto:target):not(:has(#p-puedo:checked):has(#p-ver:checked):has(#p-elmenu:checked):has(#p-menu:checked):has(#p-por:checked):has(#p-favor:checked):not(:has(#p-cuenta:checked)):not(:has(#p-agua:checked)):not(:has(#p-mesa:checked))) #incorrecto{
+body.leccion-aleman-nivel2:has(#correcto:target):not(:has(#p-mi:checked):has(#p-madre:checked):has(#p-es:checked):has(#p-la:checked):has(#p-mejor:checked):not(:has(#p-su:checked)):not(:has(#p-padre:checked))) #incorrecto{
     display: flex;
 }
 
-#p-puedo:focus-visible ~ .banco-palabras label[for="p-puedo"],
-#p-ver:focus-visible ~ .banco-palabras label[for="p-ver"],
-#p-elmenu:focus-visible ~ .banco-palabras label[for="p-elmenu"],
-#p-menu:focus-visible ~ .banco-palabras label[for="p-menu"],
-#p-por:focus-visible ~ .banco-palabras label[for="p-por"],
-#p-favor:focus-visible ~ .banco-palabras label[for="p-favor"],
-#p-cuenta:focus-visible ~ .banco-palabras label[for="p-cuenta"],
-#p-agua:focus-visible ~ .banco-palabras label[for="p-agua"],
-#p-mesa:focus-visible ~ .banco-palabras label[for="p-mesa"]{
+
+/* foco visible al navegar con la tecla Tab */
+#p-mi:focus-visible ~ .banco-palabras label[for="p-mi"],
+#p-madre:focus-visible ~ .banco-palabras label[for="p-madre"],
+#p-es:focus-visible ~ .banco-palabras label[for="p-es"],
+#p-la:focus-visible ~ .banco-palabras label[for="p-la"],
+#p-mejor:focus-visible ~ .banco-palabras label[for="p-mejor"],
+#p-su:focus-visible ~ .banco-palabras label[for="p-su"],
+#p-padre:focus-visible ~ .banco-palabras label[for="p-padre"]{
+    outline: 0.15rem solid var(--texto);
+    outline-offset: 0.1rem;
+}
+
+
+/* ---------------------------------------------------
+   Alemán: "Mein Cousin ist groß."
+   Unidad 1- Saludos / Leccion 3 - Vocabulario Familiar / Nivel 3
+   Correcta: Mi+primo+es+alto (sin Su/prima)
+   --------------------------------------------------- */
+#p-mi:checked ~ .pregunta .slot-mi,
+#p-primo:checked ~ .pregunta .slot-primo,
+#p-es:checked ~ .pregunta .slot-es,
+#p-alto:checked ~ .pregunta .slot-alto,
+#p-su:checked ~ .pregunta .slot-su,
+#p-prima:checked ~ .pregunta .slot-prima{
+    display: block;
+}
+
+#p-mi:checked ~ .banco-palabras label[for="p-mi"],
+#p-primo:checked ~ .banco-palabras label[for="p-primo"],
+#p-es:checked ~ .banco-palabras label[for="p-es"],
+#p-alto:checked ~ .banco-palabras label[for="p-alto"],
+#p-su:checked ~ .banco-palabras label[for="p-su"],
+#p-prima:checked ~ .banco-palabras label[for="p-prima"]{
+    background-color: #dcdad7;
+    color: transparent;
+    border-color: transparent;
+}
+
+body.leccion-aleman-nivel3:has(#p-mi:checked):has(#p-primo:checked):has(#p-es:checked):has(#p-alto:checked):not(:has(#p-su:checked)):not(:has(#p-prima:checked)) #correcto:target{
+    display: flex;
+}
+
+body.leccion-aleman-nivel3:has(#correcto:target):not(:has(#p-mi:checked):has(#p-primo:checked):has(#p-es:checked):has(#p-alto:checked):not(:has(#p-su:checked)):not(:has(#p-prima:checked))) #incorrecto{
+    display: flex;
+}
+
+
+/* foco visible al navegar con la tecla Tab */
+#p-mi:focus-visible ~ .banco-palabras label[for="p-mi"],
+#p-primo:focus-visible ~ .banco-palabras label[for="p-primo"],
+#p-es:focus-visible ~ .banco-palabras label[for="p-es"],
+#p-alto:focus-visible ~ .banco-palabras label[for="p-alto"],
+#p-su:focus-visible ~ .banco-palabras label[for="p-su"],
+#p-prima:focus-visible ~ .banco-palabras label[for="p-prima"]{
+    outline: 0.15rem solid var(--texto);
+    outline-offset: 0.1rem;
+}
+
+/* ---------------------------------------------------
+   Alemán: "Mein Sohn ist klein."
+   Unidad 1- Saludos / Leccion 3 - Vocabulario Familiar / Nivel 4
+   Correcta: Mi+hijo+es+pequeño (sin Su/pequeña)
+   --------------------------------------------------- */
+#p-mi:checked ~ .pregunta .slot-mi,
+#p-hijo:checked ~ .pregunta .slot-hijo,
+#p-es:checked ~ .pregunta .slot-es,
+#p-pequeno:checked ~ .pregunta .slot-pequeno,
+#p-su:checked ~ .pregunta .slot-su,
+#p-pequena:checked ~ .pregunta .slot-pequena{
+    display: block;
+}
+
+#p-mi:checked ~ .banco-palabras label[for="p-mi"],
+#p-hijo:checked ~ .banco-palabras label[for="p-hijo"],
+#p-es:checked ~ .banco-palabras label[for="p-es"],
+#p-pequeno:checked ~ .banco-palabras label[for="p-pequeno"],
+#p-su:checked ~ .banco-palabras label[for="p-su"],
+#p-pequena:checked ~ .banco-palabras label[for="p-pequena"]{
+    background-color: #dcdad7;
+    color: transparent;
+    border-color: transparent;
+}
+
+body.leccion-aleman-nivel4:has(#p-mi:checked):has(#p-hijo:checked):has(#p-es:checked):has(#p-pequeno:checked):not(:has(#p-su:checked)):not(:has(#p-pequena:checked)) #correcto:target{
+    display: flex;
+}
+
+body.leccion-aleman-nivel4:has(#correcto:target):not(:has(#p-mi:checked):has(#p-hijo:checked):has(#p-es:checked):has(#p-pequeno:checked):not(:has(#p-su:checked)):not(:has(#p-pequena:checked))) #incorrecto{
+    display: flex;
+}
+
+
+/* foco visible al navegar con la tecla Tab */
+#p-mi:focus-visible ~ .banco-palabras label[for="p-mi"],
+#p-hijo:focus-visible ~ .banco-palabras label[for="p-hijo"],
+#p-es:focus-visible ~ .banco-palabras label[for="p-es"],
+#p-pequeno:focus-visible ~ .banco-palabras label[for="p-pequeno"],
+#p-su:focus-visible ~ .banco-palabras label[for="p-su"],
+#p-pequena:focus-visible ~ .banco-palabras label[for="p-pequena"]{
+    outline: 0.15rem solid var(--texto);
+    outline-offset: 0.1rem;
+}
+
+/* ---------------------------------------------------
+   Inglés: "The train is red"
+   Unidad 3 - Viajes / Leccion 1 - Transporte / NIVEL 1
+   Correcta: ¿Puedo + ver + el + menú, + por + favor?
+             (sin cuenta/agua/mesa)
+   --------------------------------------------------- */
+#p-el:checked ~ .pregunta .slot-el,
+#p-tren:checked ~ .pregunta .slot-tren,
+#p-es:checked ~ .pregunta .slot-es,
+#p-rojo:checked ~ .pregunta .slot-rojo,
+#p-azul:checked ~ .pregunta .slot-azul,
+#p-auto:checked ~ .pregunta .slot-auto,
+#p-bicicleta:checked ~ .pregunta .slot-bicicleta,
+#p-ella:checked ~ .pregunta .slot-ella,
+#p-mi:checked ~ .pregunta .slot-mi{
+    display: block;
+}
+
+#p-el:checked ~ .banco-palabras label[for="p-el"],
+#p-tren:checked ~ .banco-palabras label[for="p-tren"],
+#p-es:checked ~ .banco-palabras label[for="p-es"],
+#p-rojo:checked ~ .banco-palabras label[for="p-rojo"],
+#p-azul:checked ~ .banco-palabras label[for="p-azul"],
+#p-auto:checked ~ .banco-palabras label[for="p-auto"],
+#p-bicicleta:checked ~ .banco-palabras label[for="p-bicicleta"],
+#p-ella:checked ~ .banco-palabras label[for="p-ella"],
+#p-mi:checked ~ .banco-palabras label[for="p-mi"]{
+    background-color: #dcdad7;
+    color: transparent;
+    border-color: transparent;
+}
+
+body.leccion-ingles-nivel1:has(#p-el:checked):has(#p-tren:checked):has(#p-es:checked):has(#p-rojo:checked):not(:has(#p-azul:checked)):not(:has(#p-auto:checked)):not(:has(#p-bicicleta:checked)):not(:has(#p-ella:checked)):not(:has(#p-mi:checked)) #correcto:target{
+    display: flex;
+}
+
+body.leccion-ingles-nivel1:has(#correcto:target):not(:has(#p-el:checked):has(#p-tren:checked):has(#p-es:checked):has(#p-rojo:checked):not(:has(#p-azul:checked)):not(:has(#p-auto:checked)):not(:has(#p-bicicleta:checked)):not(:has(#p-ella:checked)):not(:has(#p-mi:checked))) #incorrecto{
+    display: flex;
+}
+
+#p-el:focus-visible ~ .banco-palabras label[for="p-el"],
+#p-tren:focus-visible ~ .banco-palabras label[for="p-tren"],
+#p-es:focus-visible ~ .banco-palabras label[for="p-es"],
+#p-rojo:focus-visible ~ .banco-palabras label[for="p-rojo"],
+#p-azul:focus-visible ~ .banco-palabras label[for="p-azul"],
+#p-auto:focus-visible ~ .banco-palabras label[for="p-auto"],
+#p-bicicleta:focus-visible ~ .banco-palabras label[for="p-bicicleta"],
+#p-ella:focus-visible ~ .banco-palabras label[for="p-ella"],
+#p-mi:focus-visible ~ .banco-palabras label[for="p-mi"]{
+    outline: 0.15rem solid var(--texto);
+    outline-offset: 0.1rem;
+}
+
+/* ---------------------------------------------------
+   Inglés: "The train is red"
+   Unidad 3 - Viajes / Leccion 1 - Transporte / NIVEL 2
+   Correcta: ¿Puedo + ver + el + menú, + por + favor?
+             (sin cuenta/agua/mesa)
+   --------------------------------------------------- */
+#p-me:checked ~ .pregunta .slot-me,
+#p-voy:checked ~ .pregunta .slot-voy,
+#p-a:checked ~ .pregunta .slot-a,
+#p-tomar:checked ~ .pregunta .slot-tomar,
+#p-el:checked ~ .pregunta .slot-el,
+#p-colectivo:checked ~ .pregunta .slot-colectivo,
+#p-avion:checked ~ .pregunta .slot-avion,
+#p-ir:checked ~ .pregunta .slot-ir,
+#p-tren:checked ~ .pregunta .slot-tren{
+    display: block;
+}
+
+#p-me:checked ~ .banco-palabras label[for="p-me"],
+#p-voy:checked ~ .banco-palabras label[for="p-voy"],
+#p-a:checked ~ .banco-palabras label[for="p-a"],
+#p-tomar:checked ~ .banco-palabras label[for="p-tomar"],
+#p-el:checked ~ .banco-palabras label[for="p-el"],
+#p-colectivo:checked ~ .banco-palabras label[for="p-colectivo"],
+#p-avion:checked ~ .banco-palabras label[for="p-avion"],
+#p-ir:checked ~ .banco-palabras label[for="p-ir"],
+#p-tren:checked ~ .banco-palabras label[for="p-tren"]{
+    background-color: #dcdad7;
+    color: transparent;
+    border-color: transparent;
+}
+
+body.leccion-ingles-nivel2:has(#p-me:checked):has(#p-voy:checked):has(#p-a:checked):has(#p-tomar:checked):has(#p-el:checked):has(#p-colectivo:checked):not(:has(#p-avion:checked)):not(:has(#p-ir:checked)):not(:has(#p-tren:checked)) #correcto:target{
+    display: flex;
+}
+
+body.leccion-ingles-nivel2:has(#correcto:target):not(:has(#p-me:checked):has(#p-voy:checked):has(#p-a:checked):has(#p-tomar:checked):has(#p-el:checked):has(#p-colectivo:checked)):not(:has(#p-azul:checked)):not(:has(#p-auto:checked)):not(:has(#p-bicicleta:checked)):not(:has(#p-ella:checked)):not(:has(#p-mi:checked)) #incorrecto{
+    display: flex;
+}
+
+#p-me:focus-visible ~ .banco-palabras label[for="p-me"],
+#p-voy:focus-visible ~ .banco-palabras label[for="p-voy"],
+#p-a:focus-visible ~ .banco-palabras label[for="p-a"],
+#p-tomar:focus-visible ~ .banco-palabras label[for="p-tomar"],
+#p-el:focus-visible ~ .banco-palabras label[for="p-el"],
+#p-colectivo:focus-visible ~ .banco-palabras label[for="p-colectivo"],
+#p-avion:focus-visible ~ .banco-palabras label[for="p-avion"],
+#p-ir:focus-visible ~ .banco-palabras label[for="p-ir"],
+#p-tren:focus-visible ~ .banco-palabras label[for="p-tren"]{
+    outline: 0.15rem solid var(--texto);
+    outline-offset: 0.1rem;
+}
+
+/* ---------------------------------------------------
+   Inglés: "The train is red"
+   Unidad 3 - Viajes / Leccion 1 - Transporte / NIVEL 3
+   Correcta: ¿Puedo + ver + el + menú, + por + favor?
+             (sin cuenta/agua/mesa)
+   --------------------------------------------------- */
+#p-me:checked ~ .pregunta .slot-me,
+#p-gusta:checked ~ .pregunta .slot-gusta,
+#p-andar:checked ~ .pregunta .slot-andar,
+#p-en:checked ~ .pregunta .slot-en,
+#p-moto:checked ~ .pregunta .slot-moto,
+#p-no:checked ~ .pregunta .slot-no,
+#p-cuatriciclo:checked ~ .pregunta .slot-cuatriciclo,
+#p-lavar:checked ~ .pregunta .slot-lavar,
+#p-odio:checked ~ .pregunta .slot-odio{
+    display: block;
+}
+
+#p-me:checked ~ .banco-palabras label[for="p-me"],
+#p-gusta:checked ~ .banco-palabras label[for="p-gusta"],
+#p-andar:checked ~ .banco-palabras label[for="p-andar"],
+#p-en:checked ~ .banco-palabras label[for="p-en"],
+#p-moto:checked ~ .banco-palabras label[for="p-moto"],
+#p-no:checked ~ .banco-palabras label[for="p-no"],
+#p-cuatriciclo:checked ~ .banco-palabras label[for="p-cuatriciclo"],
+#p-lavar:checked ~ .banco-palabras label[for="p-lavar"],
+#p-odio:checked ~ .banco-palabras label[for="p-odio"]{
+    background-color: #dcdad7;
+    color: transparent;
+    border-color: transparent;
+}
+
+body.leccion-ingles-nivel3:has(#p-me:checked):has(#p-gusta:checked):has(#p-andar:checked):has(#p-en:checked):has(#p-moto:checked):not(:has(#p-no:checked)):not(:has(#p-cuatriciclo:checked)):not(:has(#p-lavar:checked)):not(:has(#p-odio:checked)) #correcto:target{
+    display: flex;
+}
+
+body.leccion-ingles-nivel3:has(#correcto:target):not(:has(#p-me:checked):has(#p-gusta:checked):has(#p-andar:checked):has(#p-en:checked):has(#p-moto:checked):not(:has(#p-no:checked)):not(:has(#p-cuatriciclo:checked)):not(:has(#p-lavar:checked)):not(:has(#p-odio:checked))) #incorrecto{
+    display: flex;
+}
+
+#p-me:focus-visible ~ .banco-palabras label[for="p-me"],
+#p-gusta:focus-visible ~ .banco-palabras label[for="p-gusta"],
+#p-andar:focus-visible ~ .banco-palabras label[for="p-andar"],
+#p-en:focus-visible ~ .banco-palabras label[for="p-en"],
+#p-moto:focus-visible ~ .banco-palabras label[for="p-moto"],
+#p-no:focus-visible ~ .banco-palabras label[for="p-no"],
+#p-cuatriciclo:focus-visible ~ .banco-palabras label[for="p-cuatriciclo"],
+#p-lavar:focus-visible ~ .banco-palabras label[for="p-lavar"],
+#p-odio:focus-visible ~ .banco-palabras label[for="p-odio"]{
+    outline: 0.15rem solid var(--texto);
+    outline-offset: 0.1rem;
+}
+
+/* ---------------------------------------------------
+   Inglés: "The boat floats on the water"
+   Unidad 3 - Viajes / Leccion 1 - Transporte / NIVEL 4
+   Correcta: ¿Puedo + ver + el + menú, + por + favor?
+             (sin cuenta/agua/mesa)
+   --------------------------------------------------- */
+#p-el:checked ~ .pregunta .slot-el,
+#p-barco:checked ~ .pregunta .slot-barco,
+#p-es:checked ~ .pregunta .slot-es,
+#p-gigante:checked ~ .pregunta .slot-gigante,
+#p-pequeno:checked ~ .pregunta .slot-pequeno,
+#p-auto:checked ~ .pregunta .slot-auto,
+#p-bicicleta:checked ~ .pregunta .slot-bicicleta,
+#p-ella:checked ~ .pregunta .slot-ella,
+#p-mi:checked ~ .pregunta .slot-mi{
+    display: block;
+}
+
+#p-el:checked ~ .banco-palabras label[for="p-el"],
+#p-barco:checked ~ .banco-palabras label[for="p-barco"],
+#p-es:checked ~ .banco-palabras label[for="p-es"],
+#p-gigante:checked ~ .banco-palabras label[for="p-gigante"],
+#p-pequeno:checked ~ .banco-palabras label[for="p-pequeno"],
+#p-auto:checked ~ .banco-palabras label[for="p-auto"],
+#p-bicicleta:checked ~ .banco-palabras label[for="p-bicicleta"],
+#p-ella:checked ~ .banco-palabras label[for="p-ella"],
+#p-mi:checked ~ .banco-palabras label[for="p-mi"]{
+    background-color: #dcdad7;
+    color: transparent;
+    border-color: transparent;
+}
+
+body.leccion-ingles-nivel4:has(#p-el:checked):has(#p-barco:checked):has(#p-es:checked):has(#p-gigante:checked):not(:has(#p-pequeno:checked)):not(:has(#p-auto:checked)):not(:has(#p-bicicleta:checked)):not(:has(#p-ella:checked)):not(:has(#p-mi:checked)) #correcto:target{
+    display: flex;
+}
+
+body.leccion-ingles-nivel4:has(#correcto:target):not(:has(#p-el:checked):has(#p-barco:checked):has(#p-es:checked):has(#p-gigante:checked):not(:has(#p-pequeno:checked)):not(:has(#p-auto:checked)):not(:has(#p-bicicleta:checked)):not(:has(#p-ella:checked)):not(:has(#p-mi:checked))) #incorrecto{
+    display: flex;
+}
+
+#p-el:focus-visible ~ .banco-palabras label[for="p-el"],
+#p-barco:focus-visible ~ .banco-palabras label[for="p-barco"],
+#p-es:focus-visible ~ .banco-palabras label[for="p-es"],
+#p-gigante:focus-visible ~ .banco-palabras label[for="p-gigante"],
+#p-pequeno:focus-visible ~ .banco-palabras label[for="p-pequeno"],
+#p-auto:focus-visible ~ .banco-palabras label[for="p-auto"],
+#p-bicicleta:focus-visible ~ .banco-palabras label[for="p-bicicleta"],
+#p-ella:focus-visible ~ .banco-palabras label[for="p-ella"],
+#p-mi:focus-visible ~ .banco-palabras label[for="mi"]{
     outline: 0.15rem solid var(--texto);
     outline-offset: 0.1rem;
 }
 
 /* ---------------------------------------------------
    Chino: "早上好，你好吗？"
+   Unidad 1- Saludos / Leccion 1 - Frases Básicas / Nivel 1
    Correcta: Buenos + días, + ¿cómo + estás?
              (sin Buenas/noches/Gracias)
    --------------------------------------------------- */
@@ -366,11 +666,11 @@ body.leccion-ingles:has(#correcto:target):not(:has(#p-puedo:checked):has(#p-ver:
     border-color: transparent;
 }
 
-body.leccion-chino:has(#p-buenos:checked):has(#p-dias:checked):has(#p-como:checked):has(#p-estas:checked):not(:has(#p-buenas:checked)):not(:has(#p-noches:checked)):not(:has(#p-gracias:checked)) #correcto:target{
+body.leccion-chino-nivel1:has(#p-buenos:checked):has(#p-dias:checked):has(#p-como:checked):has(#p-estas:checked):not(:has(#p-buenas:checked)):not(:has(#p-noches:checked)):not(:has(#p-gracias:checked)) #correcto:target{
     display: flex;
 }
 
-body.leccion-chino:has(#correcto:target):not(:has(#p-buenos:checked):has(#p-dias:checked):has(#p-como:checked):has(#p-estas:checked):not(:has(#p-buenas:checked)):not(:has(#p-noches:checked)):not(:has(#p-gracias:checked))) #incorrecto{
+body.leccion-chino-nivel1:has(#correcto:target):not(:has(#p-buenos:checked):has(#p-dias:checked):has(#p-como:checked):has(#p-estas:checked):not(:has(#p-buenas:checked)):not(:has(#p-noches:checked)):not(:has(#p-gracias:checked))) #incorrecto{
     display: flex;
 }
 
@@ -381,6 +681,142 @@ body.leccion-chino:has(#correcto:target):not(:has(#p-buenos:checked):has(#p-dias
 #p-buenas:focus-visible ~ .banco-palabras label[for="p-buenas"],
 #p-noches:focus-visible ~ .banco-palabras label[for="p-noches"],
 #p-gracias:focus-visible ~ .banco-palabras label[for="p-gracias"]{
+    outline: 0.15rem solid var(--texto);
+    outline-offset: 0.1rem;
+}
+
+/* ---------------------------------------------------
+   Chino Mandarín: "你好，我叫Carlos。"
+   Unidad 1- Saludos / Leccion 1 - Frases Básicas / Nivel 2
+   Correcta: Hola+mi+nombre+es+Carlos (sin tu/María)
+   --------------------------------------------------- */
+#p-s1-hola:checked ~ .pregunta .slot-s1-hola,
+#p-s1-mi:checked ~ .pregunta .slot-s1-mi,
+#p-s1-nombre:checked ~ .pregunta .slot-s1-nombre,
+#p-s1-es:checked ~ .pregunta .slot-s1-es,
+#p-s1-carlos:checked ~ .pregunta .slot-s1-carlos,
+#p-s1-tu:checked ~ .pregunta .slot-s1-tu,
+#p-s1-maria:checked ~ .pregunta .slot-s1-maria{
+    display: block;
+}
+
+#p-s1-hola:checked ~ .banco-palabras label[for="p-s1-hola"],
+#p-s1-mi:checked ~ .banco-palabras label[for="p-s1-mi"],
+#p-s1-nombre:checked ~ .banco-palabras label[for="p-s1-nombre"],
+#p-s1-es:checked ~ .banco-palabras label[for="p-s1-es"],
+#p-s1-carlos:checked ~ .banco-palabras label[for="p-s1-carlos"],
+#p-s1-tu:checked ~ .banco-palabras label[for="p-s1-tu"],
+#p-s1-maria:checked ~ .banco-palabras label[for="p-s1-maria"]{
+    background-color: #dcdad7;
+    color: transparent;
+    border-color: transparent;
+}
+
+body.leccion-chino-nivel2:has(#p-s1-hola:checked):has(#p-s1-mi:checked):has(#p-s1-nombre:checked):has(#p-s1-es:checked):has(#p-s1-carlos:checked):not(:has(#p-s1-tu:checked)):not(:has(#p-s1-maria:checked)) #correcto:target{
+    display: flex;
+}
+
+body.leccion-chino-nivel2:has(#correcto:target):not(:has(#p-s1-hola:checked):has(#p-s1-mi:checked):has(#p-s1-nombre:checked):has(#p-s1-es:checked):has(#p-s1-carlos:checked):not(:has(#p-s1-tu:checked)):not(:has(#p-s1-maria:checked))) #incorrecto{
+    display: flex;
+}
+
+/* foco visible al navegar con la tecla Tab */
+#p-s1-hola:focus-visible ~ .banco-palabras label[for="p-s1-hola"],
+#p-s1-mi:focus-visible ~ .banco-palabras label[for="p-s1-mi"],
+#p-s1-nombre:focus-visible ~ .banco-palabras label[for="p-s1-nombre"],
+#p-s1-es:focus-visible ~ .banco-palabras label[for="p-s1-es"],
+#p-s1-carlos:focus-visible ~ .banco-palabras label[for="p-s1-carlos"],
+#p-s1-tu:focus-visible ~ .banco-palabras label[for="p-s1-tu"],
+#p-s1-maria:focus-visible ~ .banco-palabras label[for="p-s1-maria"]{
+    outline: 0.15rem solid var(--texto);
+    outline-offset: 0.1rem;
+}
+
+
+/* ---------------------------------------------------
+   Chino Mandarín: "我很好，你呢？"
+   Unidad 1- Saludos / Leccion X - Presentaciones / Nivel 3
+   Correcta: Estoy+bien+y+vos (sin mal/él)
+   --------------------------------------------------- */
+#p-s2-estoy:checked ~ .pregunta .slot-s2-estoy,
+#p-s2-bien:checked ~ .pregunta .slot-s2-bien,
+#p-s2-y:checked ~ .pregunta .slot-s2-y,
+#p-s2-vos:checked ~ .pregunta .slot-s2-vos,
+#p-s2-mal:checked ~ .pregunta .slot-s2-mal,
+#p-s2-el:checked ~ .pregunta .slot-s2-el{
+    display: block;
+}
+
+#p-s2-estoy:checked ~ .banco-palabras label[for="p-s2-estoy"],
+#p-s2-bien:checked ~ .banco-palabras label[for="p-s2-bien"],
+#p-s2-y:checked ~ .banco-palabras label[for="p-s2-y"],
+#p-s2-vos:checked ~ .banco-palabras label[for="p-s2-vos"],
+#p-s2-mal:checked ~ .banco-palabras label[for="p-s2-mal"],
+#p-s2-el:checked ~ .banco-palabras label[for="p-s2-el"]{
+    background-color: #dcdad7;
+    color: transparent;
+    border-color: transparent;
+}
+
+body.leccion-chino-nivel3:has(#p-s2-estoy:checked):has(#p-s2-bien:checked):has(#p-s2-y:checked):has(#p-s2-vos:checked):not(:has(#p-s2-mal:checked)):not(:has(#p-s2-el:checked)) #correcto:target{
+    display: flex;
+}
+
+body.leccion-chino-nivel3:has(#correcto:target):not(:has(#p-s2-estoy:checked):has(#p-s2-bien:checked):has(#p-s2-y:checked):has(#p-s2-vos:checked):not(:has(#p-s2-mal:checked)):not(:has(#p-s2-el:checked))) #incorrecto{
+    display: flex;
+}
+
+/* foco visible al navegar con la tecla Tab */
+#p-s2-estoy:focus-visible ~ .banco-palabras label[for="p-s2-estoy"],
+#p-s2-bien:focus-visible ~ .banco-palabras label[for="p-s2-bien"],
+#p-s2-y:focus-visible ~ .banco-palabras label[for="p-s2-y"],
+#p-s2-vos:focus-visible ~ .banco-palabras label[for="p-s2-vos"],
+#p-s2-mal:focus-visible ~ .banco-palabras label[for="p-s2-mal"],
+#p-s2-el:focus-visible ~ .banco-palabras label[for="p-s2-el"]{
+    outline: 0.15rem solid var(--texto);
+    outline-offset: 0.1rem;
+}
+
+/* ---------------------------------------------------
+   Chino Mandarín: "你叫什么名字？"
+   Unidad 1- Saludos / Leccion X - Presentaciones / Nivel 4
+   Correcta: Como+es+tu+nombre (sin mi/Cuál)
+   --------------------------------------------------- */
+#p-s3-como:checked ~ .pregunta .slot-s3-como,
+#p-s3-es:checked ~ .pregunta .slot-s3-es,
+#p-s3-tu:checked ~ .pregunta .slot-s3-tu,
+#p-s3-nombre:checked ~ .pregunta .slot-s3-nombre,
+#p-s3-mi:checked ~ .pregunta .slot-s3-mi,
+#p-s3-cual:checked ~ .pregunta .slot-s3-cual{
+    display: block;
+}
+
+#p-s3-como:checked ~ .banco-palabras label[for="p-s3-como"],
+#p-s3-es:checked ~ .banco-palabras label[for="p-s3-es"],
+#p-s3-tu:checked ~ .banco-palabras label[for="p-s3-tu"],
+#p-s3-nombre:checked ~ .banco-palabras label[for="p-s3-nombre"],
+#p-s3-mi:checked ~ .banco-palabras label[for="p-s3-mi"],
+#p-s3-cual:checked ~ .banco-palabras label[for="p-s3-cual"]{
+    background-color: #dcdad7;
+    color: transparent;
+    border-color: transparent;
+}
+
+body.leccion-chino-nivel4:has(#p-s3-como:checked):has(#p-s3-es:checked):has(#p-s3-tu:checked):has(#p-s3-nombre:checked):not(:has(#p-s3-mi:checked)):not(:has(#p-s3-cual:checked)) #correcto:target{
+    display: flex;
+}
+
+body.leccion-chino-nivel4:has(#correcto:target):not(:has(#p-s3-como:checked):has(#p-s3-es:checked):has(#p-s3-tu:checked):has(#p-s3-nombre:checked):not(:has(#p-s3-mi:checked)):not(:has(#p-s3-cual:checked))) #incorrecto{
+    display: flex;
+}
+
+/* foco visible al navegar con la tecla Tab */
+#p-s3-como:focus-visible ~ .banco-palabras label[for="p-s3-como"],
+#p-s3-es:focus-visible ~ .banco-palabras label[for="p-s3-es"],
+#p-s3-tu:focus-visible ~ .banco-palabras label[for="p-s3-tu"],
+#p-s3-nombre:focus-visible ~ .banco-palabras label[for="p-s3-nombre"],
+#p-s3-mi:focus-visible ~ .banco-palabras label[for="p-s3-mi"],
+#p-s3-cual:focus-visible ~ .banco-palabras label[for="p-s3-cual"]{
     outline: 0.15rem solid var(--texto);
     outline-offset: 0.1rem;
 }
@@ -483,17 +919,26 @@ body.leccion-chino:has(#correcto:target):not(:has(#p-buenos:checked):has(#p-dias
 @media (max-width: 40rem){
 
     .barra-leccion{
-        padding: 3.5rem 1rem 1rem;      /* arriba: lugar para la X */
+        padding: 3.5rem 1rem 1rem;
+        margin-top: 2rem;
         justify-content: center;
         text-align: center;
     }
 
+    .ejercicio{
+        padding: 0 1rem;
+    }
+
+    .tarjeta-ejercicio{
+        padding: 1.2rem;
+    }
+
     .estado-leccion{
-        min-width: 100%;                /* la barra ocupa su propia línea */
+        min-width: 100%;
     }
 
     .pregunta{
-        flex-direction: column;         /* Poli arriba, enunciado abajo */
+        flex-direction: column;
         text-align: center;
     }
 
@@ -501,7 +946,8 @@ body.leccion-chino:has(#correcto:target):not(:has(#p-buenos:checked):has(#p-dias
         width: 7rem;
     }
 
-    .respuesta{
+    .respuesta,
+    .banco{
         justify-content: center;
     }
 
@@ -514,7 +960,63 @@ body.leccion-chino:has(#correcto:target):not(:has(#p-buenos:checked):has(#p-dias
     .resultado a{
         text-align: center;
     }
+
+    main.ejercicio > .boton-comprobar{
+        margin-bottom: 6rem;
+    }
 }
+
+/*  OPCION 2 PARA QUE EL CARTEL DE CORRECTO O INCORRECTO NO TAPE TODO
+
+@media (max-width: 40rem){
+
+    .barra-leccion{
+        padding: 3.5rem 1rem 1rem;      
+        justify-content: center;
+        text-align: center;
+    }
+
+    .estado-leccion{
+        min-width: 100%;                
+    }
+
+    .pregunta{
+        flex-direction: column;         
+        text-align: center;
+    }
+
+    .imagen-poli{
+        width: 7rem;
+    }
+
+    .respuesta{
+        justify-content: center;
+    }
+
+    .resultado{
+        position: static;      /* NUEVO: deja de estar pegado a la pantalla */
+        /*margin-top: 1rem;       /*NUEVO */
+       /* border-radius: 1rem;   /* NUEVO */
+        /*border: 0.15rem solid; /* NUEVO: se ve completo, no solo arriba 
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .resultado a{
+        text-align: center;
+    }
+
+    .exito{                    
+        border-color: var(--verde);
+    }
+
+    .error{                    
+        border-color: var(--rojo);
+    }
+}
+
+*/
 
 /* =====================================================
    MODO "LECCIÓN COMPLETADA" (solo lectura)
