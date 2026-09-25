@@ -1036,9 +1036,9 @@ body.leccion-chino-nivel4:has(#correcto:target):not(:has(#p-s3-como:checked):has
     padding: 1rem 1.5rem 1rem 3.5rem;   /* a la izquierda: lugar para la X */
     border-radius: 1.2rem;
     background-color: var(--verde);
-    zoom: 0.85;
-    
+    zoom: 0.85; 
 }
+
 /* Ya no hay nada para elegir: se esconde el banco de palabras */
 body.completada .banco-palabras{
     display: none;
@@ -1079,4 +1079,25 @@ body.completada .slot{
 body.completada #correcto{
     display: flex;
 }
- 
+
+.botones-repaso{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    
+
+}
+
+.boton-siguiente-anterior{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12rem;
+    padding:0.5rem;
+    background-color: #8fc97f;
+    color:#ffffff;
+    border-radius: 2rem;
+    margin:1rem;
+    box-sizing: border-box;
+}
+
