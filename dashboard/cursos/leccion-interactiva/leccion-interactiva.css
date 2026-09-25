@@ -787,7 +787,7 @@ body.leccion-chino-nivel3:has(#correcto:target):not(:has(#p-s2-estoy:checked):ha
 #p-s3-tu:checked ~ .pregunta .slot-s3-tu,
 #p-s3-nombre:checked ~ .pregunta .slot-s3-nombre,
 #p-s3-mi:checked ~ .pregunta .slot-s3-mi,
-#p-s3-cual:checked ~ .pregunta .slot-s3-cual{
+#p-s3-que:checked ~ .pregunta .slot-s3-que{
     display: block;
 }
 
@@ -796,17 +796,17 @@ body.leccion-chino-nivel3:has(#correcto:target):not(:has(#p-s2-estoy:checked):ha
 #p-s3-tu:checked ~ .banco-palabras label[for="p-s3-tu"],
 #p-s3-nombre:checked ~ .banco-palabras label[for="p-s3-nombre"],
 #p-s3-mi:checked ~ .banco-palabras label[for="p-s3-mi"],
-#p-s3-cual:checked ~ .banco-palabras label[for="p-s3-cual"]{
+#p-s3-que:checked ~ .banco-palabras label[for="p-s3-que"]{
     background-color: #dcdad7;
     color: transparent;
     border-color: transparent;
 }
 
-body.leccion-chino-nivel4:has(#p-s3-como:checked):has(#p-s3-es:checked):has(#p-s3-tu:checked):has(#p-s3-nombre:checked):not(:has(#p-s3-mi:checked)):not(:has(#p-s3-cual:checked)) #correcto:target{
+body.leccion-chino-nivel4:has(#p-s3-como:checked):has(#p-s3-es:checked):has(#p-s3-tu:checked):has(#p-s3-nombre:checked):not(:has(#p-s3-mi:checked)):not(:has(#p-s3-que:checked)) #correcto:target{
     display: flex;
 }
 
-body.leccion-chino-nivel4:has(#correcto:target):not(:has(#p-s3-como:checked):has(#p-s3-es:checked):has(#p-s3-tu:checked):has(#p-s3-nombre:checked):not(:has(#p-s3-mi:checked)):not(:has(#p-s3-cual:checked))) #incorrecto{
+body.leccion-chino-nivel4:has(#correcto:target):not(:has(#p-s3-como:checked):has(#p-s3-es:checked):has(#p-s3-tu:checked):has(#p-s3-nombre:checked):not(:has(#p-s3-mi:checked)):not(:has(#p-s3-que:checked))) #incorrecto{
     display: flex;
 }
 
@@ -816,7 +816,7 @@ body.leccion-chino-nivel4:has(#correcto:target):not(:has(#p-s3-como:checked):has
 #p-s3-tu:focus-visible ~ .banco-palabras label[for="p-s3-tu"],
 #p-s3-nombre:focus-visible ~ .banco-palabras label[for="p-s3-nombre"],
 #p-s3-mi:focus-visible ~ .banco-palabras label[for="p-s3-mi"],
-#p-s3-cual:focus-visible ~ .banco-palabras label[for="p-s3-cual"]{
+#p-s3-que:focus-visible ~ .banco-palabras label[for="p-s3-que"]{
     outline: 0.15rem solid var(--texto);
     outline-offset: 0.1rem;
 }
