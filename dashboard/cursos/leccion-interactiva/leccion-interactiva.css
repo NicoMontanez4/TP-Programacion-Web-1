@@ -32,12 +32,12 @@
 /* botón de salida: círculo rojo con la X blanca, en la esquina */
 .boton-salir{
     position: absolute;
-    top: 0.5rem;
-    left: 0.5rem;
+    top: 1rem;
+    left: 1rem;
     display: grid;
     place-items: center;
-    width: 1.2rem;                      /* tamaño cómodo para tocar */
-    height: 1.2rem;
+    width: 1.6rem;                      /* tamaño cómodo para tocar */
+    height: 1.6rem;
     border-radius: 50%;
     background-color: var(--rojo);
     color: white;

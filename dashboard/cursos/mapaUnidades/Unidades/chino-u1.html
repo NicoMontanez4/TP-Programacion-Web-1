@@ -7,6 +7,7 @@
         <title>Unidad 1 - Chino</title>
         <link rel="stylesheet" href="../../../global.css" />
         <link rel="stylesheet" href="../mapaUnidades.css" />
+        <link rel="stylesheet" href="unidades.css" />
     </head>
 
     <body>
@@ -104,41 +105,219 @@
 
         <main>
 
-            <!-- Seccion introductoria - Bandera + Titulo idioma + texto 
+             <!-- Seccion introductoria - Bandera + Titulo idioma + texto 
              + barra de progreso del lado izquierdo + foto del derecho-->
 
             <section class="encabezado-curso">
+
                 <section class="info-curso">
                     <section class="titulo-curso">
                         <img
                             class="imagen-bandera"
                             src="../../../../imagenes/BanderaChina.png"
-                            alt="Bandera China"
+                            alt="Bandera de China"
                         />
                         <h1>Chino</h1>
                     </section>
-
-                    <p class="mensaje">
-                        Comenza tus lecciones<br />
-                        Tu primer lección es <strong>Frases Básicas</strong>.
-                    </p>
-
-                    <section class="progreso-curso">
-                        <label for="progreso-ingles"
-                            >Progreso: 0% · Nivel: Inicial (HSK 1)</label
-                        >
-                        <progress value="0" max="100">45%</progress>
-                    </section>
+                    
                 </section>
 
-                <img
-                    class="imagen-unidad-Poli"
-                    src="../../../../imagenes/CursoChino.png"
-                    alt="Poli curso chino"
-                />
+                <!-- Titulo de unidad + descripcion-->
+
+                <article class="titulo-unidad">
+                    
+                    <h2> Unidad 1 - Saludos</h2>
+                    <p class="texto-unidad">Aprende a presentarte, saludar y mantener conversaciones básicas.</p>
+                
+                </article>
+
+               
             </section>
 
+            <section class="unidad">
+
+                
+                <!-- Tarjeta de la unidad = Img Poli + recorrido de lecciones-->
+
+                <section class="tarjeta-unidad">
+
+                    <section class="recorrdio-imagen">
+
+                        <img class="imagen-unidad"
+                        src= "../../../../imagenes/Poli-leyendo.png" 
+                        alt="Poli curso ingles"
+                        >
+
+                        <a class="volver-a-cursos" href="../mapaUnidadesChino.html">Volver a cursos</a>
+
+                    </section>
+
+                    <!--CONTENEDOR DE TODO EL RECORRIDO DE LECCIONES DE LA UNIDAD-->
+
+                    <article class="recorrido-lecciones-unidad">
+
+  
+                        <!-- BOTONES DE LECCIONES CON HOVER-->
+
+                        <!-- Lección en curso -->
+    
+                        <article class="contenedor leccion-en-curso-recorrido">
+
+                            <h3 class="titulo-leccion">Frases Básicas</h3>
+
+                            <span class="burbuja-emergente">Comenzar</span>
+
+                            <a class="boton-leccion" href="../../leccion-interactiva/chino-u1-l1.html" aria-label="Repasar lección 1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    fill="#ffffff" viewBox="0 0 24 24">
+                                    <path d="M9 15.59 4.71 11.3 3.3 12.71l5 5c.2.2.45.29.71.29s.51-.1.71-.29l11-11-1.41-1.41L9.02 15.59Z"></path>
+                                </svg>
+                            </a>
+
+                            <article class="progreso-leccion">
+                                <div class="progreso-leccion-porcentaje" style="width: 100%;"></div>
+                            </article>
+
+                        </article>
+
+                        <!-- ICONO DE FLECHA ENTRE LECCIONES-->
+                                <span class="flecha-recorrido">
+                                    
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        fill="#f06c00" viewBox="0 0 24 24">
+                                        <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                                        <path d="M12 2C6.49 2 2 6.49 2 12s4.49 10 10 10 10-4.49 10-10S17.51 2 12 2M7 14l5-6 5 6z"></path>
+                                    </svg>
+
+                                </span>
+
+                        <article class="contenedor leccion-bloqueada-recorrido">
+
+                            <h3 class="titulo-leccion">Presentaciones</h3>
+
+                            <span class="burbuja-emergente">Bloqueado</span>
+
+                            <button class="boton-leccion" type="button">
+
+                                <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24"  
+                                    fill="#ffffff" viewBox="0 0 24 24" >
+                                    <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                                    <path d="M6 22h12c1.1 0 2-.9 2-2v-9c0-1.1-.9-2-2-2h-1V7c0-2.76-2.24-5-5-5S7 4.24 7 7v2H6c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2M9 7c0-1.65 1.35-3 3-3s3 1.35 3 3v2H9z"></path>
+                                </svg>
+
+                            </button>
+
+                            <article class="progreso-leccion">
+                                <div class="progreso-leccion-porcentaje" style="width: 100%;"></div>
+                            </article>
+
+                        </article>
+
+                        <!-- ICONO DE FLECHA ENTRE LECCIONES-->
+                                <span class="flecha-recorrido">
+                                    
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        fill="#f06c00" viewBox="0 0 24 24">
+                                        <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                                        <path d="M12 2C6.49 2 2 6.49 2 12s4.49 10 10 10 10-4.49 10-10S17.51 2 12 2M7 14l5-6 5 6z"></path>
+                                    </svg>
+
+                                </span>
+
+
+                        <!-- COFRE DENTRO DEL RECORRIDO CON BURBUJA EMERGENTE-->   
+                            <span class="cofre-contenedor">
+                                
+                                <span class="burbuja-emergente"><svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24"  
+                                    fill="currentColor" viewBox="0 0 24 24" >
+                                    <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                                    <path d="M6 22h12c1.1 0 2-.9 2-2v-9c0-1.1-.9-2-2-2h-1V7c0-2.76-2.24-5-5-5S7 4.24 7 7v2H6c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2M9 7c0-1.65 1.35-3 3-3s3 1.35 3 3v2H9z"></path>
+                                    </svg></span>
+                                <img class="cofre-cerrado" src="../../../../imagenes/Cofre-Cerrado.png" alt="Imagen de un cofre abierto">
+                            
+                            </span>
+
+                            <!-- ICONO DE FLECHA ENTRE LECCIONES-->
+                                <span class="flecha-recorrido">
+                                    
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        fill="#f06c00" viewBox="0 0 24 24">
+                                        <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                                        <path d="M12 2C6.49 2 2 6.49 2 12s4.49 10 10 10 10-4.49 10-10S17.51 2 12 2M7 14l5-6 5 6z"></path>
+                                    </svg>
+
+                                </span>
+
+                        <article class="contenedor leccion-bloqueada-recorrido">
+
+                            <h3 class="titulo-leccion">Vocabulario Familiar</h3>
+
+                            <span class="burbuja-emergente">Bloqueado</span>
+
+                            <button class="boton-leccion" type="button">
+
+                                <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24"  
+                                    fill="#ffffff" viewBox="0 0 24 24" >
+                                    <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                                    <path d="M6 22h12c1.1 0 2-.9 2-2v-9c0-1.1-.9-2-2-2h-1V7c0-2.76-2.24-5-5-5S7 4.24 7 7v2H6c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2M9 7c0-1.65 1.35-3 3-3s3 1.35 3 3v2H9z"></path>
+                                </svg>
+
+                            </button>
+
+                            <article class="progreso-leccion">
+                                <div class="progreso-leccion-porcentaje" style="width: 100%;"></div>
+                            </article>
+
+                        </article>
+
+                        <!-- ICONO DE FLECHA ENTRE LECCIONES-->
+                                <span class="flecha-recorrido">
+                                    
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        fill="#f06c00" viewBox="0 0 24 24">
+                                        <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                                        <path d="M12 2C6.49 2 2 6.49 2 12s4.49 10 10 10 10-4.49 10-10S17.51 2 12 2M7 14l5-6 5 6z"></path>
+                                    </svg>
+
+                                </span>
+
+                        <article class="contenedor leccion-bloqueada-recorrido">
+
+                            <h3 class="titulo-leccion">Preguntando</h3>
+
+                            <span class="burbuja-emergente">Bloqueado</span>
+
+                            <button class="boton-leccion" type="button">
+
+                                <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24"  
+                                    fill="#ffffff" viewBox="0 0 24 24" >
+                                    <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                                    <path d="M6 22h12c1.1 0 2-.9 2-2v-9c0-1.1-.9-2-2-2h-1V7c0-2.76-2.24-5-5-5S7 4.24 7 7v2H6c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2M9 7c0-1.65 1.35-3 3-3s3 1.35 3 3v2H9z"></path>
+                                </svg>
+
+                            </button>
+
+                            <article class="progreso-leccion">
+                                <div class="progreso-leccion-porcentaje" style="width: 100%;"></div>
+                            </article>
+
+                        </article>
+
+                        
+                    </article>
+
+                </section>
+                
+                
+                
+            </section>
+            <br>
+
         </main>
+
+        <footer>
+            <p>©2026 <span>PoliLingo</span> - Todos los derechos reservados.</p>
+        </footer>
 
     </body>
 

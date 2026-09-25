@@ -48,12 +48,13 @@
 }
 
 .titulo-leccion {
-    margin: 0 0 0.6rem;
-    font-size: 0.95rem;
+    margin: 0 0 0.8rem;
+    font-size: 1.2rem;
     font-family: inherit;
-    font-weight: 800;
+    font-weight: 700;
     text-align: center;
     color: #10151b;
+    
 }
 
 .recorrido-lecciones-unidad {
@@ -61,7 +62,7 @@
     overflow-y: auto;
     overflow-x: hidden;
     padding: 1.5rem 1rem;       /* aire para que no se corten sombras ni burbuja */
-    scrollbar-width: thin;      /* scroll más discreto (Firefox) */
+    scrollbar-width: thin;     
     scrollbar-color: #8fc97f transparent;
 }
 
@@ -79,15 +80,55 @@
     height: auto;
 }
 
+/* COFRE DENTRO DEL RECORRIDO*/
+/* ------------------------- */
+
+.cofre-contenedor{
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+
 .cofre-abierto {
+    display: block;
+    margin: 0 auto;
     width: 7rem;
     height: auto;
+    background-color: #f167df;
+    border-radius: 50%;
+    padding: 1rem;
+    box-sizing: border-box;
 }
+
+.cofre-cerrado {
+    display: block;
+    margin: 0 auto;
+    width: 7rem;
+    height: auto;
+    background-color: #b7b7b7;
+    border-radius: 50%;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.cofre-contenedor:hover .burbuja-emergente{
+    opacity: 1;
+    transform: translateY(0);
+    color: #f167df;
+}
+
+
+
+/* ------------------------- */
 
 .flecha-recorrido {
     display: flex;
     justify-content: center;
     align-self: center;
+    margin-top:1.5rem;
+    margin-bottom:1.5rem;
     width: 100%;
     line-height: 0;          /* saca el espacio fantasma del SVG inline */
     flex-shrink: 0;          /* no se aplasta dentro del scroll */
@@ -98,18 +139,6 @@
     height: 1.5rem;
     transform: rotate(180deg);   /* apunta hacia abajo */
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -126,7 +155,6 @@
     font-size: 0.95rem;
     letter-spacing: 0.03rem;
     padding: 0.5rem 1.1rem;
-    position: absolute;
     top: -0.6rem; /* Que tan arriba del boton aparece la burbuja*/
     border-radius: 0.9rem;
     margin-bottom: 0.6rem;
@@ -134,6 +162,10 @@
     transform: translateY(0.4rem);
     transition: opacity 0.15s ease, transform 0.15s ease;
     pointer-events: none;
+    display: inline-flex;      /* alinea texto e ícono en una fila */
+    align-items: center;
+    gap: 0.3rem;
+    white-space: nowrap; 
 }
 
 .burbuja-emergente::after {
@@ -151,6 +183,7 @@
     opacity: 1;
     transform: translateY(0);
 }
+
 
 /* --- Botón cuadrado (base) --- */
 .boton-leccion {
