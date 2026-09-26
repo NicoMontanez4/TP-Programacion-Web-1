@@ -46,7 +46,6 @@ h2 {
     padding: clamp(1rem, 4vw, 2rem) clamp(1.5rem, 5vw, 3rem);  
     margin: 1.6rem;
     gap: 1.5rem;
-    zoom:0.5;
 }
 
 .titulo-liga {
@@ -77,22 +76,26 @@ h2 {
 
 table {
   width: 100%;
-  min-width: 28rem;  
   border-collapse: collapse;   
   text-align: center;
 }
 
-th {
-    padding: clamp(0.5rem, 1.5vw, 0.75rem);
-    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+th,
+td {
+    overflow-wrap: break-word;  /* si un texto no entra, corta la palabra en vez de desbordar */
+    word-break: break-word;
+}
 
+th {
+    padding: clamp(0.3rem, 1.5vw, 0.75rem);
+    font-size: clamp(0.7rem, 1.5vw, 1.1rem);
 }
 
 td {
-    padding: clamp(0.5rem, 2vw, 1rem);
-    font-size: clamp(0.75rem, 1.3vw, 0.85rem);
-
+    padding: clamp(0.3rem, 2vw, 1rem);
+    font-size: clamp(0.6rem, 1.3vw, 0.85rem);
 }
+
 .avatar{
     width: 2rem;
     height: 2rem;
