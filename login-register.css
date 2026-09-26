@@ -141,6 +141,14 @@ fieldset {
     cursor: pointer;
 }
 
+.boton-login:visited {
+    color: #000000;
+}
+
+.boton-login:hover {
+    background-color: #ebd083;
+}
+
 /*El olvidado del login*/
 .olvidado {
     display: flex;
@@ -170,8 +178,6 @@ fieldset {
     border: 0.1rem solid gray;
     box-sizing: border-box;
     cursor: pointer;
-    box-sizing: border-box;
-    text-align: center;
     font-size: clamp(0.79rem, 1vw, 2rem);
 }
 
@@ -215,12 +221,6 @@ fieldset {
 }
 
 /*-------------ACÁ ARRANCA OLVIDASTE_CONTRA-------*/
-
-.logo h2 {
-    box-sizing: border-box;
-    text-align: center;
-    font-size: clamp(1rem, 1.5vw, 1.6rem);
-}
 
 .logo h3 {
     box-sizing: border-box;
