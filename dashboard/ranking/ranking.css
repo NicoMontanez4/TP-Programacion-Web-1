@@ -6,85 +6,92 @@ body{
 }
 
 main {
-  max-width: 70rem;      /* en pantallas grandes no se estira de más */
-  margin: 0 auto;        /* centrado */
-  padding: 1.5rem 2rem;  /* aire a los costados y arriba */
+  max-width: 70rem;   
+  min-width: 0;   
+  margin: 0 auto;        
+  padding: clamp(1rem, 3vw, 2rem);   
 }
 
 
 h1 {
   margin: 0 0 0.5rem;
-  color: #0e7f96;        /* el turquesa de tu diseño */
+  color: #0e7f96;        
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
 }
 
 h2 {
   margin: 1.5rem 0 1rem;
+  font-size: clamp(1.15rem, 2.5vw, 1.6rem);
+}
+
+.titulo-ranking{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.liga-actual{
+  font-size: 0.8rem;
 }
 
 
-.ranking-liga-bronce{
+.ranking-liga-bronce,
+.ranking-liga-plata,
+.ranking-liga-oro {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
-    background-color: rgb(206,137,70);
+    align-items: center;                        
+    justify-content: space-between;             
     border-radius: 3rem;
-    padding: 0.5rem 1.5rem;
-    margin: 2rem;
+    padding: clamp(1rem, 4vw, 2rem) clamp(1.5rem, 5vw, 3rem);  
+    margin: 1.6rem;
+    gap: 1.5rem;
+    zoom:0.5;
 }
 
-.ranking-liga-plata{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
-    background-color: silver;
-    border-radius: 3rem;
-    padding: 0.5rem 1.5rem;
-    margin: 2rem;
-
-}
-
-.ranking-liga-oro{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
-    background-color: gold;
-    border-radius: 3rem;
-    padding: 0.5rem 1.5rem;
-    margin: 2rem;
-
+.titulo-liga {
+    min-width: 0;
+    flex: 1;
 }
 
 
-.Poli-ranking{
-    width: 8rem;
+.Poli-ranking {
+    width: clamp(5rem, 20vw, 8rem);
+    max-inline-size: 100%;
+    flex-shrink: 0;  
 }
 
+.ranking-liga-bronce { background-color: rgb(206, 137, 70); }
+.ranking-liga-plata  { background-color: silver; }
+.ranking-liga-oro    { background-color: gold; }
 
 
 .tabla-ranking {
-  max-height: 15rem;
+  max-height: clamp(12rem, 40vh, 18rem);
   overflow-y: auto;
-  scrollbar-color: #000 #ffffff;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0,0,0,0.4) transparent;
   background-color: rgb(247, 242, 242);
 }
 
 table {
   width: 100%;
+  min-width: 28rem;  
   border-collapse: collapse;   
   text-align: center;
 }
 
 th {
-  padding: 0.75rem;
-  font-size: 1.1rem;
+    padding: clamp(0.5rem, 1.5vw, 0.75rem);
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+
 }
 
 td {
-  padding: 1rem;
-  font-size: 0.85rem;
+    padding: clamp(0.5rem, 2vw, 1rem);
+    font-size: clamp(0.75rem, 1.3vw, 0.85rem);
+
 }
 .avatar{
     width: 2rem;
@@ -121,29 +128,18 @@ td {
 
 
 /* Bordes redondeados en la fila resaltada */
-.tu-fila td:first-child {
-  border-radius: 1rem 0 0 1rem;
-}
-
-.tu-fila td:last-child {
-  border-radius: 0 1rem 1rem 0;
-}
-
-.zona-descenso td:first-child {
-  border-radius: 1rem 0 0 1rem;
-}
-
-.zona-descenso td:last-child {
-  border-radius: 0 1rem 1rem 0;
-}
-
+.tu-fila td:first-child,
+.zona-descenso td:first-child,
 .zona-top td:first-child {
-  border-radius: 1rem 0 0 1rem;
+    border-radius: 1rem 0 0 1rem;
 }
 
+.tu-fila td:last-child,
+.zona-descenso td:last-child,
 .zona-top td:last-child {
-  border-radius: 0 1rem 1rem 0;
+    border-radius: 0 1rem 1rem 0;
 }
+
 
 .otras-ligas{
     display: flex;
@@ -154,7 +150,8 @@ td {
 
 .otras-ligas nav {
   display: flex;       
-  flex-wrap: wrap;      
+  flex-wrap: wrap;  
+  justify-content: center;   
   gap: 1rem;
 }
 
@@ -179,37 +176,20 @@ td {
 }
 
 @media screen and (max-width: 768px) {
-    .ranking-liga-bronce {
-        flex-direction: column-reverse; /* invierte el orden visual: la imagen (último hijo) va arriba */
-        align-items: center;    /* en column, align-items pasa a controlar el eje horizontal */
-        gap: 1rem;               /* separación entre el texto y la imagen al apilarse */
-    }
-
-    .ranking-liga-oro {
-      flex-direction: column-reverse;
-      align-items: center;
-      gap: 1rem;
-    }
-
+    .ranking-liga-bronce,
+    .ranking-liga-oro,
     .ranking-liga-plata {
-      flex-direction: column-reverse;
-      align-items: center;
-      gap: 1rem;
+        flex-direction: column-reverse; /* la imagen va arriba */
+        align-items: center;
     }
-
-    .titulo-liga {
-        text-align: center; /* centra el h2 y el p de una sola vez */
-    }
-
+ 
+    .titulo-liga,
     .otras-ligas h2 {
-      text-align: center;
+        text-align: center;
     }
-
+ 
     .otras-ligas nav {
-      display: flex;
-      flex-direction: column;
-      align-items: center;       
-      flex-wrap: wrap;      
-      gap: 1rem;
+        flex-direction: column;
+        align-items: center;
     }
 }
