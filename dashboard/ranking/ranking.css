@@ -40,19 +40,21 @@ h2 {
 .ranking-liga-oro {
     display: flex;
     flex-direction: row;
-    align-items: center;                        
-    justify-content: space-between;             
+    align-items: center;              
+    justify-content: space-between;   
     border-radius: 3rem;
-    padding: clamp(1rem, 4vw, 2rem) clamp(1.5rem, 5vw, 3rem);  
-    margin: 1.6rem;
-    gap: 1.5rem;
+    padding: clamp(0.75rem, 1.5vw, 1.25rem) clamp(1.5rem, 4vw, 3rem);
+    margin: 2rem 0;
+    flex-wrap: wrap;
 }
 
 .titulo-liga {
-    min-width: 0;
-    flex: 1;
+    max-width: 32rem;   /* evita que el texto se estire demasiado en cards muy anchos */
 }
 
+.titulo-liga h2 {
+    margin-top: 0;
+}
 
 .Poli-ranking {
     width: clamp(5rem, 20vw, 8rem);
@@ -88,7 +90,7 @@ td {
 
 th {
     padding: clamp(0.3rem, 1.5vw, 0.75rem);
-    font-size: clamp(0.7rem, 1.5vw, 1.1rem);
+    font-size: clamp(0.5rem, 1.3vw, 0.9rem);
 }
 
 td {
