@@ -269,7 +269,7 @@ small {
     flex-wrap: wrap;
     margin-top: 1rem;
     gap: 1.2rem;
-    border: none;
+    border-style: none;
 }
 
 .btn-guardar,
@@ -287,10 +287,63 @@ small {
     justify-content: center;
 }
 
+.btn-eliminar-cuenta {
+    padding: 0.6rem 1.6rem;
+    min-height: min(5vh, 2.8rem);
+    border-radius: 1.5rem;
+    border: none;
+    color: red;
+    font-weight: 700;
+    font-size: clamp(0.85rem, 1vw, 1rem);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
 .btn-guardar {
     background-color: #0288d1;
 }
 
 .btn-cerrar-sesion {
     background-color: #e53935;
+}
+
+.btn-eliminar-cuenta:hover {
+    color: #fff;
+    background-color: #000000;
+}
+
+/* ELIMINAR CUENTA */
+
+.botones-eliminar-cuenta {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    gap: 1.2rem;
+    border-style: none;
+}
+
+.boton-confirmar-eliminar-cuenta,
+.boton-cancelar {
+    padding: 0.6rem 1.6rem;
+    min-height: min(5vh, 2.8rem);
+    border-radius: 1.5rem;
+    border: none;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: clamp(0.85rem, 1vw, 1rem);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.boton-confirmar-eliminar-cuenta {
+    background-color: red;
+}
+
+.boton-cancelar {
+    background-color: gray;
 }
