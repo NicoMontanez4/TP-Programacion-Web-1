@@ -12,7 +12,7 @@ body {
     font-family: "Nunito", "Segoe UI", Tahoma, sans-serif;
     background-color: #fff;
 }
-
+ 
 body {
     display: flex;
     flex-direction: column;
@@ -93,14 +93,21 @@ img {
 }
 
 .navbar {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* izquierda flexible / centro ajustado al contenido / derecha flexible */
     align-items: center;
-    justify-content: space-between;
     gap: calc(0.5rem + 1vw); /* Ajuste fluido usando calc */
     padding: clamp(0.75rem, 2vw, 1.25rem) clamp(1rem, 4vw, 3rem);
     width: 100%;
     background-color: #8fc97f;
+}
+
+.navbar-links {
+    justify-self: center; /* centra el bloque de links en su propia columna, el del medio */
+}
+
+.navbar-estadisticas {
+    justify-self: end; /* pega las estadísticas contra el borde derecho de su columna */
 }
 
 nav img {
@@ -192,13 +199,15 @@ footer p {
 
 @media screen and (max-width: 768px) {
     .navbar {
-        flex-wrap: wrap; /* los links en una fila y las estadisticas en otra */
+        flex-direction: column;
+        align-items: center;
         justify-content: center; /* centra las filas resultantes */
-        gap: 0.75rem; /* achica el espacio general entre logo/links/stats */
+        gap: 1rem; /* achica el espacio general entre logo/links/stats */
     }
 
-    .navbar {
-        margin: 0; /* achica el espacio general entre logo/links/stats */
-        gap: 1rem; /* achico el espacio entre CURSOS / PERFIL / RANKING / TIENDA */
+    .navbar-links,
+    .navbar-estadisticas {
+        width: 100%;
+        justify-content: center;
     }
 }

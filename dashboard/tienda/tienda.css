@@ -5,6 +5,10 @@
     align-items: center;
 }
 
+.tienda-titulo h1 {
+    color: #0e7f96;
+}
+
 .tienda-introduccion{
     display: flex;
     align-items: flex-start;
