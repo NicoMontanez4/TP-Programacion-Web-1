@@ -48,35 +48,40 @@
     padding: 0 1rem;
 }
 
-.tarjetas-cursos {
-    display: grid;
-    /* auto-fit + minmax: crea tantas columnas de al menos 15rem como entren,
-       y si no entran 3, las achica o las baja de línea automáticamente (responsive sin media queries) */
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    gap: 1.5rem;
-    align-items: center;
-}
-
 .seleccionar-cursos header {
     text-align: center; /* centra el título de la sección, a diferencia del hero que va a la izquierda */
     margin: 1rem;
 }
 
-.tarjetas-cursos a {
-    display: block; /* un <a> es inline por defecto; block hace que ocupe toda la tarjeta como área clickeable */
-    color: inherit; /* evita que el texto de adentro se vea azul (color por defecto de los links) */
-    text-decoration: none; /* saca el subrayado por defecto del link */
+.tarjetas-cursos {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
+
+.tarjetas-cursos > article {
+    width: 100%; /* cada tarjeta ocupa todo el ancho del contenedor */
+}
+
+/* Estructura de cada tarjeta */
 
 .seleccionar-cursos article {
     box-sizing: border-box;
-    padding: 1.25rem;
-    border-radius: 1rem; /* bordes redondeados, estilo consistente con el resto del sitio */
-    display: flex;
-    flex-direction: column; /* apila ícono, texto, barra de progreso y botón */
-    align-items: center; /* centra todo horizontalmente dentro de la tarjeta */
-    gap: 0.5rem;
-    transition: background-color 0.2s ease; /* suaviza el cambio de color cuando se pasa el mouse */
+    border-radius: 1rem; /* bordes redondeados */
+    overflow: hidden; /* recorta el header para que respete el borde redondeado del article */
+}
+
+.curso-header {
+    display: block;
+    padding: 0.6rem 1.25rem;
+    color: inherit; /* evita que el texto de adentro se vea azul (color por defecto de los links) */
+    text-decoration: none; /* saca el subrayado por defecto del link */
+    cursor: pointer;
+    transition: filter 0.2s ease; /* suaviza el oscurecido al pasar el mouse */
+}
+
+.curso-header:hover {
+    filter: brightness(1); /* mismo tono de la tarjeta, un poco más oscuro */
 }
 
 .seleccionar-cursos article header {
@@ -86,13 +91,34 @@
 }
 
 .seleccionar-cursos article img {
-    width: 6rem;
-    height: 6rem;
+    width: 3.5rem;
+    height: 3.5rem;
 }
 
-.seleccionar-cursos article p {
+.flecha {
+    margin-left: auto; /* empuja la flecha al extremo derecho del header */
+    font-size: 0.9rem;
+}
+
+.contenido-curso {
+    padding: 0 1.25rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+/* Textos y controles dentro de la tarjeta */
+.curso-header p {
     margin: 0;
-    font-weight: 700;
+    font-weight: 700; /* el nombre del idioma va destacado */
+}
+
+.nivel-curso,
+.progreso-texto {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: 400; /* la info secundaria mas liviana que el nombre */
 }
 
 .seleccionar-cursos article progress {
@@ -104,7 +130,8 @@
     appearance: none; /* resetea el estilo nativo del navegador para poder personalizarlo con CSS */
 }
 
-.seleccionar-cursos article span {
+.boton-continuar,
+.boton-empezar {
     margin-top: 0.5rem;
     padding: 0.4rem 1rem;
     border-radius: 999px; /* valor bien alto = siempre queda como una "píldora" sin importar el tamaño */
@@ -113,14 +140,13 @@
     font-weight: 700;
 }
 
-/* Colores por curso: por defecto todos los cursos son verdes... */
-.chino, .ingles, .aleman { background-color: #8fc97f; }
-/* ...pero el botón de "Empezar" en Chino se distingue en amarillo porque todavía no se arrancó ese curso */
-.seleccionar-cursos .chino span { background-color: #f5c063; }
+.boton-empezar {
+    background-color: #f5c063;
+    
+}
 
-/* Estados hover: le dan feedback visual al usuario de que la tarjeta es clickeable */
-.ingles:hover, .aleman:hover { background-color: rgb(41, 104, 4); } /* verde más oscuro */
-.chino:hover { background-color: #f5c063; } /* mismo amarillo del botón para reforzar que es el curso a "empezar" */
+/* Colores por curso: por defecto todos los cursos son verdes... */
+.chino, .ingles, .aleman, .ingles-abierto, .aleman-abierto, .chino-abierto { background-color: #8fc97f; }
 
 /* ============================================
    ACTIVIDAD DE HOY + ACTIVIDAD SEMANAL
