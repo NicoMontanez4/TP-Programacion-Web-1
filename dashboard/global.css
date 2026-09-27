@@ -123,13 +123,20 @@ menu {
     list-style: none;
 }
 
-.navbar-links,
-.navbar-estadisticas {
+.navbar-links {
+    justify-self: center;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: clamp(0.75rem, 2vw, 1.5rem);
-    
+}
+
+.navbar-estadisticas {
+    justify-self: end;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: clamp(0.75rem, 2vw, 1.5rem);
 }
 
 .navbar-links a {

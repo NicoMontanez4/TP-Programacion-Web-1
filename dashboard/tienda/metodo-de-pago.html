@@ -3,12 +3,12 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Compra realizada - PoliLingo</title>
+        <title>Método de pago</title>
         <link rel="stylesheet" href="../global.css" />
         <link rel="stylesheet" href="tienda.css" />
     </head>
 
-    <body class="fondo-compra-realizada">
+    <body>
         <header>
             <nav class="navbar">
                 <img src="../../imagenes/Logo.png" alt="Logo poliLingo" />
@@ -87,33 +87,56 @@
             </nav>
         </header>
 
-        <main class="compra-realizada">
-            <section class="tarjeta-compra-realizada">
-                <figure class="imagen-compra-realizada">
-                    <img
-                        class="poli-compra-realizada"
-                        src="../../imagenes/Poli-compra-realizada.png"
-                        alt="Poli festejando la compra"
-                    />
-                    <img
-                        class="check-compra-realizada"
-                        src="../../imagenes/Completa.png"
-                        alt="Compra confirmada"
-                    />
-                </figure>
 
-                <h1>¡Compra realizada!</h1>
+        <main>
+            <section class="tienda-contenedor">
+                <section class="seccion-tienda">
+                    <h2>Método de pago</h2>
 
-                <p>
-                    Tu compra se realizó correctamente.<br />
-                    ¡Gracias por tu compra!
-                </p>
+                    <p class="metodo-pago-subtitulo">
+                        Completá el método de pago
+                    </p>
 
-                <a class="boton-volver-tienda" href="../tienda/tienda.html"
-                    >Volver a la tienda →</a
-                >
+                    <form class="formulario-pago">
+                        <fieldset class="campo-pago">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" name="nombre" />
+                        </fieldset>
+
+                        <fieldset class="campo-pago">
+                            <label for="numero-tarjeta">Número de tarjeta:</label>
+                            <input type="text" id="numero-tarjeta" name="numero-tarjeta" />
+                        </fieldset>
+
+                        <fieldset class="campo-pago">
+                            <label for="apellido">Apellido:</label>
+                            <input type="text" id="apellido" name="apellido" />
+                        </fieldset>
+
+                        <fieldset class="campo-pago">
+                            <label for="vencimiento">Vencimiento:</label>
+                            <input type="text" id="vencimiento" name="vencimiento" placeholder="MM/AA" />
+                        </fieldset>
+
+                        <fieldset class="campo-pago">
+                            <label for="dni">DNI:</label>
+                            <input type="text" id="dni" name="dni" />
+                        </fieldset>
+
+                        <fieldset class="campo-pago">
+                            <label for="codigo-seguridad">Código de seguridad:</label>
+                            <input type="text" id="codigo-seguridad" name="codigo-seguridad" />
+                        </fieldset>
+                    </form>
+
+                    <a class="boton-realizar-compra" href="compra-realizada.html">Realizar compra</a>
+                </section>
             </section>
         </main>
+
+        <nav class="volver">
+            <a class="volver-a-cursos" href="tienda.html">Volver a la tienda</a>
+        </nav>
 
         <footer>
             <p>©2026 PoliLingo - Todos los derechos reservados.</p>
