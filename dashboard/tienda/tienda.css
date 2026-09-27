@@ -305,6 +305,106 @@
     border-color: #0e9384;
 }
 
+/* ================= BENEFICIOS SUPERPOLI ================= */
+
+.contenedor-superpoli{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem 1rem;
+    gap: 2rem;
+}
+
+.tarjeta-superpoli-beneficios{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;  
+    background-color: #43C5BB;
+    padding: 1rem 1.5rem;
+    border-radius: 2rem;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 40rem;
+    box-sizing: border-box;
+}
+
+.imagen-superpoli-beneficios{
+    width: 6rem;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.titulo-superpoli h1{
+    margin: 0;
+    font-size: 1rem;
+}
+
+.titulo-superpoli p{
+    margin: 0.3rem 0 0;
+    font-size: 0.9rem;
+}
+
+/* ---- lista vertical de beneficios ---- */
+.contenedor-tarjetas-beneficios{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 40rem;
+}
+
+.tarjeta-beneficio{
+    display: flex;
+    flex-direction: row;
+    align-items: center;       
+    gap: 1rem;
+    padding: 1.2rem 0.5rem;
+    border-bottom: 0.06rem solid #2a2f36;
+}
+
+.tarjeta-beneficio:last-child{
+    border-bottom: none;
+}
+
+/* ---- cuadrado de color detrás del ícono ---- */
+.icono-beneficio{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.9rem;
+    flex-shrink: 0;
+    
+}
+
+.icono-rosa    { background-color: #fbdce4; }
+.icono-celeste { background-color: #d8effa; }
+.icono-amarillo{ background-color: #fdecc8; }
+.icono-violeta { background-color: #efdcfa; }
+.icono-verde   { background-color: #d7f3e3; }
+.icono-violeta2{ background-color: #e0d0f5; }
+
+.tarjeta-beneficio svg{
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+}
+
+.texto-beneficio h2{
+    margin: 0 0 0.3rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.texto-beneficio p{
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+
 /* ================= COMPRA REALIZADA ================= */
 
 .fondo-compra-realizada{
