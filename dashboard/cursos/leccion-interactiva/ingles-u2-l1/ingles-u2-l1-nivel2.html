@@ -4,25 +4,22 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Lección interactiva - PoliLingo</title>
-        <link rel="stylesheet" href="../../global.css" />
-        <link rel="stylesheet" href="leccion-interactiva.css" />
+        <link rel="stylesheet" href="../../../global.css" />
+        <link rel="stylesheet" href="../leccion-interactiva.css" />
     </head>
 
-    <body class="leccion-ingles">
+    <body class="leccion-ingles completada">
         <header>
             <nav class="navbar">
-                <img src="../../../imagenes/Logo.png" alt="Logo poliLingo" />
+                <img src="../../../../imagenes/Logo.png" alt="Logo poliLingo" />
 
                 <ul class="navbar-links">
-                    <li><a href="../cursos.html" aria-current="page">Cursos</a></li>
-
-                    <li>
-                        <a href="../../perfil/perfil.html" 
-                            >Perfil</a
-                        >
+                    <li><a href="../../cursos.html" aria-current="page">
+                        Cursos</a>
                     </li>
-                    <li><a href="../../ranking/ranking.html">Ranking</a></li>
-                    <li><a href="../../tienda/tienda.html">Tienda</a></li>
+                    <li><a href="../../../perfil/perfil.html" >Perfil</a></li>
+                    <li><a href="../../../ranking/ranking.html">Ranking</a></li>
+                    <li><a href="../../../tienda/tienda.html">Tienda</a></li>
                 </ul>
 
                 <ul class="navbar-estadisticas">
@@ -104,17 +101,17 @@
         <main class="ejercicio">
             <section class="leccion-container">
                 <!-- CABECERA DE LA SECCIÓN (Header correcto) -->
-                <header class="barra-leccion">
+                <header class="barra-leccion-completada">
                     <a
                         class="boton-salir"
-                        href="../mapaUnidades/mapaUnidadesIngles.html"
+                        href="../../mapaUnidades/mapaUnidadesIngles.html"
                         aria-label="Salir de la lección"
                         >✕</a
                     >
 
                     <img
                         class="bandera-leccion"
-                        src="../../../imagenes/BanderaReinoUnido.png"
+                        src="../../../../imagenes/BanderaReinoUnido.png"
                         alt="Bandera de Reino Unido"
                     />
 
@@ -122,147 +119,86 @@
                     <hgroup class="titulo-leccion">
                         <h1>Inglés</h1>
                         <p>Unidad 2 - Comida</p>
-                        <p>Lección 2 - En el restaurante</p>
+                        <p>Lección 1 - Alimentos</p>
                     </hgroup>
 
                     <ul class="estado-leccion">
-                        <li>Cantidad de vidas: ❤️❤️❤️</li>
+                        <li>Cantidad de vidas: ❤️❤️</li>
                         <li>
                             <label for="progreso-leccion"
-                                >Progreso de la lección: 60%</label
+                                >Progreso de la lección: 100%</label
                             >
                             <progress
                                 id="progreso-leccion"
-                                value="60"
+                                value="100"
                                 max="100"
                             >
-                                60%
+                                100%
                             </progress>
                         </li>
                     </ul>
                 </header>
 
-                <!-- FORMULARIO DE EJERCICIO (No es un article, es una interacción) -->
-                <form class="tarjeta-ejercicio">
-                    <!-- Checkboxes de control -->
-                    <input class="selector" type="checkbox" id="p-puedo" />
-                    <input class="selector" type="checkbox" id="p-ver" />
-                    <input class="selector" type="checkbox" id="p-elmenu" />
-                    <input class="selector" type="checkbox" id="p-menu" />
-                    <input class="selector" type="checkbox" id="p-por" />
-                    <input class="selector" type="checkbox" id="p-favor" />
-                    <input class="selector" type="checkbox" id="p-cuenta" />
-                    <input class="selector" type="checkbox" id="p-agua" />
-                    <input class="selector" type="checkbox" id="p-mesa" />
+               <section class="tarjeta-ejercicio">
 
-                    <!-- BLOQUE 1: Pregunta y Construcción de respuesta -->
                     <section class="pregunta">
+
                         <img
                             class="imagen-poli"
-                            src="../../../imagenes/Poli-hablando.png"
+                            src="../../../../imagenes/Poli-hablando.png"
                             alt="Mascota Poli hablando"
                         />
 
-                        <fieldset class="enunciado">
-                            <h2>Traducí la siguiente oración:</h2>
-                            <p class="frase">
-                                <strong>“Can I see the menu, please?”</strong>
-                            </p>
+                         <section class="enunciado">
 
-                            <ol class="respuesta" aria-label="Tu respuesta">
-                                <li class="slot slot-puedo">
-                                    <label for="p-puedo">¿Puedo</label>
-                                </li>
-                                <li class="slot slot-ver">
-                                    <label for="p-ver">ver</label>
-                                </li>
-                                <li class="slot slot-elmenu">
-                                    <label for="p-elmenu">el</label>
-                                </li>
-                                <li class="slot slot-menu">
-                                    <label for="p-menu">menú</label>
-                                </li>
-                                <li class="slot slot-por">
-                                    <label for="p-por">por</label>
-                                </li>
-                                <li class="slot slot-favor">
-                                    <label for="p-favor">favor?</label>
-                                </li>
-                                <li class="slot slot-cuenta">
-                                    <label for="p-cuenta">cuenta</label>
-                                </li>
-                                <li class="slot slot-agua">
-                                    <label for="p-agua">agua</label>
-                                </li>
-                                <li class="slot slot-mesa">
-                                    <label for="p-mesa">mesa</label>
-                                </li>
-                            </ol>
-                        </fieldset>
+                                <h2>Traducí la siguiente oración:</h2>
+
+                                <p class="frase">
+                                    <strong>“This meat is raw.”</strong>
+                                </p>
+
+                                <ul class="respuesta" aria-label="Tu respuesta">
+                                    <li class="palabra">Esta</li>
+                                    <li class="palabra">carne</li>
+                                    <li class="palabra">está</li>
+                                    <li class="palabra">cruda</li>
+                                    
+                                </ul>
+                            </section>
+                               
+                    
                     </section>
 
-                    <!-- BLOQUE 2: Banco de palabras -->
-                    <section class="banco-palabras">
-                        <h3>Banco de palabras disponibles:</h3>
 
-                        <ul class="banco">
-                            <li>
-                                <label class="ficha" for="p-agua">agua</label>
-                            </li>
-                            <li>
-                                <label class="ficha" for="p-elmenu">el</label>
-                            </li>
-                            <li>
-                                <label class="ficha" for="p-favor"
-                                    >favor?</label
-                                >
-                            </li>
-                            <li>
-                                <label class="ficha" for="p-mesa">mesa</label>
-                            </li>
-                            <li>
-                                <label class="ficha" for="p-puedo"
-                                    >¿Puedo</label
-                                >
-                            </li>
-                            <li>
-                                <label class="ficha" for="p-cuenta"
-                                    >cuenta</label
-                                >
-                            </li>
-                            <li>
-                                <label class="ficha" for="p-menu">menú</label>
-                            </li>
-                            <li>
-                                <label class="ficha" for="p-ver">ver</label>
-                            </li>
-                            <li>
-                                <label class="ficha" for="p-por">por</label>
-                            </li>
-                        </ul>
-                    </section>
-                </form>
-            </section>
+               </section>
 
-            <!-- Panel de éxito -->
-            <section id="correcto" class="resultado exito">
-                <h2>¡Correcto!</h2>
-                <p>¡Muy bien! Sumaste 10 XP.</p>
-                <a
-                    class="boton-comprobar"
-                    href="../mapaUnidades/mapaUnidadesIngles.html"
-                    >Continuar</a
-                >
-            </section>
+               <!--Botones de repasar anterior y siguiente nivel-->
+               <!------------------------------------------------->
 
-            <!-- Panel de error -->
-            <section id="incorrecto" class="resultado error">
-                <h2>Incorrecto</h2>
-                <p>Revisá el orden de las palabras e intentá de nuevo.</p>
-                <a class="boton-comprobar" href="#">Reintentar</a>
-            </section>
+               <span class="botones-repaso">
 
-            <a class="boton-comprobar" href="#correcto">Comprobar respuesta</a>
+                    <a class="boton-siguiente-anterior" href="ingles-u2-l1-nivel1.html">
+                            <h3>Nivel anterior</h3>
+                    </a>
+
+                    <a class="boton-siguiente-anterior" href="ingles-u2-l1-nivel3.html">
+                            <h3>Nivel siguiente</h3>
+                    </a>
+
+               </span>
+
+               <!------------------------------------------------->
+
+               <section class="resultado exito" id="correcto" role="status">
+                    <h2>¡Lección superada!</h2>
+                    <p>XP Total : 80  </p>
+                    <a href="../../mapaUnidades/Unidades/ingles-u2.html">Volver al mapa</a>
+                </section>
+
+
+
         </main>
+
     </body>
+
 </html>

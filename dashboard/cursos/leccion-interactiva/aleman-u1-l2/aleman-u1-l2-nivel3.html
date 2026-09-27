@@ -4,25 +4,22 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Lección interactiva - PoliLingo</title>
-        <link rel="stylesheet" href="../../global.css" />
-        <link rel="stylesheet" href="leccion-interactiva.css" />
+        <link rel="stylesheet" href="../../../global.css" />
+        <link rel="stylesheet" href="../leccion-interactiva.css" />
     </head>
 
-    <body class="leccion-chino">
+    <body class="leccion-aleman completada">
         <header>
             <nav class="navbar">
-                <img src="../../../imagenes/Logo.png" alt="Logo poliLingo" />
+                <img src="../../../../imagenes/Logo.png" alt="Logo poliLingo" />
 
                 <ul class="navbar-links">
-                    <li><a href="../cursos.html" aria-current="page">Cursos</a></li>
-
-                    <li>
-                        <a href="../../perfil/perfil.html" 
-                            >Perfil</a
-                        >
+                    <li><a href="../../cursos.html" aria-current="page">
+                        Cursos</a>
                     </li>
-                    <li><a href="../../ranking/ranking.html">Ranking</a></li>
-                    <li><a href="../../tienda/tienda.html">Tienda</a></li>
+                    <li><a href="../../../perfil/perfil.html" >Perfil</a></li>
+                    <li><a href="../../../ranking/ranking.html">Ranking</a></li>
+                    <li><a href="../../../tienda/tienda.html">Tienda</a></li>
                 </ul>
 
                 <ul class="navbar-estadisticas">
@@ -104,155 +101,109 @@
         <main class="ejercicio">
             <section class="leccion-container">
                 <!-- CABECERA DE LA SECCIÓN (Header correcto) -->
-                <header class="barra-leccion">
+                <header class="barra-leccion-completada">
                     <a
                         class="boton-salir"
-                        href="../mapaUnidades/mapaUnidadesChino.html"
+                        href="../../mapaUnidades/mapaUnidadesAleman.html"
                         aria-label="Salir de la lección"
                         >✕</a
                     >
 
                     <img
                         class="bandera-leccion"
-                        src="../../../imagenes/BanderaChina.png"
-                        alt="Bandera de China"
+                        src="../../../../imagenes/BanderaAlemania.png"
+                        alt="Bandera de Alemania"
                     />
 
                     <!-- hgroup agrupa correctamente Título + Subtítulo -->
                     <hgroup class="titulo-leccion">
-                        <h1>Chino</h1>
+                        <h1>Alemán</h1>
                         <p>Unidad 1 - Saludos</p>
                         <p>Lección 1 - Frases Básicas</p>
                     </hgroup>
 
                     <ul class="estado-leccion">
-                        <li>Cantidad de vidas: ❤️❤️❤️</li>
+                        <li>Cantidad de vidas: ❤️❤️</li>
                         <li>
                             <label for="progreso-leccion"
-                                >Progreso de la lección: 60%</label
+                                >Progreso de la lección: 100%</label
                             >
                             <progress
                                 id="progreso-leccion"
-                                value="60"
+                                value="100"
                                 max="100"
                             >
-                                60%
+                                100%
                             </progress>
                         </li>
                     </ul>
                 </header>
 
-                <!-- FORMULARIO DE EJERCICIO (No es un article, es una interacción) -->
-                <form class="tarjeta-ejercicio">
-                    <!-- Checkboxes de control -->
-                    <input class="selector" type="checkbox" id="p-buenos" />
-                    <input class="selector" type="checkbox" id="p-dias" />
-                    <input class="selector" type="checkbox" id="p-como" />
-                    <input class="selector" type="checkbox" id="p-estas" />
-                    <input class="selector" type="checkbox" id="p-buenas" />
-                    <input class="selector" type="checkbox" id="p-noches" />
-                    <input class="selector" type="checkbox" id="p-gracias" />
+               <section class="tarjeta-ejercicio">
 
-                    <!-- BLOQUE 1: Pregunta y Construcción de respuesta -->
                     <section class="pregunta">
+
                         <img
                             class="imagen-poli"
-                            src="../../../imagenes/Poli-hablando.png"
+                            src="../../../../imagenes/Poli-hablando.png"
                             alt="Mascota Poli hablando"
                         />
 
-                        <fieldset class="enunciado">
-                            <h2>Traducí la siguiente oración:</h2>
-                            <p class="frase">
-                                <strong>“早上好，你好吗？"</strong>
-                            </p>
+                         <section class="enunciado">
 
-                            <ol class="respuesta" aria-label="Tu respuesta">
-                                <li class="slot slot-buenos">
-                                    <label for="p-buenos">Buenos</label>
-                                </li>
-                                <li class="slot slot-dias">
-                                    <label for="p-dias">días</label>
-                                </li>
-                                <li class="slot slot-como">
-                                    <label for="p-como">¿Cómo</label>
-                                </li>
-                                <li class="slot slot-estas">
-                                    <label for="p-estas">estás?</label>
-                                </li>
-                                <li class="slot slot-hola">
-                                    <label for="p-buenas">Buenas</label>
-                                </li>
-                                <li class="slot slot-noches">
-                                    <label for="p-noches">noches</label>
-                                </li>
-                                <li class="slot slot-gracias">
-                                    <label for="p-gracias">Gracias</label>
-                                </li>
-                            </ol>
-                        </fieldset>
+                                <h2>Traducí la siguiente oración:</h2>
+
+                                <p class="frase">
+                                    <strong>“Er ist mein Freund Tomas”</strong>
+                                </p>
+
+                                <ul class="respuesta" aria-label="Tu respuesta">
+                                    <li class="palabra">El</li>
+                                    <li class="palabra">es</li>
+                                    <li class="palabra">mi</li>
+                                    <li class="palabra">amigo</li>
+                                    <li class="palabra">Tomas</li>
+                
+                                    
+                                    
+                                </ul>
+                            </section>
+                               
+                    
                     </section>
 
-                    <!-- BLOQUE 2: Banco de palabras -->
-                    <section class="banco-palabras">
-                        <h3>Banco de palabras disponibles:</h3>
 
-                        <ul class="banco">
-                            <li>
-                                <label class="ficha" for="p-gracias"
-                                    >Gracias</label
-                                >
-                            </li>
-                            <li>
-                                <label class="ficha" for="p-dias">días</label>
-                            </li>
-                            <li>
-                                <label class="ficha" for="p-buenas"
-                                    >Buenas</label
-                                >
-                            </li>
-                            <li>
-                                <label class="ficha" for="p-como">¿Cómo</label>
-                            </li>
-                            <li>
-                                <label class="ficha" for="p-noches"
-                                    >noches</label
-                                >
-                            </li>
-                            <li>
-                                <label class="ficha" for="p-buenos"
-                                    >Buenos</label
-                                >
-                            </li>
-                            <li>
-                                <label class="ficha" for="p-estas"
-                                    >estás?</label
-                                >
-                            </li>
-                        </ul>
-                    </section>
-                </form>
-            </section>
+               </section>
 
-            <!-- Panel de éxito -->
-            <section id="correcto" class="resultado exito">
-                <h2>¡Correcto!</h2>
-                <p>¡Muy bien! Sumaste 10 XP.</p>
-                <a
-                    class="boton-comprobar"
-                    href="../mapaUnidades/mapaUnidadesChino.html"
-                    >Continuar</a
-                >
-            </section>
+               <!--Botones de repasar anterior y siguiente nivel-->
+               <!------------------------------------------------->
 
-            <!-- Panel de error -->
-            <section id="incorrecto" class="resultado error">
-                <h2>Incorrecto</h2>
-                <p>Revisá el orden de las palabras e intentá de nuevo.</p>
-                <a class="boton-comprobar" href="#">Reintentar</a>
-            </section>
+               <span class="botones-repaso">
 
-            <a class="boton-comprobar" href="#correcto">Comprobar respuesta</a>
+                    <a class="boton-siguiente-anterior" href="aleman-u1-l2-nivel2.html">
+                            <h3>Nivel anterior</h3>
+                    </a>
+
+                    <a class="boton-siguiente-anterior" href="aleman-u1-l2-nivel4.html">
+                            <h3>Nivel siguiente</h3>
+                    </a>
+
+               </span>
+
+               <!------------------------------------------------->
+
+
+               <section class="resultado exito" id="correcto" role="status">
+                    <h2>¡Lección superada!</h2>
+                   
+                    <p>XP Total : 80  </p>
+                    <a href="../../mapaUnidades/Unidades/aleman-u1.html">Volver al mapa</a>
+                </section>
+
+
+
         </main>
+
     </body>
+
 </html>

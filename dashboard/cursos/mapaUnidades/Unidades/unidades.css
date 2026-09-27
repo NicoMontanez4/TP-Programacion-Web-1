@@ -1,0 +1,312 @@
+
+.unidad{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap; 
+    align-items: center;
+   
+    
+}
+
+.titulo-unidad{
+    display:flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+   
+}
+
+.titulo-unidad {
+    flex: 1;             /* usa el espacio que queda */
+    min-width: 0;        /* deja que el texto se achique y haga saltos de línea */
+}
+
+.titulo-unidad h2,
+.texto-unidad {
+    margin: 0;
+}
+
+
+.tarjeta-unidad{
+
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    gap:2rem;
+    zoom: 0.75;
+
+}
+
+.recorrdio-imagen{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:2rem;
+}
+
+.titulo-leccion {
+    margin: 0 0 0.8rem;
+    font-size: 1.2rem;
+    font-family: inherit;
+    font-weight: 700;
+    text-align: center;
+    color: #10151b;
+    
+}
+
+.recorrido-lecciones-unidad {
+    max-height: 35rem;          /* alto de la zona visible */
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 1.5rem 1rem;       /* aire para que no se corten sombras ni burbuja */
+    scrollbar-width: thin;     
+    scrollbar-color: #8fc97f transparent;
+}
+
+.contenedor {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    align-items: center;
+    position: relative;
+    width: 15rem;
+}
+
+.imagen-unidad{
+    width: 12rem;
+    height: auto;
+}
+
+/* COFRE DENTRO DEL RECORRIDO*/
+/* ------------------------- */
+
+.cofre-contenedor{
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.cofre-abierto {
+    display: block;
+    margin: 0 auto;
+    width: 7rem;
+    height: auto;
+    background-color: #f167df;
+    border-radius: 50%;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.cofre-cerrado {
+    display: block;
+    margin: 0 auto;
+    width: 7rem;
+    height: auto;
+    background-color: #b7b7b7;
+    border-radius: 50%;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.cofre-contenedor:hover .burbuja-emergente{
+    opacity: 1;
+    transform: translateY(0);
+    color: #f167df;
+}
+
+
+
+/* ------------------------- */
+
+.flecha-recorrido {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    margin-top:1.5rem;
+    margin-bottom:1.5rem;
+    width: 100%;
+    line-height: 0;          /* saca el espacio fantasma del SVG inline */
+    flex-shrink: 0;          /* no se aplasta dentro del scroll */
+}
+
+.flecha-recorrido svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    transform: rotate(180deg);   /* apunta hacia abajo */
+}
+
+
+
+/* ------------------------------------ */
+/* ---- SECCION BOTONES DE LECCION ---- */
+/* ------------------------------------ */
+
+/* --- Globo de texto burbuja emergente (cartelito) --- */
+.burbuja-emergente {
+    position: absolute;
+    background: #10151b;
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.95rem;
+    letter-spacing: 0.03rem;
+    padding: 0.5rem 1.1rem;
+    top: -0.6rem; /* Que tan arriba del boton aparece la burbuja*/
+    border-radius: 0.9rem;
+    margin-bottom: 0.6rem;
+    opacity: 0;
+    transform: translateY(0.4rem);
+    transition: opacity 0.15s ease, transform 0.15s ease;
+    pointer-events: none;
+    display: inline-flex;      /* alinea texto e ícono en una fila */
+    align-items: center;
+    gap: 0.3rem;
+    white-space: nowrap; 
+}
+
+.burbuja-emergente::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -0.5rem;
+    transform: translateX(-50%);
+    border-width: 0.5rem 0.45rem 0 0.45rem;
+    border-style: solid;
+    border-color: #10151b transparent transparent transparent;
+}
+
+.contenedor:hover .burbuja-emergente {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* --- Botón cuadrado (base) --- */
+.boton-leccion {
+    all: unset;
+    width: 100%;
+    height: 4rem;
+    border-radius: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transform: translateY(0);
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.boton-leccion svg {
+    width: 3rem;
+    height: 3rem;
+    filter: drop-shadow(0 0.06rem 0.06rem rgba(0,0,0,0.25));
+    transition: transform 0.12s ease;
+}
+
+.boton-leccion:hover {
+    transform: translateY(0.25rem);
+}
+
+.boton-leccion:hover svg {
+    transform: scale(0.9);
+}
+
+.boton-leccion:active {
+    transform: translateY(0.4rem);
+}
+
+.boton-leccion:active svg {
+    transform: scale(0.85);
+}
+
+.boton-leccion:focus-visible {
+    outline: 0.2rem solid #fff;
+    outline-offset: 0.25rem;
+}
+
+/* --- Barra de progreso --- */
+.progreso-leccion {
+    width: 100%;
+    height: 0.6rem;
+    background: #3a4048;
+    border-radius: 999px;
+    margin-top: 0.75rem;
+    overflow: hidden;
+}
+
+.progreso-leccion-porcentaje {
+    height: 100%;
+    border-radius: 999px;
+    transition: width 0.2s ease;
+}
+
+/* ===== Variante: completada (verde) ===== */
+.leccion-completada-recorrido .boton-leccion {
+    background-color: #6fb85b;
+    box-shadow: 0 0.4rem 0 #378d1f, 0 0.9rem 0.9rem rgba(0,0,0,0.4);
+}
+
+.leccion-completada-recorrido .boton-leccion:hover {
+    box-shadow: 0 0.1rem 0 #4a8a0d, 0 0.25rem 0.4rem rgba(0,0,0,0.4);
+}
+
+.leccion-completada-recorrido .boton-leccion:active {
+    box-shadow: 0 0 0 #4a8a0d, 0 0.1rem 0.25rem rgba(0,0,0,0.4);
+}
+
+.leccion-completada-recorrido .progreso-leccion-porcentaje {
+    background: #378d1f;
+}
+
+.leccion-completada-recorrido .burbuja-emergente {
+    color: #378d1f;
+}
+
+/* ===== Variante: en curso (azul, barra vacía) ===== */
+.leccion-en-curso-recorrido .boton-leccion {
+    background: linear-gradient(180deg, #1cb0f6 0%, #16a1e3 100%);
+    box-shadow: 0 0.4rem 0 #1288c2, 0 0.9rem 0.9rem rgba(0,0,0,0.4);
+}
+
+.leccion-en-curso-recorrido .boton-leccion:hover {
+    box-shadow: 0 0.1rem 0 #1288c2, 0 0.25rem 0.4rem rgba(0,0,0,0.4);
+}
+
+.leccion-en-curso-recorrido .boton-leccion:active {
+    box-shadow: 0 0 0 #1288c2, 0 0.1rem 0.25rem rgba(0,0,0,0.4);
+}
+
+.leccion-en-curso-recorrido .progreso-leccion-porcentaje {
+    background: #3a4048; 
+}
+
+.leccion-en-curso-recorrido .burbuja-emergente {
+    color: #1cb0f6;
+}
+
+/* ===== Variante: bloqueada (gris) ===== */
+.leccion-bloqueada-recorrido .boton-leccion {
+    background: linear-gradient(180deg, #b7b7b7 0%, #9a9a9a 100%);
+    box-shadow: 0 0.4rem 0 #808080, 0 0.9rem 0.9rem rgba(0,0,0,0.4);
+    cursor: not-allowed;
+}
+
+.leccion-bloqueada-recorrido .boton-leccion:hover {
+    box-shadow: 0 0.4rem 0 #808080, 0 0.9rem 0.9rem rgba(0,0,0,0.4);
+    transform: translateY(0);
+}
+
+.leccion-bloqueada-recorrido .boton-leccion:hover svg {
+    transform: none;
+}
+
+.leccion-bloqueada-recorrido .progreso-leccion-porcentaje {
+    background: #b7b7b7;
+}
+
+.leccion-bloqueada-recorrido .burbuja-emergente {
+    color: #b7b7b7;
+}

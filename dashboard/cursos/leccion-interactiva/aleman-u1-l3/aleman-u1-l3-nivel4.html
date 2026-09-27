@@ -4,25 +4,25 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Lección interactiva - PoliLingo</title>
-        <link rel="stylesheet" href="../../global.css" />
-        <link rel="stylesheet" href="leccion-interactiva.css" />
+        <link rel="stylesheet" href="../../../global.css" />
+        <link rel="stylesheet" href="../leccion-interactiva.css" />
     </head>
 
-    <body class="leccion-aleman">
+    <body class="leccion-aleman-nivel4">
         <header>
             <nav class="navbar">
-                <img src="../../../imagenes/Logo.png" alt="Logo poliLingo" />
+                <img src="../../../../imagenes/Logo.png" alt="Logo poliLingo" />
 
                 <ul class="navbar-links">
-                    <li><a href="../cursos.html" aria-current="page">Cursos</a></li>
+                    <li><a href="../../cursos.html">Cursos</a></li>
 
                     <li>
-                        <a href="../../perfil/perfil.html" 
+                        <a href="../../../perfil/perfil.html" aria-current="page"
                             >Perfil</a
                         >
                     </li>
-                    <li><a href="../../ranking/ranking.html">Ranking</a></li>
-                    <li><a href="../../tienda/tienda.html">Tienda</a></li>
+                    <li><a href="../../../ranking/ranking.html">Ranking</a></li>
+                    <li><a href="../../../tienda/tienda.html">Tienda</a></li>
                 </ul>
 
                 <ul class="navbar-estadisticas">
@@ -107,14 +107,14 @@
                 <header class="barra-leccion">
                     <a
                         class="boton-salir"
-                        href="../mapaUnidades/mapaUnidadesAleman.html"
+                        href="../../mapaUnidades/mapaUnidadesAleman.html"
                         aria-label="Salir de la lección"
                         >✕</a
                     >
 
                     <img
                         class="bandera-leccion"
-                        src="../../../imagenes/BanderaAlemania.png"
+                        src="../../../../imagenes/BanderaAlemania.png"
                         alt="Bandera de Alemania"
                     />
 
@@ -129,65 +129,62 @@
                         <li>Cantidad de vidas: ❤️❤️❤️</li>
                         <li>
                             <label for="progreso-leccion"
-                                >Progreso de la lección: 60%</label
+                                >Progreso de la lección: 75%</label
                             >
                             <progress
                                 id="progreso-leccion"
-                                value="60"
+                                value="75"
                                 max="100"
                             >
-                                60%
+                                75%
                             </progress>
                         </li>
                     </ul>
                 </header>
 
+                
                 <!-- FORMULARIO DE EJERCICIO (No es un article, es una interacción) -->
                 <form class="tarjeta-ejercicio">
                     <!-- Checkboxes de control -->
-                    <input class="selector" type="checkbox" id="p-el" />
-                    <input class="selector" type="checkbox" id="p-es" />
                     <input class="selector" type="checkbox" id="p-mi" />
-                    <input class="selector" type="checkbox" id="p-abuelo" />
-                    <input class="selector" type="checkbox" id="p-ella" />
+                    <input class="selector" type="checkbox" id="p-hijo" />
+                    <input class="selector" type="checkbox" id="p-es" />
+                    <input class="selector" type="checkbox" id="p-pequeno" />
                     <input class="selector" type="checkbox" id="p-su" />
-                    <input class="selector" type="checkbox" id="p-abuela" />
+                    <input class="selector" type="checkbox" id="p-pequena" />
 
                     <!-- BLOQUE 1: Pregunta y Construcción de respuesta -->
                     <section class="pregunta">
                         <img
                             class="imagen-poli"
-                            src="../../../imagenes/Poli-hablando.png"
+                            src="../../../../imagenes/Poli-hablando.png"
                             alt="Mascota Poli hablando"
                         />
 
                         <fieldset class="enunciado">
                             <h2>Traducí la siguiente oración:</h2>
                             <p class="frase">
-                                <strong>“Er ist mein Großvater..”</strong>
+                                <strong>„Mein Sohn ist klein.“</strong>
                             </p>
 
                             <ol class="respuesta" aria-label="Tu respuesta">
-                                <li class="slot slot-el">
-                                    <label for="p-el">Él</label>
+                                <li class="slot slot-mi">
+                                    <label for="p-mi">Mi</label>
+                                </li>
+                                <li class="slot slot-hijo">
+                                    <label for="p-hijo">hijo</label>
                                 </li>
                                 <li class="slot slot-es">
                                     <label for="p-es">es</label>
                                 </li>
-                                <li class="slot slot-mi">
-                                    <label for="p-mi">mi</label>
-                                </li>
-                                <li class="slot slot-abuelo">
-                                    <label for="p-abuelo">abuelo.</label>
-                                </li>
-                                <li class="slot slot-ella">
-                                    <label for="p-ella">Ella</label>
+                                <li class="slot slot-pequeno">
+                                    <label for="p-pequeno">pequeño.</label>
                                 </li>
                                 <li class="slot slot-su">
-                                    <label for="p-su">su</label>
+                                    <label for="p-su">Su</label>
                                 </li>
-                                <li class="slot slot-abuela">
-                                    <label for="p-abuela">abuela</label>
+                                <li class="slot slot-pequena">
+                                    <label for="p-pequena">pequeña</label>
                                 </li>
                             </ol>
                         </fieldset>
@@ -199,29 +196,22 @@
 
                         <ul class="banco">
                             <li>
-                                <label class="ficha" for="p-su">su</label>
+                                <label class="ficha" for="p-su">Su</label>
                             </li>
                             <li>
-                                <label class="ficha" for="p-abuelo"
-                                    >abuelo</label
-                                >
+                                <label class="ficha" for="p-pequena">pequeña</label>
                             </li>
                             <li>
-                                <label class="ficha" for="p-ella">ella</label>
+                                <label class="ficha" for="p-mi">Mi</label>
                             </li>
                             <li>
-                                <label class="ficha" for="p-mi">mi</label>
-                            </li>
-                            <li>
-                                <label class="ficha" for="p-abuela"
-                                    >abuela</label
-                                >
-                            </li>
-                            <li>
-                                <label class="ficha" for="p-el">el</label>
+                                <label class="ficha" for="p-hijo">hijo</label>
                             </li>
                             <li>
                                 <label class="ficha" for="p-es">es</label>
+                            </li>
+                            <li>
+                                <label class="ficha" for="p-pequeno">pequeño</label>
                             </li>
                         </ul>
                     </section>
@@ -231,19 +221,15 @@
             <!-- Panel de éxito -->
             <section id="correcto" class="resultado exito">
                 <h2>¡Correcto!</h2>
-                <p>¡Muy bien! Sumaste 10 XP.</p>
-                <a
-                    class="boton-comprobar"
-                    href="../mapaUnidades/mapaUnidadesAleman.html"
-                    >Continuar</a
-                >
+                <p>¡Muy bien! Leccion completada! Sumaste 50 XP.</p>
+                <a href="../../mapaUnidades/Unidades/aleman-u1.html">Volver al mapa</a>
             </section>
 
             <!-- Panel de error -->
             <section id="incorrecto" class="resultado error">
                 <h2>Incorrecto</h2>
                 <p>Revisá el orden de las palabras e intentá de nuevo.</p>
-                <a class="boton-comprobar" href="#">Reintentar</a>
+                <a class="boton-comprobar" href="aleman-u1-l3-nivel4.html">Reintentar</a>
             </section>
 
             <a class="boton-comprobar" href="#correcto">Comprobar respuesta</a>
