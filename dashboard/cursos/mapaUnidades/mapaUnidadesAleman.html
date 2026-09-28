@@ -89,187 +89,220 @@
         </header>
 
         <main>
+            <!-- Seccion introductoria - Bandera + Titulo idioma + texto 
+             + barra de progreso del lado izquierdo + foto del derecho-->
+
             <section class="encabezado-curso">
+
                 <section class="info-curso">
+
                     <section class="titulo-curso">
+
                         <img
                             class="imagen-bandera"
                             src="../../../imagenes/BanderaAlemania.png"
-                            alt="Bandera Alemania"
-                        />
+                            alt="Bandera Alemania"/>   
+
                         <h1>Alemán</h1>
+
                     </section>
 
                     <p class="mensaje">
                         ¡Vas muy bien!<br />
-                        Tu próxima lección es
-                        <strong>Vocabulario de Familia</strong>.
+                        Próxima lección:
+                        <strong>Vocabulario Familiar</strong>.
                     </p>
 
                     <section class="progreso-curso">
                         <label for="progreso-ingles"
-                            >Progreso: 12% · Nivel Principiante (A1)</label
+                            >Progreso: 12% · Nivel: Principiante (A1) </label
                         >
-                        <progress value="12" max="100">45%</progress>
+                        <progress value="12" max="100">12%</progress>
                     </section>
                 </section>
 
                 <img
                     class="imagen-unidad-Poli"
-                    src="../../../imagenes/CursoAleman.png"
-                    alt="Poli curso aleman"
+                    src="../../../imagenes/CursoChino.png"
+                    alt="Poli curso chino"
                 />
             </section>
 
             <!-- Seccion del mapa de unidades-->
 
-            <article class="unidad-en-progreso">
-                <img
-                    class="imagen-unidad-Poli"
-                    src="../../../imagenes/Unidad-Saludos.png"
-                    alt="Unidad Saludos"
-                />
+            <!-- Seccion unidad completa-->
 
-                <section class="info-unidad">
-                    <h2>Unidad 1 - Saludos</h2>
-                    <p>
-                        <i
-                            >Aprende a presentarte, saludar y mantener
-                            conversaciones básicas.</i
-                        >
-                    </p>
-                </section>
+            <section class="contenedor-mapa-unidades">
 
-                <section class="progreso-unidad">
-                    <label for="progreso-u1">Progreso · 0 / 3 lecciones</label>
-                    <progress id="progreso-u1" value="0" max="3">
-                        3 de 3
-                    </progress>
-                </section>
-            </article>
+                <h2>Selecciona la unidad que quieras repasar o continuar.</h2>
 
-            <!-- Mapa de lecciones de la unidad actual-->
+                <article class="mapa-unidades-ingles">
 
-            <section class="lecciones">
-                <article class="leccion-completada">
-                    <img
-                        class="icono-leccion"
-                        src="../../../imagenes/Completa.png"
-                        alt="Leccion completa"
-                    />
+                    <!-- Unidad 1 - en curso -->
+                    <article class="fila-unidad">
 
-                    <section class="info-leccion">
-                        <h3>Lección 1 - Frases Básicas</h3>
-                        <p>Completada</p>
-                    </section>
+                        <span class="icono-estado estado-en-curso">
+                            <svg  xmlns="http://www.w3.org/2000/svg" 
+                            width="24" 
+                            height="24"  
+                            fill="#ffffff" 
+                            viewBox="0 0 24 24" >
+                            <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                            <path d="M12 2C6.49 2 2 6.49 2 12s4.49 10 10 10 10-4.49 10-10S17.51 2 12 2m4.7 13.87-5.2-3c-.31-.18-.5-.51-.5-.87V6h2v5.42l4.7 2.71-1 1.73Z"></path>
+                            </svg>
+                        </span>
+
+                        <article class="tarjeta-unidad tarjeta-en-curso">
+
+                            <article class="info-unidad">
+                                <img src="../../../imagenes/Unidad-Saludos.png" alt="Imagen de unidad Saludos">
+
+                                <section class="datos-unidad">
+                                    <h3>Unidad 1 - Saludos</h3>
+                                    <a class="boton-repasar boton-naranja" href="Unidades/aleman-u1.html">Comenzar</a>
+                                </section>
+                            </article>
+
+                            <section class="progreso-curso estado-unidad">
+                                <label for="progreso-u3">En curso · 2/3 lecciones</label>
+                                <progress id="progreso-u3" class="barra-en-curso" value="66" max="100">66%</progress>
+                            </section>
+
+                        </article>
+
+                    </article>
+
+                    <!-- Unidad 2 - bloqueada -->
+                    <article class="fila-unidad">
+
+                        <span class="icono-estado estado-bloqueada">
+                            <svg  xmlns="http://www.w3.org/2000/svg" 
+                            width="22" 
+                            height="22"  
+                            fill="#ffffff" 
+                            viewBox="0 2 24 24" >
+                            <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                            <path d="M6 22h12c1.1 0 2-.9 2-2v-9c0-1.1-.9-2-2-2h-1V7c0-2.76-2.24-5-5-5S7 4.24 7 7v2H6c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2m7-4.28V20h-2v-2.28A2 2 0 0 1 10 16c0-1.1.9-2 2-2s2 .9 2 2a2 2 0 0 1-1 1.72M9 7c0-1.65 1.35-3 3-3s3 1.35 3 3v2H9z"></path>
+                            </svg>
+                        </span>
+
+                        <article class="tarjeta-unidad tarjeta-bloqueada">
+
+                            <article class="info-unidad">
+                                <img src="../../../imagenes/Unidad-Comida.png" alt="Imagen de unidad Comida">
+
+                                <section class="datos-unidad">
+                                    <h3>Unidad 2 - Comidas</h3>
+                                </section>
+                            </article>
+
+                            <section class="progreso-curso estado-unidad">
+                                <label>Bloqueada · 0/3 lecciones</label>
+                            </section>
+
+                        </article>
+
+                    </article>
+
+                    <!-- Unidad 3 - bloqueada -->
+                    <article class="fila-unidad">
+
+                        <span class="icono-estado estado-bloqueada">
+                            <svg  xmlns="http://www.w3.org/2000/svg" 
+                            width="22" 
+                            height="22"  
+                            fill="#ffffff" 
+                            viewBox="0 2 24 24" >
+                            <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                            <path d="M6 22h12c1.1 0 2-.9 2-2v-9c0-1.1-.9-2-2-2h-1V7c0-2.76-2.24-5-5-5S7 4.24 7 7v2H6c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2m7-4.28V20h-2v-2.28A2 2 0 0 1 10 16c0-1.1.9-2 2-2s2 .9 2 2a2 2 0 0 1-1 1.72M9 7c0-1.65 1.35-3 3-3s3 1.35 3 3v2H9z"></path>
+                            </svg>
+                        </span>
+
+                        <article class="tarjeta-unidad tarjeta-bloqueada">
+
+                            <article class="info-unidad">
+                                <img src="../../../imagenes/Unidad-Viajes.png" alt="Imagen de unidad Viajes">
+
+                                <section class="datos-unidad">
+                                    <h3>Unidad 3 - Viajes</h3>
+                                </section>
+                            </article>
+
+                            <section class="progreso-curso estado-unidad">
+                                <label>Bloqueada · 0/3 lecciones</label>
+                            </section>
+
+                        </article>
+
+                    </article>
+
+                    <!-- Unidad 4 - bloqueada -->
+                    <article class="fila-unidad">
+
+                        <span class="icono-estado estado-bloqueada">
+                            <svg  xmlns="http://www.w3.org/2000/svg" 
+                            width="22" 
+                            height="22"  
+                            fill="#ffffff" 
+                            viewBox="0 2 24 24" >
+                            <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                            <path d="M6 22h12c1.1 0 2-.9 2-2v-9c0-1.1-.9-2-2-2h-1V7c0-2.76-2.24-5-5-5S7 4.24 7 7v2H6c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2m7-4.28V20h-2v-2.28A2 2 0 0 1 10 16c0-1.1.9-2 2-2s2 .9 2 2a2 2 0 0 1-1 1.72M9 7c0-1.65 1.35-3 3-3s3 1.35 3 3v2H9z"></path>
+                            </svg>
+                        </span>
+
+                        <article class="tarjeta-unidad tarjeta-bloqueada">
+
+                            <article class="info-unidad">
+                                <img src="../../../imagenes/Unidad-Conversacion.png" alt="Imagen de unidad Conversaciones">
+
+                                <section class="datos-unidad">
+                                    <h3>Unidad 4 - Conversaciones</h3>
+                                </section>
+                            </article>
+
+                            <section class="progreso-curso estado-unidad">
+                                <label>Bloqueada · 0/3 lecciones</label>
+                            </section>
+
+                        </article>
+
+                    </article>
+
+                    <!-- Unidad 5 - bloqueada -->
+                    <article class="fila-unidad">
+
+                        <span class="icono-estado estado-bloqueada">
+                            <svg  xmlns="http://www.w3.org/2000/svg" 
+                            width="22" 
+                            height="22"  
+                            fill="#ffffff" 
+                            viewBox="0 2 24 24" >
+                            <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                            <path d="M6 22h12c1.1 0 2-.9 2-2v-9c0-1.1-.9-2-2-2h-1V7c0-2.76-2.24-5-5-5S7 4.24 7 7v2H6c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2m7-4.28V20h-2v-2.28A2 2 0 0 1 10 16c0-1.1.9-2 2-2s2 .9 2 2a2 2 0 0 1-1 1.72M9 7c0-1.65 1.35-3 3-3s3 1.35 3 3v2H9z"></path>
+                            </svg>
+                        </span>
+
+                        <article class="tarjeta-unidad tarjeta-bloqueada">
+
+                            <article class="info-unidad">
+                                <img src="../../../imagenes/Unidad-TiemposVerbales.png" alt="Imagen de unidad Tiempos verbales">
+
+                                <section class="datos-unidad">
+                                    <h3>Unidad 5 - Tiempos verbales</h3>
+                                </section>
+                            </article>
+
+                            <section class="progreso-curso estado-unidad">
+                                <label>Bloqueada · 0/3 lecciones</label>
+                            </section>
+
+                        </article>
+
+                    </article>
+
                 </article>
 
-                <article class="leccion-completada">
-                    <img
-                        class="icono-leccion"
-                        src="../../../imagenes/Completa.png"
-                        alt="Leccion completa"
-                    />
-
-                    <section class="info-leccion">
-                        <h3>Lección 2 - Presentaciones</h3>
-                        <p>Completada</p>
-                    </section>
-                </article>
-
-                <a
-                    class="leccion-en-curso"
-                    href="../leccion-interactiva/aleman-u1-l3.html"
-                >
-                    <img
-                        class="icono-leccion"
-                        src="../../../imagenes/Encurso.png"
-                        alt="En curso"
-                    />
-
-                    <section class="info-leccion">
-                        <h3>Lección 3 - Vocabulario de Familia</h3>
-                        <p>En curso</p>
-                    </section>
-                </a>
-            </section>
-
-            <!-- Seccion unidades bloqueadas-->
-
-            <article class="unidad-bloqueada">
-                <img
-                    class="imagen-unidad-Poli"
-                    src="../../../imagenes/Unidad-Comida.png"
-                    alt="Unidad Viajes"
-                />
-
-                <section class="info-unidad">
-                    <h2>Unidad 2 - Comida</h2>
-                    <p>
-                        <i
-                            >Habla sobre tus comidas favoritas, restaurantes y
-                            hábitos alimenticios.</i
-                        >
-                    </p>
-                </section>
-
-                <section class="progreso-unidad">
-                    <label for="progreso-u1">Progreso · 0 / 3 lecciones</label>
-                    <progress id="progreso-u1" value="0" max="3">
-                        3 de 3
-                    </progress>
-                </section>
-            </article>
-
-            <article class="unidad-bloqueada">
-                <img
-                    class="imagen-unidad-Poli"
-                    src="../../../imagenes/Unidad-Viajes.png"
-                    alt="Unidad Viajes"
-                />
-
-                <section class="info-unidad">
-                    <h2>Unidad 3 - Viajes</h2>
-                    <p>
-                        <i
-                            >Aprendé a viajar, pedir direcciones y hablar sobre
-                            tus planes.</i
-                        >
-                    </p>
-                </section>
-
-                <section class="progreso-unidad">
-                    <label for="progreso-u1">Progreso · 0 / 3 lecciones</label>
-                    <progress id="progreso-u1" value="0" max="3">
-                        3 de 3
-                    </progress>
-                </section>
-            </article>
-
-            <article class="unidad-bloqueada">
-                <img
-                    class="imagen-unidad-Poli"
-                    src="../../../imagenes/Unidad-Conversacion.png"
-                    alt="Unidad Conversación"
-                />
-
-                <section class="info-unidad">
-                    <h2>Unidad 4 - Conversación</h2>
-                    <p>
-                        <i
-                            >Mejora tu fluidez, expresiones útiles y
-                            comunicación cotidiana.</i
-                        >
-                    </p>
-                </section>
-
-                <section class="progreso-unidad">
-                    <label for="progreso-u1">Progreso · 0 / 3 lecciones</label>
-                    <progress id="progreso-u1" value="0" max="3">
-                        3 de 3
-                    </progress>
-                </section>
-            </article>
+             </section>
 
             <nav class="volver">
                 <a class="volver-a-cursos" href="../cursos.html">
