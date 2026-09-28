@@ -1088,12 +1088,14 @@ body.completada #correcto{
     display: flex;
 }
 
-.botones-repaso{
-    display:flex;
-    flex-direction: row;
+.botones-repaso {
+    display: flex;
+    flex-wrap: wrap;        /* si no entran, pasan a otra línea */
     justify-content: center;
-    
-
+    gap: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 16px;
 }
 
 .boton-siguiente-anterior{
@@ -1108,4 +1110,6 @@ body.completada #correcto{
     margin:1rem;
     box-sizing: border-box;
 }
+
+
 
