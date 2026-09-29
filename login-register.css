@@ -30,7 +30,8 @@ main {
 }
 
 /*Acá arranca el login*/
-.form-login {
+/* El calendario utiliza el mismo formato para seguir un mismo patron */
+.form-login, .tarjeta-calendario {
     display: flex;
     flex-direction: column;
     align-items: center;
