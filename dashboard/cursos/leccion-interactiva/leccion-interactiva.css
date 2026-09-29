@@ -927,8 +927,8 @@ body.leccion-chino-nivel4:has(#correcto:target):not(:has(#p-s3-como:checked):has
 @media (max-width: 40rem){
 
     .barra-leccion{
-        padding: 3.5rem 1rem 1rem;
-        margin-top: 2rem;
+        padding: 3.5rem 1rem 1rem;   
+        margin-top: 2rem;   
         justify-content: center;
         text-align: center;
     }
@@ -939,49 +939,6 @@ body.leccion-chino-nivel4:has(#correcto:target):not(:has(#p-s3-como:checked):has
 
     .tarjeta-ejercicio{
         padding: 1.2rem;
-    }
-
-    .estado-leccion{
-        min-width: 100%;
-    }
-
-    .pregunta{
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .imagen-poli{
-        width: 7rem;
-    }
-
-    .respuesta,
-    .banco{
-        justify-content: center;
-    }
-
-    .resultado{
-        flex-direction: column;
-        align-items: stretch;
-        text-align: center;
-    }
-
-    .resultado a{
-        text-align: center;
-    }
-
-    main.ejercicio > .boton-comprobar{
-        margin-bottom: 6rem;
-    }
-}
-
-/*  OPCION 2 PARA QUE EL CARTEL DE CORRECTO O INCORRECTO NO TAPE TODO
-
-@media (max-width: 40rem){
-
-    .barra-leccion{
-        padding: 3.5rem 1rem 1rem;      
-        justify-content: center;
-        text-align: center;
     }
 
     .estado-leccion{
@@ -997,15 +954,16 @@ body.leccion-chino-nivel4:has(#correcto:target):not(:has(#p-s3-como:checked):has
         width: 7rem;
     }
 
-    .respuesta{
+    .respuesta,
+    .banco{
         justify-content: center;
     }
 
     .resultado{
-        position: static;      /* NUEVO: deja de estar pegado a la pantalla */
-        /*margin-top: 1rem;       /*NUEVO */
-       /* border-radius: 1rem;   /* NUEVO */
-        /*border: 0.15rem solid; /* NUEVO: se ve completo, no solo arriba 
+        position: static;      
+        margin-top: 1rem;       
+       border-radius: 1rem;   
+        border: 0.15rem solid; 
         flex-direction: column;
         align-items: stretch;
         text-align: center;
@@ -1024,7 +982,7 @@ body.leccion-chino-nivel4:has(#correcto:target):not(:has(#p-s3-como:checked):has
     }
 }
 
-*/
+
 
 /* =====================================================
    MODO "LECCIÓN COMPLETADA" (solo lectura)
@@ -1090,9 +1048,9 @@ body.completada #correcto{
 
 .botones-repaso {
     display: flex;
-    flex-wrap: wrap;        /* si no entran, pasan a otra línea */
+    flex-wrap: wrap;        
     justify-content: center;
-    gap: 12px;
+    gap: 0.1rem;
     width: 100%;
     box-sizing: border-box;
     padding: 0 16px;
