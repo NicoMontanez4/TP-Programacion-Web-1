@@ -479,7 +479,7 @@
     filter: brightness(1.05);
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 420px) {
     
     .tienda-contenedor{
         padding: 0 0.75rem;

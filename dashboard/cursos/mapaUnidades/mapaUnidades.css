@@ -238,7 +238,7 @@
 
 /* ================= RESPONSIVE ================= */
 
-@media (max-width: 40rem){
+@media screen and (max-width: 420px) {
 
     .tarjeta-unidad{
         flex-direction: column;
