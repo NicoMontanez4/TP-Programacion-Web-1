@@ -28,13 +28,22 @@
     background-color: var(--verde);
 }
 
+<<<<<<< HEAD
+=======
+
+/* botón de salida: círculo rojo con la X blanca, en la esquina */
+>>>>>>> Nico
 .boton-salir {
     position: absolute;
     top: 1rem;
     left: 1rem;
     display: grid;
     place-items: center;
+<<<<<<< HEAD
     width: 1.6rem;
+=======
+    width: 1.6rem; /* tamaño cómodo para tocar */
+>>>>>>> Nico
     height: 1.6rem;
     border-radius: 50%;
     background-color: var(--rojo);
@@ -98,6 +107,10 @@
     appearance: none;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> Nico
 /* cada navegador usa pseudo-elementos distintos: van separados */
 .estado-leccion progress::-webkit-progress-bar {
     background-color: var(--gris-barra);
