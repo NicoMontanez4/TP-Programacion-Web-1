@@ -107,19 +107,6 @@
     appearance: none;
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> Nico
-/* cada navegador usa pseudo-elementos distintos: van separados */
-.estado-leccion progress::-webkit-progress-bar {
-    background-color: var(--gris-barra);
-}
-
-.estado-leccion progress::-webkit-progress-value {
-    background-color: white;
-    border-radius: 1rem;
-}
 
 .estado-leccion progress::-moz-progress-bar {
     background-color: white;
