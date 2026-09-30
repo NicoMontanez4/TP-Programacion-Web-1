@@ -51,6 +51,16 @@ h2 {
     max-width: 32rem;   /* evita que el texto se estire demasiado en cards muy anchos */
 }
 
+.titulo-liga p strong {
+  white-space: nowrap;
+}
+
+.icono-gema-ranking {
+  width: 1.3em;
+  height: 1.3em;
+  vertical-align: middle;
+}
+
 .titulo-liga h2 {
     margin-top: 0;
 }
@@ -183,15 +193,16 @@ td {
     .ranking-liga-bronce,
     .ranking-liga-oro,
     .ranking-liga-plata {
-        flex-direction: column-reverse; /* la imagen va arriba */
+        flex-direction: column-reverse;
         align-items: center;
     }
- 
+
     .titulo-liga,
+    .titulo-liga p,
     .otras-ligas h2 {
         text-align: center;
     }
- 
+
     .otras-ligas nav {
         flex-direction: column;
         align-items: center;
