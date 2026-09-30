@@ -1,257 +1,274 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html,
 body {
-    min-height: 100vh;
+  min-height: 100vh;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #b8b8c4;
-    font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #b8b8c4;
+  font-family: sans-serif;
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-    padding: 2.5rem 0;
-    width: 100%;
-    gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 0;
+  width: 100%;
+  gap: 2rem;
 }
 
 /*Acá arranca el login*/
 /* El calendario utiliza el mismo formato para seguir un mismo patron */
-.form-login, .tarjeta-calendario {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem 2rem;
-    gap: 1rem; /*HACER RESPONSIVE, mobile = 1rem, grande=2rem*/
-    width: min(80%, 25rem, 38rem);
-    height: auto;
-    border-radius: 2rem;
-    background-color: #dbe7ff;
+.tarjeta-calendario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  gap: 1rem; /*HACER RESPONSIVE, mobile = 1rem, grande=2rem*/
+  width: min(80%, 25rem, 38rem);
+  height: auto;
+  border-radius: 2rem;
+  background-color: #dbe7ff;
 }
 
-fieldset {
-    border: none;
+.form-login {
+  width: min(90%, 600px);
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  background-color: #dbe7ff;
+  border-radius: 2rem;
 }
 
 /*Lo que sería el "header" del form*/
 .logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    width: 100%;
-    text-align: center;
-    box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 .logo img {
-    min-inline-size: 110px;
-    max-inline-size: 36%;
-    height: auto;
+  min-inline-size: 110px;
+  max-inline-size: 36%;
+  height: auto;
 }
 
 .logo h2 {
-    box-sizing: border-box;
-    text-align: center;
-    font-size: clamp(1rem, 1.5vw, 1.6rem);
+  box-sizing: border-box;
+  text-align: center;
+  font-size: clamp(1rem, 1.5vw, 1.6rem);
 }
 
 /*Lo que sería el "body" del form*/
 .campo {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .campo label {
-    font-size: clamp(0.9rem, 1.2vw, 1.5rem);
-    margin-bottom: 0.3rem;
-    margin-left: 5%;
+  font-size: clamp(0.9rem, 1.2vw, 1.5rem);
+  margin-bottom: 0.3rem;
 }
 
 .campo input {
-    padding: 0 5%;
-    width: 100%;
-    font-size: clamp(0.85rem, 1.3vw, 1.5rem);
-    height: min(5.3vh, 3.5rem);
-    border-radius: 1.8rem;
-    border: 0.1rem solid gray;
+  padding: 0 5%;
+  width: 100%;
+  font-size: clamp(0.85rem, 1.3vw, 1.5rem);
+  height: min(5.3vh, 3.5rem);
+  border-radius: 1.8rem;
+  border: 0.1rem solid gray;
+  box-sizing: border-box;
 }
 
 /*------La chechbox------*/
-.campo.campo-checkbox {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 0.5rem;
-    width: 90%;
+.campo-checkbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  width: 90%;
+  padding: 0.5rem;
 }
 
 .campo.campo-checkbox label {
-    margin: 0;
-    font-size: 1rem;
+  margin: 0;
+  font-size: 1rem;
 }
 
 .campo input[type="checkbox"] {
-    appearance: none;
-    padding: 0;
-    width: 1.2rem;
-    height: 1.2rem;
-    border-radius: 0.3rem;
-    border: 0.1rem solid gray;
-    flex-shrink: 0;
-    cursor: pointer;
+  appearance: none;
+  padding: 0;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 0.3rem;
+  border: 0.1rem solid gray;
+  flex-shrink: 0;
+  cursor: pointer;
 }
 
 .campo input[type="checkbox"]:checked {
-    background-color: #60b8af;
-    border-color: #60b8af;
+  background-color: #60b8af;
+  border-color: #60b8af;
 }
 
 /*------Botón------*/
 .boton-login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: min(5.3vh, 3.5rem);
-    text-align: center;
-    text-decoration: none;
-    font-size: 1rem;
-    color: #000000;
-    background-color: #fcd994;
-    border-radius: 2rem;
-    border: 0.1rem solid gray;
-    box-sizing: border-box;
-    cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: min(5.3vh, 3.5rem);
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  color: #000000;
+  background-color: #fcd994;
+  border-radius: 2rem;
+  border: 0.1rem solid gray;
+  box-sizing: border-box;
+  cursor: pointer;
 }
 
 .boton-login:visited {
-    color: #000000;
+  color: #000000;
 }
 
 .boton-login:hover {
-    background-color: #ebd083;
+  background-color: #ebd083;
+}
+
+.negrita {
+  font-weight: bold;
 }
 
 /*El olvidado del login*/
 .olvidado {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    width: 100%;
-    gap: 1.5rem;
+  /* display: flex;
+  flex-direction: row; */
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  width: 100%;
+  gap: 1rem;
+  margin: 0 auto;
 }
 
 .olvidado img {
-    min-inline-size: 80px;
-    max-inline-size: 10%;
-    height: auto;
+  grid-row: span 2;
+  width: 100px;
+  height: auto;
 }
 
 .olvidado a {
-    display: flex;
-    flex-direction: column;
-    padding: 0.4rem 1rem;
-    text-align: center;
-    text-decoration: none;
-    background-color: #e0e0e0;
-    color: rgb(247, 250, 253);
-    border-radius: 0.2rem;
-    border: 0.1rem solid gray;
-    box-sizing: border-box;
-    cursor: pointer;
-    font-size: clamp(0.79rem, 1vw, 2rem);
+  /* display: flex;
+    flex-direction: column; */
+  grid-column: 2;
+  display: flex;
+  width: 80%;
+  padding: 0.4rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  background-color: #e0e0e0;
+  color: rgb(247, 250, 253);
+  border-radius: 0.2rem;
+  border: 0.1rem solid gray;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: clamp(0.79rem, 1vw, 2rem);
 }
 
-.olvidado a:first-child {
-    color: #000000;
-    background-color: #60b8af;
+.olvidado a:nth-of-type(1) {
+  color: #000000;
+  background-color: #60b8af;
 }
 
-.olvidado a:last-child {
-    background-color: #60b8af;
+.olvidado a:nth-of-type(2) {
+  background-color: #60b8af;
 }
 
 .olvidado a:hover {
-    color: #fff;
-    background-color: #509992;
+  color: #fff;
+  background-color: #509992;
 }
 
 /*-------------ACÁ ARRANCA EL REGISTRO-------*/
 .imagen-3 {
-    width: 12rem;
-    height: auto;
+  width: 12rem;
+  height: auto;
 }
 
 .header-registro {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 100%;
 }
 
 .contenedor-registro {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    width: 40rem;
-    margin: 3rem auto 0;
-    gap: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 40rem;
+  margin: 3rem auto 0;
+  gap: 1rem;
 }
 
 /*-------------ACÁ ARRANCA OLVIDASTE_CONTRA-------*/
 
 .logo h3 {
-    box-sizing: border-box;
-    text-align: center;
-    font-weight: normal;
-    font-size: clamp(0.85rem, 1.2vw, 1.2rem);
+  box-sizing: border-box;
+  text-align: center;
+  font-weight: normal;
+  font-size: clamp(0.85rem, 1.2vw, 1.2rem);
 }
 
 .campo p {
-    box-sizing: border-box;
-    text-align: left;
-    font-weight: normal;
-    font-size: clamp(0.6rem, 1vw, 1.2rem);
-    margin-bottom: 0.3rem;
-    margin-top: 3%;
+  box-sizing: border-box;
+  text-align: left;
+  font-weight: normal;
+  font-size: clamp(0.6rem, 1vw, 1.2rem);
+  margin-bottom: 0.3rem;
+  margin-top: 3%;
 }
 
 /*-------------ACÁ COD_RECUPERACION-------*/
 .grupo-inputs-codigo {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    gap: 0.8rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 0.8rem;
 }
 
 .grupo-inputs-codigo input {
-    width: 2.5rem;
-    height: 3rem;
-    text-align: center;
-    font-size: 1.2rem;
-    box-sizing: border-box;
-    border: 0.1rem solid gray;
+  width: 2.5rem;
+  height: 3rem;
+  text-align: center;
+  font-size: 1.2rem;
+  box-sizing: border-box;
+  border: 0.1rem solid gray;
 }
