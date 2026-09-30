@@ -538,7 +538,7 @@
             <section class="datos-cuenta">
                 <h2>Datos de la cuenta</h2>
 
-                <dl class="lista-datos">
+                <dl class="lista-datos"> <!-- lista pares de clave-valor -->
                     <dt>Nombre:</dt>
                     <dd>Carlos</dd>
 
@@ -569,11 +569,9 @@
                 <h2>Ajustes de la cuenta</h2>
 
                 <form action="perfil.html" method="POST" class="form-ajustes">
-                    <fieldset class="campo-grupo">
+                    <article class="campo-grupo">
                         <p class="campo horizontal">
-                            <label for="idioma-interfaz"
-                                >Idioma principal de interfaz:</label
-                            >
+                            <label for="idioma-interfaz">Idioma principal de interfaz:</label>
                             <select id="idioma-interfaz" name="idioma">
                                 <option value="es" selected>Español</option>
                                 <option value="en">Inglés</option>
@@ -581,7 +579,7 @@
                                 <option value="zh">Chino</option>
                             </select>
                         </p>
-                    </fieldset>
+                    </article>
 
                     <fieldset class="campo-grupo">
                         <legend class="subtitulo-form">
@@ -621,7 +619,7 @@
                         </p>
                     </fieldset>
 
-                    <fieldset class="acciones-form">
+                    <article class="acciones-form">
                         <input
                             type="submit"
                             class="boton-login btn-guardar"
@@ -639,7 +637,7 @@
                             href="eliminar_cuenta.html"
                             >Eliminar Cuenta</a
                         >
-                    </fieldset>
+                    </article>
                 </form>
             </section>
         </main>

@@ -134,8 +134,7 @@
                     </h2>
                 </header>
 
-                <div class="tarjetas-cursos">
-                    <!--los separamos en un div para poder trabajar en css aparte del header-->
+                <section class="tarjetas-cursos">
                     <article class="ingles">
                         <a class="curso-header" href="cursos-ingles.html">
                             <header>
@@ -185,7 +184,7 @@
                                 </svg>
                             </header>
                         </a>
-                        <div class="contenido-curso">
+                        <article class="contenido-curso">
                             <!-- Uso un div 
                             para separar el header del texto, barra y boton dentro de la misma tarjeta -->
                             <label class="progreso-texto" for="progreso-aleman"
@@ -201,7 +200,7 @@
                             >
                                 Continuar
                             </a>
-                        </div>
+                        </article>
                     </article>
 
                     <article class="chino">
@@ -228,16 +227,16 @@
                             </header>
                         </a>
                     </article>
-                </div>
+                </section>
             </section>
 
-            <div class="fila-actividad">
-                <!--Envuelvo los dos section en un div para poder ponerlos lado a lado en un flexbox en el css-->
+            <section class="fila-actividad">
+                <!--Envuelvo los dos section en otro para poder ponerlos lado a lado en un flexbox en el css-->
                 <section class="actividad-hoy">
                     <header>
                         <h2>Tu actividad</h2>
                     </header>
-                    <div class="texto-actividad">
+                    <article class="texto-actividad">
                         <p class="racha">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -289,7 +288,7 @@
                             </svg>
                             Liga: Bronce
                         </p>
-                        <div class="barra-xp">
+                        <article class="barra-xp">
                             <progress
                                 id="progreso-meta-diaria"
                                 value="35"
@@ -298,8 +297,8 @@
                                 35/50 XP
                             </progress>
                             <label for="progreso-meta-diaria">35/50 XP</label>
-                        </div>
-                    </div>
+                        </article>
+                    </article>
                 </section>
 
                 <section class="actividad-semanal">
@@ -346,7 +345,7 @@
                 <article class="logro">
                     <p>Completa 50 lecciones de inglés</p>
                     <!--Icon-->
-                    <div class="barra-logro">
+                    <article class="barra-logro">
                         <progress
                             id="progreso-lecciones-ingles"
                             value="8"
@@ -355,42 +354,42 @@
                             8/50
                         </progress>
                         <label for="progreso-lecciones-ingles">8/50</label>
-                    </div>
+                    </article>
                 </article>
 
                 <article class="logro">
                     <p>Gana 600 Poligemas</p>
                     <!--Icon-->
-                    <div class="barra-logro">
+                    <article class="barra-logro">
                         <progress id="progreso-poligemas" value="550" max="600">
                             550/600
                         </progress>
                         <label for="progreso-poligemas">550/600</label>
-                    </div>
+                    </article>
                 </article>
 
                 <article class="logro">
                     <p>Realiza 2 compras en la tienda</p>
                     <!--Icon-->
-                    <div class="barra-logro">
+                    <article class="barra-logro">
                         <progress id="progreso-compras" value="1" max="2">
                             1/2
                         </progress>
                         <label for="progreso-compras">1/2</label>
-                    </div>
+                    </article>
                 </article>
             </section>
 
             <section class="bienvenida">
                 <img src="../../imagenes/PoliSaluda.png" alt="Poli saluda" />
-                <div class="texto-bienvenida">
+                <article class="texto-bienvenida">
                     <h2>¡Hola Carlos! Te saluda Poli</h2>
                     <h2>Ya llevás 5 días aprendiendo</h2>
                     <p>¡Completá una lección más para mantener tu racha!</p>
                     <a href="cursos.html" class="boton-continuar"
                         >Continuar aprendiendo</a
                     >
-                </div>
+                </article>
             </section>
         </main>
 
