@@ -363,6 +363,6 @@
     }
     
     .boton-continuar {
-        text-align: center;
+        align-self: center;
     }
 }
