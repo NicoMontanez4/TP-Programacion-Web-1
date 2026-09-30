@@ -97,60 +97,58 @@
 
 
         <main>
-    <section class="tienda-contenedor">
-        <section class="seccion-tienda">
-            <h2>Método de pago</h2>
+            <section class="tienda-contenedor">
+                <section class="seccion-tienda">
+                    <h2>Método de pago</h2>
 
-            <p class="metodo-pago-subtitulo">
-                Completá el método de pago
-            </p>
+                    <p class="metodo-pago-subtitulo">
+                        Completá el método de pago
+                    </p>
 
-            <form class="formulario-pago" id="formulario-pago" action="compra-realizada.html">
-                <fieldset class="campo-pago">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" autocomplete="cc-given-name" required />
-                </fieldset>
+                     <form
+                        class="formulario-pago"
+                        action="compra-realizada.html"
+                        method="POST"
+            >
+                        <fieldset class="campo-pago">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" name="nombre" required/>
+                        </fieldset>
 
-                <fieldset class="campo-pago">
-                    <label for="numero-tarjeta">Número de tarjeta:</label>
-                    <input type="text" id="numero-tarjeta" name="numero-tarjeta"
-                           inputmode="numeric" autocomplete="cc-number"
-                           pattern="[0-9 ]{13,19}" title="Ingresá entre 13 y 19 dígitos" required />
-                </fieldset>
+                        <fieldset class="campo-pago">
+                            <label for="numero-tarjeta">Número de tarjeta:</label>
+                            <input type="number" id="numero-tarjeta" name="numero-tarjeta" required/>
+                        </fieldset>
 
-                <fieldset class="campo-pago">
-                    <label for="apellido">Apellido:</label>
-                    <input type="text" id="apellido" name="apellido" autocomplete="cc-family-name" required />
-                </fieldset>
+                        <fieldset class="campo-pago">
+                            <label for="apellido">Apellido:</label>
+                            <input type="text" id="apellido" name="apellido" required/>
+                        </fieldset>
 
-                <fieldset class="campo-pago">
-                    <label for="vencimiento">Vencimiento:</label>
-                    <input type="text" id="vencimiento" name="vencimiento" placeholder="MM/AA"
-                           autocomplete="cc-exp" pattern="(0[1-9]|1[0-2])\/[0-9]{2}"
-                           title="Formato MM/AA" required />
-                </fieldset>
+                        <fieldset class="campo-pago">
+                            <label for="vencimiento">Vencimiento:</label>
+                            <input type="number" id="vencimiento" name="vencimiento" placeholder="MM/AA" required />
+                        </fieldset>
 
-                <fieldset class="campo-pago">
-                    <label for="dni">DNI:</label>
-                    <input type="text" id="dni" name="dni" inputmode="numeric"
-                           pattern="[0-9]{7,8}" title="Ingresá 7 u 8 dígitos, sin puntos" required />
-                </fieldset>
+                        <fieldset class="campo-pago">
+                            <label for="dni">DNI:</label>
+                            <input type="number" id="dni" name="dni" required/>
+                        </fieldset>
 
-                <fieldset class="campo-pago">
-                    <label for="codigo-seguridad">Código de seguridad:</label>
-                    <input type="text" id="codigo-seguridad" name="codigo-seguridad"
-                           inputmode="numeric" autocomplete="cc-csc"
-                           pattern="[0-9]{3,4}" title="3 o 4 dígitos" required />
-                </fieldset>
-            </form>
+                        <fieldset class="campo-pago">
+                            <label for="codigo-seguridad">Código de seguridad:</label>
+                            <input type="number" id="codigo-seguridad" name="codigo-seguridad" placeholder="123" required/>
+                        </fieldset>
 
-            <!-- El botón queda afuera del form (no rompe tu CSS) pero lo dispara con form="..." -->
-            <button class="boton-realizar-compra" type="submit" form="formulario-pago">
-                Realizar compra
-            </button>
-        </section>
-    </section>
-</main>
+                        <button class="boton-realizar-compra" type="submit">
+                            Realizar compra
+                        </button>
+
+                    </form>
+                    
+                </section>
+            </section>
+        </main>
 
         <nav class="volver">
             <a class="volver-a-cursos" href="tienda.html">Volver a la tienda</a>
