@@ -1,46 +1,46 @@
 <!doctype html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>PoliLingo - Recuperar Contraseña</title>
-        <link rel="stylesheet" href="../login-register.css" />
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PoliLingo - Recuperar Contraseña</title>
+    <link rel="stylesheet" href="../login-register.css" />
+  </head>
 
-    <body>
-        <main>
-            <!-- El action apunta a la siguiente pantalla tras validar el input -->
-            <form
-                class="form-login"
-                action="cod_recuperacion.html"
-                method="POST"
-            >
-                <fieldset class="logo">
-                    <h2>¿Olvidaste tu contraseña?</h2>
-                    <h3>
-                        No te preocupes, don't worry, mach dir keine Sorgen,
-                        别担心...
-                    </h3>
-                </fieldset>
+  <body>
+    <main>
+      <!-- Texto del Inicio -->
+      <section class="form-login">
+        <article class="logo">
+          <h2>¿Olvidaste tu contraseña?</h2>
+          <h3>
+            No te preocupes, don't worry, mach dir keine Sorgen, 别担心...
+          </h3>
+        </article>
 
-                <fieldset class="campo">
-                    <label for="email">Email:</label>
-                    <input
-                        id="email"
-                        name="email"
-                        type="email"
-                        placeholder="ejemplo@email.com"
-                        required
-                    />
-                    <p>
-                        (Ingresa el mail para recibir el código de recuperación)
-                    </p>
-                </fieldset>
-
-                <!-- Se usa submit para activar la validación requerida del input -->
-                <button type="submit" class="boton-login">Aceptar</button>
-                <a class="boton-login" href="../index.html">Cancelar</a>
-            </form>
-        </main>
-    </body>
+        <!-- Formulario -->
+        <article class="form-login">
+          <form
+            action="../login-register/cod_recuperacion.html"
+            method="GET"
+            class="campo"
+          >
+            <label for="email">Email:</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="ejemplo@email.com"
+              required
+            />
+            <p>(Ingresa el mail para recibir el código de recuperación)</p>
+            <button type="submit" class="boton-login">
+              <span class="negrita">Aceptar</span>
+            </button>
+            <a href="../index.html" class="boton-login">Cancelar</a>
+          </form>
+        </article>
+      </section>
+    </main>
+  </body>
 </html>

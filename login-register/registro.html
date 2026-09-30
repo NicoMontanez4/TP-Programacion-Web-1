@@ -1,76 +1,62 @@
 <!doctype html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>PoliLingo - Registrarse</title>
-        <link rel="stylesheet" href="../login-register.css" />
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PoliLingo - Registrarse</title>
+    <link rel="stylesheet" href="../login-register.css" />
+  </head>
 
-    <body>
-        <main>
-            <form
-                class="form-login"
-                action="../dashboard/Dashboard.html"
-                method="POST"
-            >
-                <fieldset class="logo">
-                    <h2>
-                        Registrate y comenzá a aprender el idioma que más te
-                        guste.
-                    </h2>
-                </fieldset>
+  <body>
+    <main>
+      <!-- Texto del Inicio -->
+      <section class="form-login">
+        <article class="logo">
+          <h2>Registrate y comenza a aprender el idioma que mas te guste.</h2>
+        </article>
 
-                <fieldset class="campo">
-                    <label for="usuario">Usuario / Email:</label>
-                    <input
-                        id="usuario"
-                        name="username"
-                        type="text"
-                        placeholder="ejemplo@email.com"
-                        required
-                    />
-                </fieldset>
+        <!-- Formulario -->
+        <article class="form-login">
+          <form action="../dashboard/Dashboard.html" method="GET" class="campo">
+            <label for="email">Email:</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="ejemplo@email.com"
+              required
+            />
 
-                <fieldset class="campo">
-                    <label for="contrasenia">Contraseña:</label>
-                    <input
-                        id="contrasenia"
-                        name="contrasenia"
-                        type="password"
-                        placeholder="Mínimo 8 caracteres"
-                        required
-                    />
-                </fieldset>
+            <label for="contrasenia">Contraseña:</label>
+            <input
+              id="contrasenia"
+              name="contrasenia"
+              type="password"
+              placeholder="Mínimo 8 caracteres"
+              required
+            />
 
-                <fieldset class="campo">
-                    <label for="confirmar-contrasenia"
-                        >Repetí la Contraseña:</label
-                    >
-                    <input
-                        type="password"
-                        id="confirmar-contrasenia"
-                        name="confirmar-contrasenia"
-                        required
-                    />
-                </fieldset>
+            <label for="contrasenia">Repeti la Contraseña:</label>
+            <input
+              id="contrasenia"
+              name="contrasenia"
+              type="password"
+              placeholder="********"
+              required
+            />
 
-                <fieldset class="campo campo-checkbox">
-                    <input
-                        type="checkbox"
-                        id="recordarme"
-                        name="recordarme"
-                        required
-                    />
-                    <label for="recordarme"
-                        >Acepto los Términos y la Política de Privacidad</label
-                    >
-                </fieldset>
+            <label class="campo-checkbox">
+              <input type="checkbox" id="recordarme" name="recordarme" />
+              Acepto los Términos y la Política de Privacidad
+            </label>
 
-                <!-- Se usa submit para procesar y validar todos los campos required -->
-                <button type="submit" class="boton-login">Registrarse</button>
-                <a class="boton-login" href="../index.html">Tengo una cuenta</a>
-            </form>
-        </main>
-    </body>
+            <button type="submit" class="boton-login">
+              <span class="negrita">Registrarse</span>
+            </button>
+            <a href="../index.html" class="boton-login">Tengo una cuenta</a>
+          </form>
+        </article>
+      </section>
+    </main>
+  </body>
 </html>
