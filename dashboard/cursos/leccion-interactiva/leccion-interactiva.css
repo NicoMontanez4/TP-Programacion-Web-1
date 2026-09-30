@@ -28,22 +28,13 @@
     background-color: var(--verde);
 }
 
-<<<<<<< HEAD
-.boton-salir{
-=======
-/* botón de salida: círculo rojo con la X blanca, en la esquina */
 .boton-salir {
->>>>>>> main
     position: absolute;
     top: 1rem;
     left: 1rem;
     display: grid;
     place-items: center;
-<<<<<<< HEAD
-    width: 1.6rem;                      
-=======
-    width: 1.6rem; /* tamaño cómodo para tocar */
->>>>>>> main
+    width: 1.6rem;
     height: 1.6rem;
     border-radius: 50%;
     background-color: var(--rojo);
@@ -107,8 +98,6 @@
     appearance: none;
 }
 
-<<<<<<< HEAD
-=======
 /* cada navegador usa pseudo-elementos distintos: van separados */
 .estado-leccion progress::-webkit-progress-bar {
     background-color: var(--gris-barra);
@@ -124,7 +113,6 @@
     border-radius: 1rem;
 }
 
->>>>>>> main
 /* ================= CONTENEDOR PRINCIPAL ================= */
 .ejercicio {
     display: flex;
@@ -146,7 +134,6 @@
     width: 100%;
 }
 
-
 fieldset {
     border: none;
     min-width: 0;
@@ -166,11 +153,7 @@ fieldset {
     flex-shrink: 0;
 }
 
-<<<<<<< HEAD
-.enunciado{
-=======
 .enunciado {
->>>>>>> main
     flex: 1; /* ocupa el espacio que deja Poli */
     min-width: 0;
 }
@@ -202,19 +185,11 @@ fieldset {
 .respuesta,
 .banco {
     display: flex;
-<<<<<<< HEAD
-    flex-wrap: wrap;     /* bajan de línea si no entran */
-    gap: 0.6rem;                 
-    margin: 0;
-    padding: 0;
-    list-style: none;   /* sin números ni viñetas */
-=======
     flex-wrap: wrap; /* bajan de línea si no entran */
-    gap: 0.6rem; /* misma distancia entre todas */
+    gap: 0.6rem;
     margin: 0;
     padding: 0;
     list-style: none; /* sin números ni viñetas */
->>>>>>> main
     min-width: 0;
 }
 
@@ -1009,20 +984,9 @@ body.leccion-chino-nivel4:has(#correcto:target):not(
 }
 
 /* ================= PANELES DE CORRECCIÓN ================= */
-<<<<<<< HEAD
-.resultado{
-    display: none;    /* escondido por defecto */
-    position: fixed;  /* pegado al borde inferior de la pantalla */
-=======
 .resultado {
     display: none; /* escondido por defecto */
     position: fixed; /* pegado al borde inferior de la pantalla */
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 1.2rem 1.5rem;
-    margin-bottom: 5%;
-    box-sizing: border-box;
->>>>>>> main
     left: 0;
     right: 0;
     bottom: 0;
@@ -1041,14 +1005,9 @@ body.leccion-chino-nivel4:has(#correcto:target):not(
     margin: 0;
     font-size: 1.3rem;
 }
-<<<<<<< HEAD
 
-.resultado p{
-    flex: 1;    /* empuja el botón hacia la derecha */
-=======
-resultado .resultado p {
+.resultado p {
     flex: 1; /* empuja el botón hacia la derecha */
->>>>>>> main
     margin: 0;
     font-weight: 700;
 }
