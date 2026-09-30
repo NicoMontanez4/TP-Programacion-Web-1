@@ -95,58 +95,63 @@
             </nav>
         </header>
 
-
         <main>
             <section class="tienda-contenedor">
                 <section class="seccion-tienda">
                     <h2>Método de pago</h2>
+                    <p class="metodo-pago-subtitulo">Completá el método de pago</p>
 
-                    <p class="metodo-pago-subtitulo">
-                        Completá el método de pago
-                    </p>
-
-                     <form
+                    <form
                         class="formulario-pago"
                         action="compra-realizada.html"
-                        method="POST"
-            >
-                        <fieldset class="campo-pago">
-                            <label for="nombre">Nombre:</label>
-                            <input type="text" id="nombre" name="nombre" required/>
-                        </fieldset>
+                    >
 
-                        <fieldset class="campo-pago">
-                            <label for="numero-tarjeta">Número de tarjeta:</label>
-                            <input type="number" id="numero-tarjeta" name="numero-tarjeta" required/>
-                        </fieldset>
+                        <article class="campo-pago">
+                            <label for="nombre">
+                                Nombre:
+                                <input type="text" id="nombre" name="nombre" required/>
+                            </label>
+                        </article>
 
-                        <fieldset class="campo-pago">
-                            <label for="apellido">Apellido:</label>
-                            <input type="text" id="apellido" name="apellido" required/>
-                        </fieldset>
+                        <article class="campo-pago">
+                            <label for="numero-tarjeta">
+                                Número de tarjeta:
+                                <input type="number" id="numero-tarjeta" name="numero-tarjeta" required/>
+                            </label>
+                        </article>
 
-                        <fieldset class="campo-pago">
-                            <label for="vencimiento">Vencimiento:</label>
-                            <input type="number" id="vencimiento" name="vencimiento" placeholder="MM/AA" required />
-                        </fieldset>
+                        <article class="campo-pago">
+                            <label for="apellido">
+                                Apellido:
+                                <input type="text" id="apellido" name="apellido" required/>
+                            </label>   
+                        </article>
 
-                        <fieldset class="campo-pago">
-                            <label for="dni">DNI:</label>
-                            <input type="number" id="dni" name="dni" required/>
-                        </fieldset>
+                        <article class="campo-pago">
+                            <label for="vencimiento">
+                                Vencimiento:
+                                <input type="number" id="vencimiento" name="vencimiento" placeholder="MM/AA" required />
+                            </label>
+                        </article>
 
-                        <fieldset class="campo-pago">
-                            <label for="codigo-seguridad">Código de seguridad:</label>
-                            <input type="number" id="codigo-seguridad" name="codigo-seguridad" placeholder="123" required/>
-                        </fieldset>
+                        <article class="campo-pago">
+                            <label for="dni">
+                                DNI:
+                                <input type="number" id="dni" name="dni" required/>
+                            </label>
+                        </article>
 
-                        <a href="compra-realizada.html">
-                            <button class="boton-realizar-compra" type="submit">
+                        <article class="campo-pago">
+                            <label for="codigo-seguridad">
+                                Código de seguridad:
+                                <input type="number" id="codigo-seguridad" name="codigo-seguridad" placeholder="123" required/>
+                            </label>
+                        </article>
+
+                        <button class="boton-realizar-compra" type="submit">
                             Realizar compra
-                        </button></a>
-
+                        </button>
                     </form>
-                    
                 </section>
             </section>
         </main>
