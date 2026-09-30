@@ -1,6 +1,5 @@
 /* =====================================================
-   LECCIÓN INTERACTIVA - PoliLingo
-   Archivo: leccion-interactiva.css
+   LECCIÓN INTERACTIVA 
    ===================================================== */
 
 /* ================= VARIABLES ================= */
@@ -29,14 +28,13 @@
     background-color: var(--verde);
 }
 
-/* botón de salida: círculo rojo con la X blanca, en la esquina */
 .boton-salir{
     position: absolute;
     top: 1rem;
     left: 1rem;
     display: grid;
     place-items: center;
-    width: 1.6rem;                      /* tamaño cómodo para tocar */
+    width: 1.6rem;                      
     height: 1.6rem;
     border-radius: 50%;
     background-color: var(--rojo);
@@ -101,21 +99,6 @@
     appearance: none;
 }
 
-/* cada navegador usa pseudo-elementos distintos: van separados */
-.estado-leccion progress::-webkit-progress-bar{
-    background-color: var(--gris-barra);
-}
-
-.estado-leccion progress::-webkit-progress-value{
-    background-color: white;
-    border-radius: 1rem;
-}
-
-.estado-leccion progress::-moz-progress-bar{
-    background-color: white;
-    border-radius: 1rem;
-}
-
 /* ================= CONTENEDOR PRINCIPAL ================= */
 .ejercicio{
     display: flex;
@@ -137,6 +120,7 @@
     width: 100%;
 }
 
+
 fieldset {
     border: none;
     min-width: 0;
@@ -157,7 +141,7 @@ fieldset {
 }
 
 .enunciado{
-    flex: 1;                            /* ocupa el espacio que deja Poli */
+    flex: 1; /* ocupa el espacio que deja Poli */
     min-width: 0;
 }
 
@@ -188,11 +172,11 @@ fieldset {
 .respuesta,
 .banco{
     display: flex;
-    flex-wrap: wrap;                    /* bajan de línea si no entran */
-    gap: 0.6rem;                        /* misma distancia entre todas */
+    flex-wrap: wrap;     /* bajan de línea si no entran */
+    gap: 0.6rem;                 
     margin: 0;
     padding: 0;
-    list-style: none;                   /* sin números ni viñetas */
+    list-style: none;   /* sin números ni viñetas */
     min-width: 0;
 }
 
@@ -437,8 +421,8 @@ body.leccion-aleman-nivel4:has(#correcto:target):not(:has(#p-mi:checked):has(#p-
 /* ---------------------------------------------------
    Inglés: "The train is red"
    Unidad 3 - Viajes / Leccion 1 - Transporte / NIVEL 1
-   Correcta: ¿Puedo + ver + el + menú, + por + favor?
-             (sin cuenta/agua/mesa)
+   Correcta: El + tren + es + rojo
+             (sin azul/auto/bicicleta/ella/mi)
    --------------------------------------------------- */
 #p-el:checked ~ .pregunta .slot-el,
 #p-tren:checked ~ .pregunta .slot-tren,
@@ -488,10 +472,10 @@ body.leccion-ingles-nivel1:has(#correcto:target):not(:has(#p-el:checked):has(#p-
 }
 
 /* ---------------------------------------------------
-   Inglés: "The train is red"
+   Inglés: "I am going to take the bus"
    Unidad 3 - Viajes / Leccion 1 - Transporte / NIVEL 2
-   Correcta: ¿Puedo + ver + el + menú, + por + favor?
-             (sin cuenta/agua/mesa)
+   Correcta: Me + voy + a + tomar + el + colectivo
+             (sin avion/ir/tren)
    --------------------------------------------------- */
 #p-me:checked ~ .pregunta .slot-me,
 #p-voy:checked ~ .pregunta .slot-voy,
@@ -541,10 +525,10 @@ body.leccion-ingles-nivel2:has(#correcto:target):not(:has(#p-me:checked):has(#p-
 }
 
 /* ---------------------------------------------------
-   Inglés: "The train is red"
+   Inglés: "I like riding a motorcycle."
    Unidad 3 - Viajes / Leccion 1 - Transporte / NIVEL 3
-   Correcta: ¿Puedo + ver + el + menú, + por + favor?
-             (sin cuenta/agua/mesa)
+   Correcta: Me + gusta + andar + en + moto
+             (sin no/cuatriciclo/lavar/odio)
    --------------------------------------------------- */
 #p-me:checked ~ .pregunta .slot-me,
 #p-gusta:checked ~ .pregunta .slot-gusta,
@@ -594,10 +578,10 @@ body.leccion-ingles-nivel3:has(#correcto:target):not(:has(#p-me:checked):has(#p-
 }
 
 /* ---------------------------------------------------
-   Inglés: "The boat floats on the water"
+   Inglés: "The boat is huge."
    Unidad 3 - Viajes / Leccion 1 - Transporte / NIVEL 4
-   Correcta: ¿Puedo + ver + el + menú, + por + favor?
-             (sin cuenta/agua/mesa)
+   Correcta: El + barco + es + gigante
+             (sin pequeno/auto/bicicleta/ella/mi)
    --------------------------------------------------- */
 #p-el:checked ~ .pregunta .slot-el,
 #p-barco:checked ~ .pregunta .slot-barco,
@@ -853,8 +837,8 @@ body.leccion-chino-nivel4:has(#correcto:target):not(:has(#p-s3-como:checked):has
 
 /* ================= PANELES DE CORRECCIÓN ================= */
 .resultado{
-    display: none;                      /* escondido por defecto */
-    position: fixed;                    /* pegado al borde inferior de la pantalla */
+    display: none;    /* escondido por defecto */
+    position: fixed;  /* pegado al borde inferior de la pantalla */
     left: 0;
     right: 0;
     bottom: 0;
@@ -870,8 +854,6 @@ body.leccion-chino-nivel4:has(#correcto:target):not(:has(#p-s3-como:checked):has
 /* El botón "Comprobar respuesta" lleva siempre a #correcto (activa el :target).
    Qué panel se muestra depende de las palabras elegidas:
 
-   RESPUESTA CORRECTA = Buenos + días + ¿Cómo + estás? marcadas,
-                        y Hola, Gracias y Adiós SIN marcar. */
 
 /* panel de éxito: solo si se comprobó Y la respuesta es correcta */
 
@@ -882,7 +864,7 @@ body.leccion-chino-nivel4:has(#correcto:target):not(:has(#p-s3-como:checked):has
 }
 
 .resultado p{
-    flex: 1;                            /* empuja el botón hacia la derecha */
+    flex: 1;    /* empuja el botón hacia la derecha */
     margin: 0;
     font-weight: 700;
 }
