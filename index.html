@@ -1,75 +1,65 @@
 <!doctype html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>PoliLingo - Iniciar Sesión</title>
-        <link rel="stylesheet" href="login-register.css" />
-    </head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PoliLingo - Iniciar Sesión</title>
+    <link rel="stylesheet" href="login-register.css" />
+  </head>
 
-    <body>
-        <main>
-            <form
-                class="form-login"
-                action="dashboard/Dashboard.html"
-                method="GET"
-            >
-                <fieldset class="logo">
-                    <img src="imagenes/Logo.png" alt="Imagen del lorito" />
-                    <h2>
-                        Aprendé Inglés, Alemán y Chino gratis y de forma
-                        divertida!
-                    </h2>
-                </fieldset>
+  <body>
+    <main>
+      <!-- Logo y Texto del Inicio -->
+      <section class="form-login">
+        <article class="logo">
+          <img src="imagenes/Logo.png" alt="Imagen del lorito" />
+          <h2>Aprendé Inglés, Alemán y Chino gratis y de forma divertida!</h2>
+        </article>
 
-                <fieldset class="campo">
-                    <label for="usuario">Usuario / Email:</label>
-                    <input
-                        id="usuario"
-                        name="username"
-                        type="text"
-                        placeholder="ejemplo@email.com"
-                        required
-                    />
-                </fieldset>
+        <!-- Formulario -->
+        <article class="form-login">
+          <form action="dashboard/Dashboard.html" method="GET" class="campo">
+            <label for="email">Email:</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="ejemplo@email.com"
+              required
+            />
 
-                <fieldset class="campo">
-                    <label for="contrasenia">Contraseña:</label>
-                    <input
-                        id="contrasenia"
-                        name="contrasenia"
-                        type="password"
-                        placeholder="Mínimo 8 caracteres"
-                        required
-                    />
-                </fieldset>
+            <label for="contrasenia">Contraseña:</label>
+            <input
+              id="contrasenia"
+              name="contrasenia"
+              type="password"
+              placeholder="Mínimo 8 caracteres"
+              required
+            />
 
-                <fieldset class="campo campo-checkbox">
-                    <input type="checkbox" id="recordarme" name="recordarme" />
-                    <label for="recordarme">Recordar contraseña</label>
-                </fieldset>
+            <label class="campo-checkbox">
+              <input type="checkbox" id="recordarme" name="recordarme" />
+              Recordar contraseña
+            </label>
 
-                <a href="dashboard/Dashboard.html" class="boton-login"
-                    >Iniciar Sesión</a
-                >
+            <button type="submit" class="boton-login">
+              <span class="negrita">Iniciar Sesión</span>
+            </button>
+          </form>
+        </article>
 
-                <fieldset class="olvidado">
-                    <img
-                        src="imagenes/Poli1.png"
-                        alt="Imagen de Poli interrogante"
-                    />
+        <!-- Olvido de Contrasenia -->
+        <article class="olvidado">
+          <img src="imagenes/Poli1.png" alt="Imagen de Poli interrogante" />
 
-                    <fieldset>
-                        <a href="login-register/olvidaste_contra.html"
-                            >Olvidaste tu contraseña?</a
-                        >
-
-                        <a href="login-register/registro.html"
-                            >No tenés cuenta? Logueate acá!</a
-                        >
-                    </fieldset>
-                </fieldset>
-            </form>
-        </main>
-    </body>
+          <a href="login-register/olvidaste_contra.html"
+            >Olvidaste tu contraseña?</a
+          >
+          <a href="login-register/registro.html"
+            >No tenés cuenta? Logueate acá!</a
+          >
+        </article>
+      </section>
+    </main>
+  </body>
 </html>
