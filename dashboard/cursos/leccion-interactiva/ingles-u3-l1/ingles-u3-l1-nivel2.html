@@ -162,17 +162,7 @@
                 </header>
 
                 <!-- FORMULARIO DE EJERCICIO (No es un article, es una interacción) -->
-                <form class="tarjeta-ejercicio">
-                    <!-- Checkboxes de control -->
-                    <input class="selector" type="checkbox" id="p-me" />
-                    <input class="selector" type="checkbox" id="p-voy" />
-                    <input class="selector" type="checkbox" id="p-a" />
-                    <input class="selector" type="checkbox" id="p-tomar" />
-                    <input class="selector" type="checkbox" id="p-el" />
-                    <input class="selector" type="checkbox" id="p-colectivo" />
-                    <input class="selector" type="checkbox" id="p-avion" />
-                    <input class="selector" type="checkbox" id="p-ir" />
-                    <input class="selector" type="checkbox" id="p-tren" />
+                <section class="tarjeta-ejercicio">
 
                     <!-- BLOQUE 1: Pregunta y Construcción de respuesta -->
                     <section class="pregunta">
@@ -182,42 +172,14 @@
                             alt="Mascota Poli hablando"
                         />
 
-                        <fieldset class="enunciado">
+                        <section class="enunciado">
                             <h2>Traducí la siguiente oración:</h2>
                             <p class="frase">
                                 <strong>“I'm going to take the bus.”</strong>
                             </p>
 
-                            <ol class="respuesta" aria-label="Tu respuesta">
-                                <li class="slot slot-me">
-                                    <label for="p-me">Me</label>
-                                </li>
-                                <li class="slot slot-voy">
-                                    <label for="p-voy">voy</label>
-                                </li>
-                                <li class="slot slot-a">
-                                    <label for="p-a">a</label>
-                                </li>
-                                <li class="slot slot-tomar">
-                                    <label for="p-tomar">tomar</label>
-                                </li>
-                                <li class="slot slot-el">
-                                    <label for="p-el">el</label>
-                                </li>
-                                <li class="slot slot-colectivo">
-                                    <label for="p-colectivo">colectivo</label>
-                                </li>
-                                <li class="slot slot-avion">
-                                    <label for="p-avion">avion</label>
-                                </li>
-                                <li class="slot slot-ir">
-                                    <label for="p-ir">ir</label>
-                                </li>
-                                <li class="slot slot-tren">
-                                    <label for="p-tren">tren</label>
-                                </li>
-                            </ol>
-                        </fieldset>
+                            <ol class="respuesta" aria-label="Tu respuesta"></ol>
+                        </section>
                     </section>
 
                     <!-- BLOQUE 2: Banco de palabras -->
@@ -226,37 +188,35 @@
 
                         <ul class="banco">
                             <li>
-                                <label class="ficha" for="p-me">Me</label>
+                                <button type="button" class="ficha">Me</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-tren">tren</label>
+                                <button type="button" class="ficha">tren</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-tomar">tomar</label>
+                                <button type="button" class="ficha">tomar</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-voy">voy</label>
+                                <button type="button" class="ficha">voy</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-a">a</label>
+                                <button type="button" class="ficha">a</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-colectivo"
-                                    >colectivo</label
-                                >
+                                <button type="button" class="ficha">colectivo</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-ir">ir</label>
+                                <button type="button" class="ficha">ir</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-el">el</label>
+                                <button type="button" class="ficha">el</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-avion">avion</label>
+                                <button type="button" class="ficha">avion</button>
                             </li>
                         </ul>
                     </section>
-                </form>
+                </section>
             </section>
 
             <!-- Panel de éxito -->
@@ -272,10 +232,10 @@
             <section id="incorrecto" class="resultado error">
                 <h2>Incorrecto</h2>
                 <p>Revisá el orden de las palabras e intentá de nuevo.</p>
-                <a class="boton-comprobar" href="#">Reintentar</a>
+                <button type="button" class="boton-comprobar">Reintentar</button>
             </section>
 
-            <a class="boton-comprobar" href="#correcto">Comprobar respuesta</a>
+            <button type="button" class="boton-comprobar" id="boton-comprobar">Comprobar respuesta</button>
         </main>
         <footer>
             <p>©2026 PoliLingo - Todos los derechos reservados.</p>

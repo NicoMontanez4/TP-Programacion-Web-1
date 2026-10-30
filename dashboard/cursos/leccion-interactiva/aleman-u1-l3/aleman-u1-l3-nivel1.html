@@ -157,15 +157,7 @@
                 </header>
 
                 <!-- FORMULARIO DE EJERCICIO (No es un article, es una interacción) -->
-                <form class="tarjeta-ejercicio">
-                    <!-- Checkboxes de control -->
-                    <input class="selector" type="checkbox" id="p-el" />
-                    <input class="selector" type="checkbox" id="p-es" />
-                    <input class="selector" type="checkbox" id="p-mi" />
-                    <input class="selector" type="checkbox" id="p-abuelo" />
-                    <input class="selector" type="checkbox" id="p-ella" />
-                    <input class="selector" type="checkbox" id="p-su" />
-                    <input class="selector" type="checkbox" id="p-abuela" />
+                <section class="tarjeta-ejercicio">
 
                     <!-- BLOQUE 1: Pregunta y Construcción de respuesta -->
                     <section class="pregunta">
@@ -175,36 +167,14 @@
                             alt="Mascota Poli hablando"
                         />
 
-                        <fieldset class="enunciado">
+                        <section class="enunciado">
                             <h2>Traducí la siguiente oración:</h2>
                             <p class="frase">
                                 <strong>“Er ist mein Großvater”</strong>
                             </p>
 
-                            <ol class="respuesta" aria-label="Tu respuesta">
-                                <li class="slot slot-el">
-                                    <label for="p-el">Él</label>
-                                </li>
-                                <li class="slot slot-es">
-                                    <label for="p-es">es</label>
-                                </li>
-                                <li class="slot slot-mi">
-                                    <label for="p-mi">mi</label>
-                                </li>
-                                <li class="slot slot-abuelo">
-                                    <label for="p-abuelo">abuelo.</label>
-                                </li>
-                                <li class="slot slot-ella">
-                                    <label for="p-ella">Ella</label>
-                                </li>
-                                <li class="slot slot-su">
-                                    <label for="p-su">su</label>
-                                </li>
-                                <li class="slot slot-abuela">
-                                    <label for="p-abuela">abuela</label>
-                                </li>
-                            </ol>
-                        </fieldset>
+                            <ol class="respuesta" aria-label="Tu respuesta"></ol>
+                        </section>
                     </section>
 
                     <!-- BLOQUE 2: Banco de palabras -->
@@ -213,33 +183,29 @@
 
                         <ul class="banco">
                             <li>
-                                <label class="ficha" for="p-su">su</label>
+                                <button type="button" class="ficha">su</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-abuelo"
-                                    >abuelo</label
-                                >
+                                <button type="button" class="ficha">abuelo</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-ella">ella</label>
+                                <button type="button" class="ficha">ella</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-mi">mi</label>
+                                <button type="button" class="ficha">mi</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-abuela"
-                                    >abuela</label
-                                >
+                                <button type="button" class="ficha">abuela</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-el">el</label>
+                                <button type="button" class="ficha">el</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-es">es</label>
+                                <button type="button" class="ficha">es</button>
                             </li>
                         </ul>
                     </section>
-                </form>
+                </section>
             </section>
 
             <!-- Panel de éxito -->
@@ -260,7 +226,7 @@
                 >
             </section>
 
-            <a class="boton-comprobar" href="#correcto">Comprobar respuesta</a>
+            <button type="button" class="boton-comprobar" id="boton-comprobar">Comprobar respuesta</button>
         </main>
         <footer>
             <p>©2026 PoliLingo - Todos los derechos reservados.</p>

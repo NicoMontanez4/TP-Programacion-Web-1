@@ -162,17 +162,7 @@
                 </header>
 
                 <!-- FORMULARIO DE EJERCICIO (No es un article, es una interacción) -->
-                <form class="tarjeta-ejercicio">
-                    <!-- Checkboxes de control -->
-                    <input class="selector" type="checkbox" id="p-el" />
-                    <input class="selector" type="checkbox" id="p-barco" />
-                    <input class="selector" type="checkbox" id="p-es" />
-                    <input class="selector" type="checkbox" id="p-gigante" />
-                    <input class="selector" type="checkbox" id="p-pequeno" />
-                    <input class="selector" type="checkbox" id="p-auto" />
-                    <input class="selector" type="checkbox" id="p-bicicleta" />
-                    <input class="selector" type="checkbox" id="p-ella" />
-                    <input class="selector" type="checkbox" id="p-mi" />
+                <section class="tarjeta-ejercicio">
 
                     <!-- BLOQUE 1: Pregunta y Construcción de respuesta -->
                     <section class="pregunta">
@@ -182,42 +172,14 @@
                             alt="Mascota Poli hablando"
                         />
 
-                        <fieldset class="enunciado">
+                        <section class="enunciado">
                             <h2>Traducí la siguiente oración:</h2>
                             <p class="frase">
                                 <strong>“The boat is huge”</strong>
                             </p>
 
-                            <ol class="respuesta" aria-label="Tu respuesta">
-                                <li class="slot slot-el">
-                                    <label for="p-el">El</label>
-                                </li>
-                                <li class="slot slot-barco">
-                                    <label for="p-barco">barco</label>
-                                </li>
-                                <li class="slot slot-es">
-                                    <label for="p-es">es</label>
-                                </li>
-                                <li class="slot slot-gigante">
-                                    <label for="p-gigante">gigante</label>
-                                </li>
-                                <li class="slot slot-pequeno">
-                                    <label for="p-pequeno">pequeño</label>
-                                </li>
-                                <li class="slot slot-auto">
-                                    <label for="p-auto">auto</label>
-                                </li>
-                                <li class="slot slot-bicicleta">
-                                    <label for="p-bicicleta">bicicleta</label>
-                                </li>
-                                <li class="slot slot-ella">
-                                    <label for="p-ella">ella</label>
-                                </li>
-                                <li class="slot slot-mi">
-                                    <label for="p-mi">mi</label>
-                                </li>
-                            </ol>
-                        </fieldset>
+                            <ol class="respuesta" aria-label="Tu respuesta"></ol>
+                        </section>
                     </section>
 
                     <!-- BLOQUE 2: Banco de palabras -->
@@ -226,41 +188,35 @@
 
                         <ul class="banco">
                             <li>
-                                <label class="ficha" for="p-auto">auto</label>
+                                <button type="button" class="ficha">auto</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-mi">mi</label>
+                                <button type="button" class="ficha">mi</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-barco">barco</label>
+                                <button type="button" class="ficha">barco</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-ella">ella</label>
+                                <button type="button" class="ficha">ella</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-pequeno"
-                                    >pequeño</label
-                                >
+                                <button type="button" class="ficha">pequeño</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-es">es</label>
+                                <button type="button" class="ficha">es</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-gigante"
-                                    >gigante</label
-                                >
+                                <button type="button" class="ficha">gigante</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-el">El</label>
+                                <button type="button" class="ficha">El</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-bicicleta"
-                                    >bicicleta</label
-                                >
+                                <button type="button" class="ficha">bicicleta</button>
                             </li>
                         </ul>
                     </section>
-                </form>
+                </section>
             </section>
 
             <!-- Panel de éxito -->
@@ -278,10 +234,10 @@
             <section id="incorrecto" class="resultado error">
                 <h2>Incorrecto</h2>
                 <p>Revisá el orden de las palabras e intentá de nuevo.</p>
-                <a class="boton-comprobar" href="#">Reintentar</a>
+                <button type="button" class="boton-comprobar">Reintentar</button>
             </section>
 
-            <a class="boton-comprobar" href="#correcto">Comprobar respuesta</a>
+            <button type="button" class="boton-comprobar" id="boton-comprobar">Comprobar respuesta</button>
         </main>
         <footer>
             <p>©2026 PoliLingo - Todos los derechos reservados.</p>

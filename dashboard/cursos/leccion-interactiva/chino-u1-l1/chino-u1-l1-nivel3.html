@@ -161,13 +161,7 @@
                 </header>
 
                 <!-- FORMULARIO DE EJERCICIO (No es un article, es una interacción) -->
-                <form class="tarjeta-ejercicio">
-                    <input class="selector" type="checkbox" id="p-s2-estoy" />
-                    <input class="selector" type="checkbox" id="p-s2-bien" />
-                    <input class="selector" type="checkbox" id="p-s2-y" />
-                    <input class="selector" type="checkbox" id="p-s2-vos" />
-                    <input class="selector" type="checkbox" id="p-s2-mal" />
-                    <input class="selector" type="checkbox" id="p-s2-el" />
+                <section class="tarjeta-ejercicio">
 
                     <section class="pregunta">
                         <img
@@ -176,33 +170,14 @@
                             alt="Mascota Poli hablando"
                         />
 
-                        <fieldset class="enunciado">
+                        <section class="enunciado">
                             <h2>Traducí la siguiente oración:</h2>
                             <p class="frase">
                                 <strong>我很好，你呢？</strong>
                             </p>
 
-                            <ol class="respuesta" aria-label="Tu respuesta">
-                                <li class="slot slot-s2-estoy">
-                                    <label for="p-s2-estoy">Estoy</label>
-                                </li>
-                                <li class="slot slot-s2-bien">
-                                    <label for="p-s2-bien">bien,</label>
-                                </li>
-                                <li class="slot slot-s2-y">
-                                    <label for="p-s2-y">¿y</label>
-                                </li>
-                                <li class="slot slot-s2-vos">
-                                    <label for="p-s2-vos">vos?</label>
-                                </li>
-                                <li class="slot slot-s2-mal">
-                                    <label for="p-s2-mal">mal,</label>
-                                </li>
-                                <li class="slot slot-s2-el">
-                                    <label for="p-s2-el">él?</label>
-                                </li>
-                            </ol>
-                        </fieldset>
+                            <ol class="respuesta" aria-label="Tu respuesta"></ol>
+                        </section>
                     </section>
 
                     <section class="banco-palabras">
@@ -210,30 +185,26 @@
 
                         <ul class="banco">
                             <li>
-                                <label class="ficha" for="p-s2-mal">mal,</label>
+                                <button type="button" class="ficha">mal,</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-s2-el">él?</label>
+                                <button type="button" class="ficha">él?</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-s2-estoy"
-                                    >Estoy</label
-                                >
+                                <button type="button" class="ficha">Estoy</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-s2-bien"
-                                    >bien,</label
-                                >
+                                <button type="button" class="ficha">bien,</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-s2-y">¿y</label>
+                                <button type="button" class="ficha">¿y</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-s2-vos">vos?</label>
+                                <button type="button" class="ficha">vos?</button>
                             </li>
                         </ul>
                     </section>
-                </form>
+                </section>
             </section>
 
             <!-- Panel de éxito -->
@@ -254,7 +225,7 @@
                 >
             </section>
 
-            <a class="boton-comprobar" href="#correcto">Comprobar respuesta</a>
+            <button type="button" class="boton-comprobar" id="boton-comprobar">Comprobar respuesta</button>
         </main>
         <footer>
             <p>©2026 PoliLingo - Todos los derechos reservados.</p>

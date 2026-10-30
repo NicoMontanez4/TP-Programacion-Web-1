@@ -157,15 +157,7 @@
                 </header>
 
                 <!-- FORMULARIO DE EJERCICIO (No es un article, es una interacción) -->
-                <form class="tarjeta-ejercicio">
-                    <!-- Checkboxes de control -->
-                    <input class="selector" type="checkbox" id="p-buenos" />
-                    <input class="selector" type="checkbox" id="p-dias" />
-                    <input class="selector" type="checkbox" id="p-como" />
-                    <input class="selector" type="checkbox" id="p-estas" />
-                    <input class="selector" type="checkbox" id="p-buenas" />
-                    <input class="selector" type="checkbox" id="p-noches" />
-                    <input class="selector" type="checkbox" id="p-gracias" />
+                <section class="tarjeta-ejercicio">
 
                     <!-- BLOQUE 1: Pregunta y Construcción de respuesta -->
                     <section class="pregunta">
@@ -175,36 +167,14 @@
                             alt="Mascota Poli hablando"
                         />
 
-                        <fieldset class="enunciado">
+                        <section class="enunciado">
                             <h2>Traducí la siguiente oración:</h2>
                             <p class="frase">
                                 <strong>“早上好，你好吗？"</strong>
                             </p>
 
-                            <ol class="respuesta" aria-label="Tu respuesta">
-                                <li class="slot slot-buenos">
-                                    <label for="p-buenos">Buenos</label>
-                                </li>
-                                <li class="slot slot-dias">
-                                    <label for="p-dias">días</label>
-                                </li>
-                                <li class="slot slot-como">
-                                    <label for="p-como">¿Cómo</label>
-                                </li>
-                                <li class="slot slot-estas">
-                                    <label for="p-estas">estás?</label>
-                                </li>
-                                <li class="slot slot-buenas">
-                                    <label for="p-buenas">Buenas</label>
-                                </li>
-                                <li class="slot slot-noches">
-                                    <label for="p-noches">noches</label>
-                                </li>
-                                <li class="slot slot-gracias">
-                                    <label for="p-gracias">Gracias</label>
-                                </li>
-                            </ol>
-                        </fieldset>
+                            <ol class="respuesta" aria-label="Tu respuesta"></ol>
+                        </section>
                     </section>
 
                     <!-- BLOQUE 2: Banco de palabras -->
@@ -213,39 +183,29 @@
 
                         <ul class="banco">
                             <li>
-                                <label class="ficha" for="p-gracias"
-                                    >Gracias</label
-                                >
+                                <button type="button" class="ficha">Gracias</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-dias">días</label>
+                                <button type="button" class="ficha">días</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-buenas"
-                                    >Buenas</label
-                                >
+                                <button type="button" class="ficha">Buenas</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-como">¿Cómo</label>
+                                <button type="button" class="ficha">¿Cómo</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-noches"
-                                    >noches</label
-                                >
+                                <button type="button" class="ficha">noches</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-buenos"
-                                    >Buenos</label
-                                >
+                                <button type="button" class="ficha">Buenos</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-estas"
-                                    >estás?</label
-                                >
+                                <button type="button" class="ficha">estás?</button>
                             </li>
                         </ul>
                     </section>
-                </form>
+                </section>
             </section>
 
             <!-- Panel de éxito -->
@@ -266,7 +226,7 @@
                 >
             </section>
 
-            <a class="boton-comprobar" href="#correcto">Comprobar respuesta</a>
+            <button type="button" class="boton-comprobar" id="boton-comprobar">Comprobar respuesta</button>
         </main>
         <footer>
             <p>©2026 PoliLingo - Todos los derechos reservados.</p>

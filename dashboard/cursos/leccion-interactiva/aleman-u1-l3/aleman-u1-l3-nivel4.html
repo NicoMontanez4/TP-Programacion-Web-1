@@ -161,14 +161,7 @@
                 </header>
 
                 <!-- FORMULARIO DE EJERCICIO (No es un article, es una interacción) -->
-                <form class="tarjeta-ejercicio">
-                    <!-- Checkboxes de control -->
-                    <input class="selector" type="checkbox" id="p-mi" />
-                    <input class="selector" type="checkbox" id="p-hijo" />
-                    <input class="selector" type="checkbox" id="p-es" />
-                    <input class="selector" type="checkbox" id="p-pequeno" />
-                    <input class="selector" type="checkbox" id="p-su" />
-                    <input class="selector" type="checkbox" id="p-pequena" />
+                <section class="tarjeta-ejercicio">
 
                     <!-- BLOQUE 1: Pregunta y Construcción de respuesta -->
                     <section class="pregunta">
@@ -178,33 +171,14 @@
                             alt="Mascota Poli hablando"
                         />
 
-                        <fieldset class="enunciado">
+                        <section class="enunciado">
                             <h2>Traducí la siguiente oración:</h2>
                             <p class="frase">
                                 <strong>"Mein Sohn ist klein."</strong>
                             </p>
 
-                            <ol class="respuesta" aria-label="Tu respuesta">
-                                <li class="slot slot-mi">
-                                    <label for="p-mi">Mi</label>
-                                </li>
-                                <li class="slot slot-hijo">
-                                    <label for="p-hijo">hijo</label>
-                                </li>
-                                <li class="slot slot-es">
-                                    <label for="p-es">es</label>
-                                </li>
-                                <li class="slot slot-pequeno">
-                                    <label for="p-pequeno">pequeño.</label>
-                                </li>
-                                <li class="slot slot-su">
-                                    <label for="p-su">Su</label>
-                                </li>
-                                <li class="slot slot-pequena">
-                                    <label for="p-pequena">pequeña</label>
-                                </li>
-                            </ol>
-                        </fieldset>
+                            <ol class="respuesta" aria-label="Tu respuesta"></ol>
+                        </section>
                     </section>
 
                     <!-- BLOQUE 2: Banco de palabras -->
@@ -213,30 +187,26 @@
 
                         <ul class="banco">
                             <li>
-                                <label class="ficha" for="p-su">Su</label>
+                                <button type="button" class="ficha">Su</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-pequena"
-                                    >pequeña</label
-                                >
+                                <button type="button" class="ficha">pequeña</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-mi">Mi</label>
+                                <button type="button" class="ficha">Mi</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-hijo">hijo</label>
+                                <button type="button" class="ficha">hijo</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-es">es</label>
+                                <button type="button" class="ficha">es</button>
                             </li>
                             <li>
-                                <label class="ficha" for="p-pequeno"
-                                    >pequeño</label
-                                >
+                                <button type="button" class="ficha">pequeño</button>
                             </li>
                         </ul>
                     </section>
-                </form>
+                </section>
             </section>
 
             <!-- Panel de éxito -->
@@ -257,7 +227,7 @@
                 >
             </section>
 
-            <a class="boton-comprobar" href="#correcto">Comprobar respuesta</a>
+            <button type="button" class="boton-comprobar" id="boton-comprobar">Comprobar respuesta</button>
         </main>
         <footer>
             <p>©2026 PoliLingo - Todos los derechos reservados.</p>
