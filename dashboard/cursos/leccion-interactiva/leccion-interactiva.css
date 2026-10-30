@@ -70,7 +70,7 @@
     font-weight: 700;
 }
 
-/* vidas + progreso: dos filas, la barra ocupa el espacio que sobra */
+/* intentos + progreso: dos filas, la barra ocupa el espacio que sobra */
 .estado-leccion {
     flex: 1;
     min-width: 16rem;
@@ -88,6 +88,40 @@
     display: flex;
     align-items: center;
     gap: 0.8rem;
+}
+
+/* ---- intentos de la lección ---- */
+.intentos {
+    flex-wrap: wrap;
+    row-gap: 0.2rem;
+}
+
+.intentos-marcas {
+    display: flex;
+    gap: 0.35rem;
+}
+
+.intento {
+    width: 1.1rem;
+    height: 1.1rem;
+    border: 0.15rem solid var(--petroleo);
+    border-radius: 50%;
+    background-color: var(--petroleo);
+}
+
+/* intento ya usado: círculo vacío */
+.intento-usado {
+    background-color: white;
+}
+
+.intentos-numero {
+    font-size: 1rem;
+}
+
+.intentos-ayuda {
+    flex-basis: 100%;
+    font-size: 0.75rem;
+    font-weight: 400;
 }
 
 /* ---- barra de progreso ---- */
