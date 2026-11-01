@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>PoliLingo - Iniciar Sesión</title>
     <link rel="stylesheet" href="css/cuenta.css" />
+    <script src="js/datos.js" defer></script>
+    <script src="js/estado.js" defer></script>
+    <script src="js/paginas/login.js" defer></script>
   </head>
 
   <body>
@@ -18,12 +21,12 @@
 
         <!-- Formulario -->
         <article class="form-login">
-          <form id="form-login" class="campo">
-            <label for="email">Email:</label>
+          <form id="form-login" class="campo" novalidate>
+            <label for="usuario-email">Usuario o email:</label>
             <input
-              id="email"
-              name="email"
-              type="email"
+              id="usuario-email"
+              name="usuario-email"
+              type="text"
               placeholder="ejemplo@email.com"
               required
             />
@@ -39,8 +42,10 @@
 
             <label class="campo-checkbox">
               <input type="checkbox" id="recordarme" name="recordarme" />
-              Recordar contraseña
+              Recordar mi usuario
             </label>
+
+            <p id="mensaje-login" class="mensaje-form" role="alert" hidden></p>
 
             <button type="submit" class="boton-login">
               <span class="negrita">Iniciar Sesión</span>
@@ -56,16 +61,13 @@
           />
 
           <a href="paginas/cuenta/olvidaste_contra(recuperar).html"
-            >Olvidaste tu contraseña?</a
+            >¿Olvidaste tu contraseña?</a
           >
           <a href="paginas/cuenta/registro.html"
-            >No tenés cuenta? Logueate acá!</a
+            >¿No tenés cuenta? ¡Registrate acá!</a
           >
         </article>
       </section>
     </main>
   </body>
-  <script src="../../js/datos.js"></script>
-  <script src="../../js/estado.js"></script>
-  <script src="../../js/paginas/login.js"></script>
 </html>

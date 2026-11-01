@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>PoliLingo - Registrarse</title>
     <link rel="stylesheet" href="../../css/cuenta.css" />
+    <script src="../../js/datos.js" defer></script>
+    <script src="../../js/estado.js" defer></script>
+    <script src="../../js/paginas/registro.js" defer></script>
   </head>
 
   <body>
@@ -12,12 +15,25 @@
       <!-- Texto del Inicio -->
       <section class="form-login">
         <article class="logo">
-          <h2>Registrate y comenza a aprender el idioma que mas te guste.</h2>
+          <h2>Registrate y comenzá a aprender el idioma que más te guste.</h2>
         </article>
 
         <!-- Formulario -->
         <article class="form-login">
-          <form class="campo" id="form-registro">
+          <form class="campo" id="form-registro" novalidate>
+            <label for="nombre">Nombre:</label>
+            <input id="nombre" name="nombre" type="text" placeholder="Juan" required>
+
+            <label for="apellido">Apellido (opcional):</label>
+            <input id="apellido" name="apellido" type="text" placeholder="Perez">
+
+            <label for="usuario">Nombre de usuario:</label>
+            <input id="usuario" name="usuario" type="text" placeholder="juanperez_web" aria-describedby="ayuda-usuario" required>
+
+            <small id="ayuda-usuario" class="ayuda-campo">
+              De 3 a 15 caracteres: letras, números y _. Es el que se ve en el ranking
+            </small>
+
             <label for="email">Email:</label>
             <input
               id="email"
@@ -36,7 +52,7 @@
               required
             />
 
-            <label for="contrasenia">Repeti la Contraseña:</label>
+            <label for="repetir-contrasenia">Repeti la Contraseña:</label>
             <input
               id="repetir-contrasenia"
               name="repetir-contrasenia"
@@ -46,20 +62,19 @@
             />
 
             <label class="campo-checkbox">
-              <input type="checkbox" id="recordarme" name="recordarme" />
+              <input type="checkbox" id="terminos" name="terminos" />
               Acepto los Términos y la Política de Privacidad
             </label>
+
+            <p id="mensaje-registro" class="mensaje-form" role="alert" hidden></p>
 
             <button type="submit" class="boton-login">
               <span class="negrita">Registrarse</span>
             </button>
-            <a href="../../index.html" class="boton-login">Tengo una cuenta</a>
+            <a href="../../index.html" class="boton-login">Ya tengo una cuenta</a>
           </form>
         </article>
       </section>
     </main>
-    <script src="../../js/datos.js"></script>
-    <script src="../../js/estado.js"></script>
-    <script src="../../js/paginas/registro.js"></script>
   </body>
 </html>
