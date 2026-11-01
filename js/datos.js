@@ -3,6 +3,8 @@
 const CURSOS_DISPONIBLES = {
   ingles: {
     id: "ingles",
+    descripcion: "Mejorá tu inglés desde cero o perfeccioná lo que sabés.",
+    bandera: "BanderaReinoUnido.png",
     nombre: "Inglés desde Español",
     nivel: "Intermedio (B1)",
     progreso: 45,
@@ -21,6 +23,8 @@ const CURSOS_DISPONIBLES = {
   },
   aleman: {
     id: "aleman",
+    descripcion: "Aprendé alemán y conectá con nuevas oportunidades.",
+    bandera: "BanderaAlemania.png",
     nombre: "Alemán desde Español",
     nivel: "Principiante (A1)",
     progreso: 12,
@@ -38,6 +42,8 @@ const CURSOS_DISPONIBLES = {
   },
   chino: {
     id: "chino",
+    descripcion: "Descubrí el idioma más hablado del mundo.",
+    bandera: "BanderaChina.png",
     nombre: "Chino desde Español",
     nivel: "Inicial (HSK 1)",
     progreso: 0,
@@ -60,4 +66,5 @@ const CONFIG_INICIAL = {
   vidasMaximas: 5,
   gemasIniciales: 50,
   rachaInicial: 0,
+  metaDiaria: 50,
 };

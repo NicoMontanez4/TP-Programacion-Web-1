@@ -134,82 +134,28 @@
                     </h2>
                 </header>
 
-                <section class="tarjetas-cursos">
-                    <article class="ingles">
-                        <a class="curso-header" href="mis-cursos.html">
-                            <header>
-                                <img
-                                    src="../../imagenes/cursos/Curso-Ingles.png"
-                                    alt="Curso Inglés"
-                                />
-                                <p>Inglés desde Español</p>
-                                <svg
-                                    class="flecha"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    fill="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
-                                    <path
-                                        d="M17.35 8H6.65c-.64 0-.99.76-.56 1.24l5.35 6.11c.3.34.83.34 1.13 0l5.35-6.11C18.34 8.76 18 8 17.36 8Z"
-                                    ></path>
-                                </svg>
-                            </header>
-                        </a>
-                    </article>
+                <section class="tarjetas-cursos"></section>
 
-                    <article class="aleman">
-                        <a class="curso-header" href="mis-cursos.html">
-                            <header>
-                                <img
-                                    src="../../imagenes/cursos/Curso-Aleman.png"
-                                    alt="Curso Alemán"
-                                />
-                                <p>Alemán desde Español</p>
-                                <svg
-                                    class="flecha"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    fill="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
-                                    <path
-                                        d="M17.35 8H6.65c-.64 0-.99.76-.56 1.24l5.35 6.11c.3.34.83.34 1.13 0l5.35-6.11C18.34 8.76 18 8 17.36 8Z"
-                                    ></path>
-                                </svg>
-                            </header>
-                        </a>
-                    </article>
+                <a href="catalogo.html" class="boton-agregar-curso">
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4z"></path>
+                        <path d="M12 2C6.49 2 2 6.49 2 12s4.49 10 10 10 10-4.49 10-10S17.51 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8"></path>
+                    </svg>
+                    Agregar curso
+                </a>
 
-                    <article class="chino">
-                        <a class="curso-header" href="mis-cursos.html">
-                            <header>
-                                <img
-                                    src="../../imagenes/cursos/Curso-Chino.png"
-                                    alt="Curso Chino"
-                                />
-                                <p>Chino desde Español</p>
-                                <svg
-                                    class="flecha"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    fill="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
-                                    <path
-                                        d="M17.35 8H6.65c-.64 0-.99.76-.56 1.24l5.35 6.11c.3.34.83.34 1.13 0l5.35-6.11C18.34 8.76 18 8 17.36 8Z"
-                                    ></path>
-                                </svg>
-                            </header>
-                        </a>
-                    </article>
+                <section id="sin-cursos" class="sin-cursos" hidden>
+                    <h2>Todavía no estás inscripto en ningún curso</h2>
+                    <p>Explorá el catálogo y elegí tu primer idioma.</p>
+                    <a href="catalogo.html" class="boton-continuar">Ir al catálogo</a>
                 </section>
+
+            </section>
+
+            <section id="estado-inicial" class="sin-cursos" hidden>
+                <h2>¡Todavía no empezaste!</h2>
+                <p>Inscribite en un curso y completá tu primera lección para empezar tu racha.</p>
+                <a href="catalogo.html" class="boton-continuar">Ver el catálogo</a>
             </section>
 
             <section class="fila-actividad">
@@ -232,7 +178,7 @@
                                     d="M18.78 7.39a1 1 0 0 0-.83.32c-.77.84-1.82 1.31-2.94 1.31-2.21 0-4.01-1.8-4.01-4.01 0-.27.03-.56.1-.87a.99.99 0 0 0-.39-1.02c-.32-.23-.75-.26-1.09-.06-2.48 1.42-6.63 4.61-6.63 9.95 0 4.96 4.04 9 9 9s9-4.04 9-9c0-1.82-.49-3.55-1.47-5.14a.98.98 0 0 0-.76-.47ZM9.5 17.5c0-1.77 1.71-2.93 2.5-3.38.79.45 2.5 1.61 2.5 3.38a2.5 2.5 0 0 1-5 0m6.9.94c.06-.3.1-.62.1-.94 0-3.62-3.94-5.35-4.11-5.42a1 1 0 0 0-.79 0c-.17.07-4.11 1.8-4.11 5.42 0 .32.04.64.1.94A6.96 6.96 0 0 1 4.99 13c0-3.36 2.12-5.72 4.06-7.18.4 2.93 2.92 5.19 5.95 5.19 1.22 0 2.38-.37 3.37-1.05.41.97.62 1.98.62 3.04a7.02 7.02 0 0 1-2.6 5.44Z"
                                 ></path>
                             </svg>
-                            Racha: 5 días
+                            Racha: <span id="resumen-racha">5</span> días
                         </p>
                         <p class="meta">
                             <svg
@@ -250,7 +196,7 @@
                                     d="M13 4.07V2h-2v2.07A8 8 0 0 0 4.07 11H2v2h2.07A8 8 0 0 0 11 19.93V22h2v-2.07A8 8 0 0 0 19.93 13H22v-2h-2.07A8 8 0 0 0 13 4.07M12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6"
                                 ></path>
                             </svg>
-                            Meta diaría: 50 XP
+                            Meta diaria: <span id="meta-diaria">50</span> XP
                         </p>
                         <p class="liga">
                             <svg
@@ -268,7 +214,7 @@
                                     d="M21 4h-3V3c0-.55-.45-1-1-1H7c-.55 0-1 .45-1 1v1H3c-.55 0-1 .45-1 1v3c0 4.29 1.79 6.88 4.81 6.99A6 6 0 0 0 11 17.91V20H8v2h8v-2h-3v-2.09a5.98 5.98 0 0 0 4.19-2.92C20.2 14.88 22 12.29 22 8V5c0-.55-.45-1-1-1M4 8V6h2v6c0 .28.03.56.06.83C4.22 12.12 4 9.31 4 8m12 4c0 2.21-1.79 4-4 4s-4-1.79-4-4V4h8zm4-4c0 1.31-.22 4.12-2.06 4.83.04-.27.06-.55.06-.83V6h2z"
                                 ></path>
                             </svg>
-                            Liga: Bronce
+                            Liga: <span id="resumen-liga">Bronce</span>
                         </p>
                         <article class="barra-xp">
                             <progress
@@ -365,18 +311,21 @@
             <section class="bienvenida">
                 <img src="../../imagenes/poli/PoliSaluda.png" alt="Poli saluda" />
                 <article class="texto-bienvenida">
-                    <h2>¡Hola Carlos! Te saluda Poli</h2>
-                    <h2>Ya llevás 5 días aprendiendo</h2>
-                    <p>¡Completá una lección más para mantener tu racha!</p>
-                    <a href="mis-cursos.html" class="boton-continuar"
-                        >Continuar aprendiendo</a
-                    >
-                </article>
+                    <h2 id="saludo">¡Hola! Te saluda Poli</h2>
+                        <h2 id="texto-racha">Ya llevás 5 días aprendiendo</h2>
+                        <p>¡Completá una lección más para mantener tu racha!</p>
+                        <a href="mis-cursos.html" class="boton-continuar" id="boton-continuar">Continuar aprendiendo</a>
+                    </article>
             </section>
         </main>
 
         <footer>
             <p>©2026 PoliLingo - Todos los derechos reservados.</p>
         </footer>
+
+        <script src="../../js/datos.js"></script>
+        <script src="../../js/estado.js"></script>
+        <script src="../../js/paginas/mis-cursos.js"></script>
+
     </body>
 </html>

@@ -93,6 +93,9 @@
 .seleccionar-cursos article img {
     width: 3.5rem;
     height: 3.5rem;
+    border-radius: 50%;   /* lo hace circular */
+    object-fit: cover;    /* recorta la imagen para llenar el círculo sin deformarla */
+    flex-shrink: 0;       /* evita que el flex lo achate si el nombre es largo */
 }
 
 .flecha {
@@ -365,4 +368,113 @@
     .boton-continuar {
         align-self: center;
     }
+}
+/* Mis cursos: estado vacío */
+.sin-cursos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    padding: 2rem 1.5rem;
+    border-radius: 1rem;
+    background-color: #8fc97f;
+    text-align: center;
+}
+.sin-cursos[hidden] { display: none; }
+ 
+.sin-cursos img { width: 7rem; height: auto; }
+.sin-cursos h2,
+.sin-cursos p { margin: 0; }
+.sin-cursos .boton-continuar {
+    margin-top: 0.5rem;
+    padding: 0.7rem 1.75rem;
+}
+
+/* El bloque desplegable oculto con el atributo hidden */
+.contenido-curso[hidden] { display: none; }
+ 
+/* Flecha hacia arriba cuando la tarjeta está abierta */
+[class$="-abierto"] .flecha { transform: rotate(180deg); }
+ 
+/* Catálogo */
+.catalogo-pagina {
+    display: flex;
+    gap: 1.5rem;
+    max-width: 70rem;
+    margin: 1rem auto 2rem;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+.panel-lateral { flex: 0 0 14rem; }
+.panel-lateral img { width: 100%; }
+.panel-lateral section {
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #e3f3de;
+}
+.catalogo { flex: 1; }
+.tarjetas-catalogo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+.tarjeta-catalogo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #e3f3de;
+    border: 0.1rem solid #8fc97f;
+}
+.tarjeta-catalogo img { width: 4rem; height: 4rem; }
+.tarjeta-catalogo h2,
+.tarjeta-catalogo p { margin: 0; }
+.boton-curso {
+    margin-top: auto;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 999px;
+    background-color: #2e9e3e;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+.banner-logros {
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    background-color: #c9e8c0;
+}
+.banner-logros h2,
+.banner-logros p { margin: 0.25rem 0; }
+ 
+@media screen and (max-width: 768px) {
+    .catalogo-pagina { flex-direction: column; }
+    .panel-lateral { flex-basis: auto; }
+    .panel-lateral img { max-width: 10rem; }
+}
+ 
+.boton-agregar-curso {
+    display: flex;              /* antes: block */
+    align-items: center;        /* centra ícono y texto en vertical */
+    justify-content: center;    /* centra el contenido en horizontal */
+    gap: 0.5rem;                /* separación entre el ícono y el texto */
+    width: fit-content;
+    margin: 1.5rem auto 0;
+    padding: 0.6rem 1.5rem;
+    border-radius: 999px;
+    background-color: #2e9e3e;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.boton-agregar-curso[hidden] { display: none; }
+
+.boton-agregar-curso svg {
+    flex-shrink: 0;             /* evita que el ícono se achique si falta espacio */
 }

@@ -1,0 +1,225 @@
+/* ============================================
+   CATÁLOGO DE CURSOS
+   ============================================ */
+ 
+.catalogo-pagina {
+    display: grid;
+    grid-template-columns: 1fr auto; /* texto a la izquierda, loro a la derecha */
+    grid-template-areas:
+        "encabezado encabezado-poli"
+        "linea      linea"
+        "mensaje    mensaje"
+        "tarjetas   tarjetas"
+        "banner     banner"
+        "caja       caja";
+    gap: 1rem 2rem;
+    align-content: start;
+    box-sizing: border-box;
+    max-width: 70rem;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* .catalogo y .panel-lateral dejan de ser cajas: sus hijos se acomodan
+   directamente en la grilla de arriba, cada uno en su area */
+.catalogo,
+.panel-lateral {
+    display: contents;
+}
+
+.encabezado-catalogo { grid-area: encabezado; align-self: end; }
+.poli-catalogo       { grid-area: encabezado-poli; align-self: end; }
+#mensaje-catalogo    { grid-area: mensaje; }
+.tarjetas-catalogo   { grid-area: tarjetas; }
+.banner-logros       { grid-area: banner; }
+.caja-lateral        { grid-area: caja; }
+
+/* ---------- Loro ---------- */
+.poli-catalogo {
+    width: 9rem;
+    height: auto;
+    display: block; /* evita el espacio extra que deja una imagen inline debajo */
+}
+
+/* Linea verde de punta a punta, por debajo del título y del loro */
+.catalogo-pagina::after {
+    content: "";
+    grid-area: linea;
+    height: 0.2rem;
+    margin-top: -0.75rem; /* anula casi todo el gap de la grilla: el loro "se apoya" sobre la linea */
+    background-color: #8fc97f;
+}
+
+/* ---------- Caja "Aprendé sin límites" (ahora va al final, de punta a punta) ---------- */
+.caja-lateral {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.25rem;
+    border-radius: 1.5rem;
+    background-color: #e6f4e1;
+    color: #1f6b2e;
+    text-align: center;
+}
+
+.caja-lateral h2 {
+    font-size: 1.2rem;
+    color: #0a4148;
+}
+
+.caja-lateral p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #333;
+}
+
+/* ---------- Encabezado ---------- */
+.encabezado-catalogo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-bottom: 0.5rem; /* la linea verde ahora la dibuja .catalogo-pagina::after */
+}
+ 
+.encabezado-catalogo h1 {
+    font-size: 2rem;
+    color: rgb(35, 140, 182); /* color institucional */
+}
+ 
+.encabezado-catalogo p {
+    font-size: 1.05rem;
+    line-height: 1.4;
+}
+ 
+/* Mensaje de "Te inscribiste en..." */
+#mensaje-catalogo {
+    min-height: 1.5rem; /* reserva el lugar para que la página no salte al aparecer */
+    margin: 0;
+    font-weight: 700;
+    color: #1f6b2e;
+}
+ 
+/* ---------- Tarjetas ---------- */
+.tarjetas-catalogo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); /* 3 en fila en escritorio, se acomodan solas en pantallas chicas */
+    gap: 1.25rem;
+    margin: 0;
+}
+ 
+.tarjeta-catalogo {
+    display: grid;
+    grid-template-columns: 4rem 1fr; /* bandera a la izquierda, texto a la derecha */
+    grid-template-areas:
+        "bandera titulo"
+        "bandera descripcion"
+        "boton   boton";
+    align-items: center;
+    gap: 0.25rem 1rem;
+    padding: 1rem;
+    border: 0.12rem solid #b9e0ad;
+    border-radius: 1rem;
+    background-color: #eef8ea;
+}
+ 
+.tarjeta-catalogo img {
+    grid-area: bandera;
+    align-self: start;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+ 
+.tarjeta-catalogo h2 {
+    grid-area: titulo;
+    align-self: end;
+    font-size: 1.1rem;
+    color: #0a4148;
+}
+ 
+.tarjeta-catalogo p {
+    grid-area: descripcion;
+    align-self: start;
+    font-size: 0.9rem;
+    line-height: 1.35;
+    color: #333;
+}
+ 
+/* ---------- Botones de las tarjetas ---------- */
+.boton-curso {
+    grid-area: boton;
+    display: block;
+    margin-top: 0.5rem;
+    width: 100%;
+    padding: 0.6rem 1rem;
+    border: 0.15rem solid #26813a;
+    border-radius: 999px;
+    background-color: #26813a; /* verde oscuro: el texto blanco se lee bien */
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    transition: filter 0.2s ease;
+}
+ 
+.boton-curso:hover {
+    filter: brightness(1.1);
+}
+ 
+/* "Ir al curso" (ya inscripto): botón con borde, para distinguirlo también sin el color */
+a.boton-curso {
+    background-color: #fff;
+    color: #26813a;
+}
+ 
+.boton-curso:focus-visible {
+    outline: 0.2rem solid #222;
+    outline-offset: 0.15rem;
+}
+ 
+/* ---------- Banner final ---------- */
+.banner-logros {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: 1.25rem;
+    background-color: #d7edcf;
+}
+ 
+.banner-logros svg {
+    flex-shrink: 0; /* el ícono no se achica si falta espacio */
+}
+ 
+.banner-logros h2 {
+    font-size: 1.2rem;
+    color: #1f6b2e;
+}
+ 
+.banner-logros p {
+    font-size: 0.95rem;
+    color: #333;
+}
+ 
+/* ---------- Pantallas chicas ---------- */
+@media screen and (max-width: 768px) {
+    .catalogo-pagina {
+        gap: 1rem 1rem;
+    }
+
+    .poli-catalogo {
+        width: 6rem;
+    }
+
+    .encabezado-catalogo h1 { font-size: 1.6rem; }
+    .encabezado-catalogo p  { font-size: 1rem; }
+}
+
+@media screen and (max-width: 480px) {
+    .poli-catalogo { width: 4.5rem; }
+
+    .caja-lateral svg { display: none; } /* el globo sobra en pantallas muy chicas */
+}
