@@ -10,9 +10,10 @@
         <script src="../../js/estado.js" defer></script>
         <script src="../../js/utils.js" defer></script>
         <script src="../../js/navbar.js" defer></script>
+        <script src="../../js/paginas/leccion.js" defer></script>
     </head>
 
-    <body class="leccion-ingles-nivel1">
+    <body>
         <header id="navbar"></header>
 
         <main class="ejercicio">
@@ -20,35 +21,38 @@
                 <!-- CABECERA DE LA SECCIÓN (Header correcto) -->
                 <header class="barra-leccion">
                     <a
+                        id="boton-salir"
                         class="boton-salir"
-                        href="mapa.html?curso=ingles"
+                        href="mapa.html"
                         aria-label="Salir de la lección"
                         >✕</a
                     >
 
                     <img
+                        id="bandera-leccion"
                         class="bandera-leccion"
-                        src="../../imagenes/banderas/BanderaReinoUnido.png"
-                        alt="Bandera de Reino Unido"
+                        src=""
+                        alt=""
                     />
 
                     <!-- hgroup agrupa correctamente Título + Subtítulo -->
                     <hgroup class="titulo-leccion">
-                        <h1>Inglés</h1>
-                        <p>Unidad 3 - Viajes</p>
-                        <p>Lección 1 - Transporte</p>
+                        <h1 id="leccion-curso"></h1>
+                        <p id="leccion-unidad"></p>
+                        <p id="leccion-titulo"></p>
                     </hgroup>
 
                     <ul class="estado-leccion">
-                        <li class="intentos" aria-label="Te quedan 3 de 3 intentos"><span>Intentos</span><span class="intentos-marcas" aria-hidden="true"><span class="intento"></span><span class="intento"></span><span class="intento"></span></span><span class="intentos-numero">3 de 3</span><span class="intentos-ayuda">Si usás los 3 intentos, perdés 1 vida ❤️</span></li>
+                        <li id="intentos" class="intentos" aria-label="Te quedan 3 de 3 intentos">
+                            <span>Intentos</span>
+                            <span id="intentos-marcas" class="intentos-marcas" aria-hidden="true"></span>
+                            <span id="intentos-numero" class="intentos-numero"></span>
+                            <span class="intentos-ayuda">Si usas los 3 intentos, perdes 1 vida ❤️</span>
+                        </li>
 
                         <li>
-                            <label for="progreso-leccion"
-                                >Progreso de la lección: 0%</label
-                            >
-                            <progress id="progreso-leccion" value="0" max="100">
-                                0%
-                            </progress>
+                            <label id="progreso-texto" for="progreso-leccion">Progreso de la lección: 0%</label>
+                            <progress id="progreso-leccion" value="0" max="100">0%</progress>
                         </li>
                     </ul>
                 </header>
@@ -67,10 +71,10 @@
                         <section class="enunciado">
                             <h2>Traducí la siguiente oración:</h2>
                             <p class="frase">
-                                <strong>“The train is red”</strong>
+                                <strong id="frase"></strong>
                             </p>
 
-                            <ol class="respuesta" aria-label="Tu respuesta"></ol>
+                            <ol id="respuesta" class="respuesta" aria-label="Tu respuesta"></ol>
                         </section>
                     </section>
 
@@ -78,56 +82,27 @@
                     <section class="banco-palabras">
                         <h3>Banco de palabras disponibles:</h3>
 
-                        <ul class="banco">
-                            <li>
-                                <button type="button" class="ficha">auto</button>
-                            </li>
-                            <li>
-                                <button type="button" class="ficha">mi</button>
-                            </li>
-                            <li>
-                                <button type="button" class="ficha">tren</button>
-                            </li>
-                            <li>
-                                <button type="button" class="ficha">ella</button>
-                            </li>
-                            <li>
-                                <button type="button" class="ficha">rojo</button>
-                            </li>
-                            <li>
-                                <button type="button" class="ficha">es</button>
-                            </li>
-                            <li>
-                                <button type="button" class="ficha">azul</button>
-                            </li>
-                            <li>
-                                <button type="button" class="ficha">El</button>
-                            </li>
-                            <li>
-                                <button type="button" class="ficha">bicicleta</button>
-                            </li>
-                        </ul>
+                        <ul id="banco" class="banco" aria-label="Palabras para elegir"></ul>
                     </section>
                 </section>
             </section>
 
             <!-- Panel de éxito -->
-            <section id="correcto" class="resultado exito">
+            <section id="correcto" class="resultado exito" role="status">
                 <h2>¡Correcto!</h2>
-                <p>¡Muy bien! Sumaste 10 XP.</p>
+                <p id="mensaje-correcto"></p>
+                <button type="button" id="boton-continuar" class="boton-comprobar">Continuar</button>
             </section>
 
             <!-- Panel de error -->
-            <section id="incorrecto" class="resultado error">
+            <section id="incorrecto" class="resultado error" role="alert">
                 <h2>Incorrecto</h2>
                 <p>Revisá el orden de las palabras e intentá de nuevo.</p>
-                <button type="button" class="boton-comprobar">Reintentar</button>
+                <button type="button" id="boton-reintentar" class="boton-comprobar">Reintentar</button>
             </section>
 
             <button type="button" class="boton-comprobar" id="boton-comprobar">Comprobar respuesta</button>
         </main>
-        <footer>
-            <p>©2026 PoliLingo - Todos los derechos reservados.</p>
-        </footer>
+        <footer id="footer"></footer>
     </body>
 </html>

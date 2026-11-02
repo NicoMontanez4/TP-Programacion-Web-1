@@ -87,4 +87,13 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
     actualizarNavbar(); /* Si hay usuario, crea el navbar */
+    crearFooter();
 });
+
+// El footer es igual en todas las páginas: lo armamos acá una sola vez
+function crearFooter() {
+    const footer = document.getElementById("footer");
+    if (!footer) return;
+    const anio = new Date().getFullYear(); // el año se actualiza solo
+    footer.innerHTML = "<p>©" + anio + " PoliLingo - Todos los derechos reservados.</p>";
+}

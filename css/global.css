@@ -6,6 +6,11 @@
     font-family: "Nunito", "Segoe UI", Tahoma, sans-serif;
 }
 
+/* Lo que tiene el atributo hidden no se muestra nunca, aunque otra regla le ponga display */
+[hidden] {
+    display: none !important;
+}
+
 html,
 body {
     height: 100%;              
