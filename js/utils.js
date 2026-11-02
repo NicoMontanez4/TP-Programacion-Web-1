@@ -33,3 +33,84 @@ function ocultarMensaje(idElemento) {
     elemento.hidden = true;
     elemento.textContent = "";
 }
+
+/* Mostrar un cartel (modal) */
+// opciones = {
+//   titulo: "texto",
+//   texto: "texto",
+//   imagen: "ruta de una imagen" (opcional),
+//   botones: [ { texto, tipo: "principal" | "secundario", alHacerClic: función } ],
+//   cerrable: false  -> no se cierra con Escape (para avisos obligatorios)
+// }
+function mostrarModal(opciones) {
+    cerrarModal(); // si había otro abierto, lo sacamos
+
+    const modal = document.createElement("dialog"); /* "dialog" es una etiqueta HTML
+    que funciona como un cartel, se muestra adelante de todo con fondo oscurecido,
+    no deja tocar la pagina de atras hasta que se cierre, etc. */
+    modal.id = "modal-polilingo";
+    modal.className = "modal";
+    modal.setAttribute("aria-labelledby", "modal-titulo");
+
+    if (opciones.imagen) {
+        const imagen = document.createElement("img");
+        imagen.src = opciones.imagen;
+        imagen.alt = "";
+        imagen.className = "modal-imagen";
+        modal.appendChild(imagen);
+    }
+
+    const titulo = document.createElement("h2"); /* Crea una etiqueta que todavia no está
+    en la pagina. Es como hacer un "new" de un objeto. */
+    titulo.id = "modal-titulo";
+    titulo.textContent = opciones.titulo;
+    modal.appendChild(titulo); /* Mete un elemento adentro de otro. */
+
+    if (opciones.texto) {
+        const texto = document.createElement("p");
+        texto.textContent = opciones.texto;
+        modal.appendChild(texto);
+    }
+
+    // Si no mandan botones, ponemos uno de "Aceptar"
+    const listaBotones = opciones.botones || [{ texto: "Aceptar", tipo: "principal" }];
+    const contenedorBotones = document.createElement("article");
+    contenedorBotones.className = "modal-botones";
+    let seEligioUnBoton = false;
+
+    listaBotones.forEach(function (boton) {
+        const elemento = document.createElement("button");
+        elemento.type = "button";
+        elemento.textContent = boton.texto;
+        elemento.className = "modal-boton " + (boton.tipo === "secundario" ? "modal-boton-secundario" : "modal-boton-principal");
+        elemento.addEventListener("click", function () {
+            seEligioUnBoton = true;
+            cerrarModal();
+            if (boton.alHacerClic) boton.alHacerClic();
+        });
+        contenedorBotones.appendChild(elemento);
+    });
+    modal.appendChild(contenedorBotones);
+
+    // Escape: si el cartel no es cerrable, lo bloqueamos
+    modal.addEventListener("cancel", function (evento) {
+        if (opciones.cerrable === false) evento.preventDefault();
+    });
+
+    // Si igual se cerró sin tocar un botón (algunos navegadores dejan con doble Escape),
+    // en un cartel obligatorio ejecutamos la acción del primer botón
+    modal.addEventListener("close", function () {
+        modal.remove();
+        if (!seEligioUnBoton && opciones.cerrable === false && listaBotones[0].alHacerClic) {
+            listaBotones[0].alHacerClic();
+        }
+    });
+
+    document.body.appendChild(modal);
+    modal.showModal(); // lo muestra y pone el foco en el primer botón
+}
+
+function cerrarModal() {
+    const modal = document.getElementById("modal-polilingo");
+    if (modal) modal.close();
+}
