@@ -11,7 +11,8 @@
         "mensaje    mensaje"
         "tarjetas   tarjetas"
         "banner     banner"
-        "caja       caja";
+        "caja       caja"
+        "volver     volver";
     gap: 1rem 2rem;
     align-content: start;
     box-sizing: border-box;
@@ -33,6 +34,7 @@
 .tarjetas-catalogo   { grid-area: tarjetas; }
 .banner-logros       { grid-area: banner; }
 .caja-lateral        { grid-area: caja; }
+.volver-catalogo     { grid-area: volver; margin: 0; align-items: center; }
 
 /* ---------- Loro ---------- */
 .poli-catalogo {
