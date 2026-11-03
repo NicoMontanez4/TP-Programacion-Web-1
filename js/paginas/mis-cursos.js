@@ -73,9 +73,19 @@ document.addEventListener("DOMContentLoaded", () => {
           texto: "Sí, eliminar",
           tipo: "principal",
           alHacerClic: () => {
-            const resultado = eliminarCurso(idCurso);
-            mensaje.textContent = resultado.mensaje;
-            dibujarCursos();
+              const resultado = eliminarCurso(idCurso);
+
+              dibujarCursos();
+
+              const quedanCursos = ORDEN_CURSOS.some(
+                  (id) => CURSOS[id] && estaInscripto(usuarioActual(), id)
+              );
+
+              if (quedanCursos) {
+                  mensaje.textContent = resultado.mensaje;
+              } else {
+                  mensaje.textContent = "";
+              }
           },
         },
       ],
