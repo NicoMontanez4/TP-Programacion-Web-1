@@ -1,104 +1,152 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>PoliLingo - Registrarse</title>
-    <link rel="stylesheet" href="../../css/cuenta.css" />
-    <script src="../../js/datos.js" defer></script>
-    <script src="../../js/estado.js" defer></script>
-    <script src="../../js/paginas/registro.js" defer></script>
-  </head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Registrate</title>
+        <link rel="stylesheet" href="../../css/cuenta.css" />
+        <script src="../../js/datos.js" defer></script>
+        <script src="../../js/estado.js" defer></script>
+        <script src="../../js/paginas/registro.js" defer></script>
+    </head>
 
-  <body>
-    <main>
-      <!-- Formulario de Registro -->
-      <section class="form-login">
-        <article class="logo">
-          <img src="../../imagenes/poli/Logo.png" alt="Imagen del lorito" />
-          <h2>Registrate y comenzá a aprender el idioma que más te guste.</h2>
-        </article>
+    <body>
+        <main>
+            <section class="form-login">
+                <article class="logo">
+                    <img
+                        src="../../imagenes/poli/Logo.png"
+                        alt="Imagen del lorito"
+                    />
+                    <h2>
+                        Registrate y comenzá a aprender el idioma que más te
+                        guste.
+                    </h2>
+                </article>
 
-        <form class="campo" id="form-registro" novalidate>
-          <label for="nombre">Nombre:</label>
-          <input
-            id="nombre"
-            name="nombre"
-            type="text"
-            placeholder="Juan"
-            required
-          />
+                <form class="campo" id="form-registro" novalidate>
+                    <!-- ===== Paso 1: Perfil ===== -->
+                    <div id="paso-perfil" class="paso-form">
+                        <h3 class="paso-titulo">Perfil</h3>
+                        <hr class="divisor" />
 
-          <label for="apellido">Apellido (opcional):</label>
-          <input
-            id="apellido"
-            name="apellido"
-            type="text"
-            placeholder="Perez"
-          />
+                        <label for="nombre">Nombre:</label>
+                        <input
+                            id="nombre"
+                            name="nombre"
+                            type="text"
+                            placeholder="Juan"
+                            required
+                        />
 
-          <label for="usuario">Nombre de usuario:</label>
-          <input
-            id="usuario"
-            name="usuario"
-            type="text"
-            placeholder="juanperez_web"
-            required
-          />
+                        <label for="apellido">Apellido (opcional):</label>
+                        <input
+                            id="apellido"
+                            name="apellido"
+                            type="text"
+                            placeholder="Perez"
+                        />
 
-          <article id="req-usuario" class="ayuda-campo">
-            De 3 a 15 caracteres: letras, números y _
-          </article>
+                        <label for="usuario">Nombre de usuario:</label>
+                        <input
+                            id="usuario"
+                            name="usuario"
+                            type="text"
+                            placeholder="juanperez_web"
+                            required
+                        />
 
-          <label for="email">Email:</label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            placeholder="ejemplo@email.com"
-            required
-          />
+                        <article id="req-usuario" class="ayuda-campo">
+                            De 3 a 15 caracteres.
+                        </article>
+                        <article id="req-usuario-2" class="ayuda-campo">
+                            Solo letras, números y '_'
+                        </article>
 
-          <label for="contrasenia">Contraseña:</label>
-          <input
-            id="contrasenia"
-            name="contrasenia"
-            type="password"
-            placeholder="Mínimo 8 caracteres"
-            required
-          />
+                        <button
+                            type="button"
+                            id="btn-continuar"
+                            class="boton boton-amarillo"
+                        >
+                            Continuar →
+                        </button>
+                    </div>
 
-          <!-- Requisitos: grises al inicio, se pintan al escribir -->
-          <article id="req-longitud" class="ayuda-campo">
-            Mínimo 8 caracteres
-          </article>
+                    <!-- ===== Paso 2: Privacidad ===== -->
+                    <div id="paso-privacidad" class="paso-form" hidden>
+                        <h3 class="paso-titulo">Privacidad</h3>
+                        <hr class="divisor" />
 
-          <article id="req-numero" class="ayuda-campo">
-            Al menos un número
-          </article>
+                        <label for="email">Email:</label>
+                        <input
+                            id="email"
+                            name="email"
+                            type="email"
+                            placeholder="ejemplo@email.com"
+                            required
+                        />
 
-          <label for="repetir-contrasenia">Repetí la Contraseña:</label>
-          <input
-            id="repetir-contrasenia"
-            name="repetir-contrasenia"
-            type="password"
-            placeholder="********"
-            required
-          />
+                        <label for="contrasenia">Contraseña:</label>
+                        <input
+                            id="contrasenia"
+                            name="contrasenia"
+                            type="password"
+                            placeholder="Mínimo 8 caracteres"
+                            required
+                        />
 
-          <label class="campo-checkbox">
-            <input type="checkbox" id="terminos" name="terminos" />
-            Acepto los Términos y la Política de Privacidad
-          </label>
+                        <article id="req-longitud" class="ayuda-campo">
+                            Mínimo 8 caracteres
+                        </article>
+                        <article id="req-numero" class="ayuda-campo">
+                            Al menos un número
+                        </article>
 
-          <p id="mensaje-registro" class="mensaje-form" role="alert" hidden></p>
+                        <label for="repetir-contrasenia"
+                            >Repetí la Contraseña:</label
+                        >
+                        <input
+                            id="repetir-contrasenia"
+                            name="repetir-contrasenia"
+                            type="password"
+                            placeholder="********"
+                            required
+                        />
 
-          <button type="submit" class="boton-login">
-            <span class="negrita">Registrarse</span>
-          </button>
-          <a href="../../index.html" class="boton-login">Ya tengo una cuenta</a>
-        </form>
-      </section>
-    </main>
-  </body>
+                        <label class="campo-checkbox">
+                            <input
+                                type="checkbox"
+                                id="terminos"
+                                name="terminos"
+                            />
+                            Acepto los Términos y Condiciones
+                        </label>
+
+                        <p
+                            id="mensaje-registro"
+                            class="mensaje-form"
+                            role="alert"
+                            hidden
+                        ></p>
+                        <div class="acciones-paso">
+                            <button
+                                type="button"
+                                id="btn-volver"
+                                class="boton boton-amarillo"
+                            >
+                                ← Volver
+                            </button>
+                            <button type="submit" class="boton boton-verde">
+                                Registrarse
+                            </button>
+                        </div>
+                    </div>
+
+                    <a href="../../index.html" class="boton boton-azul"
+                        >Ya tengo una cuenta</a
+                    >
+                </form>
+            </section>
+        </main>
+    </body>
 </html>

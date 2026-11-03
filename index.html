@@ -1,73 +1,89 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>PoliLingo - Iniciar Sesión</title>
-    <link rel="stylesheet" href="css/cuenta.css" />
-    <script src="js/datos.js" defer></script>
-    <script src="js/estado.js" defer></script>
-    <script src="js/paginas/login.js" defer></script>
-  </head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Iniciar Sesión</title>
+        <link rel="stylesheet" href="css/cuenta.css" />
+        <script src="js/datos.js" defer></script>
+        <script src="js/estado.js" defer></script>
+        <script src="js/paginas/login.js" defer></script>
+    </head>
 
-  <body>
-    <main>
-      <!-- Logo y Texto del Inicio -->
-      <section class="form-login">
-        <article class="logo">
-          <img src="imagenes/poli/Logo.png" alt="Imagen del lorito" />
-          <h2>Aprendé Inglés, Alemán y Chino gratis y de forma divertida!</h2>
-        </article>
+    <body>
+        <main>
+            <section class="form-login">
+                <!-- Logo y Texto -->
+                <article class="logo">
+                    <img src="imagenes/poli/Logo.png" alt="Imagen del lorito" />
+                    <h2>
+                        Aprendé Inglés, Alemán y Chino gratis y de forma
+                        divertida!
+                    </h2>
+                </article>
 
-        <!-- Formulario -->
-        <article class="form-login">
-          <form id="form-login" class="campo" novalidate>
-            <label for="usuario-email">Usuario o email:</label>
-            <input
-              id="usuario-email"
-              name="usuario-email"
-              type="text"
-              placeholder="ejemplo@email.com"
-              required
-            />
+                <!-- Formulario -->
+                <form id="form-login" class="campo" novalidate>
+                    <h3 class="paso-titulo">Iniciar Sesión</h3>
+                    <hr class="divisor" />
 
-            <label for="contrasenia">Contraseña:</label>
-            <input
-              id="contrasenia"
-              name="contrasenia"
-              type="password"
-              placeholder="Mínimo 8 caracteres"
-              required
-            />
+                    <label for="usuario-email">Usuario o email:</label>
+                    <input
+                        id="usuario-email"
+                        name="usuario-email"
+                        type="text"
+                        placeholder="ejemplo@email.com"
+                        required
+                    />
 
-            <label class="campo-checkbox">
-              <input type="checkbox" id="recordarme" name="recordarme" />
-              Recordar mi usuario
-            </label>
+                    <label for="contrasenia">Contraseña:</label>
+                    <input
+                        id="contrasenia"
+                        name="contrasenia"
+                        type="password"
+                        placeholder="Mínimo 8 caracteres"
+                        required
+                    />
 
-            <p id="mensaje-login" class="mensaje-form" role="alert" hidden></p>
+                    <!-- Fila con Checkbox y Link de Olvido -->
+                    <div class="opciones-login">
+                        <label class="campo-checkbox">
+                            <input
+                                type="checkbox"
+                                id="recordarme"
+                                name="recordarme"
+                            />
+                            Recordarme
+                        </label>
+                        <a
+                            href="paginas/cuenta/olvidaste_contra.html"
+                            class="link-olvidado"
+                        >
+                            ¿Olvidaste tu contraseña?
+                        </a>
+                    </div>
 
-            <button type="submit" class="boton-login">
-              <span class="negrita">Iniciar Sesión</span>
-            </button>
-          </form>
-        </article>
+                    <p
+                        id="mensaje-login"
+                        class="mensaje-form"
+                        role="alert"
+                        hidden
+                    ></p>
 
-        <!-- Olvido de Contrasenia -->
-        <article class="olvidado">
-          <img
-            src="imagenes/poli/Poli1.png"
-            alt="Imagen de Poli interrogante"
-          />
+                    <!-- Botón de ingreso -->
+                    <button type="submit" class="boton boton-verde">
+                        Iniciar Sesión
+                    </button>
 
-          <a href="paginas/cuenta/olvidaste_contra.html"
-            >¿Olvidaste tu contraseña?</a
-          >
-          <a href="paginas/cuenta/registro.html"
-            >¿No tenés cuenta? ¡Registrate acá!</a
-          >
-        </article>
-      </section>
-    </main>
-  </body>
+                    <!-- Botón de registro -->
+                    <a
+                        href="paginas/cuenta/registro.html"
+                        class="boton boton-azul"
+                    >
+                        ¿No tenés cuenta? ¡Registrate acá!
+                    </a>
+                </form>
+            </section>
+        </main>
+    </body>
 </html>
