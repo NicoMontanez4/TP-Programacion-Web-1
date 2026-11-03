@@ -114,3 +114,4 @@ function cerrarModal() {
     const modal = document.getElementById("modal-polilingo");
     if (modal) modal.close();
 }
+
