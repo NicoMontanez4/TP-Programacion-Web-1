@@ -73,6 +73,8 @@ const IDIOMAS_INTERFAZ = [
    - Las lecciones marcadas "Ejercicios nuevos" no estaban en el TP1:
      las agregamos para que cada unidad 1 (y la 3 de inglés) esté completa.
 */
+
+/* Esto explica como está armado cursos */
  
 const CONSIGNA_TRADUCIR = "Traducí la siguiente oración:";
  

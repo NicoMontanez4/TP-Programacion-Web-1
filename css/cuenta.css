@@ -49,7 +49,11 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: clamp(1rem, 3vw, 2rem);   /* separación entre logo, campos, botón, etc. */
+  gap: clamp(
+    0.2rem,
+    1vw,
+    0.5rem
+  ); /* separación entre logo, campos, botón, etc. */
   width: min(90%, 600px);
   margin: 0 auto;
   padding: 2rem 1rem;
@@ -99,10 +103,11 @@ main {
   padding: 0 5%;
   width: 100%;
   font-size: clamp(0.85rem, 1.3vw, 1.5rem);
-  height: min(5.3vh, 3.5rem);
-  border-radius: 1.8rem;
-  border: 0.1rem solid gray;
+  height: min(4vh, 3.5rem);
+  border-radius: 1rem;
+  border: 1px solid gray;
   box-sizing: border-box;
+  margin-bottom: 0.7rem;
 }
 
 /*------La chechbox------*/
@@ -146,7 +151,7 @@ main {
   text-align: center;
   text-decoration: none;
   font-size: 1rem;
-  color: #000000;
+  color: #111111;
   background-color: #fcd994;
   border-radius: 2rem;
   border: 0.1rem solid gray;
@@ -196,7 +201,7 @@ main {
   padding: 0.4rem 1rem;
   text-align: center;
   text-decoration: none;
-  background-color: #e0e0e0;
+  background-color: #ff0000;
   color: rgb(247, 250, 253);
   border-radius: 0.2rem;
   border: 0.1rem solid gray;
@@ -206,12 +211,13 @@ main {
 }
 
 .olvidado a:nth-of-type(1) {
-  color: #000000;
-  background-color: #60b8af;
+  color: #111111;
+  background-color: #bdcaff;
 }
 
 .olvidado a:nth-of-type(2) {
-  background-color: #60b8af;
+  color: #111111;
+  background-color: #91c1ff;
 }
 
 .olvidado a:hover {
@@ -272,61 +278,68 @@ main {
 }
 
 .grupo-inputs-codigo form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.8rem;
-}
-
-.grupo-inputs-codigo input {
-  width: 2.5rem;
-  height: 3rem;
-  text-align: center;
-  font-size: 1.2rem;
-  box-sizing: border-box;
-  border: 0.1rem solid gray;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
 }
 
 /*------Mensajes de los formularios (login y registro)------*/
 .campo .mensaje-form {
   width: 100%;
-  margin: 0.5rem 0 0.2rem;
+  margin: 0.2rem 0 0.3rem 0;
   padding: 0.6rem 1rem;
-  border-radius: 1rem;
+  border-radius: 0.3rem;
   font-size: 0.95rem; /* más específico que ".campo p" para que no quede chiquito */
   font-weight: bold;
   text-align: left;
 }
- 
+
 .mensaje-error {
   background-color: #fbd5d5;
   color: #8a1414;
   border: 0.1rem solid #e53935;
 }
- 
+
 .mensaje-error::before {
   content: "✕ "; /* el ícono acompaña al texto: no depende solo del color */
 }
- 
+
 .mensaje-ok {
   background-color: #d7f5d0;
   color: #1f5e28;
   border: 0.1rem solid #2f7d3b;
 }
- 
+
 .mensaje-ok::before {
   content: "✓ ";
 }
- 
+
 /* Campo con error */
 .campo input[aria-invalid="true"] {
   border: 0.15rem solid #e53935;
-  outline: 0.15rem solid #e53935;
 }
- 
+
 /* Texto de ayuda debajo de un campo */
 .ayuda-campo {
-  margin: 0.2rem 0 0.6rem 0.8rem;
+  margin: 0 0 1rem 1rem;
   font-size: 0.8rem;
   color: #333;
+}
+
+/* estilo para los inputs de codigo de recuperacion*/
+.grupo-inputs-codigo input {
+  width: 3rem;
+  height: 3.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0;
+}
+
+.codigo-digitos {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1rem;
 }

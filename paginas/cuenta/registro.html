@@ -12,68 +12,92 @@
 
   <body>
     <main>
-      <!-- Texto del Inicio -->
+      <!-- Formulario de Registro -->
       <section class="form-login">
         <article class="logo">
+          <img src="../../imagenes/poli/Logo.png" alt="Imagen del lorito" />
           <h2>Registrate y comenzá a aprender el idioma que más te guste.</h2>
         </article>
 
-        <!-- Formulario -->
-        <article class="form-login">
-          <form class="campo" id="form-registro" novalidate>
-            <label for="nombre">Nombre:</label>
-            <input id="nombre" name="nombre" type="text" placeholder="Juan" required>
+        <form class="campo" id="form-registro" novalidate>
+          <label for="nombre">Nombre:</label>
+          <input
+            id="nombre"
+            name="nombre"
+            type="text"
+            placeholder="Juan"
+            required
+          />
 
-            <label for="apellido">Apellido (opcional):</label>
-            <input id="apellido" name="apellido" type="text" placeholder="Perez">
+          <label for="apellido">Apellido (opcional):</label>
+          <input
+            id="apellido"
+            name="apellido"
+            type="text"
+            placeholder="Perez"
+          />
 
-            <label for="usuario">Nombre de usuario:</label>
-            <input id="usuario" name="usuario" type="text" placeholder="juanperez_web" aria-describedby="ayuda-usuario" required>
+          <label for="usuario">Nombre de usuario:</label>
+          <input
+            id="usuario"
+            name="usuario"
+            type="text"
+            placeholder="juanperez_web"
+            required
+          />
 
-            <small id="ayuda-usuario" class="ayuda-campo">
-              De 3 a 15 caracteres: letras, números y _. Es el que se ve en el ranking
-            </small>
+          <article id="req-usuario" class="ayuda-campo">
+            De 3 a 15 caracteres: letras, números y _
+          </article>
 
-            <label for="email">Email:</label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              placeholder="ejemplo@email.com"
-              required
-            />
+          <label for="email">Email:</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="ejemplo@email.com"
+            required
+          />
 
-            <label for="contrasenia">Contraseña:</label>
-            <input
-              id="contrasenia"
-              name="contrasenia"
-              type="password"
-              placeholder="Mínimo 8 caracteres"
-              required
-            />
+          <label for="contrasenia">Contraseña:</label>
+          <input
+            id="contrasenia"
+            name="contrasenia"
+            type="password"
+            placeholder="Mínimo 8 caracteres"
+            required
+          />
 
-            <label for="repetir-contrasenia">Repeti la Contraseña:</label>
-            <input
-              id="repetir-contrasenia"
-              name="repetir-contrasenia"
-              type="password"
-              placeholder="********"
-              required
-            />
+          <!-- Requisitos: grises al inicio, se pintan al escribir -->
+          <article id="req-longitud" class="ayuda-campo">
+            Mínimo 8 caracteres
+          </article>
 
-            <label class="campo-checkbox">
-              <input type="checkbox" id="terminos" name="terminos" />
-              Acepto los Términos y la Política de Privacidad
-            </label>
+          <article id="req-numero" class="ayuda-campo">
+            Al menos un número
+          </article>
 
-            <p id="mensaje-registro" class="mensaje-form" role="alert" hidden></p>
+          <label for="repetir-contrasenia">Repetí la Contraseña:</label>
+          <input
+            id="repetir-contrasenia"
+            name="repetir-contrasenia"
+            type="password"
+            placeholder="********"
+            required
+          />
 
-            <button type="submit" class="boton-login">
-              <span class="negrita">Registrarse</span>
-            </button>
-            <a href="../../index.html" class="boton-login">Ya tengo una cuenta</a>
-          </form>
-        </article>
+          <label class="campo-checkbox">
+            <input type="checkbox" id="terminos" name="terminos" />
+            Acepto los Términos y la Política de Privacidad
+          </label>
+
+          <p id="mensaje-registro" class="mensaje-form" role="alert" hidden></p>
+
+          <button type="submit" class="boton-login">
+            <span class="negrita">Registrarse</span>
+          </button>
+          <a href="../../index.html" class="boton-login">Ya tengo una cuenta</a>
+        </form>
       </section>
     </main>
   </body>

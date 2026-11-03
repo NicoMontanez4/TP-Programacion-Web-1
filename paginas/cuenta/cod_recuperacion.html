@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PoliLingo - Código de recuperación</title>
+    <link rel="stylesheet" href="../../css/cuenta.css" />
+    <script src="../../js/datos.js" defer></script>
+    <script src="../../js/estado.js" defer></script>
+    <script src="../../js/utils.js" defer></script>
+    <script src="../../js/paginas/cod_recuperacion.js" defer></script>
+  </head>
+
+  <body>
+    <main>
+      <!-- Texto del Inicio -->
+      <section class="form-login">
+        <article class="logo">
+          <img src="../../imagenes/poli/Logo.png" alt="Imagen del lorito" />
+          <h2>Verificá tu identidad</h2>
+          <h3>Ingresá el código de 4 dígitos que enviamos a tu email</h3>
+        </article>
+
+        <!-- Formulario -->
+        <article class="grupo-inputs-codigo">
+          <form id="form-codigo" method="POST" novalidate>
+            <div class="campo">
+              <div class="codigo-digitos">
+                <input
+                  type="text"
+                  inputmode="numeric"
+                  maxlength="1"
+                  pattern="[0-9]"
+                  id="numero1"
+                  name="numero1"
+                  required
+                />
+                <input
+                  type="text"
+                  inputmode="numeric"
+                  maxlength="1"
+                  pattern="[0-9]"
+                  id="numero2"
+                  name="numero2"
+                  required
+                />
+                <input
+                  type="text"
+                  inputmode="numeric"
+                  maxlength="1"
+                  pattern="[0-9]"
+                  id="numero3"
+                  name="numero3"
+                  required
+                />
+                <input
+                  type="text"
+                  inputmode="numeric"
+                  maxlength="1"
+                  pattern="[0-9]"
+                  id="numero4"
+                  name="numero4"
+                  required
+                />
+              </div>
+
+              <p
+                id="mensaje-codigo"
+                class="mensaje-form"
+                role="alert"
+                hidden
+              ></p>
+            </div>
+
+            <button type="submit" class="boton-login">
+              <span class="negrita">Enviar</span>
+            </button>
+            <a href="../../index.html" class="boton-login">Cancelar</a>
+          </form>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
