@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../../css/cuenta.css" />
     <script src="../../js/datos.js" defer></script>
     <script src="../../js/estado.js" defer></script>
+    <script src="../../js/utils.js" defer></script>
     <script src="../../js/paginas/cod_recuperacion.js" defer></script>
   </head>
 
@@ -24,14 +25,7 @@
         <article class="grupo-inputs-codigo">
           <form id="form-codigo" method="POST" novalidate>
             <div class="campo">
-              <div
-                style="
-                  display: flex;
-                  gap: 0.5rem;
-                  justify-content: center;
-                  margin-bottom: 1rem;
-                "
-              >
+              <div class="codigo-digitos">
                 <input
                   type="text"
                   inputmode="numeric"

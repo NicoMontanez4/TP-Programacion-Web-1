@@ -31,11 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (campos.usuario && reqUsuario) {
     campos.usuario.addEventListener("input", () => {
       const val = campos.usuario.value.trim();
-      if (FORMATO_USUARIO.test(val)) {
-        reqUsuario.className = "mensaje-form mensaje-ok";
-      } else {
-        reqUsuario.className = "mensaje-form mensaje-error";
-      }
+      pintarRequisito(reqUsuario, val, FORMATO_USUARIO.test(val));
       campos.usuario.removeAttribute("aria-invalid");
     });
   }
@@ -44,25 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (campos.contrasenia) {
     campos.contrasenia.addEventListener("input", () => {
       const val = campos.contrasenia.value;
-
-      // 1. Longitud mínima
-      if (reqLongitud) {
-        if (val.length >= LARGO_MINIMO_PASS) {
-          reqLongitud.className = "mensaje-form mensaje-ok";
-        } else {
-          reqLongitud.className = "mensaje-form mensaje-error";
-        }
-      }
-
-      // 2. Al menos un número
-      if (reqNumero) {
-        if (/\d/.test(val)) {
-          reqNumero.className = "mensaje-form mensaje-ok";
-        } else {
-          reqNumero.className = "mensaje-form mensaje-error";
-        }
-      }
-
+      pintarRequisito(reqLongitud, val, val.length >= LARGO_MINIMO_PASS);
+      pintarRequisito(reqNumero, val, /\d/.test(val));
       campos.contrasenia.removeAttribute("aria-invalid");
     });
   }
@@ -181,4 +160,16 @@ function marcarError(input, elemento, texto) {
   input.setAttribute("aria-invalid", "true");
   input.focus();
   mostrarMensajeForm(elemento, texto, "error");
+}
+
+// Pinta un requisito: gris si el campo está vacío, verde si se cumple, rojo si no
+function pintarRequisito(elemento, valor, cumple) {
+  if (!elemento) return;
+  if (valor === "") {
+    elemento.className = "ayuda-campo";
+  } else if (cumple) {
+    elemento.className = "mensaje-form mensaje-ok";
+  } else {
+    elemento.className = "mensaje-form mensaje-error";
+  }
 }

@@ -284,15 +284,6 @@ main {
   gap: 0.8rem;
 }
 
-.grupo-inputs-codigo input {
-  width: 2.5rem;
-  height: 3rem;
-  text-align: center;
-  font-size: 1.2rem;
-  box-sizing: border-box;
-  border: 0.1rem solid gray;
-}
-
 /*------Mensajes de los formularios (login y registro)------*/
 .campo .mensaje-form {
   width: 100%;
@@ -336,7 +327,7 @@ main {
   color: #333;
 }
 
-/* estilo para los inputs de cidugode recuperacion*/
+/* estilo para los inputs de codigo de recuperacion*/
 .grupo-inputs-codigo input {
   width: 3rem;
   height: 3.5rem;
@@ -344,4 +335,11 @@ main {
   font-size: 1.5rem;
   font-weight: bold;
   padding: 0;
+}
+
+.codigo-digitos {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1rem;
 }

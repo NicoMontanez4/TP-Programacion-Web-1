@@ -2,7 +2,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const inputsCodigo = document.querySelectorAll("#form-codigo input");
   const formulario = document.getElementById("form-codigo");
-  const mensajeError = document.getElementById("mensaje-codigo");
 
   inputsCodigo.forEach((input, index) => {
     //controlamos el input para digitos
@@ -37,11 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const codigoGuardado = sessionStorage.getItem("codigoRecuperacion");
 
     if (codigoIngresado.length < 4) {
-      mostrarMensaje(
-        mensajeError,
-        "por favor, completa los 4 digitos del codigo.",
-        "error",
-      );
+      mostrarMensaje("mensaje-codigo", "Por favor, completá los 4 dígitos del código.", "error");
       inputsCodigo.forEach((input) =>
         input.setAttribute("aria-invalid", "true"),
       );
@@ -49,39 +44,25 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (codigoIngresado !== codigoGuardado) {
-      mostrarMensaje(
-        mensajeError,
-        "el codigo ingresado es incorrecto.",
-        "error",
-      );
+      mostrarMensaje("mensaje-codigo", "El código ingresado es incorrecto.", "error");
       inputsCodigo.forEach((input) =>
         input.setAttribute("aria-invalid", "true"),
       );
       return;
     }
 
-    mostrarMensaje(
-      mensajeError,
-      "¡codigo verificado con exito! redirigiendo...",
-      "ok",
-    );
+    sessionStorage.setItem("codigoVerificado", "si");
+
+    mostrarMensaje("mensaje-codigo", "¡Código verificado con éxito! Redirigiendo...", "ok");
     setTimeout(() => {
-      window.location.href = "nueva_contrasenia(recuperar).html";
+      window.location.href = "nueva_contrasenia.html";
     }, 1500);
   });
 
   inputsCodigo.forEach((input) => {
     input.addEventListener("input", () => {
       inputsCodigo.forEach((i) => i.removeAttribute("aria-invalid"));
-      mensajeError.hidden = true;
+      ocultarMensaje("mensaje-codigo");
     });
   });
 });
-
-//funcion para renderizar mensajes
-function mostrarMensaje(elemento, texto, tipo) {
-  elemento.textContent = texto;
-  elemento.className =
-    "mensaje-form " + (tipo === "ok" ? "mensaje-ok" : "mensaje-error");
-  elemento.hidden = false;
-}

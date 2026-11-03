@@ -46,9 +46,9 @@
             required
           />
 
-          <div id="req-usuario" class="mensaje-form mensaje-error">
+          <article id="req-usuario" class="ayuda-campo">
             De 3 a 15 caracteres: letras, números y _
-          </div>
+          </article>
 
           <label for="email">Email:</label>
           <input
@@ -68,15 +68,16 @@
             required
           />
 
-          <!-- Requerimientos de contraseña en filas independientes (rojos por default con ✕) -->
-          <div id="req-longitud" class="mensaje-form mensaje-error">
+          <!-- Requisitos: grises al inicio, se pintan al escribir -->
+          <article id="req-longitud" class="ayuda-campo">
             Mínimo 8 caracteres
-          </div>
-          <div id="req-numero" class="mensaje-form mensaje-error">
-            Al menos un número
-          </div>
+          </article>
 
-          <label for="repetir-contrasenia">Repeti la Contraseña:</label>
+          <article id="req-numero" class="ayuda-campo">
+            Al menos un número
+          </article>
+
+          <label for="repetir-contrasenia">Repetí la Contraseña:</label>
           <input
             id="repetir-contrasenia"
             name="repetir-contrasenia"

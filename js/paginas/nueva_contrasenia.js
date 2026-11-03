@@ -1,8 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
+    if (sessionStorage.getItem("codigoVerificado") !== "si") {
+    window.location.href = "olvidaste_contra.html";
+    return;
+  }
+
   const formulario = document.querySelector("form");
   const nuevaInput = document.getElementById("nueva-contrasenia");
   const confirmarInput = document.getElementById("confirmar-nueva-contrasenia");
-  const mensajeError = document.getElementById("mensaje-nueva-contra");
 
   const validarEnTiempoReal = () => {
     const nueva = nuevaInput.value.trim();
@@ -11,39 +15,31 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!nueva && !confirmar) {
       nuevaInput.removeAttribute("aria-invalid");
       confirmarInput.removeAttribute("aria-invalid");
-      mensajeError.hidden = true;
+      ocultarMensaje("mensaje-nueva-contra");
       return true;
     }
 
     if (nueva.length > 0 && nueva.length < 8) {
       nuevaInput.setAttribute("aria-invalid", "true");
-      mostrarMensaje(
-        mensajeError,
-        "la contraseña debe tener al menos 8 caracteres",
-        "error",
-      );
+      mostrarMensaje("mensaje-nueva-contra", "La contraseña debe tener al menos 8 caracteres", "error");
       return false;
     }
 
     if (nueva.length >= 8 && !/\d/.test(nueva)) {
       nuevaInput.setAttribute("aria-invalid", "true");
-      mostrarMensaje(
-        mensajeError,
-        "la contraseña debe tener al menos un número",
-        "error",
-      );
+      mostrarMensaje("mensaje-nueva-contra", "La contraseña debe tener al menos un número","error");
       return false;
     }
 
     if (confirmar.length > 0 && nueva !== confirmar) {
       confirmarInput.setAttribute("aria-invalid", "true");
-      mostrarMensaje(mensajeError, "las contraseñas no coinciden", "error");
+      mostrarMensaje("mensaje-nueva-contra", "Las contraseñas no coinciden", "error");
       return false;
     }
 
     nuevaInput.removeAttribute("aria-invalid");
     confirmarInput.removeAttribute("aria-invalid");
-    mensajeError.hidden = true;
+    ocultarMensaje("mensaje-nueva-contra");
     return true;
   };
 
@@ -57,11 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const confirmar = confirmarInput.value.trim();
 
     if (!nueva || !confirmar) {
-      mostrarMensaje(
-        mensajeError,
-        "por favor, completa todos los campos",
-        "error",
-      );
+      mostrarMensaje("mensaje-nueva-contra", "Por favor, completá todos los campos", "error");
       return;
     }
 
@@ -71,40 +63,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const email = sessionStorage.getItem("emailRecuperacion");
     if (!email) {
-      mostrarMensaje(
-        mensajeError,
-        "error: no se encontró el email en la sesión",
-        "error",
-      );
+      mostrarMensaje("mensaje-nueva-contra", "Error: no se encontró el email en la sesión", "error");
       return;
     }
 
     const resultado = cambiarPassword(email, nueva);
 
     if (!resultado.ok) {
-      mostrarMensaje(mensajeError, resultado.mensaje, "error");
+      mostrarMensaje("mensaje-nueva-contra", resultado.mensaje, "error");
       return;
     }
 
     //limpiamos la sesion y los datos temporales para forzar el login
     sessionStorage.removeItem("codigoRecuperacion");
     sessionStorage.removeItem("emailRecuperacion");
-    localStorage.removeItem("usuarioActivo"); //por si guarda la sesion activa con este nombre
+    sessionStorage.removeItem("codigoVerificado");
+    cerrarSesion();
 
-    mostrarMensaje(
-      mensajeError,
-      "¡contraseña actualizada con éxito! redirigiendo...",
-      "ok",
-    );
+    mostrarMensaje("mensaje-nueva-contra", "¡Contraseña actualizada con éxito! Redirigiendo...", "ok");
     setTimeout(() => {
       window.location.href = "../../index.html";
     }, 2000);
   });
 });
-
-function mostrarMensaje(elemento, texto, tipo) {
-  elemento.textContent = texto;
-  elemento.className =
-    "mensaje-form " + (tipo === "ok" ? "mensaje-ok" : "mensaje-error");
-  elemento.hidden = false;
-}
