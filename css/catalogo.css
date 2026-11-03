@@ -206,22 +206,32 @@ a.boton-curso {
     color: #333;
 }
  
-/* ---------- Pantallas chicas ---------- */
-@media screen and (max-width: 768px) {
+/* Celulares: loro arriba y centrado, texto debajo */
+@media screen and (max-width: 600px) {
     .catalogo-pagina {
-        gap: 1rem 1rem;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "encabezado-poli"
+            "encabezado"
+            "linea"
+            "mensaje"
+            "tarjetas"
+            "banner"
+            "caja"
+            "volver";
     }
 
     .poli-catalogo {
-        width: 6rem;
+        width: 8rem;
+        justify-self: center;
+        align-self: center;
     }
 
-    .encabezado-catalogo h1 { font-size: 1.6rem; }
-    .encabezado-catalogo p  { font-size: 1rem; }
-}
+    .encabezado-catalogo {
+        text-align: center;
+    }
 
-@media screen and (max-width: 480px) {
-    .poli-catalogo { width: 4.5rem; }
-
-    .caja-lateral svg { display: none; } /* el globo sobra en pantallas muy chicas */
+    .catalogo-pagina::after {
+        margin-top: 0; /* en escritorio el loro "se apoya" en la línea; apilado ya no hace falta */
+    }
 }
