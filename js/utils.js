@@ -5,8 +5,6 @@
 // Ej: en "mapa.html?curso=aleman", leerParametro("curso") -> "aleman"
 function leerParametro(nombre) {
     const parametros = new URLSearchParams(window.location.search);
-    /* window.location.search es la parte de la URL desde el ?. 
-    Es como un Map de Java: le pedís una clave y te da el valor */
     return parametros.get(nombre);
 }
 
@@ -23,7 +21,8 @@ function mostrarMensaje(idElemento, texto, tipo) {
     const elemento = document.getElementById(idElemento);
     if (!elemento) return;
     elemento.textContent = texto;
-    elemento.className = "mensaje-form " + (tipo === "ok" ? "mensaje-ok" : "mensaje-error");
+    elemento.className =
+        "mensaje-form " + (tipo === "ok" ? "mensaje-ok" : "mensaje-error");
     elemento.hidden = false;
 }
 
@@ -32,6 +31,16 @@ function ocultarMensaje(idElemento) {
     if (!elemento) return;
     elemento.hidden = true;
     elemento.textContent = "";
+}
+
+/* Pintar un requisito (texto de ayuda) */
+// Pinta un requisito: gris por defecto, verde si cumple, rojo si no.
+// Solo cambia el color del texto (no tamaño, ni negrita, ni fondo).
+function pintarRequisito(elemento, valor, cumple) {
+    if (!elemento) return;
+    elemento.classList.remove("requisito-ok", "requisito-error");
+    if (valor === "") return; // queda en gris
+    elemento.classList.add(cumple ? "requisito-ok" : "requisito-error");
 }
 
 /* Mostrar un cartel (modal) */
@@ -45,9 +54,7 @@ function ocultarMensaje(idElemento) {
 function mostrarModal(opciones) {
     cerrarModal(); // si había otro abierto, lo sacamos
 
-    const modal = document.createElement("dialog"); /* "dialog" es una etiqueta HTML
-    que funciona como un cartel, se muestra adelante de todo con fondo oscurecido,
-    no deja tocar la pagina de atras hasta que se cierre, etc. */
+    const modal = document.createElement("dialog");
     modal.id = "modal-polilingo";
     modal.className = "modal";
     modal.setAttribute("aria-labelledby", "modal-titulo");
@@ -60,11 +67,10 @@ function mostrarModal(opciones) {
         modal.appendChild(imagen);
     }
 
-    const titulo = document.createElement("h2"); /* Crea una etiqueta que todavia no está
-    en la pagina. Es como hacer un "new" de un objeto. */
+    const titulo = document.createElement("h2");
     titulo.id = "modal-titulo";
     titulo.textContent = opciones.titulo;
-    modal.appendChild(titulo); /* Mete un elemento adentro de otro. */
+    modal.appendChild(titulo);
 
     if (opciones.texto) {
         const texto = document.createElement("p");
@@ -72,8 +78,9 @@ function mostrarModal(opciones) {
         modal.appendChild(texto);
     }
 
-    // Si no mandan botones, ponemos uno de "Aceptar"
-    const listaBotones = opciones.botones || [{ texto: "Aceptar", tipo: "principal" }];
+    const listaBotones = opciones.botones || [
+        { texto: "Aceptar", tipo: "principal" },
+    ];
     const contenedorBotones = document.createElement("article");
     contenedorBotones.className = "modal-botones";
     let seEligioUnBoton = false;
@@ -82,7 +89,11 @@ function mostrarModal(opciones) {
         const elemento = document.createElement("button");
         elemento.type = "button";
         elemento.textContent = boton.texto;
-        elemento.className = "modal-boton " + (boton.tipo === "secundario" ? "modal-boton-secundario" : "modal-boton-principal");
+        elemento.className =
+            "modal-boton " +
+            (boton.tipo === "secundario"
+                ? "modal-boton-secundario"
+                : "modal-boton-principal");
         elemento.addEventListener("click", function () {
             seEligioUnBoton = true;
             cerrarModal();
@@ -92,26 +103,26 @@ function mostrarModal(opciones) {
     });
     modal.appendChild(contenedorBotones);
 
-    // Escape: si el cartel no es cerrable, lo bloqueamos
     modal.addEventListener("cancel", function (evento) {
         if (opciones.cerrable === false) evento.preventDefault();
     });
 
-    // Si igual se cerró sin tocar un botón (algunos navegadores dejan con doble Escape),
-    // en un cartel obligatorio ejecutamos la acción del primer botón
     modal.addEventListener("close", function () {
         modal.remove();
-        if (!seEligioUnBoton && opciones.cerrable === false && listaBotones[0].alHacerClic) {
+        if (
+            !seElegioUnBoton &&
+            opciones.cerrable === false &&
+            listaBotones[0].alHacerClic
+        ) {
             listaBotones[0].alHacerClic();
         }
     });
 
     document.body.appendChild(modal);
-    modal.showModal(); // lo muestra y pone el foco en el primer botón
+    modal.showModal();
 }
 
 function cerrarModal() {
     const modal = document.getElementById("modal-polilingo");
     if (modal) modal.close();
 }
-
