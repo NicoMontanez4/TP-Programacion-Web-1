@@ -24,16 +24,39 @@
             <!--Identificación-->
 
             <section class="usuario">
+
                 <img id="perfil-avatar"
                     src="../../imagenes/avatares/Avatar1.png"
                     alt="Avatar del usuario">
+
+                <button type="button" id="boton-cambiar-avatar">
+                    Cambiar foto
+                </button>
 
                 <h2 id="perfil-nombre">Carlos Perez</h2>
 
                 <p id="perfil-usuario">@carlosperez123</p>
 
                 <p id="perfil-fecha">Septiembre de 2026</p>
+
             </section>
+
+            <!-- Selector de avatares, fuera del perfil -->
+
+            <form id="form-avatar" class="selector-avatares" hidden>
+
+                <h3>Elegí tu avatar</h3>
+
+                <fieldset id="grilla-avatares"></fieldset>
+
+                <p id="mensaje-avatar"></p>
+
+                <button type="submit">Guardar foto</button>
+                <button type="button" id="boton-cancelar-avatar">
+                    Cancelar
+                </button>
+
+            </form>
 
             <!-- Estadísticas, logros y logros bloqueados-->
 

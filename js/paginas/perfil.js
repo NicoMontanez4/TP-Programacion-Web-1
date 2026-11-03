@@ -36,10 +36,12 @@ function cargarDatosPerfil() {
     }
 
     cargarDatosPersonales(usuario);
+    configurarAvatares(usuario);
     cargarEstadisticas(usuario);
     cargarDatosCuenta(usuario);
     cargarLogros(usuario);
     configurarAjustes(usuario);
+    
 }
 
 
@@ -67,6 +69,101 @@ function cargarDatosPersonales(usuario) {
     if (fecha) {
         fecha.textContent = `Desde ${formatearFecha(usuario.fechaAlta)}`;
     }
+}
+
+/* ======================== AVATARES ======================== */
+
+function configurarAvatares(usuario) {
+
+    const foto = document.getElementById("perfil-avatar");
+    const botonCambiar = document.getElementById("boton-cambiar-avatar");
+    const botonCancelar = document.getElementById("boton-cancelar-avatar");
+    const formulario = document.getElementById("form-avatar");
+    const grilla = document.getElementById("grilla-avatares");
+    const mensaje = document.getElementById("mensaje-avatar");
+
+    if (!foto || !botonCambiar || !formulario || !grilla) return;
+
+    // Mostrar la foto actual
+    foto.src = `../../imagenes/avatares/${usuario.avatar}`;
+    foto.alt = `Foto de perfil de ${usuario.nombre}`;
+
+    // Crear la grilla de avatares
+    grilla.innerHTML = "";
+
+    AVATARES.forEach(function (archivo, i) {
+
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = "avatar";
+        input.id = `avatar-${i}`;
+        input.value = archivo;
+
+        if (archivo === usuario.avatar) {
+            input.checked = true;
+        }
+
+        const label = document.createElement("label");
+        label.htmlFor = `avatar-${i}`;
+
+        const imagen = document.createElement("img");
+        imagen.src = `../../imagenes/avatares/${archivo}`;
+        imagen.alt = `Avatar ${i + 1}`;
+
+        label.appendChild(imagen);
+
+        grilla.appendChild(input);
+        grilla.appendChild(label);
+    });
+
+    // Abrir selector
+    botonCambiar.addEventListener("click", function () {
+        formulario.hidden = false;
+        mensaje.textContent = "";
+    });
+
+    // Cancelar selección
+    if (botonCancelar) {
+        botonCancelar.addEventListener("click", function () {
+            formulario.hidden = true;
+        });
+    }
+
+    // Guardar avatar elegido
+    formulario.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const elegido = formulario.querySelector(
+            'input[name="avatar"]:checked'
+        );
+
+        if (!elegido) {
+            mensaje.textContent = "Elegí una imagen.";
+            return;
+        }
+
+        const cambioReal = elegido.value !== usuario.avatar;
+
+        usuario.avatar = elegido.value;
+
+        if (cambioReal) {
+            usuario.avatarCambiado = true;
+        }
+
+        guardarUsuario(usuario);
+
+        // Actualizar foto del perfil
+        foto.src = `../../imagenes/avatares/${usuario.avatar}`;
+
+        // Actualizar la barra de navegación
+        actualizarNavbar();
+
+        // Revisar y mostrar los logros actualizados
+        cargarLogros(usuario);
+
+        mensaje.textContent = "¡Foto de perfil actualizada!";
+        formulario.hidden = true;
+    });
 }
 
 

@@ -795,7 +795,8 @@ const LOGROS = [
         descripcion: "Cambiá tu foto de perfil",
         imagen: "Logro-7.png",
         meta: 1,
-        valor: function (u) { return u.avatar !== AVATAR_PREDETERMINADO ? 1 : 0; },
+        valor: function (u) {return u.avatarCambiado ? 1 : 0;
+},
     },
     {
         id: "maestro-ingles",

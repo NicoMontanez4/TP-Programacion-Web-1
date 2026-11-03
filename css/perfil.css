@@ -52,9 +52,11 @@ main header h1 {
 }
 
 /*----------------Panel-----------------------*/
+
 .usuario {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 1.25rem;
 }
 
@@ -67,14 +69,117 @@ main header h1 {
     border: 0.2rem solid #b3e5fc;
 }
 
-.usuario hgroup h2 {
+.usuario h2 {
     font-size: clamp(1.2rem, 2.5vw, 1.6rem);
     line-height: 1.2;
 }
 
-.usuario hgroup p {
+.usuario p {
     font-size: clamp(0.85rem, 1.1vw, 0.95rem);
     color: #6b7280;
+}
+
+/* Botón cambiar avatar */
+
+#boton-cambiar-avatar {
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 1.5rem;
+    background-color: #8fc97f;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#boton-cambiar-avatar:hover {
+    background-color: #70b660;
+}
+
+/*----------------Selector de avatares----------------*/
+
+.selector-avatares {
+    width: min(100%, 38rem);
+    margin-inline: auto;
+    padding: 1.5rem;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    border: 0.0625rem solid #dce5e8;
+}
+
+.selector-avatares[hidden] {
+    display: none;
+}
+
+.selector-avatares h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Grilla de avatares */
+
+#grilla-avatares {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
+    justify-items: center;
+    gap: 1rem;
+    border: none;
+    padding: 1rem;
+}
+
+#grilla-avatares input {
+    position: absolute;
+    opacity: 0;
+}
+
+#grilla-avatares label {
+    cursor: pointer;
+}
+
+#grilla-avatares label img {
+    width: 4rem;
+    height: 4rem;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 0.2rem solid transparent;
+    transition: transform 0.2s;
+}
+
+#grilla-avatares label:hover img {
+    transform: scale(1.1);
+}
+
+#grilla-avatares input:checked + label img {
+    border-color: var(--verde-oscuro);
+    outline: 0.15rem solid var(--verde-oscuro);
+    outline-offset: 0.15rem;
+}
+
+#grilla-avatares input:focus-visible + label img {
+    outline: 0.15rem solid #222;
+}
+
+#mensaje-avatar {
+    margin: 0.5rem 0;
+}
+
+/* Acciones */
+
+.selector-avatares button {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.selector-avatares button[type="submit"] {
+    background-color: #8fc97f;
+    color: white;
+}
+
+.selector-avatares button[type="button"] {
+    background-color: #e5e7eb;
+    color: #374151;
 }
 
 /*----------------Estadísticas, logros y logros bloqueados-----------------------*/
@@ -347,3 +452,6 @@ small {
 .boton-cancelar {
     background-color: gray;
 }
+
+
+
