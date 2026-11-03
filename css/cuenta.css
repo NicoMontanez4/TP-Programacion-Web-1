@@ -1,345 +1,328 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html,
 body {
-  min-height: 100vh;
+    min-height: 100vh;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #b8b8c4;
-  font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    font-family: sans-serif;
+    color: #333;
 }
 
 main {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-  padding: 2.5rem 0;
-  width: 100%;
-  gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 0;
+    width: 100%;
+    gap: 2rem;
 }
 
-/*Acá arranca el login*/
-/* El calendario utiliza el mismo formato para seguir un mismo patron */
-.tarjeta-calendario {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem 2rem;
-  gap: 1rem; /*HACER RESPONSIVE, mobile = 1rem, grande=2rem*/
-  width: min(80%, 25rem, 38rem);
-  height: auto;
-  border-radius: 2rem;
-  background-color: #dbe7ff;
-}
-
+/* =====================================================
+   FORMULARIO BASE (Login y Registro)
+   ===================================================== */
 .form-login {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(
-    0.2rem,
-    1vw,
-    0.5rem
-  ); /* separación entre logo, campos, botón, etc. */
-  width: min(90%, 600px);
-  margin: 0 auto;
-  padding: 2rem 1rem;
-  box-sizing: border-box;
-  background-color: #dbe7ff;
-  border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(0.2rem, 1vw, 0.5rem);
+    width: min(90%, 600px);
+    margin: 0 auto;
+    padding: 1rem 1.5rem 2rem 1.5rem;
+    background-color: #d3f7c8e2; /* Fondo limpio */
+    border-radius: 1rem;
+    border: 1px solid #e0e0e0; /* Borde sutil */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra suave */
 }
 
-/*Lo que sería el "header" del form*/
 .logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  width: 100%;
-  text-align: center;
-  box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 100%;
+    text-align: center;
 }
 
 .logo img {
-  min-inline-size: 110px;
-  max-inline-size: 36%;
-  height: auto;
+    min-inline-size: 110px;
+    max-inline-size: 36%;
+    height: auto;
+    margin-bottom: 0.5rem;
 }
 
 .logo h2 {
-  box-sizing: border-box;
-  text-align: center;
-  font-size: clamp(1rem, 1.5vw, 1.6rem);
+    text-align: center;
+    font-size: clamp(1rem, 1.5vw, 1.6rem);
+    font-weight: normal; /* Sin negrita para que sea limpio */
+    color: #555;
+    margin-bottom: 1rem;
 }
 
-/*Lo que sería el "body" del form*/
+/* =====================================================
+   ESTILOS ESPECÍFICOS DEL LOGIN (index.html)
+   ===================================================== */
+
+/* Fila que contiene el Checkbox y el link de "Olvidaste tu contraseña" */
+.opciones-login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+/* Achicamos el margen del checkbox solo para que quede alineado en esta fila */
+.opciones-login .campo-checkbox {
+    margin: 0;
+    width: auto;
+}
+
+.link-olvidado {
+    font-size: 0.8rem;
+    color: #51aee5;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+    white-space: nowrap; /* <--- ESTO EVITA EL SALTO DE LÍNEA */
+}
+.link-olvidado:hover {
+    color: #509992; /* Cambia al verde de la paleta al pasar el mouse */
+    text-decoration: underline;
+}
+
+/* =====================================================
+   CAMPOS E INPUTS
+   ===================================================== */
 .campo {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .campo label {
-  font-size: clamp(0.9rem, 1.2vw, 1.5rem);
-  margin-bottom: 0.3rem;
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #444;
 }
 
 .campo input {
-  padding: 0 5%;
-  width: 100%;
-  font-size: clamp(0.85rem, 1.3vw, 1.5rem);
-  height: min(4vh, 3.5rem);
-  border-radius: 1rem;
-  border: 1px solid gray;
-  box-sizing: border-box;
-  margin-bottom: 0.7rem;
+    box-sizing: border-box;
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    height: 2.6rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    transition: border-color 0.2s;
 }
 
-/*------La chechbox------*/
-.campo-checkbox {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0.5rem;
-  width: 90%;
-  padding: 0.5rem;
+.campo input:focus {
+    outline: none;
+    border-color: #adddfb;
+    background-color: #fff;
 }
 
-.campo.campo-checkbox label {
-  margin: 0;
-  font-size: 1rem;
+/* =====================================================
+   BOTONES (Herencia y Modificadores)
+   ===================================================== */
+/* 1. Base: lo que comparten todos */
+.boton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 2.6rem;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+    color: #111111;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    cursor: pointer;
+    margin: 0.3rem 0;
+    font-family: inherit;
+    transition:
+        background-color 0.2s,
+        transform 0.1s;
 }
 
+.boton:active {
+    transform: scale(0.98); /* Pequeño efecto al hacer clic */
+}
+
+/* 2. Modificadores: solo cambian el color */
+.boton-amarillo {
+    background-color: #fcd994;
+    border-color: #e5c37d;
+}
+.boton-amarillo:hover {
+    background-color: #ebd083;
+}
+
+.boton-azul {
+    background-color: #adddfb;
+    border-color: #8bc3e4;
+}
+.boton-azul:hover {
+    background-color: #96c6e3;
+}
+
+.boton-verde {
+    background-color: #8affb5;
+    border-color: #71d194;
+}
+.boton-verde:hover {
+    background-color: #69c88d;
+}
+
+/* Acciones del paso (Paso 2: Volver y Registrarse) */
+.acciones-paso {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* =====================================================
+   PASOS Y DIVISORES
+   ===================================================== */
+.paso-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.paso-form[hidden] {
+    display: none;
+}
+
+.divisor {
+    width: 100%;
+    border: none;
+    border-top: 1px solid #888;
+    margin: 0rem 0 1rem 0;
+}
+
+.paso-titulo {
+    text-align: left;
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: 600;
+}
+
+/* =====================================================
+   REQUISITOS Y MENSAJES
+   ===================================================== */
+.ayuda-campo {
+    margin: 0 0 0.2rem 0; /* Pegados entre sí */
+    padding: 0;
+    font-size: 0.8rem;
+    font-weight: normal;
+    color: #888; /* Gris por defecto */
+    background: none;
+    border: none;
+    text-align: left;
+}
+
+/* Aire después del último requisito */
+.ayuda-campo:last-of-type {
+    margin-bottom: 1rem;
+}
+
+.ayuda-campo.requisito-ok {
+    color: #1f7a34;
+}
+
+.ayuda-campo.requisito-error {
+    color: #c62828;
+}
+
+/* Checkbox */
+.campo label.campo-checkbox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+    margin: 0rem 0;
+    font-size: 0.8rem; /* Tamaño legible (0.4rem era muy chiquito) */
+    color: #555;
+    font-weight: normal;
+    cursor: pointer; /* Hace que se note que se puede clickear */
+}
+
+/* El cuadradito del checkbox */
 .campo input[type="checkbox"] {
-  appearance: none;
-  padding: 0;
-  width: 1.2rem;
-  height: 1.2rem;
-  border-radius: 0.3rem;
-  border: 0.1rem solid gray;
-  flex-shrink: 0;
-  cursor: pointer;
+    appearance: none;
+    margin: 0;
+    padding: 0; /* <--- ¡ESTA ES LA LÍNEA QUE FALTA! */
+    box-sizing: border-box; /* Asegura que el borde no sume tamaño extra */
+    width: 1.3rem;
+    height: 1.3rem;
+    min-width: 1.3rem; /* Evita que Flexbox lo aplaste */
+    min-height: 1.3rem;
+    border-radius: 0.3rem;
+    border: 1px solid #888;
+    background-color: #fff;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    transition: all 0.2s;
 }
-
+/* Cuando está seleccionado */
 .campo input[type="checkbox"]:checked {
-  background-color: #60b8af;
-  border-color: #60b8af;
+    background-color: #60b8af;
+    border-color: #60b8af;
 }
 
-/*------Botón------*/
-.boton-login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: min(5.3vh, 3.5rem);
-  text-align: center;
-  text-decoration: none;
-  font-size: 1rem;
-  color: #111111;
-  background-color: #fcd994;
-  border-radius: 2rem;
-  border: 0.1rem solid gray;
-  box-sizing: border-box;
-  cursor: pointer;
-  margin: 0.3rem;
+/* El tilde (✓) que aparece al seleccionar */
+.campo input[type="checkbox"]:checked::after {
+    content: "✓";
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1;
 }
-
-.boton-login:visited {
-  color: #000000;
-}
-
-.boton-login:hover {
-  background-color: #ebd083;
-}
-
-.negrita {
-  font-weight: bold;
-}
-
-/*El olvidado del login*/
-.olvidado {
-  /* display: flex;
-  flex-direction: row; */
-  display: grid;
-  grid-template-columns: auto 1fr;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  width: 100%;
-  gap: 1rem;
-  margin: 0 auto;
-}
-
-.olvidado img {
-  grid-row: span 2;
-  width: 100px;
-  height: auto;
-}
-
-.olvidado a {
-  /* display: flex;
-    flex-direction: column; */
-  grid-column: 2;
-  display: flex;
-  width: 80%;
-  padding: 0.4rem 1rem;
-  text-align: center;
-  text-decoration: none;
-  background-color: #ff0000;
-  color: rgb(247, 250, 253);
-  border-radius: 0.2rem;
-  border: 0.1rem solid gray;
-  box-sizing: border-box;
-  cursor: pointer;
-  font-size: clamp(0.79rem, 1vw, 2rem);
-}
-
-.olvidado a:nth-of-type(1) {
-  color: #111111;
-  background-color: #bdcaff;
-}
-
-.olvidado a:nth-of-type(2) {
-  color: #111111;
-  background-color: #91c1ff;
-}
-
-.olvidado a:hover {
-  color: #fff;
-  background-color: #509992;
-}
-
-/*-------------ACÁ ARRANCA EL REGISTRO-------*/
-.imagen-3 {
-  width: 12rem;
-  height: auto;
-}
-
-.header-registro {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  width: 100%;
-}
-
-.contenedor-registro {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  width: 40rem;
-  margin: 3rem auto 0;
-  gap: 1rem;
-}
-
-/*-------------ACÁ ARRANCA OLVIDASTE_CONTRA-------*/
-
-.logo h3 {
-  box-sizing: border-box;
-  text-align: center;
-  font-weight: normal;
-  font-size: clamp(0.85rem, 1.2vw, 1.2rem);
-}
-
-.campo p {
-  box-sizing: border-box;
-  text-align: left;
-  font-weight: normal;
-  font-size: clamp(0.6rem, 1vw, 1.2rem);
-  margin-bottom: 0.3rem;
-  margin-top: 3%;
-}
-
-/*-------------ACÁ COD_RECUPERACION-------*/
-.grupo-inputs-codigo {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  gap: 0.8rem;
-  margin: 1rem;
-}
-
-.grupo-inputs-codigo form {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.8rem;
-}
-
-/*------Mensajes de los formularios (login y registro)------*/
+/* Mensajes de error/éxito globales */
 .campo .mensaje-form {
-  width: 100%;
-  margin: 0.2rem 0 0.3rem 0;
-  padding: 0.6rem 1rem;
-  border-radius: 0.3rem;
-  font-size: 0.95rem; /* más específico que ".campo p" para que no quede chiquito */
-  font-weight: bold;
-  text-align: left;
+    width: 100%;
+    margin: 1rem 0;
+    padding: 0.6rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: bold;
+    text-align: left;
 }
 
 .mensaje-error {
-  background-color: #fbd5d5;
-  color: #8a1414;
-  border: 0.1rem solid #e53935;
-}
-
-.mensaje-error::before {
-  content: "✕ "; /* el ícono acompaña al texto: no depende solo del color */
+    background-color: #fbd5d5;
+    color: #8a1414;
+    border: 1px solid #e53935;
 }
 
 .mensaje-ok {
-  background-color: #d7f5d0;
-  color: #1f5e28;
-  border: 0.1rem solid #2f7d3b;
-}
-
-.mensaje-ok::before {
-  content: "✓ ";
-}
-
-/* Campo con error */
-.campo input[aria-invalid="true"] {
-  border: 0.15rem solid #e53935;
-}
-
-/* Texto de ayuda debajo de un campo */
-.ayuda-campo {
-  margin: 0 0 1rem 1rem;
-  font-size: 0.8rem;
-  color: #333;
-}
-
-/* estilo para los inputs de codigo de recuperacion*/
-.grupo-inputs-codigo input {
-  width: 3rem;
-  height: 3.5rem;
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: bold;
-  padding: 0;
-}
-
-.codigo-digitos {
-  display: flex;
-  gap: 0.5rem;
-  justify-content: center;
-  margin-bottom: 1rem;
+    background-color: #d7f5d0;
+    color: #1f5e28;
+    border: 1px solid #2f7d3b;
 }
