@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>PoliLingo - Nueva Contraseña</title>
     <link rel="stylesheet" href="../../css/cuenta.css" />
+    <script src="../../js/datos.js" defer></script>
+    <script src="../../js/estado.js" defer></script>
+    <script src="../../js/paginas/nueva_contrasenia.js" defer></script>
   </head>
 
   <body>
@@ -12,27 +15,39 @@
       <!-- Texto del Inicio -->
       <section class="form-login">
         <article class="logo">
+          <img src="../../imagenes/poli/Logo.png" alt="Imagen del lorito" />
           <h2>Código Verificado</h2>
           <h3>Elegí tu nueva contraseña</h3>
         </article>
 
         <!-- Formulario -->
         <article class="form-login">
-          <form action="../../index.html" method="GET" class="campo">
-            <label for="email">Nueva contraseña:</label>
-            <input
-              id="nueva-contrasenia"
-              name="nueva-contrasenia"
-              type="password"
-              required
-            />
-            <label for="email">Confirmar contraseña:</label>
-            <input
-              id="confirmar-nueva-contrasenia"
-              name="confirmar-nueva-contrasenia"
-              type="password"
-              required
-            />
+          <form method="POST" class="campo" novalidate>
+            <div class="campo">
+              <label for="nueva-contrasenia">Nueva contraseña:</label>
+              <input
+                id="nueva-contrasenia"
+                name="nueva-contrasenia"
+                type="password"
+              />
+
+              <label for="confirmar-nueva-contrasenia"
+                >Confirmar contraseña:</label
+              >
+              <input
+                id="confirmar-nueva-contrasenia"
+                name="confirmar-nueva-contrasenia"
+                type="password"
+              />
+
+              <p
+                id="mensaje-nueva-contra"
+                class="mensaje-form"
+                role="alert"
+                hidden
+              ></p>
+            </div>
+
             <button type="submit" class="boton-login">
               <span class="negrita">Guardar y volver a Iniciar Sesión</span>
             </button>

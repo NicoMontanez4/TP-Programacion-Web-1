@@ -5,41 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>PoliLingo - Recuperar Contraseña</title>
     <link rel="stylesheet" href="../../css/cuenta.css" />
+    <script src="../../js/datos.js" defer></script>
+    <script src="../../js/estado.js" defer></script>
+    <script src="../../js/paginas/olvidaste_contra.js" defer></script>
   </head>
 
   <body>
     <main>
-      <!-- Texto del Inicio -->
       <section class="form-login">
         <article class="logo">
+          <img
+            src="../../imagenes/poli/Logo.png"
+            alt="Imagen del lorito"
+            class="imagen-3"
+          />
           <h2>¿Olvidaste tu contraseña?</h2>
           <h3>
             No te preocupes, don't worry, mach dir keine Sorgen, 别担心...
           </h3>
         </article>
 
-        <!-- Formulario -->
-        <article class="form-login">
-          <form
-            action="cod_recuperacion(recuperar).html"
-            method="GET"
-            class="campo"
-          >
+        <form method="POST" class="campo" novalidate>
+          <div class="campo">
             <label for="email">Email:</label>
             <input
               id="email"
               name="email"
               type="email"
               placeholder="ejemplo@email.com"
-              required
             />
             <p>(Ingresa el mail para recibir el código de recuperación)</p>
-            <button type="submit" class="boton-login">
-              <span class="negrita">Aceptar</span>
-            </button>
-            <a href="../../index.html" class="boton-login">Cancelar</a>
-          </form>
-        </article>
+
+            <p
+              id="mensaje-recuperar"
+              class="mensaje-form"
+              role="alert"
+              hidden
+            ></p>
+          </div>
+
+          <button type="submit" class="boton-login">
+            <span class="negrita">Aceptar</span>
+          </button>
+          <a href="../../index.html" class="boton-login">Cancelar</a>
+        </form>
       </section>
     </main>
   </body>
