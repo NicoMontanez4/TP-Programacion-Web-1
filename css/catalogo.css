@@ -105,26 +105,29 @@
 /* ---------- Tarjetas ---------- */
 .tarjetas-catalogo {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); /* 3 en fila en escritorio, se acomodan solas en pantallas chicas */
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    align-items: stretch;
     gap: 1.25rem;
     margin: 0;
 }
- 
+
 .tarjeta-catalogo {
     display: grid;
-    grid-template-columns: 4rem 1fr; /* bandera a la izquierda, texto a la derecha */
+    grid-template-columns: 4rem 1fr;
+    grid-template-rows: auto minmax(4.5rem, 1fr) 6rem;
     grid-template-areas:
         "bandera titulo"
         "bandera descripcion"
-        "boton   boton";
-    align-items: center;
+        "acciones acciones";
+    align-items: start;
     gap: 0.25rem 1rem;
     padding: 1rem;
     border: 0.12rem solid #b9e0ad;
     border-radius: 1rem;
     background-color: #eef8ea;
+    box-sizing: border-box;
 }
- 
+
 .tarjeta-catalogo img {
     grid-area: bandera;
     align-self: start;
@@ -133,42 +136,105 @@
     border-radius: 50%;
     object-fit: cover;
 }
- 
+
 .tarjeta-catalogo h2 {
     grid-area: titulo;
     align-self: end;
     font-size: 1.1rem;
     color: #0a4148;
 }
- 
+
 .tarjeta-catalogo p {
     grid-area: descripcion;
     align-self: start;
     font-size: 0.9rem;
     line-height: 1.35;
     color: #333;
+    margin: 0;
 }
  
 /* ---------- Botones de las tarjetas ---------- */
+
+.acciones-catalogo {
+    grid-area: acciones;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.55rem;
+    height: 6rem;
+    box-sizing: border-box;
+}
+
+
+
 .boton-curso {
-    grid-area: boton;
-    display: block;
-    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+
     width: 100%;
     padding: 0.6rem 1rem;
+
     border: 0.15rem solid #26813a;
     border-radius: 999px;
-    background-color: #26813a; /* verde oscuro: el texto blanco se lee bien */
-    color: #fff;
+
+    background-color: #fff;
+    color: #26813a;
+
     font-size: 1rem;
     font-weight: 700;
     text-align: center;
     cursor: pointer;
+    line-height: 1;
     transition: filter 0.2s ease;
 }
- 
+
+.boton-curso svg {
+    display: block;
+    width: 1.2rem;
+    height: 1.2rem;
+    flex-shrink: 0;
+}
+
 .boton-curso:hover {
     filter: brightness(1.1);
+    background-color: #26813a;
+    color: #fff;
+    border-color: #26813a;
+    
+}
+
+a.boton-curso {
+    background-color: #fff;
+    color: #26813a;
+}
+
+.boton-eliminar-catalogo {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.6rem 1rem;
+    border: 0.15rem solid #a32636;
+    border-radius: 999px;
+    background-color: #fff;
+    color: #a32636;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.boton-eliminar-catalogo:hover {
+    background-color: #a32636;
+    color: #fff;
+}
+
+.boton-curso:focus-visible,
+.boton-eliminar-catalogo:focus-visible {
+    outline: 0.2rem solid #222;
+    outline-offset: 0.15rem;
 }
  
 /* "Ir al curso" (ya inscripto): botón con borde, para distinguirlo también sin el color */
@@ -205,6 +271,7 @@ a.boton-curso {
     font-size: 0.95rem;
     color: #333;
 }
+
  
 /* Celulares: loro arriba y centrado, texto debajo */
 @media screen and (max-width: 600px) {
@@ -235,3 +302,4 @@ a.boton-curso {
         margin-top: 0; /* en escritorio el loro "se apoya" en la línea; apilado ya no hace falta */
     }
 }
+

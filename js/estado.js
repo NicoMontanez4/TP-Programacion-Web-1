@@ -399,6 +399,23 @@ function inscribirse(idCurso) {
     guardarUsuario(usuario);
     return { ok: true, mensaje: "¡Te inscribiste en " + curso.nombre + "!" };
 }
+
+// Saca un curso de "Mis cursos" y borra el progreso de ese curso.
+// El XP, las gemas y los cursos ya completados se mantienen (así no se puede
+// volver a cobrar la recompensa de un curso).
+function eliminarCurso(idCurso) {
+    const usuario = usuarioActual();
+    if (!usuario) return { ok: false, mensaje: "Iniciá sesión para eliminar un curso." };
+    const curso = obtenerCurso(idCurso);
+    if (!curso) return { ok: false, mensaje: "Ese curso no existe." };
+    if (!estaInscripto(usuario, idCurso)) {
+        return { ok: false, mensaje: "No estás inscripto en " + curso.nombre + "." };
+    }
+    usuario.inscripciones = usuario.inscripciones.filter(function (id) { return id !== idCurso; });
+    delete usuario.progreso[idCurso];
+    guardarUsuario(usuario);
+    return { ok: true, mensaje: "Eliminaste el curso de " + curso.nombre + "." };
+}
  
 // Se llama al terminar una lección.
 // Devuelve { ok, xpGanado, primeraVez, cursoCompletado, recompensa, logrosNuevos }

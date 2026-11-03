@@ -32,28 +32,66 @@ document.addEventListener("DOMContentLoaded", () => {
           <p class="progreso-texto">Progreso: ${progreso}%</p>
           <progress value="${progreso}" max="100">${progreso}%</progress>
           <p class="nivel-curso">Nivel: ${curso.nivel}</p>
-          <a class="boton-continuar" href="mapa.html?curso=${curso.id}">Continuar</a>
+          <div class="acciones-curso">
+            <a class="boton-continuar" href="mapa.html?curso=${curso.id}">Continuar</a>
+            <button type="button" class="boton-eliminar-curso" data-curso="${curso.id}">Eliminar curso</button>
+          </div>
         </div>
       </article>`;
   };
 
-  //dibuja una tarjeta por cada curso en el que esta inscripto (todas arrancan cerradas)
-  const inscripciones = ORDEN_CURSOS.filter((id) => CURSOS[id] && estaInscripto(usuario, id));
-
-  contenedor.innerHTML = inscripciones
-    .map((id) => crearTarjeta(CURSOS[id], false))
-    .join("");
-
-  //estado vacio: sin cursos mostramos el aviso; con cursos mostramos "Agregar curso"
-  const hayCursos = inscripciones.length > 0;
-
-  avisoSinCursos.hidden = hayCursos;
-
+  const mensaje = document.getElementById("mensaje-cursos");
   const botonAgregar = document.querySelector(".boton-agregar-curso");
-  if (botonAgregar) botonAgregar.hidden = !hayCursos;
 
-  //desplegar / plegar una tarjeta (un solo listener para todas)
+  //dibuja una tarjeta por cada curso en el que esta inscripto (todas arrancan cerradas)
+  const dibujarCursos = () => {
+    const inscripciones = ORDEN_CURSOS.filter((id) => CURSOS[id] && estaInscripto(usuarioActual(), id));
+
+    contenedor.innerHTML = inscripciones
+      .map((id) => crearTarjeta(CURSOS[id], false))
+      .join("");
+
+    //estado vacio: sin cursos mostramos el aviso; con cursos mostramos "Agregar curso"
+    const hayCursos = inscripciones.length > 0;
+    avisoSinCursos.hidden = hayCursos;
+    if (botonAgregar) botonAgregar.hidden = !hayCursos;
+  };
+
+  //cartel de confirmacion antes de eliminar un curso
+  const pedirConfirmacion = (idCurso) => {
+    const curso = CURSOS[idCurso];
+    const progreso = obtenerProgresoCurso(usuarioActual(), idCurso).porcentaje;
+
+    mostrarModal({
+      titulo: `¿Eliminar el curso de ${curso.nombre}?`,
+      texto:
+        `Vas a perder tu progreso en este curso (${progreso}%). ` +
+        `Tu XP y tus gemas se mantienen y podés volver a inscribirte desde el catálogo.`,
+      botones: [
+        { texto: "Cancelar", tipo: "secundario" },
+        {
+          texto: "Sí, eliminar",
+          tipo: "principal",
+          alHacerClic: () => {
+            const resultado = eliminarCurso(idCurso);
+            mensaje.textContent = resultado.mensaje;
+            dibujarCursos();
+          },
+        },
+      ],
+    });
+  };
+
+  dibujarCursos();
+
+  //un solo listener para todas las tarjetas: eliminar, o desplegar / plegar
   contenedor.addEventListener("click", (e) => {
+    const botonEliminar = e.target.closest(".boton-eliminar-curso");
+    if (botonEliminar) {
+      pedirConfirmacion(botonEliminar.dataset.curso);
+      return;
+    }
+
     const cabecera = e.target.closest(".curso-header");
     if (!cabecera) return;
     e.preventDefault();
