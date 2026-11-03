@@ -22,19 +22,21 @@
             </header>
 
             <!--Identificación-->
+
             <section class="usuario">
-                <img
+                <img id="perfil-avatar"
                     src="../../imagenes/avatares/Avatar1.png"
-                    alt="Foto de perfil de Carlos Perez"
-                />
-                <hgroup>
-                    <h2>Carlos Perez</h2>
-                    <p>@carlosperez123</p>
-                    <p>Septiembre de 2026</p>
-                </hgroup>
+                    alt="Avatar del usuario">
+
+                <h2 id="perfil-nombre">Carlos Perez</h2>
+
+                <p id="perfil-usuario">@carlosperez123</p>
+
+                <p id="perfil-fecha">Septiembre de 2026</p>
             </section>
 
             <!-- Estadísticas, logros y logros bloqueados-->
+
             <section class="panel-resumen">
                 <!-- Estadísticas-->
                 <article class="columna-resumen">
@@ -57,7 +59,7 @@
                                 ></path>
                             </svg>
 
-                            <span>5 días de racha</span>
+                            <span id="stat-racha">5 días de racha</span>
                         </li>
                         <li>
                             <svg
@@ -73,7 +75,7 @@
                                 ></path>
                             </svg>
 
-                            <span>350 XP Totales</span>
+                            <span id="stat-xp">350 XP Totales</span>
                         </li>
                         <li>
                             <svg
@@ -88,7 +90,7 @@
                                     d="M21.44 11H17.7l-3.12 8.44 6.77-8.27c.04-.05.06-.11.1-.17ZM10.72 2 8.39 9h7.22l-2.33-7zm10.81 6.91-3.37-5.9A2 2 0 0 0 16.42 2h-1.03l2.33 7h3.84s-.02-.06-.04-.09ZM8.39 11l3.4 10.2L15.56 11zM5.84 3.01l-3.37 5.9s-.02.06-.04.09h3.84L8.6 2H7.57c-.72 0-1.38.39-1.74 1.01Zm3.02 15.73L6.28 11H2.56c.04.05.06.11.1.17l6.2 7.58Z"
                                 ></path>
                             </svg>
-                            <span>550 PoliGemas</span>
+                            <span id="stat-gemas">550 PoliGemas</span>
                         </li>
                         <li>
                             <svg
@@ -103,7 +105,7 @@
                                     d="M11.29 20.69c.2.2.45.29.71.29s.51-.1.71-.29l7.5-7.5c2.35-2.35 2.35-6.05 0-8.41-2.29-2.29-5.84-2.35-8.21-.2-2.36-2.15-5.91-2.09-8.21.2-2.35 2.36-2.35 6.06 0 8.41z"
                                 ></path>
                             </svg>
-                            <span>3 Vidas restantes</span>
+                            <span id="stat-vidas">3 Vidas restantes</span>
                         </li>
                         <li>
                             <svg
@@ -118,7 +120,7 @@
                                     d="M21 4h-3V3c0-.55-.45-1-1-1H7c-.55 0-1 .45-1 1v1H3c-.55 0-1 .45-1 1v3c0 4.29 1.79 6.88 4.81 6.99A6 6 0 0 0 11 17.91V20H8v2h8v-2h-3v-2.09a5.98 5.98 0 0 0 4.19-2.92C20.2 14.88 22 12.29 22 8V5c0-.55-.45-1-1-1M4 8V6h2v6c0 .28.03.56.06.83C4.22 12.12 4 9.31 4 8m16 0c0 1.31-.22 4.12-2.06 4.83.04-.27.06-.55.06-.83V6h2z"
                                 ></path>
                             </svg>
-                            <span>Liga bronce</span>
+                            <span id="stat-liga">Liga bronce</span>
                         </li>
                     </ul>
                 </article>
@@ -126,315 +128,24 @@
                 <!-- Logros-->
                 <article class="columna-resumen">
                     <h2>Logros</h2>
-                    <ul class="lista-logros-scroll tarjeta-logros alcanzados">
-                        <li class="item-logro">
-                            <img src="../../imagenes/logros/Logro-1.png" alt="" />
-                            <hgroup>
-                                <h3>En llamas</h3>
-                                <p><small>Completado</small></p>
-                                <p>Alcanzaste una racha de 5 días</p>
-                            </hgroup>
-                        </li>
 
-                        <li class="item-logro">
-                            <img src="../../imagenes/logros/Logro-2.png" alt="" />
-                            <hgroup>
-                                <h3>Hechicero</h3>
-                                <p><small>Completado</small></p>
-                                <p>Ganaste 120 XP</p>
-                            </hgroup>
-                        </li>
-                        <li class="item-logro">
-                            <img src="../../imagenes/logros/Logro-3.png" alt="" />
-                            <hgroup>
-                                <h3>Insuperable</h3>
-                                <p><small>Completado</small></p>
-                                <p>
-                                    Completa 10 lecciones para habilitar la Liga
-                                </p>
-                            </hgroup>
-                        </li>
-                        <li class="item-logro">
-                            <img src="../../imagenes/logros/Logro-4.png" alt="" />
-                            <hgroup>
-                                <h3>Corazón roto</h3>
-                                <p><small>Completado</small></p>
-                                <p>Perdiste una vida</p>
-                            </hgroup>
-                        </li>
+                    <ul
+                        id="lista-logros-alcanzados"
+                        class="lista-logros-scroll tarjeta-logros alcanzados">
 
-                        <li class="item-logro">
-                            <img src="../../imagenes/logros/Logro-5.png" alt="" />
-                            <hgroup>
-                                <h3>Coleccionista de Gemas</h3>
-                                <p><small>Completado</small></p>
-                                <p>Consigue 200 PoliGemas</p>
-                            </hgroup>
-                        </li>
-
-                        <li class="item-logro">
-                            <img src="../../imagenes/logros/Logro-6.png" alt="" />
-                            <hgroup>
-                                <h3>Es un trato</h3>
-                                <p><small>Completado</small></p>
-                                <p>Haz 1 compra en la tienda</p>
-                            </hgroup>
-                        </li>
-
-                        <li class="item-logro">
-                            <img src="../../imagenes/logros/Logro-7.png" alt="" />
-                            <hgroup>
-                                <h3>Fotogénico</h3>
-                                <p><small>Completado</small></p>
-                                <p>Cambia tu foto de perfil</p>
-                            </hgroup>
-                        </li>
                     </ul>
+                    
                 </article>
 
                 <!--Logros Bloqueados -->
                 <article class="columna-resumen">
                     <h2>Logros Bloqueados</h2>
-                    <ul class="lista-logros-scroll tarjeta-logros bloqueados">
-                        <li class="item-logro desactivado">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                fill="#363434"
-                                viewBox="0 0 24 24"
-                            >
-                                <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
-                                <path
-                                    d="M6 22h12c1.1 0 2-.9 2-2v-9c0-1.1-.9-2-2-2h-1V7c0-2.76-2.24-5-5-5S7 4.24 7 7v2H6c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2M9 7c0-1.65 1.35-3 3-3s3 1.35 3 3v2H9z"
-                                ></path>
-                            </svg>
-                            <hgroup>
-                                <h3>?</h3>
-                                <p><small>Bloqueado</small></p>
-                                <p>Completa 20 lecciones de inglés</p>
-                            </hgroup>
-                        </li>
-                        <li class="item-logro desactivado">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                fill="#363434"
-                                viewBox="0 0 24 24"
-                            >
-                                <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
-                                <path
-                                    d="M6 22h12c1.1 0 2-.9 2-2v-9c0-1.1-.9-2-2-2h-1V7c0-2.76-2.24-5-5-5S7 4.24 7 7v2H6c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2M9 7c0-1.65 1.35-3 3-3s3 1.35 3 3v2H9z"
-                                ></path>
-                            </svg>
-                            <hgroup>
-                                <h3>?</h3>
-                                <p><small>Bloqueado</small></p>
-                                <p>Completa 20 lecciones de chino</p>
-                            </hgroup>
-                        </li>
-                        <li class="item-logro desactivado">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                fill="#363434"
-                                viewBox="0 0 24 24"
-                            >
-                                <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
-                                <path
-                                    d="M6 22h12c1.1 0 2-.9 2-2v-9c0-1.1-.9-2-2-2h-1V7c0-2.76-2.24-5-5-5S7 4.24 7 7v2H6c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2M9 7c0-1.65 1.35-3 3-3s3 1.35 3 3v2H9z"
-                                ></path>
-                            </svg>
-                            <hgroup>
-                                <h3>?</h3>
-                                <p><small>Bloqueado</small></p>
-                                <p>Completa 20 lecciones de alemán</p>
-                            </hgroup>
-                        </li>
-                        <li class="item-logro desactivado">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                fill="#363434"
-                                viewBox="0 0 24 24"
-                            >
-                                <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
-                                <path
-                                    d="M6 22h12c1.1 0 2-.9 2-2v-9c0-1.1-.9-2-2-2h-1V7c0-2.76-2.24-5-5-5S7 4.24 7 7v2H6c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2M9 7c0-1.65 1.35-3 3-3s3 1.35 3 3v2H9z"
-                                ></path>
-                            </svg>
-                            <hgroup>
-                                <h3>?</h3>
-                                <p><small>Bloqueado</small></p>
-                                <p>Gana 600 Poligemas</p>
-                            </hgroup>
-                        </li>
-                        <li class="item-logro desactivado">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                fill="#363434"
-                                viewBox="0 0 24 24"
-                            >
-                                <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
-                                <path
-                                    d="M6 22h12c1.1 0 2-.9 2-2v-9c0-1.1-.9-2-2-2h-1V7c0-2.76-2.24-5-5-5S7 4.24 7 7v2H6c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2M9 7c0-1.65 1.35-3 3-3s3 1.35 3 3v2H9z"
-                                ></path>
-                            </svg>
-                            <hgroup>
-                                <h3>?</h3>
-                                <p><small>Bloqueado</small></p>
-                                <p>Realiza 2 compras en la tienda</p>
-                            </hgroup>
-                        </li>
-                        <li class="item-logro desactivado">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                fill="#363434"
-                                viewBox="0 0 24 24"
-                            >
-                                <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
-                                <path
-                                    d="M6 22h12c1.1 0 2-.9 2-2v-9c0-1.1-.9-2-2-2h-1V7c0-2.76-2.24-5-5-5S7 4.24 7 7v2H6c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2M9 7c0-1.65 1.35-3 3-3s3 1.35 3 3v2H9z"
-                                ></path>
-                            </svg>
-                            <hgroup>
-                                <h3>?</h3>
-                                <p><small>Bloqueado</small></p>
-                                <p>Realiza 5 compras en la tienda</p>
-                            </hgroup>
-                        </li>
-                        <li class="item-logro desactivado">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                fill="#363434"
-                                viewBox="0 0 24 24"
-                            >
-                                <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
-                                <path
-                                    d="M6 22h12c1.1 0 2-.9 2-2v-9c0-1.1-.9-2-2-2h-1V7c0-2.76-2.24-5-5-5S7 4.24 7 7v2H6c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2M9 7c0-1.65 1.35-3 3-3s3 1.35 3 3v2H9z"
-                                ></path>
-                            </svg>
-                            <hgroup>
-                                <h3>?</h3>
-                                <p><small>Bloqueado</small></p>
-                                <p>Pierde todas tus vidas</p>
-                            </hgroup>
-                        </li>
-                        <li class="item-logro desactivado">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                fill="#363434"
-                                viewBox="0 0 24 24"
-                            >
-                                <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
-                                <path
-                                    d="M6 22h12c1.1 0 2-.9 2-2v-9c0-1.1-.9-2-2-2h-1V7c0-2.76-2.24-5-5-5S7 4.24 7 7v2H6c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2M9 7c0-1.65 1.35-3 3-3s3 1.35 3 3v2H9z"
-                                ></path>
-                            </svg>
-                            <hgroup>
-                                <h3>?</h3>
-                                <p><small>Bloqueado</small></p>
-                                <p>
-                                    Llega a tener una racha de 10 días seguidos
-                                </p>
-                            </hgroup>
-                        </li>
-                        <li class="item-logro desactivado">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                fill="#363434"
-                                viewBox="0 0 24 24"
-                            >
-                                <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
-                                <path
-                                    d="M6 22h12c1.1 0 2-.9 2-2v-9c0-1.1-.9-2-2-2h-1V7c0-2.76-2.24-5-5-5S7 4.24 7 7v2H6c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2M9 7c0-1.65 1.35-3 3-3s3 1.35 3 3v2H9z"
-                                ></path>
-                            </svg>
-                            <hgroup>
-                                <h3>?</h3>
-                                <p><small>Bloqueado</small></p>
-                                <p>
-                                    Llega a tener una racha de 15 días seguidos
-                                </p>
-                            </hgroup>
-                        </li>
-                        <li class="item-logro desactivado">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                fill="#363434"
-                                viewBox="0 0 24 24"
-                            >
-                                <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
-                                <path
-                                    d="M6 22h12c1.1 0 2-.9 2-2v-9c0-1.1-.9-2-2-2h-1V7c0-2.76-2.24-5-5-5S7 4.24 7 7v2H6c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2M9 7c0-1.65 1.35-3 3-3s3 1.35 3 3v2H9z"
-                                ></path>
-                            </svg>
-                            <hgroup>
-                                <h3>?</h3>
-                                <p><small>Bloqueado</small></p>
-                                <p>
-                                    Llega a tener una racha de 20 días seguidos
-                                </p>
-                            </hgroup>
-                        </li>
-                        <li class="item-logro desactivado">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                fill="#363434"
-                                viewBox="0 0 24 24"
-                            >
-                                <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
-                                <path
-                                    d="M6 22h12c1.1 0 2-.9 2-2v-9c0-1.1-.9-2-2-2h-1V7c0-2.76-2.24-5-5-5S7 4.24 7 7v2H6c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2M9 7c0-1.65 1.35-3 3-3s3 1.35 3 3v2H9z"
-                                ></path>
-                            </svg>
-                            <hgroup>
-                                <h3>?</h3>
-                                <p><small>Bloqueado</small></p>
-                                <p>
-                                    Llega a tener una racha de 25 días seguidos
-                                </p>
-                            </hgroup>
-                        </li>
-                        <li class="item-logro desactivado">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                fill="#363434"
-                                viewBox="0 0 24 24"
-                            >
-                                <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
-                                <path
-                                    d="M6 22h12c1.1 0 2-.9 2-2v-9c0-1.1-.9-2-2-2h-1V7c0-2.76-2.24-5-5-5S7 4.24 7 7v2H6c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2M9 7c0-1.65 1.35-3 3-3s3 1.35 3 3v2H9z"
-                                ></path>
-                            </svg>
-                            <hgroup>
-                                <h3>?</h3>
-                                <p><small>Bloqueado</small></p>
-                                <p>
-                                    Llega a tener una racha de 30 días seguidos
-                                </p>
-                            </hgroup>
-                        </li>
+                    
+                    <ul
+                            id="lista-logros-bloqueados"
+                            class="lista-logros-scroll tarjeta-logros bloqueados">
                     </ul>
+
                 </article>
             </section>
 
@@ -444,107 +155,109 @@
 
                 <dl class="lista-datos"> <!-- lista pares de clave-valor -->
                     <dt>Nombre:</dt>
-                    <dd>Carlos</dd>
+                    <dd id="dato-nombre">Carlos</dd>
 
                     <dt>Apellido:</dt>
-                    <dd>Perez</dd>
+                    <dd id="dato-apellido">Perez</dd>
 
                     <dt>Email registrado:</dt>
-                    <dd>carlosperez123@alumnos.unlam.edu.ar</dd>
+                    <dd id="dato-email">carlosperez123@alumnos.unlam.edu.ar</dd>
 
                     <dt>Usuario:</dt>
-                    <dd>carlosperez123</dd>
+                    <dd id="dato-usuario">carlosperez123</dd>
 
                     <dt>Fecha de registro:</dt>
-                    <dd>
+                    <dd id="dato-registro">
                         <time datetime="2026-09">Septiembre 2026</time>
                     </dd>
 
                     <dt>Cursos activos:</dt>
-                    <dd>Inglés, Alemán.</dd>
+                    <dd id="dato-cursos">Inglés, Alemán.</dd>
 
                     <dt>Última conexión:</dt>
-                    <dd>Hoy, 18:30</dd>
+                    <dd id="dato-conexion">Hoy, 18:30</dd>
                 </dl>
             </section>
 
             <!-- Ajustes de la cuenta -->
             <section class="ajustes-cuenta">
-                <h2>Ajustes de la cuenta</h2>
+            <h2>Ajustes de la cuenta</h2>
 
-                <form action="perfil.html" class="form-ajustes">
-                    <article class="campo-grupo">
-                        <p class="campo horizontal">
-                            <label for="idioma-interfaz">Idioma principal de interfaz:</label>
-                            <select id="idioma-interfaz" name="idioma">
-                                <option value="es" selected>Español</option>
-                                <option value="en">Inglés</option>
-                                <option value="de">Alemán</option>
-                                <option value="zh">Chino</option>
-                            </select>
-                        </p>
-                    </article>
+            <form id="form-ajustes" class="form-ajustes">
 
-                    <fieldset class="campo-grupo">
-                        <legend class="subtitulo-form">
-                            Cambiar Contraseña
-                        </legend>
+                <!-- Idioma -->
+                <article class="campo-grupo">
+                    <p class="campo horizontal">
+                        <label for="idioma-interfaz">
+                            Idioma principal de interfaz:
+                        </label>
 
-                        <p class="campo horizontal">
-                            <label for="pass-actual">Contraseña Actual:</label>
-                            <input
-                                type="password"
-                                id="pass-actual"
-                                name="pass_actual"
-                                required
-                            />
-                        </p>
+                        <select id="idioma-interfaz" name="idioma">
+                            <option value="es">Español</option>
+                            <option value="en">Inglés</option>
+                        </select>
+                    </p>
+                </article>
 
-                        <p class="campo horizontal">
-                            <label for="pass-nueva">Nueva Contraseña:</label>
-                            <input
-                                type="password"
-                                id="pass-nueva"
-                                name="pass_nueva"
-                                required
-                            />
-                        </p>
+                <!-- Cambiar contraseña -->
+                <fieldset class="campo-grupo">
+                    <legend class="subtitulo-form">
+                        Cambiar contraseña
+                    </legend>
 
-                        <p class="campo horizontal">
-                            <label for="pass-repetir"
-                                >Repetir la Contraseña:</label
-                            >
-                            <input
-                                type="password"
-                                id="pass-repetir"
-                                name="pass_repetir"
-                                required
-                            />
-                        </p>
-                    </fieldset>
-
-                    <article class="acciones-form">
+                    <p class="campo horizontal">
+                        <label for="pass-actual">Contraseña actual:</label>
                         <input
-                            type="submit"
-                            class="boton-login btn-guardar"
-                            value="Guardar cambios"
+                            type="password"
+                            id="pass-actual"
+                            name="pass_actual"
                         />
+                    </p>
 
-                        <a  
-                            id="boton-cerrar-sesion"
-                            class="boton-login btn-cerrar-sesion"
-                            href="../../index.html"
-                            >Cerrar Sesión</a
-                        >
+                    <p class="campo horizontal">
+                        <label for="pass-nueva">Nueva contraseña:</label>
+                        <input
+                            type="password"
+                            id="pass-nueva"
+                            name="pass_nueva"
+                        />
+                    </p>
 
-                        <a
-                            class="boton-login btn-eliminar-cuenta"
-                            href="eliminar-cuenta.html"
-                            >Eliminar Cuenta</a
-                        >
-                    </article>
-                </form>
-            </section>
+                    <p class="campo horizontal">
+                        <label for="pass-repetir">Repetir contraseña:</label>
+                        <input
+                            type="password"
+                            id="pass-repetir"
+                            name="pass_repetir"
+                        />
+                    </p>
+
+                    <small>La contraseña debe tener al menos 8 caracteres.</small>
+                </fieldset>
+
+                <p id="mensaje-ajustes" role="status"></p>
+
+                <article class="acciones-form">
+                    <input
+                        type="submit"
+                        class="boton-login btn-guardar"
+                        value="Guardar cambios"
+                    />
+
+                    <a
+                        id="boton-cerrar-sesion"
+                        class="boton-login btn-cerrar-sesion"
+                        href="../../index.html"
+                    >Cerrar Sesión</a>
+
+                    <a
+                        id="boton-eliminar-cuenta"
+                        class="boton-login btn-eliminar-cuenta"
+                        href="#"
+                    >Eliminar Cuenta</a>
+
+            </form>
+        </section>
         </main>
 
         <footer id="footer"></footer>
