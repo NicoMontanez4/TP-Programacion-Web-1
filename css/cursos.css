@@ -149,7 +149,11 @@
 }
 
 /* Colores por curso: por defecto todos los cursos son verdes... */
-.chino, .ingles, .aleman, .ingles-abierto, .aleman-abierto, .chino-abierto { background-color: #8fc97f; }
+.chino, .ingles, .aleman, .frances, .italiano, .portugues, .japones,
+.ingles-abierto, .aleman-abierto, .chino-abierto,
+.frances-abierto, .italiano-abierto, .portugues-abierto, .japones-abierto {
+    background-color: #8fc97f;
+}
 
 /* ============================================
    ACTIVIDAD DE HOY + ACTIVIDAD SEMANAL

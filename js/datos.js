@@ -383,10 +383,224 @@ const CURSOS = {
         }),
     },
 
+    
+    frances: {
+        id: "frances",
+        nombre: "Francés",
+        desde: "Español",
+        nivel: "Principiante (A1)",
+        descripcion: "Aprendé francés para viajar, estudiar y conocer nuevas culturas.",
+        bandera: "BanderaFrances.png",
+        imagenTarjeta: "Curso-Frances.png",
+        imagenMapa: "CursoFrances.png",
+
+        unidades: armarUnidades({
+            1: [
+                {
+                    numero: 1,
+                    titulo: "Saludos",
+                    ejercicios: [
+                        {
+                            frase: "Bonjour",
+                            respuesta: ["Buenos", "días"],
+                            distractores: ["noches", "chau"]
+                        },
+                        {
+                            frase: "Bonsoir",
+                            respuesta: ["Buenas", "noches"],
+                            distractores: ["días", "tardes"]
+                        },
+                        {
+                            frase: "Merci",
+                            respuesta: ["Gracias"],
+                            distractores: ["Hola", "Adiós"]
+                        },
+                        {
+                            frase: "Au revoir",
+                            respuesta: ["Hasta", "luego"],
+                            distractores: ["Gracias", "Buenos", "días"]
+                        }
+                    ]
+                }
+            ]
+        })
+    },
+
+    
+    italiano: {
+        id: "italiano",
+        nombre: "Italiano",
+        desde: "Español",
+        nivel: "Principiante (A1)",
+        descripcion: "Aprendé italiano para viajar, conocer su cultura y comunicarte con confianza.",
+        bandera: "BanderaItaliano.png",
+        imagenTarjeta: "Curso-Italiano.png",
+        imagenMapa: "CursoItaliano.png",
+        unidades: armarUnidades({
+            1: [
+                {
+                    numero: 1,
+                    titulo: "Frases Básicas",
+                    ejercicios: [
+                        { frase: "Buongiorno", respuesta: ["Buenos", "días"], distractores: ["noches", "Gracias"] },
+                        { frase: "Buonasera", respuesta: ["Buenas", "tardes"], distractores: ["días", "Chau"] },
+                        { frase: "Buonanotte", respuesta: ["Buenas", "noches"], distractores: ["tardes", "Hola"] },
+                        { frase: "Ciao, come stai?", respuesta: ["Hola,", "¿cómo", "estás?"], distractores: ["bien", "Gracias"] },
+                    ],
+                },
+                {
+                    numero: 2,
+                    titulo: "Presentaciones",
+                    ejercicios: [
+                        { frase: "Mi chiamo Marco.", respuesta: ["Me", "llamo", "Marco"], distractores: ["Carlos", "Ella"] },
+                        { frase: "Piacere di conoscerti.", respuesta: ["Mucho", "gusto", "en", "conocerte"], distractores: ["verte", "Gracias"] },
+                        { frase: "Sono argentino.", respuesta: ["Soy", "argentino"], distractores: ["italiano", "Estoy"] },
+                        { frase: "Lei è mia sorella.", respuesta: ["Ella", "es", "mi", "hermana"], distractores: ["madre", "Él"] },
+                    ],
+                },
+                {
+                    numero: 3,
+                    titulo: "Vocabulario Familiar",
+                    ejercicios: [
+                        { frase: "Questa è mia madre.", respuesta: ["Esta", "es", "mi", "madre"], distractores: ["padre", "hermana"] },
+                        { frase: "Mio padre è alto.", respuesta: ["Mi", "padre", "es", "alto"], distractores: ["bajo", "madre"] },
+                        { frase: "Ho un fratello.", respuesta: ["Tengo", "un", "hermano"], distractores: ["primo", "una"] },
+                        { frase: "Amo la mia famiglia.", respuesta: ["Amo", "a", "mi", "familia"], distractores: ["amigo", "casa"] },
+                    ],
+                },
+                {
+                    numero: 4,
+                    titulo: "Preguntando",
+                    ejercicios: [
+                        { frase: "Di dove sei?", respuesta: ["¿De", "dónde", "sos?"], distractores: ["¿Cómo", "estás?"] },
+                        { frase: "Quanti anni hai?", respuesta: ["¿Cuántos", "años", "tenés?"], distractores: ["días", "meses"] },
+                        { frase: "Come ti chiami?", respuesta: ["¿Cómo", "te", "llamás?"], distractores: ["vivís", "dónde"] },
+                        { frase: "Dove abiti?", respuesta: ["¿Dónde", "vivís?"], distractores: ["¿Cuándo", "sos?"] },
+                    ],
+                },
+            ],
+        }),
+    },
+
+    
+    japones: {
+        id: "japones",
+        nombre: "Japonés",
+        desde: "Español",
+        nivel: "Principiante (N5)",
+        descripcion: "Descubrí el idioma japonés y aprendé a comunicarte desde cero.",
+        bandera: "BanderaJapones.png",
+        imagenTarjeta: "Curso-Japones.png",
+        imagenMapa: "CursoJapones.png",
+        unidades: armarUnidades({
+            1: [
+                {
+                    numero: 1,
+                    titulo: "Frases Básicas",
+                    ejercicios: [
+                        { frase: "おはようございます", respuesta: ["Buenos", "días"], distractores: ["noches", "Gracias"] },
+                        { frase: "こんにちは", respuesta: ["Hola", "buenas", "tardes"], distractores: ["Gracias", "Adiós"] },
+                        { frase: "こんばんは", respuesta: ["Buenas", "noches"], distractores: ["días", "Hola"] },
+                        { frase: "ありがとう", respuesta: ["Gracias"], distractores: ["Hola", "Adiós"] },
+                    ],
+                },
+                {
+                    numero: 2,
+                    titulo: "Presentaciones",
+                    ejercicios: [
+                        { frase: "私の名前は田中です", respuesta: ["Mi", "nombre", "es", "Tanaka"], distractores: ["Carlos", "apellido"] },
+                        { frase: "はじめまして", respuesta: ["Mucho", "gusto"], distractores: ["Gracias", "Adiós"] },
+                        { frase: "私はアルゼンチン人です", respuesta: ["Soy", "argentino"], distractores: ["japonés", "brasileño"] },
+                        { frase: "私は学生です", respuesta: ["Soy", "estudiante"], distractores: ["profesor", "amigo"] },
+                    ],
+                },
+                {
+                    numero: 3,
+                    titulo: "Vocabulario Familiar",
+                    ejercicios: [
+                        { frase: "これは私の母です", respuesta: ["Esta", "es", "mi", "madre"], distractores: ["padre", "hermana"] },
+                        { frase: "私の父です", respuesta: ["Es", "mi", "padre"], distractores: ["madre", "hermano"] },
+                        { frase: "兄がいます", respuesta: ["Tengo", "un", "hermano", "mayor"], distractores: ["menor", "hermana"] },
+                        { frase: "家族が大好きです", respuesta: ["Amo", "a", "mi", "familia"], distractores: ["amigo", "casa"] },
+                    ],
+                },
+                {
+                    numero: 4,
+                    titulo: "Preguntando",
+                    ejercicios: [
+                        { frase: "どこから来ましたか？", respuesta: ["¿De", "dónde", "venís?"], distractores: ["¿Cómo", "estás?"] },
+                        { frase: "何歳ですか？", respuesta: ["¿Cuántos", "años", "tenés?"], distractores: ["días", "meses"] },
+                        { frase: "お名前は何ですか？", respuesta: ["¿Cuál", "es", "tu", "nombre?"], distractores: ["apellido", "edad"] },
+                        { frase: "どこに住んでいますか？", respuesta: ["¿Dónde", "vivís?"], distractores: ["¿Cuándo", "viajás?"] },
+                    ],
+                },
+            ],
+        }),
+    },
+
+    
+    portugues: {
+        id: "portugues",
+        nombre: "Portugués",
+        desde: "Español",
+        nivel: "Principiante (A1)",
+        descripcion: "Aprendé portugués para viajar, trabajar y comunicarte con personas de Brasil.",
+        bandera: "BanderaPortugues.png",
+        imagenTarjeta: "Curso-Portugues.png",
+        imagenMapa: "CursoPortugues.png",
+        unidades: armarUnidades({
+            1: [
+                {
+                    numero: 1,
+                    titulo: "Frases Básicas",
+                    ejercicios: [
+                        { frase: "Bom dia!", respuesta: ["¡Buenos", "días!"], distractores: ["noches", "Hola"] },
+                        { frase: "Boa tarde!", respuesta: ["¡Buenas", "tardes!"], distractores: ["noches", "Gracias"] },
+                        { frase: "Boa noite!", respuesta: ["¡Buenas", "noches!"], distractores: ["días", "Chau"] },
+                        { frase: "Tudo bem?", respuesta: ["¿Todo", "bien?"], distractores: ["mal", "Gracias"] },
+                    ],
+                },
+                {
+                    numero: 2,
+                    titulo: "Presentaciones",
+                    ejercicios: [
+                        { frase: "Meu nome é Pedro.", respuesta: ["Mi", "nombre", "es", "Pedro"], distractores: ["Carlos", "apellido"] },
+                        { frase: "Muito prazer em conhecer você.", respuesta: ["Mucho", "gusto", "en", "conocerte"], distractores: ["verte", "Gracias"] },
+                        { frase: "Eu sou argentino.", respuesta: ["Yo", "soy", "argentino"], distractores: ["brasileño", "Estoy"] },
+                        { frase: "Ela é minha amiga.", respuesta: ["Ella", "es", "mi", "amiga"], distractores: ["hermana", "Él"] },
+                    ],
+                },
+                {
+                    numero: 3,
+                    titulo: "Vocabulario Familiar",
+                    ejercicios: [
+                        { frase: "Esta é minha mãe.", respuesta: ["Esta", "es", "mi", "madre"], distractores: ["padre", "hermana"] },
+                        { frase: "Meu pai é alto.", respuesta: ["Mi", "padre", "es", "alto"], distractores: ["bajo", "madre"] },
+                        { frase: "Eu tenho um irmão.", respuesta: ["Yo", "tengo", "un", "hermano"], distractores: ["primo", "una"] },
+                        { frase: "Eu amo minha família.", respuesta: ["Yo", "amo", "a", "mi", "familia"], distractores: ["amigo", "casa"] },
+                    ],
+                },
+                {
+                    numero: 4,
+                    titulo: "Preguntando",
+                    ejercicios: [
+                        { frase: "De onde você é?", respuesta: ["¿De", "dónde", "sos?"], distractores: ["¿Cómo", "estás?"] },
+                        { frase: "Quantos anos você tem?", respuesta: ["¿Cuántos", "años", "tenés?"], distractores: ["días", "meses"] },
+                        { frase: "Qual é o seu nome?", respuesta: ["¿Cuál", "es", "tu", "nombre?"], distractores: ["apellido", "dónde"] },
+                        { frase: "Onde você mora?", respuesta: ["¿Dónde", "vivís?"], distractores: ["¿Cuándo", "sos?"] },
+                    ],
+                },
+            ],
+        }),
+    },
+
+
+
+
 };
  
 // Orden en el que se muestran los cursos (catálogo, mis cursos)
-const ORDEN_CURSOS = ["ingles", "aleman", "chino"];
+const ORDEN_CURSOS = ["ingles", "aleman", "chino", "frances", "italiano" , "japones" , "portugues"];
  
 /* ---------- Ligas y ranking ---------- */
  
