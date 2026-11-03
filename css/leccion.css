@@ -468,3 +468,27 @@ body.completada #correcto {
     margin: 1rem;
     box-sizing: border-box;
 }
+
+/* ================= PANELES: cuando se muestran ================= */
+/* El JS les agrega la clase "visible" */
+.resultado.visible {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 1rem max(1.5rem, calc((100% - 55rem) / 2)); /* alineado con la tarjeta */
+}
+
+.resultado .boton-comprobar {
+    width: auto;
+    padding: 0.6rem 1.8rem;
+}
+
+.error .boton-comprobar {
+    background-color: var(--rojo);
+}
+
+/* Fichas bloqueadas mientras se ve el resultado */
+.ficha:disabled {
+    cursor: default;
+    color: var(--texto);
+}

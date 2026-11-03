@@ -286,3 +286,47 @@ main {
   box-sizing: border-box;
   border: 0.1rem solid gray;
 }
+
+/*------Mensajes de los formularios (login y registro)------*/
+.campo .mensaje-form {
+  width: 100%;
+  margin: 0.5rem 0 0.2rem;
+  padding: 0.6rem 1rem;
+  border-radius: 1rem;
+  font-size: 0.95rem; /* más específico que ".campo p" para que no quede chiquito */
+  font-weight: bold;
+  text-align: left;
+}
+ 
+.mensaje-error {
+  background-color: #fbd5d5;
+  color: #8a1414;
+  border: 0.1rem solid #e53935;
+}
+ 
+.mensaje-error::before {
+  content: "✕ "; /* el ícono acompaña al texto: no depende solo del color */
+}
+ 
+.mensaje-ok {
+  background-color: #d7f5d0;
+  color: #1f5e28;
+  border: 0.1rem solid #2f7d3b;
+}
+ 
+.mensaje-ok::before {
+  content: "✓ ";
+}
+ 
+/* Campo con error */
+.campo input[aria-invalid="true"] {
+  border: 0.15rem solid #e53935;
+  outline: 0.15rem solid #e53935;
+}
+ 
+/* Texto de ayuda debajo de un campo */
+.ayuda-campo {
+  margin: 0.2rem 0 0.6rem 0.8rem;
+  font-size: 0.8rem;
+  color: #333;
+}
