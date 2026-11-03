@@ -10,13 +10,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //dibuja una tarjeta por cada curso; el boton depende de si el usuario ya esta inscripto
   const dibujarTarjetas = () => {
-    const inscripciones = usuarioActual().inscripciones;
+    const usuario = usuarioActual();
 
-    contenedor.innerHTML = Object.values(CURSOS_DISPONIBLES)
+    contenedor.innerHTML = ORDEN_CURSOS.map((id) => CURSOS[id])
       .map((curso) => {
-        const estaInscripto = inscripciones.includes(curso.id);
+        const inscripto = estaInscripto(usuario, curso.id);
 
-        const boton = estaInscripto
+        const boton = inscripto
           ? `<a class="boton-curso" href="mapa.html?curso=${curso.id}">Ir al curso</a>`
           : `<button type="button" class="boton-curso" data-curso="${curso.id}">+ Inscribirme</button>`;
 

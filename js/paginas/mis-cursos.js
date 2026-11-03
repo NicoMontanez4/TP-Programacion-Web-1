@@ -38,10 +38,10 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   //dibuja una tarjeta por cada curso en el que esta inscripto (todas arrancan cerradas)
-  const inscripciones = usuario.inscripciones.filter((id) => CURSOS_DISPONIBLES[id]);
+  const inscripciones = ORDEN_CURSOS.filter((id) => CURSOS[id] && estaInscripto(usuario, id));
 
   contenedor.innerHTML = inscripciones
-    .map((id) => crearTarjeta(CURSOS_DISPONIBLES[id], false))
+    .map((id) => crearTarjeta(CURSOS[id], false))
     .join("");
 
   //estado vacio: sin cursos mostramos el aviso; con cursos mostramos "Agregar curso"
@@ -69,10 +69,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   //resumen de actividad con los datos reales del usuario
-  const xpHoy = obtenerXpHoy(usuario);
-  const meta = usuario.metaDiaria;
+  const xpHoy = usuario.xpHoy;
+  const meta = META_DIARIA_XP;
 
-  document.getElementById("resumen-racha").textContent = usuario.racha ?? 0;
+  document.getElementById("resumen-racha").textContent = rachaActual(usuario);
   document.getElementById("meta-diaria").textContent = meta;
 
   const barra = document.getElementById("progreso-meta-diaria");
