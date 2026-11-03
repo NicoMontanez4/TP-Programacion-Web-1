@@ -4,297 +4,48 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Unidad 1 - Ingles</title>
+        <title>PoliLingo - Unidad</title>
         <link rel="stylesheet" href="../../css/global.css" />
         <link rel="stylesheet" href="../../css/mapa.css" />
         <script src="../../js/datos.js" defer></script>
         <script src="../../js/estado.js" defer></script>
         <script src="../../js/utils.js" defer></script>
         <script src="../../js/navbar.js" defer></script>
+        <script src="../../js/paginas/unidad.js" defer></script>
     </head>
 
     <body>
         <header id="navbar"></header>
 
         <main>
-            <!-- Seccion introductoria - Bandera + Titulo idioma + texto 
-             + barra de progreso del lado izquierdo + foto del derecho-->
-
+            <!-- Encabezado: bandera + idioma + título y descripción de la unidad (los completa unidad.js) -->
             <section class="encabezado-curso">
                 <section class="info-curso">
                     <section class="titulo-curso">
-                        <img
-                            class="imagen-bandera"
-                            src="../../imagenes/banderas/BanderaReinoUnido.png"
-                            alt="Bandera Reino Unido"
-                        />
-                        <h1>Inglés</h1>
+                        <img id="bandera-curso" class="imagen-bandera" src="" alt="" />
+                        <h1 id="nombre-curso"></h1>
                     </section>
                 </section>
 
-                <!-- Titulo de unidad + descripcion-->
-
                 <article class="titulo-unidad">
-                    <h2>Unidad 1 - Saludos</h2>
-                    <p class="texto-unidad">
-                        Aprende a presentarte, saludar y mantener conversaciones
-                        básicas.
-                    </p>
+                    <h2 id="titulo-unidad"></h2>
+                    <p id="descripcion-unidad" class="texto-unidad"></p>
                 </article>
             </section>
 
             <section class="unidad">
-                <!-- Tarjeta de la unidad = Img Poli + recorrido de lecciones-->
-
                 <section class="tarjeta-unidad">
+                    <!-- Poli + volver al curso -->
                     <section class="recorrdio-imagen">
-                        <h2>¡Listo!</h2>
-
-                        <img
-                            class="imagen-unidad"
-                            src="../../imagenes/poli/Poli-check.png"
-                            alt="Poli curso ingles"
-                        />
-
-                        <a
-                            class="volver-a-cursos"
-                            href="mapa.html?curso=ingles"
-                            >Volver a cursos</a
-                        >
+                        <h2 id="mensaje-unidad"></h2>
+                        <img id="imagen-unidad" class="imagen-unidad" src="" alt="" />
+                        <a id="volver-al-curso" class="volver-a-cursos" href="mis-cursos.html">Volver al curso</a>
                     </section>
 
-                    <!--CONTENEDOR DE TODO EL RECORRIDO DE LECCIONES DE LA UNIDAD-->
-
-                    <article class="recorrido-lecciones-unidad">
-                        <!-- BOTONES DE LECCIONES CON HOVER-->
-
-                        <!-- Lección completada -->
-
-                        <article
-                            class="contenedor leccion-completada-recorrido"
-                        >
-                            <h3 class="titulo-leccion">Frases Básicas</h3>
-
-                            <span class="burbuja-emergente">Repasar</span>
-
-                            <a
-                                class="boton-leccion"
-                                href="leccion.html?curso=ingles&unidad=1&leccion=1"
-                                aria-label="Repasar lección 1"
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    fill="#ffffff"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        d="M9 15.59 4.71 11.3 3.3 12.71l5 5c.2.2.45.29.71.29s.51-.1.71-.29l11-11-1.41-1.41L9.02 15.59Z"
-                                    ></path>
-                                </svg>
-                            </a>
-
-                            <article class="progreso-leccion">
-                                <article
-                                    class="progreso-leccion-porcentaje"
-                                    style="width: 100%"
-                                ></article>
-                            </article>
-                        </article>
-
-                        <!-- ICONO DE FLECHA ENTRE LECCIONES-->
-                        <span class="flecha-recorrido">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                fill="#f06c00"
-                                viewBox="0 0 24 24"
-                            >
-                                <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
-                                <path
-                                    d="M12 2C6.49 2 2 6.49 2 12s4.49 10 10 10 10-4.49 10-10S17.51 2 12 2M7 14l5-6 5 6z"
-                                ></path>
-                            </svg>
-                        </span>
-
-                        <!-- Lección completada -->
-                        <article
-                            class="contenedor leccion-completada-recorrido"
-                        >
-                            <h3 class="titulo-leccion">Presentaciones</h3>
-
-                            <span class="burbuja-emergente">Repasar</span>
-
-                            <a
-                                class="boton-leccion"
-                                href="leccion.html?curso=ingles&unidad=1&leccion=2"
-                                aria-label="Repasar lección 1"
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    fill="#ffffff"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        d="M9 15.59 4.71 11.3 3.3 12.71l5 5c.2.2.45.29.71.29s.51-.1.71-.29l11-11-1.41-1.41L9.02 15.59Z"
-                                    ></path>
-                                </svg>
-                            </a>
-
-                            <article class="progreso-leccion">
-                                <article
-                                    class="progreso-leccion-porcentaje"
-                                    style="width: 100%"
-                                ></article>
-                            </article>
-                        </article>
-
-                        <!-- ICONO DE FLECHA ENTRE LECCIONES-->
-                        <span class="flecha-recorrido">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                fill="#f06c00"
-                                viewBox="0 0 24 24"
-                            >
-                                <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
-                                <path
-                                    d="M12 2C6.49 2 2 6.49 2 12s4.49 10 10 10 10-4.49 10-10S17.51 2 12 2M7 14l5-6 5 6z"
-                                ></path>
-                            </svg>
-                        </span>
-
-                        <!-- COFRE DENTRO DEL RECORRIDO CON BURBUJA EMERGENTE-->
-                        <span class="cofre-contenedor">
-                            <span class="burbuja-emergente"
-                                >30
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    fill="#FF63DA"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
-                                    <path
-                                        d="M21.44 11H17.7l-3.12 8.44 6.77-8.27c.04-.05.06-.11.1-.17ZM10.72 2 8.39 9h7.22l-2.33-7zm10.81 6.91-3.37-5.9A2 2 0 0 0 16.42 2h-1.03l2.33 7h3.84s-.02-.06-.04-.09ZM8.39 11l3.4 10.2L15.56 11zM5.84 3.01l-3.37 5.9s-.02.06-.04.09h3.84L8.6 2H7.57c-.72 0-1.38.39-1.74 1.01Zm3.02 15.73L6.28 11H2.56c.04.05.06.11.1.17l6.2 7.58Z"
-                                    ></path>
-                                </svg>
-                            </span>
-                            <img
-                                class="cofre-abierto"
-                                src="../../imagenes/tienda/Cofre-abierto.png"
-                                alt="Imagen de un cofre abierto"
-                            />
-                        </span>
-
-                        <!-- ICONO DE FLECHA ENTRE LECCIONES-->
-                        <span class="flecha-recorrido">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                fill="#f06c00"
-                                viewBox="0 0 24 24"
-                            >
-                                <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
-                                <path
-                                    d="M12 2C6.49 2 2 6.49 2 12s4.49 10 10 10 10-4.49 10-10S17.51 2 12 2M7 14l5-6 5 6z"
-                                ></path>
-                            </svg>
-                        </span>
-
-                        <!-- Lección completada -->
-                        <article
-                            class="contenedor leccion-completada-recorrido"
-                        >
-                            <h3 class="titulo-leccion">Vocabulario Familiar</h3>
-
-                            <span class="burbuja-emergente">Repasar</span>
-
-                            <a
-                                class="boton-leccion"
-                                href="leccion.html?curso=ingles&unidad=1&leccion=3"
-                                aria-label="Repasar lección 1"
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    fill="#ffffff"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        d="M9 15.59 4.71 11.3 3.3 12.71l5 5c.2.2.45.29.71.29s.51-.1.71-.29l11-11-1.41-1.41L9.02 15.59Z"
-                                    ></path>
-                                </svg>
-                            </a>
-
-                            <article class="progreso-leccion">
-                                <article
-                                    class="progreso-leccion-porcentaje"
-                                    style="width: 100%"
-                                ></article>
-                            </article>
-                        </article>
-
-                        <!-- ICONO DE FLECHA ENTRE LECCIONES-->
-                        <span class="flecha-recorrido">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                fill="#f06c00"
-                                viewBox="0 0 24 24"
-                            >
-                                <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
-                                <path
-                                    d="M12 2C6.49 2 2 6.49 2 12s4.49 10 10 10 10-4.49 10-10S17.51 2 12 2M7 14l5-6 5 6z"
-                                ></path>
-                            </svg>
-                        </span>
-
-                        <article
-                            class="contenedor leccion-completada-recorrido"
-                        >
-                            <h3 class="titulo-leccion">Preguntando</h3>
-
-                            <span class="burbuja-emergente">Repasar</span>
-
-                            <a
-                                class="boton-leccion"
-                                href="leccion.html?curso=ingles&unidad=1&leccion=4"
-                                aria-label="Repasar lección 1"
-                            >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="24"
-                                    height="24"
-                                    fill="#ffffff"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        d="M9 15.59 4.71 11.3 3.3 12.71l5 5c.2.2.45.29.71.29s.51-.1.71-.29l11-11-1.41-1.41L9.02 15.59Z"
-                                    ></path>
-                                </svg>
-                            </a>
-
-                            <article class="progreso-leccion">
-                                <article
-                                    class="progreso-leccion-porcentaje"
-                                    style="width: 100%"
-                                ></article>
-                            </article>
-                        </article>
-                    </article>
+                    <!-- Recorrido de lecciones: lo arma unidad.js según el progreso del usuario -->
+                    <article id="recorrido" class="recorrido-lecciones-unidad"></article>
                 </section>
             </section>
-            <br />
         </main>
 
         <footer id="footer"></footer>
