@@ -433,7 +433,7 @@ function completarLeccion(idCurso, numeroUnidad, numeroLeccion, xpGanado) {
  
     // ¿Completó todo el curso por primera vez? -> recompensa una sola vez
     let cursoCompletado = false;
-    const progreso = obtenerProgresoCurso(usuario, curso.id).porcentaje;
+    const progreso = obtenerProgresoCurso(usuario, idCurso);
     if (progreso.total > 0 && progreso.completadas === progreso.total && !usuario.cursosCompletados.includes(idCurso)) {
         usuario.cursosCompletados.push(idCurso);
         usuario.gemas += RECOMPENSA_CURSO.gemas;
