@@ -1,88 +1,116 @@
 document.addEventListener("DOMContentLoaded", () => {
     if (sessionStorage.getItem("codigoVerificado") !== "si") {
-    window.location.href = "olvidaste_contra.html";
-    return;
-  }
-
-  const formulario = document.querySelector("form");
-  const nuevaInput = document.getElementById("nueva-contrasenia");
-  const confirmarInput = document.getElementById("confirmar-nueva-contrasenia");
-
-  const validarEnTiempoReal = () => {
-    const nueva = nuevaInput.value.trim();
-    const confirmar = confirmarInput.value.trim();
-
-    if (!nueva && !confirmar) {
-      nuevaInput.removeAttribute("aria-invalid");
-      confirmarInput.removeAttribute("aria-invalid");
-      ocultarMensaje("mensaje-nueva-contra");
-      return true;
+        window.location.href = "olvidaste_contra.html";
+        return;
     }
 
-    if (nueva.length > 0 && nueva.length < 8) {
-      nuevaInput.setAttribute("aria-invalid", "true");
-      mostrarMensaje("mensaje-nueva-contra", "La contraseña debe tener al menos 8 caracteres", "error");
-      return false;
-    }
+    const formulario = document.querySelector("form");
+    const nuevaInput = document.getElementById("nueva-contrasenia");
+    const confirmarInput = document.getElementById(
+        "confirmar-nueva-contrasenia",
+    );
 
-    if (nueva.length >= 8 && !/\d/.test(nueva)) {
-      nuevaInput.setAttribute("aria-invalid", "true");
-      mostrarMensaje("mensaje-nueva-contra", "La contraseña debe tener al menos un número","error");
-      return false;
-    }
+    // Elementos de los requisitos
+    const reqLongitud = document.getElementById("req-longitud");
+    const reqNumero = document.getElementById("req-numero");
 
-    if (confirmar.length > 0 && nueva !== confirmar) {
-      confirmarInput.setAttribute("aria-invalid", "true");
-      mostrarMensaje("mensaje-nueva-contra", "Las contraseñas no coinciden", "error");
-      return false;
-    }
+    // --- 1. Validación en tiempo real (SOLO visual y limpiar errores) ---
+    const actualizarVisuales = () => {
+        const nueva = nuevaInput.value.trim();
 
-    nuevaInput.removeAttribute("aria-invalid");
-    confirmarInput.removeAttribute("aria-invalid");
-    ocultarMensaje("mensaje-nueva-contra");
-    return true;
-  };
+        // Pintamos los requisitos (usando utils.js)
+        pintarRequisito(reqLongitud, nueva, nueva.length >= 8);
+        pintarRequisito(reqNumero, nueva, /\d/.test(nueva));
 
-  nuevaInput.addEventListener("input", validarEnTiempoReal);
-  confirmarInput.addEventListener("input", validarEnTiempoReal);
+        // Ocultamos cualquier cartel de error viejo
+        ocultarMensaje("mensaje-nueva-contra");
+        nuevaInput.removeAttribute("aria-invalid");
+        confirmarInput.removeAttribute("aria-invalid");
+    };
 
-  formulario.addEventListener("submit", (e) => {
-    e.preventDefault();
+    nuevaInput.addEventListener("input", actualizarVisuales);
+    confirmarInput.addEventListener("input", actualizarVisuales);
 
-    const nueva = nuevaInput.value.trim();
-    const confirmar = confirmarInput.value.trim();
+    // --- 2. Validación al hacer Submit (SOLO acá salta el cartel) ---
+    formulario.addEventListener("submit", (e) => {
+        e.preventDefault();
 
-    if (!nueva || !confirmar) {
-      mostrarMensaje("mensaje-nueva-contra", "Por favor, completá todos los campos", "error");
-      return;
-    }
+        const nueva = nuevaInput.value.trim();
+        const confirmar = confirmarInput.value.trim();
 
-    if (!validarEnTiempoReal()) {
-      return;
-    }
+        // Evaluamos errores en orden
+        if (!nueva || !confirmar) {
+            mostrarMensaje(
+                "mensaje-nueva-contra",
+                "Por favor, completá todos los campos.",
+                "error",
+            );
+            if (!nueva) nuevaInput.setAttribute("aria-invalid", "true");
+            if (!confirmar) confirmarInput.setAttribute("aria-invalid", "true");
+            return;
+        }
 
-    const email = sessionStorage.getItem("emailRecuperacion");
-    if (!email) {
-      mostrarMensaje("mensaje-nueva-contra", "Error: no se encontró el email en la sesión", "error");
-      return;
-    }
+        if (nueva.length < 8) {
+            nuevaInput.setAttribute("aria-invalid", "true");
+            mostrarMensaje(
+                "mensaje-nueva-contra",
+                "La contraseña debe tener al menos 8 caracteres.",
+                "error",
+            );
+            return;
+        }
 
-    const resultado = cambiarPassword(email, nueva);
+        if (!/\d/.test(nueva)) {
+            nuevaInput.setAttribute("aria-invalid", "true");
+            mostrarMensaje(
+                "mensaje-nueva-contra",
+                "La contraseña debe tener al menos un número.",
+                "error",
+            );
+            return;
+        }
 
-    if (!resultado.ok) {
-      mostrarMensaje("mensaje-nueva-contra", resultado.mensaje, "error");
-      return;
-    }
+        if (nueva !== confirmar) {
+            confirmarInput.setAttribute("aria-invalid", "true");
+            mostrarMensaje(
+                "mensaje-nueva-contra",
+                "Las contraseñas no coinciden.",
+                "error",
+            );
+            return;
+        }
 
-    //limpiamos la sesion y los datos temporales para forzar el login
-    sessionStorage.removeItem("codigoRecuperacion");
-    sessionStorage.removeItem("emailRecuperacion");
-    sessionStorage.removeItem("codigoVerificado");
-    cerrarSesion();
+        // --- 3. Si todo está OK, procedemos a guardar ---
+        const email = sessionStorage.getItem("emailRecuperacion");
+        if (!email) {
+            mostrarMensaje(
+                "mensaje-nueva-contra",
+                "Error: no se encontró el email en la sesión.",
+                "error",
+            );
+            return;
+        }
 
-    mostrarMensaje("mensaje-nueva-contra", "¡Contraseña actualizada con éxito! Redirigiendo...", "ok");
-    setTimeout(() => {
-      window.location.href = "../../index.html";
-    }, 2000);
-  });
+        const resultado = cambiarPassword(email, nueva);
+
+        if (!resultado.ok) {
+            mostrarMensaje("mensaje-nueva-contra", resultado.mensaje, "error");
+            return;
+        }
+
+        // Limpiamos la sesión y redirigimos
+        sessionStorage.removeItem("codigoRecuperacion");
+        sessionStorage.removeItem("emailRecuperacion");
+        sessionStorage.removeItem("codigoVerificado");
+        cerrarSesion();
+
+        mostrarMensaje(
+            "mensaje-nueva-contra",
+            "¡Contraseña actualizada con éxito! Redirigiendo...",
+            "ok",
+        );
+        setTimeout(() => {
+            window.location.href = "../../index.html";
+        }, 2000);
+    });
 });

@@ -326,3 +326,25 @@ main {
     color: #1f5e28;
     border: 1px solid #2f7d3b;
 }
+
+/*------------cod_recuperacion--------------*/
+/* Contenedor de los 4 cuadraditos */
+.codigo-digitos {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+/* Sobrescribimos la regla general para que no midan 100% de ancho */
+.campo .codigo-digitos input {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+    text-align: center;
+    padding: 0;
+    margin-bottom: 0; /* Quitamos el margen inferior para que queden centrados */
+    font-weight: bold;
+    border-radius: 0.5rem;
+}

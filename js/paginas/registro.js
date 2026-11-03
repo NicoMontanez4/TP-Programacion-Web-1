@@ -1,17 +1,14 @@
 /* =====================================================
    registro.js — Crear cuenta (paginas/cuenta/registro.html)
-   Necesita datos.js y estado.js cargados antes.
+   Necesita datos.js, estado.js y utils.js cargados antes.
    ===================================================== */
 
-// 3 a 15 caracteres: letras, números y guion bajo
 const FORMATO_USUARIO = /^[A-Za-z0-9_]{3,15}$/;
-// algo@algo.algo (validación simple)
 const FORMATO_EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const LARGO_MINIMO_PASS = 8;
 
 document.addEventListener("DOMContentLoaded", () => {
     const formulario = document.getElementById("form-registro");
-    const mensaje = document.getElementById("mensaje-registro");
 
     const pasoPerfil = document.getElementById("paso-perfil");
     const pasoPrivacidad = document.getElementById("paso-privacidad");
@@ -75,10 +72,10 @@ document.addEventListener("DOMContentLoaded", () => {
     btnContinuar.addEventListener("click", () => {
         const error = validarPerfil(leerDatos());
         if (error) {
-            marcarError(campos[error.campo], mensaje, error.mensaje);
+            marcarError(campos[error.campo], error.mensaje);
             return;
         }
-        mensaje.hidden = true;
+        ocultarMensaje("mensaje-registro");
         pasoPerfil.hidden = true;
         pasoPrivacidad.hidden = false;
     });
@@ -87,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     btnVolver.addEventListener("click", () => {
         pasoPrivacidad.hidden = true;
         pasoPerfil.hidden = false;
-        mensaje.hidden = true;
+        ocultarMensaje("mensaje-registro");
     });
 
     // --- Submit final ---
@@ -101,11 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (errorPerfil) {
             pasoPerfil.hidden = false;
             pasoPrivacidad.hidden = true;
-            marcarError(
-                campos[errorPerfil.campo],
-                mensaje,
-                errorPerfil.mensaje,
-            );
+            marcarError(campos[errorPerfil.campo], errorPerfil.mensaje);
             return;
         }
 
@@ -115,20 +108,24 @@ document.addEventListener("DOMContentLoaded", () => {
             campos.terminos.checked,
         );
         if (errorPriv) {
-            marcarError(campos[errorPriv.campo], mensaje, errorPriv.mensaje);
+            marcarError(campos[errorPriv.campo], errorPriv.mensaje);
             return;
         }
 
         // Crear la cuenta (estado.js controla usuario/email no repetidos)
         const resultado = crearUsuario(datos);
         if (!resultado.ok) {
-            marcarError(campos[resultado.campo], mensaje, resultado.mensaje);
+            marcarError(campos[resultado.campo], resultado.mensaje);
             return;
         }
 
         iniciarSesion(datos.usuario, datos.contrasenia);
         formulario.querySelector("button[type='submit']").disabled = true;
-        mostrarMensajeForm(mensaje, resultado.mensaje + " Entrando…", "ok");
+        mostrarMensaje(
+            "mensaje-registro",
+            resultado.mensaje + " Entrando…",
+            "ok",
+        );
         setTimeout(() => {
             window.location.href = "../inicio/inicio.html";
         }, 1200);
@@ -190,25 +187,9 @@ function validarPrivacidad(datos, repetir, aceptoTerminos) {
     return null;
 }
 
-// --- Helpers de mensajes ---
-function mostrarMensajeForm(elemento, texto, tipo) {
-    elemento.textContent = texto;
-    elemento.className =
-        "mensaje-form " + (tipo === "ok" ? "mensaje-ok" : "mensaje-error");
-    elemento.hidden = false;
-}
-
-function marcarError(input, elemento, texto) {
+// --- Helpers locales ---
+function marcarError(input, texto) {
     input.setAttribute("aria-invalid", "true");
     input.focus();
-    mostrarMensajeForm(elemento, texto, "error");
-}
-
-// Pinta un requisito: gris por defecto, verde si cumple, rojo si no.
-// Solo cambia el color del texto (no tamaño, ni negrita, ni fondo).
-function pintarRequisito(elemento, valor, cumple) {
-    if (!elemento) return;
-    elemento.classList.remove("requisito-ok", "requisito-error");
-    if (valor === "") return; // queda en gris
-    elemento.classList.add(cumple ? "requisito-ok" : "requisito-error");
+    mostrarMensaje("mensaje-registro", texto, "error");
 }
