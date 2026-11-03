@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //arma la tarjeta de un curso en el que el usuario esta inscripto
   const crearTarjeta = (curso, abierta) => {
-    const progreso = obtenerProgresoCurso(curso.id, usuario);
+    const progreso = obtenerProgresoCurso(usuario, curso.id).porcentaje;
     const claseCurso = abierta ? `${curso.id}-abierto` : curso.id;
 
     return `
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <a class="curso-header" href="#" role="button" aria-expanded="${abierta}" aria-controls="contenido-${curso.id}">
           <header>
             <img src="../../imagenes/banderas/${curso.bandera}" alt="Bandera de ${curso.nombre}" />
-            <p>${curso.nombre}</p>
+            <p>${curso.nombre} desde ${curso.desde}</p>
             ${FLECHA}
           </header>
         </a>
