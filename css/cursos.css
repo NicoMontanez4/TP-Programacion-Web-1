@@ -432,32 +432,43 @@ progress::-moz-progress-bar {
     color: #b45f00;
 }
 
-/* Celulares */
+/* Más aire arriba del "Seleccioná el curso..." y menos abajo */
+.seleccionar-cursos {
+    margin-top: 0.75rem;
+    gap: 0.75rem;
+}
+
+/* Si no hay mensaje, no reserva el espacio vacío (cancela el gap) */
+#mensaje-cursos:empty {
+    min-height: 0;
+    margin-top: -0.75rem;
+}
+
+
+/* Celulares: encabezado más compacto */
 @media screen and (max-width: 600px) {
+
     .poli-cursos { width: 6rem; }
     .bienvenida  { flex-direction: column; text-align: center; }
     .bienvenida img { max-width: 8rem; }
     .texto-bienvenida { align-items: center; }
-}
 
-/* Celulares: encabezado más compacto */
-@media screen and (max-width: 600px) {
     .hero-cursos {
-        gap: 0.6rem 1rem;
+        gap: 0.6rem 0.75rem;
     }
 
     .encabezado-cursos h1 {
-        font-size: 1.5rem;          /* entra en una sola línea */
+        font-size: 1.5rem;
         padding-bottom: 0.3rem;
     }
 
     .intro-cursos {
-        font-size: 0.9rem;
-        line-height: 1.35;
+        font-size: 0.85rem;         
+        line-height: 1.3;
     }
 
     .poli-cursos {
-        width: 4.5rem;              /* antes 6rem */
+        width: 6.5rem;              
     }
 
     .seleccionar-cursos > header h2 {
