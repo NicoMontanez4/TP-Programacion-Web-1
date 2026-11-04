@@ -110,7 +110,7 @@ function mostrarModal(opciones) {
     modal.addEventListener("close", function () {
         modal.remove();
         if (
-            !seElegioUnBoton &&
+            !seEligioUnBoton &&
             opciones.cerrable === false &&
             listaBotones[0].alHacerClic
         ) {
