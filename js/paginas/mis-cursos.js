@@ -135,11 +135,32 @@ document.querySelector('label[for="progreso-meta-diaria"]').textContent =
 barra.closest(".barra-xp").classList.toggle("completada", completada);
 
   //saludo personalizado
-  document.getElementById("saludo").textContent = `¡Hola, ${usuario.usuario}! Te saluda Poli`;
-  document.getElementById("texto-racha").textContent =
-    usuario.racha > 0 ? `Ya llevás ${usuario.racha} días aprendiendo` : "¡Empezá hoy tu racha!";
+  document.getElementById("saludo").textContent = `¡Hola, ${usuario.nombre}!`;
 
-      //liga real del usuario (antes quedaba "Bronce" fijo)
+  // Mensaje de racha: cambia si ya practicó hoy, si tiene racha o si recién empieza
+  const racha = rachaActual(usuario);
+  const textoRacha = document.getElementById("texto-racha");
+  if (racha === 0) {
+    textoRacha.textContent = "Completá tu primera lección para empezar tu racha.";
+  } else {
+    const dias = `<strong>🔥 ${racha} ${racha === 1 ? "día" : "días"} de racha</strong>`;
+    textoRacha.innerHTML = hizoActividadHoy(usuario)
+      ? `${dias}<br>¡Ya practicaste hoy, seguí así!`
+      : `${dias}<br>Completá una lección hoy para no perderla.`;
+  }
+
+  // "Continuar aprendiendo": a la próxima lección del primer curso que tenga una pendiente
+  const botonContinuar = document.getElementById("boton-continuar");
+  const cursoPendiente = ORDEN_CURSOS.find((id) => estaInscripto(usuario, id) && siguienteLeccion(usuario, id));
+  if (cursoPendiente) {
+    const l = siguienteLeccion(usuario, cursoPendiente);
+    botonContinuar.href = `leccion.html?curso=${cursoPendiente}&unidad=${l.unidad}&leccion=${l.leccion}`;
+  } else {
+    botonContinuar.href = "catalogo.html";
+    botonContinuar.textContent = "Elegí un curso";
+  }
+
+  //liga real del usuario (antes quedaba "Bronce" fijo)
   const liga = obtenerLiga(usuario.liga);
   if (liga) document.getElementById("resumen-liga").textContent = liga.nombre.replace("Liga de ", "");
 

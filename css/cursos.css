@@ -514,3 +514,16 @@
 .boton-agregar-curso svg {
     flex-shrink: 0;             /* evita que el ícono se achique si falta espacio */
 }
+
+/* Mensaje de racha debajo del saludo de Poli */
+.texto-racha {
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+.texto-racha strong {
+    font-size: 1.15rem;
+    color: #e67e00;
+}
