@@ -25,7 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
         terminos: document.getElementById("terminos"),
     };
 
+    // Capturamos ambos textos de requisitos del usuario
     const reqUsuario = document.getElementById("req-usuario");
+    const reqUsuario2 = document.getElementById("req-usuario-2");
+
     const reqLongitud = document.getElementById("req-longitud");
     const reqNumero = document.getElementById("req-numero");
 
@@ -38,10 +41,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // --- Validación en tiempo real: usuario ---
-    if (campos.usuario && reqUsuario) {
+    if (campos.usuario) {
         campos.usuario.addEventListener("input", () => {
             const val = campos.usuario.value.trim();
-            pintarRequisito(reqUsuario, val, FORMATO_USUARIO.test(val));
+            const esValido = FORMATO_USUARIO.test(val);
+
+            // Pintamos ambos requisitos
+            pintarRequisito(reqUsuario, val, esValido);
+            pintarRequisito(reqUsuario2, val, esValido);
+
             campos.usuario.removeAttribute("aria-invalid");
         });
     }

@@ -1,0 +1,158 @@
+/* =====================================================
+   ESTILOS ESPECÍFICOS DEL CATÁLOGO (catalogo.html)
+   ===================================================== */
+
+/* Contenedor principal más ancho y con flexbox en columna */
+.catalogo-container {
+    width: min(95%, 850px);
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Sección Hero (Poli + Textos) --- */
+.catalogo-hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.poli-hero {
+    width: 130px; /* Tamaño controlado para que no se coma la pantalla */
+    height: auto;
+    object-fit: contain;
+    /* Efecto de flotación suave */
+    animation: flotar 3s ease-in-out infinite;
+}
+
+@keyframes flotar {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.catalogo-textos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alineado a la izquierda */
+    max-width: 400px;
+}
+
+.catalogo-textos h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    text-align: left;
+    line-height: 1.2;
+}
+
+.eslogan-catalogo {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+/* Achicamos un poco el botón del login para que no ocupe todo el ancho */
+.catalogo-textos .boton {
+    width: auto;
+    padding: 0 2rem;
+    margin: 0;
+}
+
+/* --- Sección de Idiomas (Burbujas) --- */
+.titulo-idiomas {
+    text-align: center;
+    color: #555;
+    font-size: 1rem;
+    font-weight: normal;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Contenedor tipo "nube" usando Flexbox */
+.nube-idiomas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.2rem;
+    width: 100%;
+    padding-bottom: 1rem;
+}
+
+/* Diseño de las burbujas flotantes */
+.idioma-burbuja {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.6rem 1.2rem 0.6rem 0.6rem;
+    background-color: #fff;
+    border-radius: 50px; /* Bordes bien redondeados tipo píldora */
+    border: 2px solid #e0e0e0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    cursor: default;
+    transition: all 0.3s ease;
+}
+
+/* Hacemos que las burbujas tengan un poquito de rotación para que se vea orgánico y juguetón */
+.idioma-burbuja:nth-child(odd) {
+    transform: rotate(-3deg);
+}
+.idioma-burbuja:nth-child(even) {
+    transform: rotate(3deg);
+}
+
+/* Efecto al pasar el mouse: se enderezan, crecen y cambian de color el borde */
+.idioma-burbuja:hover {
+    transform: rotate(0deg) scale(1.08);
+    border-color: #adddfb;
+    box-shadow: 0 6px 12px rgba(173, 221, 251, 0.4);
+}
+
+/* Banderas circulares dentro de la burbuja */
+.bandera-burbuja {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+}
+
+/* Texto del idioma */
+.idioma-burbuja span {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #444;
+}
+
+/* --- RESPONSIVE PARA CELULARES --- */
+@media (max-width: 600px) {
+    .catalogo-hero {
+        flex-direction: column; /* En celular, Poli va arriba y el texto abajo */
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .catalogo-textos {
+        align-items: center;
+        max-width: 100%;
+    }
+
+    .catalogo-textos h2,
+    .eslogan-catalogo {
+        text-align: center;
+    }
+
+    .poli-hero {
+        width: 100px;
+    }
+}

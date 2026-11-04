@@ -1,22 +1,17 @@
 /* Util.js: Funciones chicas que van a usar toda la pagina */
 
 /* Leer un dato de la URL */
-// Devuelve el valor de un parámetro de la URL, o null si no está.
-// Ej: en "mapa.html?curso=aleman", leerParametro("curso") -> "aleman"
 function leerParametro(nombre) {
     const parametros = new URLSearchParams(window.location.search);
     return parametros.get(nombre);
 }
 
 /* Validar un email */
-// true si tiene forma de email (algo@algo.algo)
 function esEmailValido(email) {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
 /* Mostrar un mensaje en la pagina */
-// Muestra un mensaje de error u ok dentro de un elemento de la página.
-// tipo: "error" o "ok"
 function mostrarMensaje(idElemento, texto, tipo) {
     const elemento = document.getElementById(idElemento);
     if (!elemento) return;
@@ -34,8 +29,6 @@ function ocultarMensaje(idElemento) {
 }
 
 /* Pintar un requisito (texto de ayuda) */
-// Pinta un requisito: gris por defecto, verde si cumple, rojo si no.
-// Solo cambia el color del texto (no tamaño, ni negrita, ni fondo).
 function pintarRequisito(elemento, valor, cumple) {
     if (!elemento) return;
     elemento.classList.remove("requisito-ok", "requisito-error");
@@ -44,13 +37,6 @@ function pintarRequisito(elemento, valor, cumple) {
 }
 
 /* Mostrar un cartel (modal) */
-// opciones = {
-//   titulo: "texto",
-//   texto: "texto",
-//   imagen: "ruta de una imagen" (opcional),
-//   botones: [ { texto, tipo: "principal" | "secundario", alHacerClic: función } ],
-//   cerrable: false  -> no se cierra con Escape (para avisos obligatorios)
-// }
 function mostrarModal(opciones) {
     cerrarModal(); // si había otro abierto, lo sacamos
 
@@ -110,7 +96,7 @@ function mostrarModal(opciones) {
     modal.addEventListener("close", function () {
         modal.remove();
         if (
-            !seElegioUnBoton &&
+            !seEligioUnBoton &&
             opciones.cerrable === false &&
             listaBotones[0].alHacerClic
         ) {
