@@ -1,15 +1,16 @@
 <!doctype html>
 <html lang="es">
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>PoliLingo - Compra realizada</title>
-        <link rel="stylesheet" href="../../css/global.css" />
-        <link rel="stylesheet" href="../../css/tienda.css" />
-        <script src="../../js/datos.js" defer></script>
-        <script src="../../js/estado.js" defer></script>
-        <script src="../../js/utils.js" defer></script>
-        <script src="../../js/navbar.js" defer></script>
+        <link rel="stylesheet" href="../../css/global.css">
+        <link rel="stylesheet" href="../../css/tienda.css">
+        <script src="../../js/datos.js" defer=""></script>
+        <script src="../../js/estado.js" defer=""></script>
+        <script src="../../js/utils.js" defer=""></script>
+        <script src="../../js/navbar.js" defer=""></script>
+        <script src="../../js/paginas/compra-realizada.js" defer=""></script>
     </head>
 
     <body class="fondo-compra-realizada">
@@ -19,28 +20,18 @@
             <section class="tarjeta-compra-realizada">
                 <figure class="imagen-compra-realizada"> <!-- La funcion es figure es agrupar
                     imagenes, videos, etc. -->
-                    <img
-                        class="poli-compra-realizada"
-                        src="../../imagenes/poli/Poli-compra-realizada.png"
-                        alt="Poli festejando la compra"
-                    />
-                    <img
-                        class="check-compra-realizada"
-                        src="../../imagenes/iconos/Completa.png"
-                        alt="Compra confirmada"
-                    />
+                    <img class="poli-compra-realizada" src="../../imagenes/poli/Poli-compra-realizada.png" alt="Poli festejando la compra">
+                    <img class="check-compra-realizada" src="../../imagenes/iconos/Completa.png" alt="Compra confirmada">
                 </figure>
 
                 <h1>¡Compra realizada!</h1>
 
-                <p>
-                    Tu compra se realizó correctamente.<br />
+                <p id="detalle-compra">
+                    Tu compra se realizó correctamente.<br>
                     ¡Gracias por tu compra!
                 </p>
 
-                <a class="boton-volver-tienda" href="tienda.html"
-                    >Volver a la tienda →</a
-                >
+                <a class="boton-volver-tienda" href="tienda.html">Volver a la tienda →</a>
             </section>
         </main>
 

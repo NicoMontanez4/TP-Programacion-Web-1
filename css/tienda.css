@@ -508,3 +508,61 @@
         margin-left: calc(3rem + 1.2rem);
     }
 }
+
+/* ===================== Tienda dinámica ===================== */
+.filtro-tienda {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+    max-width: 50rem;
+    margin-top: 2rem;
+}
+
+.filtro-tienda label {
+    font-weight: 700;
+}
+
+.filtro-tienda select {
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.6rem;
+    border: 0.1rem solid #0e9384;
+    font: inherit;
+}
+
+#mensaje-tienda {
+    width: 100%;
+    max-width: 50rem;
+    box-sizing: border-box;
+    margin-top: 1rem;
+}
+
+#productos-tienda {
+    width: 100%;
+    max-width: 50rem;
+}
+
+button.boton-item {
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* Pago simulado */
+.aviso-simulado {
+    margin: 0 0 1rem;
+    padding: 0.6rem 1rem;
+    border-radius: 0.6rem;
+    background-color: #fff4d6;
+    border: 0.1rem solid #f5b301;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.formulario-pago .mensaje-form {
+    grid-column: 1 / -1;
+}
+
+.campo-pago input[aria-invalid="true"] {
+    border-color: #e53935;
+}

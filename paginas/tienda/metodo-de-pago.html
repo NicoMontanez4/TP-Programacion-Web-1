@@ -1,15 +1,16 @@
 <!doctype html>
 <html lang="es">
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>PoliLingo - Método de pago</title>
-        <link rel="stylesheet" href="../../css/global.css" />
-        <link rel="stylesheet" href="../../css/tienda.css" />
-        <script src="../../js/datos.js" defer></script>
-        <script src="../../js/estado.js" defer></script>
-        <script src="../../js/utils.js" defer></script>
-        <script src="../../js/navbar.js" defer></script>
+        <link rel="stylesheet" href="../../css/global.css">
+        <link rel="stylesheet" href="../../css/tienda.css">
+        <script src="../../js/datos.js" defer=""></script>
+        <script src="../../js/estado.js" defer=""></script>
+        <script src="../../js/utils.js" defer=""></script>
+        <script src="../../js/navbar.js" defer=""></script>
+        <script src="../../js/paginas/metodo-de-pago.js" defer=""></script>
     </head>
 
     <body>
@@ -19,54 +20,56 @@
             <section class="tienda-contenedor">
                 <section class="seccion-tienda">
                     <h2>Método de pago</h2>
-                    <p class="metodo-pago-subtitulo">Completá el método de pago</p>
+                    <p id="resumen-compra" class="metodo-pago-subtitulo"></p>
 
-                    <form
-                        class="formulario-pago"
-                        action="compra-realizada.html"
-                    >
+                    <p class="aviso-simulado" role="note">
+                        ⚠ Pago simulado: no ingreses datos reales. No se cobra nada.
+                    </p>
 
+                    <form id="form-pago" class="formulario-pago" novalidate="">
                         <article class="campo-pago">
                             <label for="nombre">
                                 Nombre:
-                                <input type="text" id="nombre" name="nombre" required/>
+                                <input type="text" id="nombre" name="nombre" autocomplete="off">
                             </label>
                         </article>
 
                         <article class="campo-pago">
                             <label for="numero-tarjeta">
                                 Número de tarjeta:
-                                <input type="number" id="numero-tarjeta" name="numero-tarjeta" required/>
+                                <input type="text" id="numero-tarjeta" name="numero-tarjeta" inputmode="numeric" maxlength="16" placeholder="16 dígitos" autocomplete="off">
                             </label>
                         </article>
 
                         <article class="campo-pago">
                             <label for="apellido">
                                 Apellido:
-                                <input type="text" id="apellido" name="apellido" required/>
-                            </label>   
+                                <input type="text" id="apellido" name="apellido" autocomplete="off">
+                            </label>
                         </article>
 
                         <article class="campo-pago">
                             <label for="vencimiento">
                                 Vencimiento:
-                                <input type="number" id="vencimiento" name="vencimiento" placeholder="MM/AA" required />
+                                <input type="text" id="vencimiento" name="vencimiento" maxlength="5" placeholder="MM/AA" autocomplete="off">
                             </label>
                         </article>
 
                         <article class="campo-pago">
                             <label for="dni">
                                 DNI:
-                                <input type="number" id="dni" name="dni" required/>
+                                <input type="text" id="dni" name="dni" inputmode="numeric" maxlength="8" placeholder="7 u 8 números" autocomplete="off">
                             </label>
                         </article>
 
                         <article class="campo-pago">
                             <label for="codigo-seguridad">
                                 Código de seguridad:
-                                <input type="number" id="codigo-seguridad" name="codigo-seguridad" placeholder="123" required/>
+                                <input type="text" id="codigo-seguridad" name="codigo-seguridad" inputmode="numeric" maxlength="4" placeholder="123" autocomplete="off">
                             </label>
                         </article>
+
+                        <p id="mensaje-pago" class="mensaje-form" role="alert" hidden=""></p>
 
                         <button class="boton-realizar-compra" type="submit">
                             Realizar compra
@@ -80,6 +83,6 @@
             <a class="volver-a-cursos" href="tienda.html">Volver a la tienda</a>
         </nav>
 
-        <footer id="footer"></footer>
+        <footer id="footer"></footer>   
     </body>
 </html>
