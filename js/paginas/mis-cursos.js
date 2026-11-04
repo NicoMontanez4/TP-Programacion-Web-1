@@ -133,4 +133,78 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("saludo").textContent = `¡Hola, ${usuario.usuario}! Te saluda Poli`;
   document.getElementById("texto-racha").textContent =
     usuario.racha > 0 ? `Ya llevás ${usuario.racha} días aprendiendo` : "¡Empezá hoy tu racha!";
-});
+
+      //liga real del usuario (antes quedaba "Bronce" fijo)
+  const liga = obtenerLiga(usuario.liga);
+  if (liga) document.getElementById("resumen-liga").textContent = liga.nombre.replace("Liga de ", "");
+
+  /* ---------- Actividad semanal ---------- */
+  const NOMBRES_DIAS = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"];
+
+  //XP ganado por fecha, sumando las lecciones guardadas en usuario.progreso
+  const xpPorFecha = (u) => {
+    const porFecha = {};
+    Object.values(u.progreso).forEach((curso) =>
+      Object.values(curso).forEach((leccion) => {
+        if (leccion.fecha) porFecha[leccion.fecha] = (porFecha[leccion.fecha] || 0) + leccion.xp;
+      })
+    );
+    return porFecha;
+  };
+
+  const dibujarSemana = () => {
+    const hoy = fechaHoy();
+    const diasDesdeLunes = (textoAFecha(hoy).getDay() + 6) % 7; //domingo = 0 -> lo paso a lunes = 0
+    const lunes = sumarDias(hoy, -diasDesdeLunes);
+    const porFecha = xpPorFecha(usuario);
+
+    document.getElementById("lista-semanal").innerHTML = NOMBRES_DIAS.map((nombre, i) => {
+      const fecha = sumarDias(lunes, i);
+      const xp = fecha === hoy ? usuario.xpHoy : porFecha[fecha] || 0;
+      const porcentaje = Math.min(100, Math.round((xp / META_DIARIA_XP) * 100));
+      return `
+        <li>
+          <span>${nombre}</span>
+          <progress value="${porcentaje}" max="100" aria-label="${nombre}: ${xp} XP">${porcentaje}%</progress>
+        </li>`;
+    }).join("");
+  };
+
+  /* ---------- Logros por conseguir ---------- */
+  //los 3 pendientes mas cerca de completarse (uno por "familia": solo el proximo escalon)
+  const logrosPendientes = (u, cantidad) => {
+    const vistos = new Set();
+    return LOGROS.map((logro) => ({ logro, p: progresoLogro(u, logro) }))
+      .filter((x) => !x.p.desbloqueado)
+      .sort((a, b) => b.p.porcentaje - a.p.porcentaje || a.logro.meta - b.logro.meta)
+      .filter((x) => {
+        const familia = x.logro.valor.toString();
+        if (vistos.has(familia)) return false;
+        vistos.add(familia);
+        return true;
+      })
+      .slice(0, cantidad);
+  };
+
+  const dibujarLogros = () => {
+    const pendientes = logrosPendientes(usuario, 3);
+    const lista = document.getElementById("lista-logros");
+
+    if (pendientes.length === 0) {
+      lista.innerHTML = "<p>¡Desbloqueaste todos los logros!</p>";
+      return;
+    }
+
+    lista.innerHTML = pendientes.map(({ logro, p }) => `
+      <article class="logro">
+        <p>${logro.descripcion}</p>
+        <article class="barra-logro">
+          <progress id="progreso-${logro.id}" value="${p.actual}" max="${p.meta}">${p.actual}/${p.meta}</progress>
+          <label for="progreso-${logro.id}">${p.actual}/${p.meta}</label>
+        </article>
+      </article>`).join("");
+  };
+
+  dibujarSemana();
+  dibujarLogros();
+});  
