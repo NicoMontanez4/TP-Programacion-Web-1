@@ -112,3 +112,97 @@ function cerrarModal() {
     const modal = document.getElementById("modal-polilingo");
     if (modal) modal.close();
 }
+
+/* ===================== Popup de logros ===================== */
+
+const INFORMACION_POPUP_LOGROS = {
+    "en-llamas": {
+        nombre: "En llamas",
+        imagen: "Logro-1.png"
+    },
+    "hechicero": {
+        nombre: "Hechicero",
+        imagen: "Logro-2.png"
+    },
+    "insuperable": {
+        nombre: "Insuperable",
+        imagen: "Logro-3.png"
+    },
+    "corazon-roto": {
+        nombre: "Corazón roto",
+        imagen: "Logro-4.png"
+    },
+    "coleccionista": {
+        nombre: "Coleccionista de Gemas",
+        imagen: "Logro-5.png"
+    },
+    "es-un-trato": {
+        nombre: "Es un trato",
+        imagen: "Logro-6.png"
+    },
+    "fotogenico": {
+        nombre: "Fotogénico",
+        imagen: "Logro-7.png"
+    }
+};
+
+let colaLogros = [];
+let popupLogroAbierto = false;
+
+document.addEventListener("logrosDesbloqueados", function (evento) {
+    colaLogros.push(...evento.detail.logros);
+    mostrarSiguienteLogro();
+});
+
+
+function mostrarSiguienteLogro() {
+    if (popupLogroAbierto || colaLogros.length === 0) return;
+
+    popupLogroAbierto = true;
+
+    const logro = colaLogros.shift();
+    const info = INFORMACION_POPUP_LOGROS[logro.id];
+
+    const popup = document.createElement("section");
+    popup.className = "popup-logro";
+    popup.setAttribute("role", "status");
+
+    const imagen = document.createElement("img");
+
+    imagen.src = info && info.imagen
+        ? "../../imagenes/logros/" + info.imagen
+        : "../../imagenes/logros/Logro-1.png";
+
+    imagen.alt = "Insignia " + (info ? info.nombre : "logro");
+
+    const contenido = document.createElement("div");
+    contenido.className = "popup-logro-contenido";
+
+    const encabezado = document.createElement("span");
+    encabezado.className = "popup-logro-encabezado";
+    encabezado.textContent = "LOGRO DESBLOQUEADO";
+
+    const nombre = document.createElement("h3");
+    nombre.textContent = info ? info.nombre : logro.id;
+
+    const descripcion = document.createElement("p");
+    descripcion.textContent =
+        "¡Felicitaciones! Seguí aprendiendo y sumando logros.";
+
+    contenido.append(encabezado, nombre, descripcion);
+    popup.append(imagen, contenido);
+
+    document.body.appendChild(popup);
+
+    // Cerrar automáticamente después de 5 segundos
+    setTimeout(function () {
+        popup.classList.add("ocultar");
+
+        setTimeout(function () {
+            popup.remove();
+            popupLogroAbierto = false;
+            mostrarSiguienteLogro();
+        }, 400);
+
+    }, 5000);
+}

@@ -573,3 +573,96 @@ footer p {
     right: 0.8rem;
     transform: none;
 }
+
+/* ===================== Popup de logros ===================== */
+
+.popup-logro {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    width: 340px;
+    max-width: calc(100vw - 40px);
+    padding: 18px;
+
+    background-color: #253746;
+    color: white;
+
+    border: 1px solid #496174;
+    border-radius: 12px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+
+    animation: entrada-logro 0.4s ease;
+}
+
+.popup-logro img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.popup-logro-contenido {
+    min-width: 0;
+}
+
+.popup-logro-encabezado {
+    color: #9ACD32;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.popup-logro h3 {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+.popup-logro p {
+    margin: 0;
+    color: #D0D9E0;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.popup-logro.ocultar {
+    opacity: 0;
+    transform: translateX(120%);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+@keyframes entrada-logro {
+    from {
+        opacity: 0;
+        transform: translateX(120%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive */
+
+@media (max-width: 480px) {
+    .popup-logro {
+        right: 10px;
+        bottom: 10px;
+        width: auto;
+        max-width: none;
+        left: 10px;
+        padding: 14px;
+    }
+
+    .popup-logro img {
+        width: 58px;
+        height: 58px;
+    }
+}
