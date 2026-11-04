@@ -10,16 +10,43 @@ const ICONOS = {
 };
 
 /* Links del menú. */
+/* Links del menú. */
 const LINKS_NAVBAR = [
     {
         texto: "Mis cursos",
         href: "../cursos/mis-cursos.html",
         seccion: "mis-cursos",
+        // Ícono: Gorro de graduación
+        icono: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>`,
     },
-    { texto: "Catálogo", href: "../cursos/catalogo.html", seccion: "catalogo" },
-    { texto: "Perfil", href: "../perfil/perfil.html", seccion: "perfil" },
-    { texto: "Ranking", href: "../ranking/ranking.html", seccion: "ranking" },
-    { texto: "Tienda", href: "../tienda/tienda.html", seccion: "tienda" },
+    {
+        texto: "Catálogo",
+        href: "../cursos/catalogo.html",
+        seccion: "catalogo",
+        // Ícono: Libreta / Catálogo
+        icono: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M8 7h8M8 11h8M8 15h4"/></svg>`,
+    },
+    {
+        texto: "Perfil",
+        href: "../perfil/perfil.html",
+        seccion: "perfil",
+        // Ícono: Usuario
+        icono: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`,
+    },
+    {
+        texto: "Ranking",
+        href: "../ranking/ranking.html",
+        seccion: "ranking",
+        // Ícono: Trofeo
+        icono: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>`,
+    },
+    {
+        texto: "Tienda",
+        href: "../tienda/tienda.html",
+        seccion: "tienda",
+        // Ícono: Carrito de compras
+        icono: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>`,
+    },
 ];
 
 // Mira la URL y dice en qué sección estamos
@@ -43,6 +70,7 @@ function actualizarNavbar() {
     const racha = rachaActual(usuario);
 
     // Un <li> por link para el menú lateral
+    // Un <li> por link para el menú lateral
     let links = "";
     LINKS_NAVBAR.forEach(function (link) {
         const actual = link.seccion === seccion ? ' aria-current="page"' : "";
@@ -52,7 +80,10 @@ function actualizarNavbar() {
             '"' +
             actual +
             ">" +
+            link.icono + // Insertamos el ícono
+            "<span>" +
             link.texto +
+            "</span>" + // Envolvemos el texto
             "</a></li>";
     });
 

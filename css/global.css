@@ -150,7 +150,7 @@ img {
 /* --- Logo --- */
 .navbar-logo {
     display: flex;
-    margin-left: clamp(0.7rem, 2vw, 1.5rem);
+    margin-left: clamp(0rem, 2vw, 4.5rem);
     margin-top: 0.2rem;
     z-index: 10;
     flex-shrink: 1;
@@ -190,7 +190,7 @@ nav img {
     padding: 0;
     gap: 0.2rem;
     /* Subimos el máximo a 1.2rem para que la letra no quede diminuta en PC */
-    font-size: clamp(0.75rem, 2.3vw, 5.2rem);
+    font-size: clamp(0.75rem, 2.3vw, 1.8rem);
     font-weight: 800;
     white-space: nowrap;
     color: #1a202c;
@@ -199,8 +199,8 @@ nav img {
 
 /* Íconos */
 .navbar-estadisticas svg {
-    width: clamp(0.8rem, 4.8vw, 1.8rem);
-    height: clamp(0.8rem, 4.8vw, 1.8rem);
+    width: clamp(0.8rem, 4.8vw, 2.2rem);
+    height: clamp(0.8rem, 4.8vw, 2.2rem);
     flex-shrink: 0;
 }
 
@@ -272,7 +272,7 @@ nav img {
 
 .menu-header h2 {
     /* Título fluido */
-    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
     color: #333;
     margin: 0;
 }
@@ -304,27 +304,34 @@ nav img {
     display: flex;
     flex-direction: column;
     /* Gap fluido entre los botones */
-    gap: clamp(0.2rem, 1vw, 0.4rem);
+    gap: clamp(0.2rem, 1.5vw, 0.9rem);
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
 .navbar-links-menu a {
-    display: block;
-    /* Padding interno del link fluido */
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
     padding: clamp(0.5rem, 1vw, 0.8rem) clamp(0.8rem, 2vw, 1.2rem);
     border-radius: 0.5rem;
     color: #444;
     font-weight: 600;
-    /* Letra fluida: no se ve microscópica en celular ni gigante en PC */
-    font-size: clamp(0.85rem, 1.2vw, 1.05rem);
+    font-size: clamp(0.85rem, 1.6vw, 1.5rem); /* Tu clamp */
     text-decoration: none;
     transition:
         background-color 0.2s,
         color 0.2s;
 }
 
+/* Nuevo: Controlamos el tamaño del ícono SVG con clamp */
+.navbar-links-menu a svg {
+    /* Mínimo: 1.1rem | Ideal: 2vw | Máximo: 1.8rem */
+    width: clamp(1.1rem, 2vw, 1.8rem);
+    height: clamp(1.1rem, 2vw, 1.8rem);
+    flex-shrink: 0;
+}
 .navbar-links-menu a:hover,
 .navbar-links-menu a[aria-current="page"] {
     background-color: #e0f2fe;
