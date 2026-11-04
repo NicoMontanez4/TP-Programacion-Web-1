@@ -494,6 +494,13 @@ body.completada #correcto {
 }
 
 /* Aire entre "Comprobar respuesta" y el footer */
-#boton-comprobar {
+#boton-comprobar{
     margin-bottom: 2rem;
+}
+
+/* Celular: aire entre el panel de resultado (Correcto / Incorrecto) y el footer */
+@media screen and (max-width: 420px) {
+    .resultado {
+        margin-bottom: 1.5rem;
+    }
 }
