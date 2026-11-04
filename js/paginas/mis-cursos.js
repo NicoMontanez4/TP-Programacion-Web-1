@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("lista-semanal").innerHTML = NOMBRES_DIAS.map((nombre, i) => {
       const fecha = sumarDias(lunes, i);
       const xp = fecha === hoy ? usuario.xpHoy : porFecha[fecha] || 0;
-      const porcentaje = Math.min(100, Math.round((xp / META_DIARIA_XP) * 100));
+      const porcentaje = Math.min(100, Math.round((xp / 200) * 100));
       return `
         <li>
           <span>${nombre}</span>
