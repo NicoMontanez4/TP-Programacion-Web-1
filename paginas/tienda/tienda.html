@@ -1,79 +1,56 @@
-<!doctype html>
-<html lang="es">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>PoliLingo - Tienda</title>
-        <link rel="stylesheet" href="../../css/global.css" />
-        <link rel="stylesheet" href="../../css/tienda.css" />
-        <script src="../../js/datos.js" defer></script>
-        <script src="../../js/estado.js" defer></script>
-        <script src="../../js/utils.js" defer></script>
-        <script src="../../js/navbar.js" defer></script>
-    </head>
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PoliLingo - Tienda</title>
+    <link rel="stylesheet" href="../../css/global.css">
+    <link rel="stylesheet" href="../../css/tienda.css">
+    <script src="../../js/datos.js" defer=""></script>
+    <script src="../../js/estado.js" defer=""></script>
+    <script src="../../js/utils.js" defer=""></script>
+    <script src="../../js/navbar.js" defer=""></script>
+    <script src="../../js/paginas/tienda.js" defer=""></script>
+</head>
+<body>
+    <header id="navbar"></header>
 
-    <body>
-        <header id="navbar"></header>
-
-        <main>
-            <section class="tienda-contenedor">
-                <header class="tienda-introduccion">
-                    <section class="tienda-titulo">
-                        <h1>Tienda</h1>
-                        <p>¡Canjeá tus gemas!</p>
-                        <p>
+    <main>
+        <section class="tienda-contenedor">
+            <header class="tienda-introduccion">
+                <section class="tienda-titulo">
+                    <h1>Tienda</h1>
+                    <p>¡Canjeá tus gemas!</p>
+                    <p>
                             Conseguí recompensas y personalizá tu experiencia en
                             PoliLingo.
-                        </p>
-                    </section>
+                    </p>
+                </section>
 
-                    <img
-                        class="imagen-tienda-titulo"
-                        src="../../imagenes/poli/PoliTienda.png"
-                        alt="Imagen de poli en la tienda"
-                    />
-                </header>
+                <img class="imagen-tienda-titulo" src="../../imagenes/poli/PoliTienda.png" alt="Imagen de poli en la tienda">
+            </header>
 
-                <article class="ofertas-tienda">
-                    <article class="contenedor-oferta-del-dia">
-                        <img
-                            class="imagen-oferta"
-                            src="../../imagenes/tienda/ProtectorDeRacha.png"
-                            alt="Imagen de la oferta del dia"
-                        />
+            <article class="ofertas-tienda">
+                <article class="contenedor-oferta-del-dia">
+                    <img class="imagen-oferta" src="../../imagenes/tienda/ProtectorDeRacha.png" alt="Imagen de la oferta del dia">
 
                         <section class="oferta-del-dia">
                             <h2>Oferta del día</h2>
                             <h3>Protector de racha</h3>
 
                             <span class="valor-item">
-                                <a
-                                    class="boton-item"
-                                    href="compra-realizada.html"
-                                    >250
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        width="24"
-                                        height="24"
-                                        fill="#FF63DA"
-                                        viewBox="0 0 24 24"
-                                    >
+                                <button type="button" class="boton-item" data-producto="protector-racha">250
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#FF63DA" viewBox="0 0 24 24">
                                         <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
-                                        <path
-                                            d="M21.44 11H17.7l-3.12 8.44 6.77-8.27c.04-.05.06-.11.1-.17ZM10.72 2 8.39 9h7.22l-2.33-7zm10.81 6.91-3.37-5.9A2 2 0 0 0 16.42 2h-1.03l2.33 7h3.84s-.02-.06-.04-.09ZM8.39 11l3.4 10.2L15.56 11zM5.84 3.01l-3.37 5.9s-.02.06-.04.09h3.84L8.6 2H7.57c-.72 0-1.38.39-1.74 1.01Zm3.02 15.73L6.28 11H2.56c.04.05.06.11.1.17l6.2 7.58Z"
-                                        ></path>
+                                        <path d="M21.44 11H17.7l-3.12 8.44 6.77-8.27c.04-.05.06-.11.1-.17ZM10.72 2 8.39 9h7.22l-2.33-7zm10.81 6.91-3.37-5.9A2 2 0 0 0 16.42 2h-1.03l2.33 7h3.84s-.02-.06-.04-.09ZM8.39 11l3.4 10.2L15.56 11zM5.84 3.01l-3.37 5.9s-.02.06-.04.09h3.84L8.6 2H7.57c-.72 0-1.38.39-1.74 1.01Zm3.02 15.73L6.28 11H2.56c.04.05.06.11.1.17l6.2 7.58Z"></path>
                                     </svg>
-                                </a>
+                                </button>
                             </span>
                         </section>
                     </article>
 
                     <article class="contenedor-oferta-super">
-                        <img
-                            class="imagen-oferta"
-                            src="../../imagenes/poli/SuperPoli.png"
-                            alt="Imagen de la oferta del dia"
-                        />
+                        <img class="imagen-oferta" src="../../imagenes/poli/SuperPoli.png" alt="Imagen de la oferta del dia">
 
                         <section class="oferta-super">
                             <h2>Súper</h2>
@@ -82,131 +59,28 @@
                                 beneficios.
                             </p>
 
-                            <a
-                                class="boton-item"
-                                href="superpoli.html"
-                                >Conocer más</a
-                            >
+                            <a class="boton-item" href="superpoli.html">Conocer más</a>
                         </section>
-                    </article>
                 </article>
+            </article>
 
-                <!-- Vidas -->
-                <section class="seccion-tienda">
-                    <h2>Vidas</h2>
-
-                    <article class="fila-item">
-                        <img
-                            class="icono-item"
-                            src="../../imagenes/tienda/vidas.png"
-                            alt="Corazón de vida"
-                        />
-
-                        <section class="texto-item">
-                            <h3>Recupera tus vidas</h3>
-                            <p>
-                                Recarga tu set de vidas y aumenta las
-                                posibilidades de terminar una lección.
-                            </p>
-                        </section>
-
-                        <a class="boton-item" href="compra-realizada.html"
-                            >Obtener por
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                fill="#FF63DA"
-                                viewBox="0 0 24 24"
-                            >
-                                <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
-                                <path
-                                    d="M21.44 11H17.7l-3.12 8.44 6.77-8.27c.04-.05.06-.11.1-.17ZM10.72 2 8.39 9h7.22l-2.33-7zm10.81 6.91-3.37-5.9A2 2 0 0 0 16.42 2h-1.03l2.33 7h3.84s-.02-.06-.04-.09ZM8.39 11l3.4 10.2L15.56 11zM5.84 3.01l-3.37 5.9s-.02.06-.04.09h3.84L8.6 2H7.57c-.72 0-1.38.39-1.74 1.01Zm3.02 15.73L6.28 11H2.56c.04.05.06.11.1.17l6.2 7.58Z"
-                                ></path>
-                            </svg>
-                            350</a
-                        >
-                    </article>
-                </section>
-
-                <!-- Potenciadores -->
-                <section class="seccion-tienda">
-                    <h2>Potenciadores</h2>
-
-                    <article class="fila-item">
-                        <img
-                            class="icono-item"
-                            src="../../imagenes/tienda/ProtectorDeRacha.png"
-                            alt="Protector de racha"
-                        />
-
-                        <section class="texto-item">
-                            <h3>
-                                Protector de racha
-                                <span class="contador-equipados"
-                                    >2/2 equipados</span
-                                >
-                            </h3>
-                            <p>
-                                Te permite mantener tu racha cuando no usas la
-                                app por un día.
-                            </p>
-                        </section>
-
-                        <section class="boton-item boton-deshabilitado">Equipado</section>
-                    </article>
-                </section>
-
-                <!-- Paquetes-->
-                <section class="seccion-tienda">
-                    <h2>Paquetes</h2>
-
-                    <article class="fila-item">
-                        <img
-                            class="icono-item icono-paquete"
-                            src="../../imagenes/tienda/Cofre1.png"
-                            alt="Paquete de refuerzo"
-                        />
-
-                        <section class="texto-item">
-                            <h3>Paquete de refuerzo</h3>
-                            <p>
-                                300 Gemas + 50 gemas de regalo + 3 Protectores
-                                de racha
-                            </p>
-                        </section>
-
-                        <a class="boton-item" href="metodo-de-pago.html"
-                            >Obtener por USD 3.00</a
-                        >
-                    </article>
-
-                    <article class="fila-item">
-                        <img
-                            class="icono-item icono-paquete"
-                            src="../../imagenes/tienda/Cofre2.png"
-                            alt="Paquete de gemas"
-                        />
-
-                        <section class="texto-item">
-                            <h3>Paquete de GEMAS</h3>
-                            <p>1500 gemas + 200 de regalo</p>
-                        </section>
-
-                        <a class="boton-item" href="metodo-de-pago.html"
-                            >Obtener por USD 9.99</a
-                        >
-                    </article>
-                </section>
+            <!-- Filtro + productos: los arma tienda.js desde PRODUCTOS (datos.js) -->
+            <section class="filtro-tienda">
+                <label for="filtro-categoria">Mostrar:</label>
+                <select id="filtro-categoria"></select>
             </section>
-        </main>
 
-        <nav class="volver">
-            <a class="volver-a-cursos" href="../cursos/mis-cursos.html">
-                Volver a cursos</a
-            >
-        </nav>
+            <p id="mensaje-tienda" class="mensaje-form" role="status" hidden=""></p>
 
-        <footer id="footer"></footer>
-    </body>
+            <section id="productos-tienda"></section>
+        </section>
+    </main>
+
+    <nav class="volver">
+        <a class="volver-a-cursos" href="../cursos/mis-cursos.html">
+            Volver a cursos</a>
+    </nav>
+
+    <footer id="footer"></footer>
+</body>
 </html>
