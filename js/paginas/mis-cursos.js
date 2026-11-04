@@ -126,8 +126,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const barra = document.getElementById("progreso-meta-diaria");
   barra.max = meta;
   barra.value = Math.min(xpHoy, meta);
-  barra.textContent = `${xpHoy}/${meta} XP`;
-  document.querySelector('label[for="progreso-meta-diaria"]').textContent = `${xpHoy}/${meta} XP`;
+  const completada = xpHoy >= meta;
+const xpMostrado = Math.min(xpHoy, meta); //nunca muestra más que la meta (50/50 en vez de 80/50)
+
+barra.textContent = `${xpMostrado}/${meta} XP`;
+document.querySelector('label[for="progreso-meta-diaria"]').textContent =
+  `${xpMostrado}/${meta} XP${completada ? " ✓" : ""}`;
+barra.closest(".barra-xp").classList.toggle("completada", completada);
 
   //saludo personalizado
   document.getElementById("saludo").textContent = `¡Hola, ${usuario.usuario}! Te saluda Poli`;
@@ -161,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("lista-semanal").innerHTML = NOMBRES_DIAS.map((nombre, i) => {
       const fecha = sumarDias(lunes, i);
       const xp = fecha === hoy ? usuario.xpHoy : porFecha[fecha] || 0;
-      const porcentaje = Math.min(100, Math.round((xp / 200) * 100));
+      const porcentaje = Math.min(100, Math.round((xp / 1000) * 100));
       return `
         <li>
           <span>${nombre}</span>
