@@ -250,6 +250,13 @@ td {
     font-weight: 700;
 }
 
+.aviso-ascenso {
+  background: #d4f5d0;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  font-weight: bold;
+}
+
 @media screen and (max-width: 768px) {
 
     main {

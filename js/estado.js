@@ -26,6 +26,7 @@
 const CLAVE_USUARIOS = "polilingo_usuarios";
 const CLAVE_SESION = "polilingo_sesion";
 const CLAVE_COMENTARIOS = "polilingo_comentarios";
+const CLAVE_LIGAS_DEMO = "polilingo_ligas_demo";
  
 /* ===================== localStorage ===================== */
  
@@ -431,7 +432,7 @@ function completarLeccion(idCurso, numeroUnidad, numeroLeccion, xpGanado) {
     sumarXp(usuario, xpGanado);
     registrarActividad(usuario);
  
-    // ¿Completó todo el curso por primera vez? -> recompensa una sola vez
+        // ¿Completó todo el curso por primera vez? -> recompensa una sola vez
     let cursoCompletado = false;
     const progreso = obtenerProgresoCurso(usuario, idCurso);
     if (progreso.total > 0 && progreso.completadas === progreso.total && !usuario.cursosCompletados.includes(idCurso)) {
@@ -440,7 +441,9 @@ function completarLeccion(idCurso, numeroUnidad, numeroLeccion, xpGanado) {
         sumarXp(usuario, RECOMPENSA_CURSO.xp);
         cursoCompletado = true;
     }
- 
+
+    revisarAscenso(usuario); // ¿superó al último de la liga siguiente?
+
     const logrosNuevos = calcularLogros(usuario);
     guardarUsuario(usuario);
  
@@ -694,30 +697,91 @@ function agregarComentario(idCurso, estrellas, texto) {
 }
  
 /* ===================== Ranking ===================== */
- 
+
 function obtenerLiga(idLiga) {
     return LIGAS.find(function (l) { return l.id === idLiga; }) || null;
 }
- 
+
+// Participantes demo con su liga actual (la guardada, si cambió de liga)
+function obtenerParticipantesDemo() {
+    const cambios = leerGuardado(CLAVE_LIGAS_DEMO, {});
+    return PARTICIPANTES_DEMO.map(function (p) {
+        return Object.assign({}, p, { liga: cambios[p.usuario] || p.liga });
+    });
+}
+
+// El de menos XP de una liga (demo o registrado), sin contar a "excluir"
+function ultimoDeLiga(idLiga, excluir) {
+    const lista = obtenerParticipantesDemo()
+        .filter(function (p) { return p.liga === idLiga; })
+        .map(function (p) { return { usuario: p.usuario, xp: p.xpSemanal, demo: true }; });
+
+    obtenerUsuarios()
+        .filter(function (u) { return u.liga === idLiga && u.usuario !== excluir; })
+        .forEach(function (u) { lista.push({ usuario: u.usuario, xp: u.xpSemanal, demo: false }); });
+
+    lista.sort(function (a, b) { return a.xp - b.xp; });
+    return lista[0] || null;
+}
+
+function moverDeLiga(participante, idLiga) {
+    if (participante.demo) {
+        const cambios = leerGuardado(CLAVE_LIGAS_DEMO, {});
+        cambios[participante.usuario] = idLiga;
+        guardarDato(CLAVE_LIGAS_DEMO, cambios);
+    } else {
+        const otro = buscarUsuario(participante.usuario);
+        if (otro) {
+            otro.liga = idLiga;
+            guardarUsuario(otro);
+        }
+    }
+}
+
+// Si el usuario superó en XP al último de la liga siguiente, intercambian lugar.
+// No guarda al usuario: lo hace quien la llama.
+function revisarAscenso(usuario) {
+    let liga = obtenerLiga(usuario.liga);
+    while (liga && liga.siguiente) {
+        const siguiente = obtenerLiga(liga.siguiente);
+        const ultimo = ultimoDeLiga(siguiente.id, usuario.usuario);
+        if (!ultimo || usuario.xpSemanal <= ultimo.xp) break;
+
+        moverDeLiga(ultimo, liga.id); // el otro baja a tu liga
+        usuario.liga = siguiente.id;  // vos subís
+        usuario.avisoAscenso = siguiente.id;
+        liga = siguiente;
+    }
+}
+
+// Revisa si el usuario actual ya merece subir de liga y, si cambió, lo guarda
+function actualizarLiga() {
+    const usuario = usuarioActual();
+    if (!usuario) return;
+    const ligaAntes = usuario.liga;
+    revisarAscenso(usuario);
+    if (usuario.liga !== ligaAntes) guardarUsuario(usuario);
+}
+
 // Tabla de una liga: participantes de demo + usuarios registrados de esa liga,
 // ordenada por XP semanal. Cada fila: { puesto, usuario, avatar, xpSemanal, estado, esActual }
 function obtenerRanking(idLiga) {
     const liga = obtenerLiga(idLiga);
     if (!liga) return [];
     const actual = leerGuardado(CLAVE_SESION, null);
- 
-    const filas = PARTICIPANTES_DEMO
+
+    const filas = obtenerParticipantesDemo() 
         .filter(function (p) { return p.liga === idLiga; })
         .map(function (p) { return { usuario: p.usuario, avatar: p.avatar, xpSemanal: p.xpSemanal, esActual: false }; });
- 
+
     obtenerUsuarios()
         .filter(function (u) { return u.liga === idLiga; })
         .forEach(function (u) {
             filas.push({ usuario: u.usuario, avatar: u.avatar, xpSemanal: u.xpSemanal, esActual: u.usuario === actual });
         });
- 
+
     filas.sort(function (a, b) { return b.xpSemanal - a.xpSemanal; });
- 
+
     return filas.map(function (fila, i) {
         const puesto = i + 1;
         let estado = "Zona neutral";

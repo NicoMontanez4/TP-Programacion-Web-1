@@ -10,8 +10,15 @@ const MEDALLAS = {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+  actualizarLiga();
   const usuario = usuarioActual();
   if (!usuario) return; // navbar.js ya redirige al login
+
+  if (usuario.avisoAscenso) {
+    mostrarAvisoAscenso(usuario.avisoAscenso);
+    delete usuario.avisoAscenso; // se muestra una sola vez
+    guardarUsuario(usuario);
+  }
 
   const selector = document.getElementById("selector-liga");
 
@@ -42,6 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* ===================== Dibujo de una liga ===================== */
 
 function mostrarLiga(idLiga) {
+  actualizarLiga();
   const usuario = usuarioActual();
   const liga = obtenerLiga(idLiga);
   if (!usuario || !liga) return;
@@ -177,4 +185,15 @@ function crearElemento(etiqueta, texto) {
   const elemento = document.createElement(etiqueta);
   elemento.textContent = texto;
   return elemento;
+}
+
+// Cartel de "pasaste de liga" arriba de la página (se muestra una sola vez)
+function mostrarAvisoAscenso(idLiga) {
+  const liga = obtenerLiga(idLiga);
+  if (!liga) return;
+  const aviso = crearElemento("p", "🎉 ¡Subiste a la " + liga.nombre + "! Superaste al último de esa liga.");
+  aviso.className = "aviso-ascenso";
+  aviso.setAttribute("role", "status");
+  const referencia = document.getElementById("mensaje-liga");
+  referencia.parentNode.insertBefore(aviso, referencia);
 }
