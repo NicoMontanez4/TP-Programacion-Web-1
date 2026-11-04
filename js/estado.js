@@ -607,12 +607,23 @@ function progresoLogro(usuario, logro) {
 // Una vez desbloqueado, un logro queda aunque después baje el valor (ej: gemas).
 function calcularLogros(usuario) {
     const nuevos = [];
+
     LOGROS.forEach(function (logro) {
         if (!usuario.logros.includes(logro.id) && logro.valor(usuario) >= logro.meta) {
             usuario.logros.push(logro.id);
             nuevos.push(logro);
         }
     });
+
+    // Avisar a la página cuando se desbloquean logros nuevos
+    if (nuevos.length > 0) {
+        document.dispatchEvent(
+            new CustomEvent("logrosDesbloqueados", {
+                detail: { logros: nuevos }
+            })
+        );
+    }
+
     return nuevos;
 }
  
