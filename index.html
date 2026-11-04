@@ -3,86 +3,99 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Iniciar Sesión</title>
+        <title>PoliLingo - Catálogo de Idiomas</title>
         <link rel="stylesheet" href="css/cuenta.css" />
-        <script src="js/datos.js" defer></script>
-        <script src="js/estado.js" defer></script>
-        <script src="js/paginas/login.js" defer></script>
+        <link rel="stylesheet" href="css/index.css" />
     </head>
 
     <body>
         <main>
-            <section class="form-login">
-                <!-- Logo y Texto -->
-                <article class="logo">
-                    <img src="imagenes/poli/Logo.png" alt="Imagen del lorito" />
-                    <h2>
-                        Aprendé Inglés, Alemán y Chino gratis y de forma
-                        divertida!
-                    </h2>
-                </article>
-
-                <!-- Formulario -->
-                <form id="form-login" class="campo" novalidate>
-                    <h3 class="paso-titulo">Iniciar Sesión</h3>
-                    <hr class="divisor" />
-
-                    <label for="usuario-email">Usuario o email:</label>
-                    <input
-                        id="usuario-email"
-                        name="usuario-email"
-                        type="text"
-                        placeholder="ejemplo@email.com"
-                        required
+            <section class="form-login catalogo-container">
+                <!-- Sección Hero: Poli, Texto y Botón -->
+                <div class="catalogo-hero">
+                    <!-- Usamos a Poli saludando (o Poli-Bienvenida) -->
+                    <img
+                        src="imagenes/poli/PoliSaluda.png"
+                        alt="Poli saludando"
+                        class="poli-hero"
                     />
 
-                    <label for="contrasenia">Contraseña:</label>
-                    <input
-                        id="contrasenia"
-                        name="contrasenia"
-                        type="password"
-                        placeholder="Mínimo 8 caracteres"
-                        required
-                    />
+                    <div class="catalogo-textos">
+                        <h2>¿Qué idioma querés conquistar hoy?</h2>
+                        <p class="eslogan-catalogo">
+                            Aprendé a tu ritmo, gratis y divirtiéndote. ¡Sumate
+                            a la aventura!
+                        </p>
 
-                    <!-- Fila con Checkbox y Link de Olvido -->
-                    <div class="opciones-login">
-                        <label class="campo-checkbox">
-                            <input
-                                type="checkbox"
-                                id="recordarme"
-                                name="recordarme"
-                            />
-                            Recordarme
-                        </label>
+                        <!-- Único botón de inicio de sesión -->
                         <a
-                            href="paginas/cuenta/olvidaste_contra.html"
-                            class="link-olvidado"
+                            href="/paginas/cuenta/login.html"
+                            class="boton boton-verde"
                         >
-                            ¿Olvidaste tu contraseña?
+                            Iniciar Sesión para aprender
                         </a>
                     </div>
+                </div>
 
-                    <p
-                        id="mensaje-login"
-                        class="mensaje-form"
-                        role="alert"
-                        hidden
-                    ></p>
+                <hr class="divisor" style="margin: 2rem 0" />
 
-                    <!-- Botón de ingreso -->
-                    <button type="submit" class="boton boton-verde">
-                        Iniciar Sesión
-                    </button>
+                <!-- Nube de Idiomas (Burbujas flotantes) -->
+                <h3 class="titulo-idiomas">Idiomas disponibles:</h3>
+                <div class="nube-idiomas">
+                    <div class="idioma-burbuja">
+                        <img
+                            src="imagenes/banderas/BanderaReinoUnido.png"
+                            alt="Inglés"
+                            class="bandera-burbuja"
+                        />
+                        <span>Inglés</span>
+                    </div>
 
-                    <!-- Botón de registro -->
-                    <a
-                        href="paginas/cuenta/registro.html"
-                        class="boton boton-azul"
-                    >
-                        ¿No tenés cuenta? ¡Registrate acá!
-                    </a>
-                </form>
+                    <div class="idioma-burbuja">
+                        <img
+                            src="imagenes/banderas/BanderaChina.png"
+                            alt="Chino"
+                            class="bandera-burbuja"
+                        />
+                        <span>Chino Mandarín</span>
+                    </div>
+
+                    <div class="idioma-burbuja">
+                        <img
+                            src="imagenes/banderas/BanderaAlemania.png"
+                            alt="Alemán"
+                            class="bandera-burbuja"
+                        />
+                        <span>Alemán</span>
+                    </div>
+
+                    <div class="idioma-burbuja">
+                        <img
+                            src="imagenes/banderas/BanderaJapones.png"
+                            alt="Japonés"
+                            class="bandera-burbuja"
+                        />
+                        <span>Japonés</span>
+                    </div>
+
+                    <div class="idioma-burbuja">
+                        <img
+                            src="imagenes/banderas/BanderaPortugues.png"
+                            alt="Portugués"
+                            class="bandera-burbuja"
+                        />
+                        <span>Portugués</span>
+                    </div>
+
+                    <div class="idioma-burbuja">
+                        <img
+                            src="imagenes/banderas/BanderaFrances.png"
+                            alt="Francés"
+                            class="bandera-burbuja"
+                        />
+                        <span>Francés</span>
+                    </div>
+                </div>
             </section>
         </main>
     </body>

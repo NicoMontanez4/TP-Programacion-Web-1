@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Iniciar Sesión</title>
+        <link rel="stylesheet" href="../../css/cuenta.css" />
+        <script src="../../js/datos.js" defer></script>
+        <script src="../../js/estado.js" defer></script>
+        <script src="../../js/utils.js" defer></script>
+        <script src="../../js/paginas/login.js" defer></script>
+    </head>
+
+    <body>
+        <main>
+            <section class="form-login">
+                <!-- Logo y Texto -->
+                <article class="logo">
+                    <img
+                        src="../../imagenes/poli/Logo.png"
+                        alt="Imagen del lorito"
+                    />
+                    <h2>
+                        Aprendé Inglés, Alemán y Chino gratis y de forma
+                        divertida!
+                    </h2>
+                </article>
+
+                <!-- Formulario -->
+                <form id="form-login" class="campo" novalidate>
+                    <h3 class="paso-titulo">Iniciar Sesión</h3>
+                    <hr class="divisor" />
+
+                    <label for="usuario-email">Usuario o email:</label>
+                    <input
+                        id="usuario-email"
+                        name="usuario-email"
+                        type="text"
+                        placeholder="ejemplo@email.com"
+                        required
+                    />
+
+                    <label for="contrasenia">Contraseña:</label>
+                    <input
+                        id="contrasenia"
+                        name="contrasenia"
+                        type="password"
+                        placeholder="Mínimo 8 caracteres"
+                        required
+                    />
+
+                    <!-- Fila con Checkbox y Link de Olvido -->
+                    <div class="opciones-login">
+                        <label class="campo-checkbox">
+                            <input
+                                type="checkbox"
+                                id="recordarme"
+                                name="recordarme"
+                            />
+                            Recordarme
+                        </label>
+                        <a
+                            href="paginas/cuenta/olvidaste_contra.html"
+                            class="link-olvidado"
+                        >
+                            ¿Olvidaste tu contraseña?
+                        </a>
+                    </div>
+
+                    <p
+                        id="mensaje-login"
+                        class="mensaje-form"
+                        role="alert"
+                        hidden
+                    ></p>
+
+                    <!-- Botón de ingreso -->
+                    <button type="submit" class="boton boton-verde">
+                        Iniciar Sesión
+                    </button>
+
+                    <!-- Botón de registro -->
+                    <a href="registro.html" class="boton boton-azul">
+                        ¿No tenés cuenta? ¡Registrate acá!
+                    </a>
+                </form>
+            </section>
+        </main>
+    </body>
+</html>

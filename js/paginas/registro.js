@@ -3,7 +3,11 @@
    Necesita datos.js, estado.js y utils.js cargados antes.
    ===================================================== */
 
-const FORMATO_USUARIO = /^[A-Za-z0-9_]{3,15}$/;
+// Validaciones separadas para el usuario
+const LARGO_MIN_USUARIO = 3;
+const LARGO_MAX_USUARIO = 15;
+const FORMATO_CARACTERES_USUARIO = /^[A-Za-z0-9_]+$/; // Solo letras, números y _
+
 const FORMATO_EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const LARGO_MINIMO_PASS = 8;
 
@@ -25,7 +29,10 @@ document.addEventListener("DOMContentLoaded", () => {
         terminos: document.getElementById("terminos"),
     };
 
+    // Capturamos ambos textos de requisitos del usuario
     const reqUsuario = document.getElementById("req-usuario");
+    const reqUsuario2 = document.getElementById("req-usuario-2");
+
     const reqLongitud = document.getElementById("req-longitud");
     const reqNumero = document.getElementById("req-numero");
 
@@ -38,11 +45,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // --- Validación en tiempo real: usuario ---
-    if (campos.usuario && reqUsuario) {
+    if (campos.usuario) {
         campos.usuario.addEventListener("input", () => {
             const val = campos.usuario.value.trim();
-            pintarRequisito(reqUsuario, val, FORMATO_USUARIO.test(val));
+
+            if (val === "") {
+                pintarRequisito(reqUsuario, val, false);
+                pintarRequisito(reqUsuario2, val, false);
+            } else {
+                // Chequeamos las condiciones por separado
+                const cumpleLongitud =
+                    val.length >= LARGO_MIN_USUARIO &&
+                    val.length <= LARGO_MAX_USUARIO;
+                const cumpleCaracteres = FORMATO_CARACTERES_USUARIO.test(val);
+
+                pintarRequisito(reqUsuario, val, cumpleLongitud);
+                pintarRequisito(reqUsuario2, val, cumpleCaracteres);
+            }
+
             campos.usuario.removeAttribute("aria-invalid");
+            ocultarMensaje("mensaje-perfil"); // Ocultamos error al escribir
         });
     }
 
@@ -53,18 +75,21 @@ document.addEventListener("DOMContentLoaded", () => {
             pintarRequisito(reqLongitud, val, val.length >= LARGO_MINIMO_PASS);
             pintarRequisito(reqNumero, val, /\d/.test(val));
             campos.contrasenia.removeAttribute("aria-invalid");
+            ocultarMensaje("mensaje-registro"); // Ocultamos error al escribir
         });
     }
 
     // Al corregir otros campos, se les saca la marca de error
     Object.values(campos).forEach((input) => {
         if (input && input !== campos.usuario && input !== campos.contrasenia) {
-            input.addEventListener("input", () =>
-                input.removeAttribute("aria-invalid"),
-            );
-            input.addEventListener("change", () =>
-                input.removeAttribute("aria-invalid"),
-            );
+            input.addEventListener("input", () => {
+                input.removeAttribute("aria-invalid");
+                if (input === campos.nombre || input === campos.apellido) {
+                    ocultarMensaje("mensaje-perfil");
+                } else {
+                    ocultarMensaje("mensaje-registro");
+                }
+            });
         }
     });
 
@@ -72,9 +97,12 @@ document.addEventListener("DOMContentLoaded", () => {
     btnContinuar.addEventListener("click", () => {
         const error = validarPerfil(leerDatos());
         if (error) {
-            marcarError(campos[error.campo], error.mensaje);
+            campos[error.campo].setAttribute("aria-invalid", "true");
+            campos[error.campo].focus();
+            mostrarMensaje("mensaje-perfil", error.mensaje, "error"); // Cartel en el Paso 1
             return;
         }
+        ocultarMensaje("mensaje-perfil");
         ocultarMensaje("mensaje-registro");
         pasoPerfil.hidden = true;
         pasoPrivacidad.hidden = false;
@@ -98,7 +126,9 @@ document.addEventListener("DOMContentLoaded", () => {
         if (errorPerfil) {
             pasoPerfil.hidden = false;
             pasoPrivacidad.hidden = true;
-            marcarError(campos[errorPerfil.campo], errorPerfil.mensaje);
+            campos[errorPerfil.campo].setAttribute("aria-invalid", "true");
+            campos[errorPerfil.campo].focus();
+            mostrarMensaje("mensaje-perfil", errorPerfil.mensaje, "error");
             return;
         }
 
@@ -108,14 +138,28 @@ document.addEventListener("DOMContentLoaded", () => {
             campos.terminos.checked,
         );
         if (errorPriv) {
-            marcarError(campos[errorPriv.campo], errorPriv.mensaje);
+            campos[errorPriv.campo].setAttribute("aria-invalid", "true");
+            campos[errorPriv.campo].focus();
+            mostrarMensaje("mensaje-registro", errorPriv.mensaje, "error"); // Cartel en el Paso 2
             return;
         }
 
         // Crear la cuenta (estado.js controla usuario/email no repetidos)
         const resultado = crearUsuario(datos);
         if (!resultado.ok) {
-            marcarError(campos[resultado.campo], resultado.mensaje);
+            // Si el error es porque el usuario ya existe, lo mandamos al paso 1
+            if (resultado.campo === "usuario") {
+                pasoPerfil.hidden = false;
+                pasoPrivacidad.hidden = true;
+                campos.usuario.setAttribute("aria-invalid", "true");
+                campos.usuario.focus();
+                mostrarMensaje("mensaje-perfil", resultado.mensaje, "error");
+            } else {
+                // Si es el email repetido, se queda en el paso 2
+                campos[resultado.campo].setAttribute("aria-invalid", "true");
+                campos[resultado.campo].focus();
+                mostrarMensaje("mensaje-registro", resultado.mensaje, "error");
+            }
             return;
         }
 
@@ -140,13 +184,26 @@ function validarPerfil(datos) {
     if (!datos.usuario) {
         return { campo: "usuario", mensaje: "Elegí un nombre de usuario." };
     }
-    if (!FORMATO_USUARIO.test(datos.usuario)) {
+
+    // Validación 1: Longitud
+    if (
+        datos.usuario.length < LARGO_MIN_USUARIO ||
+        datos.usuario.length > LARGO_MAX_USUARIO
+    ) {
         return {
             campo: "usuario",
-            mensaje:
-                "El usuario tiene que tener de 3 a 15 caracteres: solo letras, números y _.",
+            mensaje: "El usuario debe tener entre 3 y 15 caracteres.",
         };
     }
+
+    // Validación 2: Caracteres permitidos
+    if (!FORMATO_CARACTERES_USUARIO.test(datos.usuario)) {
+        return {
+            campo: "usuario",
+            mensaje: "El usuario solo puede tener letras, números y '_'.",
+        };
+    }
+
     return null;
 }
 
@@ -185,11 +242,4 @@ function validarPrivacidad(datos, repetir, aceptoTerminos) {
         };
     }
     return null;
-}
-
-// --- Helpers locales ---
-function marcarError(input, texto) {
-    input.setAttribute("aria-invalid", "true");
-    input.focus();
-    mostrarMensaje("mensaje-registro", texto, "error");
 }

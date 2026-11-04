@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="../../css/cuenta.css" />
         <script src="../../js/datos.js" defer></script>
         <script src="../../js/estado.js" defer></script>
+        <script src="../../js/utils.js" defer></script>
         <script src="../../js/paginas/registro.js" defer></script>
     </head>
 
@@ -62,6 +63,14 @@
                         <article id="req-usuario-2" class="ayuda-campo">
                             Solo letras, números y '_'
                         </article>
+
+                        <!-- Cartel de error exclusivo del Paso 1 -->
+                        <p
+                            id="mensaje-perfil"
+                            class="mensaje-form"
+                            role="alert"
+                            hidden
+                        ></p>
 
                         <button
                             type="button"
@@ -142,7 +151,7 @@
                         </div>
                     </div>
 
-                    <a href="../../index.html" class="boton boton-azul"
+                    <a href="login.html" class="boton boton-azul"
                         >Ya tengo una cuenta</a
                     >
                 </form>
