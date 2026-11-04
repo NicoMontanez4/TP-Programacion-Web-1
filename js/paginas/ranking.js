@@ -14,12 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const usuario = usuarioActual();
   if (!usuario) return; // navbar.js ya redirige al login
 
-  if (usuario.avisoAscenso) {
-    mostrarAvisoAscenso(usuario.avisoAscenso);
-    delete usuario.avisoAscenso; // se muestra una sola vez
-    guardarUsuario(usuario);
-  }
-
   const selector = document.getElementById("selector-liga");
 
   // Opciones del selector: una por liga
@@ -56,6 +50,13 @@ function mostrarLiga(idLiga) {
 
   const filas = obtenerRanking(liga.id);
   const esMiLiga = liga.id === usuario.liga;
+
+  // Si actualizarLiga() acaba de subir al usuario, se lo anunciamos
+  if (usuario.avisoAscenso) {
+    mostrarPopupAscenso(usuario.avisoAscenso);
+    delete usuario.avisoAscenso; // se muestra una sola vez
+    guardarUsuario(usuario);
+  }
 
   // Banner: nombre de la liga, color y texto
   document.getElementById("banner-liga").className = "ranking-liga-" + liga.id;
@@ -187,13 +188,14 @@ function crearElemento(etiqueta, texto) {
   return elemento;
 }
 
-// Cartel de "pasaste de liga" arriba de la página (se muestra una sola vez)
-function mostrarAvisoAscenso(idLiga) {
+// Popup de "pasaste de liga" (usa mostrarModal de utils.js)
+function mostrarPopupAscenso(idLiga) {
   const liga = obtenerLiga(idLiga);
   if (!liga) return;
-  const aviso = crearElemento("p", "🎉 ¡Subiste a la " + liga.nombre + "! Superaste al último de esa liga.");
-  aviso.className = "aviso-ascenso";
-  aviso.setAttribute("role", "status");
-  const referencia = document.getElementById("mensaje-liga");
-  referencia.parentNode.insertBefore(aviso, referencia);
+  mostrarModal({
+    titulo: "🎉 ¡Subiste de liga!",
+    texto: "Ahora estás en la " + liga.nombre + ". ¡Superaste al último de esa liga!",
+    imagen: "../../imagenes/poli/PoliRanking.png",
+    botones: [{ texto: "¡Genial!", tipo: "principal" }],
+  });
 }
