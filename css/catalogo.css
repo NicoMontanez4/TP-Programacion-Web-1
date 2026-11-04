@@ -6,19 +6,20 @@
     display: grid;
     grid-template-columns: 1fr auto; /* texto a la izquierda, loro a la derecha */
     grid-template-areas:
-        "encabezado encabezado-poli"
-        "linea      linea"
-        "mensaje    mensaje"
-        "tarjetas   tarjetas"
-        "banner     banner"
-        "caja       caja"
-        "volver     volver";
+        "titulo   titulo"
+        "intro    poli"
+        "mensaje  mensaje"
+        "tarjetas tarjetas"
+        "banner   banner"
+        "caja     caja"
+        "volver   volver";
     gap: 1rem 2rem;
     align-content: start;
     box-sizing: border-box;
+    width: 80%;                              /* igual que perfil */
     max-width: 70rem;
-    margin: 2rem auto;
-    padding: 0 1rem;
+    margin: calc(1.5rem + 1vh) auto;
+    padding: 0;
 }
 
 /* .catalogo y .panel-lateral dejan de ser cajas: sus hijos se acomodan
@@ -28,8 +29,9 @@
     display: contents;
 }
 
-.encabezado-catalogo { grid-area: encabezado; align-self: end; }
-.poli-catalogo       { grid-area: encabezado-poli; align-self: end; }
+.encabezado-catalogo { grid-area: titulo; }
+.intro-catalogo      { grid-area: intro; align-self: center; }
+.poli-catalogo       { grid-area: poli; align-self: center; }
 #mensaje-catalogo    { grid-area: mensaje; }
 .tarjetas-catalogo   { grid-area: tarjetas; }
 .banner-logros       { grid-area: banner; }
@@ -43,14 +45,6 @@
     display: block; /* evita el espacio extra que deja una imagen inline debajo */
 }
 
-/* Linea verde de punta a punta, por debajo del título y del loro */
-.catalogo-pagina::after {
-    content: "";
-    grid-area: linea;
-    height: 0.2rem;
-    margin-top: -0.75rem; /* anula casi todo el gap de la grilla: el loro "se apoya" sobre la linea */
-    background-color: #8fc97f;
-}
 
 /* ---------- Caja "Aprendé sin límites" (ahora va al final, de punta a punta) ---------- */
 .caja-lateral {
@@ -77,19 +71,13 @@
 }
 
 /* ---------- Encabezado ---------- */
-.encabezado-catalogo {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding-bottom: 0.5rem; /* la linea verde ahora la dibuja .catalogo-pagina::after */
-}
- 
 .encabezado-catalogo h1 {
-    font-size: 2rem;
-    color: rgb(35, 140, 182); /* color institucional */
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    border-bottom: 0.125rem solid #b3e5fc;
+    padding-bottom: 0.4rem;
 }
- 
-.encabezado-catalogo p {
+
+.intro-catalogo {
     font-size: 1.05rem;
     line-height: 1.4;
 }
@@ -105,23 +93,23 @@
 /* ---------- Tarjetas ---------- */
 .tarjetas-catalogo {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));  /* antes 15rem */
     align-items: stretch;
-    gap: 1.25rem;
+    gap: 1rem;
     margin: 0;
 }
 
 .tarjeta-catalogo {
     display: grid;
-    grid-template-columns: 4rem 1fr;
-    grid-template-rows: auto minmax(4.5rem, 1fr) 6rem;
+    grid-template-columns: 3rem 1fr;                              /* antes 4rem 1fr */
+    grid-template-rows: auto minmax(3.5rem, 1fr) 4.6rem;          /* antes auto minmax(4.5rem, 1fr) 6rem */
     grid-template-areas:
         "bandera titulo"
         "bandera descripcion"
         "acciones acciones";
     align-items: start;
-    gap: 0.25rem 1rem;
-    padding: 1rem;
+    gap: 0.2rem 0.75rem;
+    padding: 0.75rem;                                             /* antes 1rem */
     border: 0.12rem solid #b9e0ad;
     border-radius: 1rem;
     background-color: #eef8ea;
@@ -131,8 +119,8 @@
 .tarjeta-catalogo img {
     grid-area: bandera;
     align-self: start;
-    width: 4rem;
-    height: 4rem;
+    width: 3rem;
+    height: 3rem;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -140,15 +128,15 @@
 .tarjeta-catalogo h2 {
     grid-area: titulo;
     align-self: end;
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #0a4148;
 }
 
 .tarjeta-catalogo p {
     grid-area: descripcion;
     align-self: start;
-    font-size: 0.9rem;
-    line-height: 1.35;
+    font-size: 0.85rem;
+    line-height: 1.3;
     color: #333;
     margin: 0;
 }
@@ -160,8 +148,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 0.55rem;
-    height: 6rem;
+    gap: 0.4rem;
+    height: 4.6rem;
     box-sizing: border-box;
 }
 
@@ -174,7 +162,7 @@
     gap: 0.35rem;
 
     width: 100%;
-    padding: 0.6rem 1rem;
+    padding: 0.4rem 0.9rem;                                       
 
     border: 0.15rem solid #26813a;
     border-radius: 999px;
@@ -182,7 +170,7 @@
     background-color: #fff;
     color: #26813a;
 
-    font-size: 1rem;
+    font-size: 0.9rem;                                               
     font-weight: 700;
     text-align: center;
     cursor: pointer;
@@ -214,12 +202,11 @@ a.boton-curso {
     display: block;
     box-sizing: border-box;
     width: 100%;
-    padding: 0.6rem 1rem;
-    border: 0.15rem solid #a32636;
+    padding: 0.4rem 0.9rem;                                       
     border-radius: 999px;
     background-color: #fff;
     color: #a32636;
-    font-size: 1rem;
+    font-size: 0.9rem;                                                
     font-weight: 700;
     text-align: center;
     cursor: pointer;
@@ -273,33 +260,76 @@ a.boton-curso {
 }
 
  
-/* Celulares: loro arriba y centrado, texto debajo */
+/* El mensaje vacío no ocupa lugar (si no, deja un hueco grande antes de las tarjetas) */
+#mensaje-catalogo:empty {
+    min-height: 0;
+}
+
+/* Celulares: todo más compacto */
 @media screen and (max-width: 600px) {
     .catalogo-pagina {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "encabezado-poli"
-            "encabezado"
-            "linea"
-            "mensaje"
-            "tarjetas"
-            "banner"
-            "caja"
-            "volver";
+        gap: 0.6rem 0.75rem;
+    }
+
+    .encabezado-catalogo h1 {
+        font-size: 1.5rem;
+        padding-bottom: 0.3rem;
+    }
+
+    .intro-catalogo {
+        font-size: 0.85rem;
+        line-height: 1.3;
     }
 
     .poli-catalogo {
-        width: 8rem;
-        justify-self: center;
-        align-self: center;
+        width: 6.5rem;
     }
 
-    .encabezado-catalogo {
-        text-align: center;
+    /* Tarjetas: altura según el contenido, sin filas fijas */
+    .tarjetas-catalogo {
+        gap: 0.75rem;
     }
 
-    .catalogo-pagina::after {
-        margin-top: 0; /* en escritorio el loro "se apoya" en la línea; apilado ya no hace falta */
+    .tarjeta-catalogo {
+        grid-template-rows: auto auto auto;
+        gap: 0.2rem 0.6rem;
+        padding: 0.6rem;
+    }
+
+    .tarjeta-catalogo h2 {
+        font-size: 0.95rem;
+    }
+
+    .tarjeta-catalogo p {
+        font-size: 0.8rem;
+        line-height: 1.25;
+    }
+
+    .acciones-catalogo {
+        height: auto;
+        margin-top: 0.4rem;
+    }
+
+    .boton-curso,
+    .boton-eliminar-catalogo {
+        padding: 0.35rem 0.8rem;
+        font-size: 0.85rem;
+    }
+
+    /* Banner y caja final */
+    .banner-logros,
+    .caja-lateral {
+        padding: 0.9rem 1rem;
+    }
+
+    .banner-logros h2,
+    .caja-lateral h2 {
+        font-size: 1rem;
+    }
+
+    .banner-logros p,
+    .caja-lateral p {
+        font-size: 0.85rem;
     }
 }
 

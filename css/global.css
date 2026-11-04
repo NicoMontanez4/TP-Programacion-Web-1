@@ -732,3 +732,76 @@ footer p {
         height: 58px;
     }
 }
+
+/* ===================== Página de racha ===================== */
+.pagina-racha {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+/* La tarjeta (estos estilos estaban en el cuenta.css viejo y se perdieron) */
+.tarjeta-calendario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 25rem;
+    box-sizing: border-box;
+    padding: 1.5rem;
+    border-radius: 2rem;
+    background-color: #dbe7ff;
+}
+
+.tarjeta-calendario h1 {
+    margin: 0;
+    font-size: 1.6rem;
+}
+
+.tarjeta-calendario header p {
+    margin: 0;
+}
+
+/* Flechas para cambiar de mes */
+.cambiar-mes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-self: stretch;
+}
+
+.cambiar-mes h2 {
+    margin: 0;
+    font-size: 1rem;
+    text-transform: capitalize;
+}
+
+.cambiar-mes button {
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    border-radius: 50%;
+    background-color: #ffffff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.cambiar-mes button:disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+
+.tarjeta-calendario .grilla-dias {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.tarjeta-calendario .resumen p {
+    margin: 0;
+}
+
+.tarjeta-calendario .btn-cerrar {
+    text-decoration: none;
+}

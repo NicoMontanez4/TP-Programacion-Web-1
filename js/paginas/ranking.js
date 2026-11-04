@@ -10,6 +10,7 @@ const MEDALLAS = {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+  actualizarLiga();
   const usuario = usuarioActual();
   if (!usuario) return; // navbar.js ya redirige al login
 
@@ -42,12 +43,20 @@ document.addEventListener("DOMContentLoaded", () => {
 /* ===================== Dibujo de una liga ===================== */
 
 function mostrarLiga(idLiga) {
+  actualizarLiga();
   const usuario = usuarioActual();
   const liga = obtenerLiga(idLiga);
   if (!usuario || !liga) return;
 
   const filas = obtenerRanking(liga.id);
   const esMiLiga = liga.id === usuario.liga;
+
+  // Si actualizarLiga() acaba de subir al usuario, se lo anunciamos
+  if (usuario.avisoAscenso) {
+    mostrarPopupAscenso(usuario.avisoAscenso);
+    delete usuario.avisoAscenso; // se muestra una sola vez
+    guardarUsuario(usuario);
+  }
 
   // Banner: nombre de la liga, color y texto
   document.getElementById("banner-liga").className = "ranking-liga-" + liga.id;
@@ -122,10 +131,22 @@ function dibujarTabla(filas) {
     }
 
     const tdAvatar = document.createElement("td");
+
+    const AVATAR_POR_DEFECTO = "../../imagenes/avatares/avatar.png";
+
     const avatar = document.createElement("img");
     avatar.className = "avatar";
-    avatar.src = "../../imagenes/avatares/" + datos.avatar;
     avatar.alt = "Avatar de " + datos.usuario;
+
+    // Si la imagen falla, se usa la de por defecto
+    avatar.onerror = () => {
+    avatar.onerror = null; // evita un bucle infinito si avatar.png tampoco existe
+    avatar.src = AVATAR_POR_DEFECTO;
+    };
+
+    avatar.src = "../../imagenes/avatares/" + datos.avatar;
+
+    
     tdAvatar.appendChild(avatar);
 
     const tdPuesto = document.createElement("td");
@@ -165,4 +186,16 @@ function crearElemento(etiqueta, texto) {
   const elemento = document.createElement(etiqueta);
   elemento.textContent = texto;
   return elemento;
+}
+
+// Popup de "pasaste de liga" (usa mostrarModal de utils.js)
+function mostrarPopupAscenso(idLiga) {
+  const liga = obtenerLiga(idLiga);
+  if (!liga) return;
+  mostrarModal({
+    titulo: "🎉 ¡Subiste de liga!",
+    texto: "Ahora estás en la " + liga.nombre + ". ¡Superaste al último de esa liga!",
+    imagen: "../../imagenes/poli/PoliRanking.png",
+    botones: [{ texto: "¡Genial!", tipo: "principal" }],
+  });
 }

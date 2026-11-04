@@ -1,83 +1,65 @@
-<!DOCTYPE html>
-<html lang='es'>
-<head>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <title>PoliLingo - Calendario</title>
-    <link rel="stylesheet" href="../../css/cuenta.css">
-    <link rel='stylesheet' href="../../css/global.css">
-</head>
-<body>
-    <main>
-        <section class="tarjeta-calendario">
-            <header>
-                <svg  xmlns="http://www.w3.org/2000/svg" 
-                    width="24" 
-                    height="24"  
-                    fill="#ff9400" 
-                    viewBox="0 0 24 24" >
-                    <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
-                    <path d="M14.5 18.56c0-2.05-1.68-3.38-2.5-3.91-.82.53-2.5 1.86-2.5 3.91 0 1.62 1.12 2.94 2.5 2.94s2.5-1.32 2.5-2.94"></path><path d="M18.78 7.39a.99.99 0 0 0-.83.32c-.77.84-1.82 1.31-2.94 1.31-2.21 0-4.01-1.8-4.01-4.01 0-.27.03-.56.1-.87.08-.39-.07-.79-.38-1.02a.98.98 0 0 0-1.09-.06C7.16 4.48 3 7.67 3 13.01c0 3.59 2.12 6.7 5.18 8.14-.42-.75-.68-1.63-.68-2.57 0-3.96 3.9-5.88 4.07-5.96.28-.13.59-.13.87 0 .17.08 4.07 2.01 4.07 5.96 0 .95-.26 1.82-.68 2.57 3.05-1.44 5.18-4.54 5.18-8.14 0-1.82-.49-3.55-1.47-5.14a.98.98 0 0 0-.76-.47Z"></path>
-                </svg>
-                <h1>Racha de 5 días</h1>
-                <p>¡Seguí así, no la cortes!</p>
-            </header>
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>PoliLingo - Racha</title>
+        <link rel="stylesheet" href="../../css/global.css" />
+        <script src="../../js/datos.js" defer></script>
+        <script src="../../js/estado.js" defer></script>
+        <script src="../../js/utils.js" defer></script>
+        <script src="../../js/navbar.js" defer></script>
+        <script src="../../js/paginas/racha.js" defer></script>
+    </head>
 
-            <section class="dias-semana">
-                <span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span>
+    <body>
+        <header id="navbar"></header>
+
+        <main class="pagina-racha">
+            <section class="tarjeta-calendario">
+                <!-- Título y mensaje: los completa racha.js -->
+                <header>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#ff9400" viewBox="0 0 24 24" aria-hidden="true">
+                        <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                        <path d="M14.5 18.56c0-2.05-1.68-3.38-2.5-3.91-.82.53-2.5 1.86-2.5 3.91 0 1.62 1.12 2.94 2.5 2.94s2.5-1.32 2.5-2.94"></path><path d="M18.78 7.39a.99.99 0 0 0-.83.32c-.77.84-1.82 1.31-2.94 1.31-2.21 0-4.01-1.8-4.01-4.01 0-.27.03-.56.1-.87.08-.39-.07-.79-.38-1.02a.98.98 0 0 0-1.09-.06C7.16 4.48 3 7.67 3 13.01c0 3.59 2.12 6.7 5.18 8.14-.42-.75-.68-1.63-.68-2.57 0-3.96 3.9-5.88 4.07-5.96.28-.13.59-.13.87 0 .17.08 4.07 2.01 4.07 5.96 0 .95-.26 1.82-.68 2.57 3.05-1.44 5.18-4.54 5.18-8.14 0-1.82-.49-3.55-1.47-5.14a.98.98 0 0 0-.76-.47Z"></path>
+                    </svg>
+                    <h1 id="titulo-racha"></h1>
+                    <p id="mensaje-racha"></p>
+                </header>
+
+                <!-- Mes que se está viendo, con flechas para cambiar -->
+                <nav class="cambiar-mes" aria-label="Cambiar de mes">
+                    <button type="button" id="mes-anterior" aria-label="Mes anterior">‹</button>
+                    <h2 id="nombre-mes"></h2>
+                    <button type="button" id="mes-siguiente" aria-label="Mes siguiente">›</button>
+                </nav>
+
+                <section class="dias-semana" aria-hidden="true">
+                    <span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span>
+                </section>
+
+                <!-- Los días los arma racha.js -->
+                <ul id="grilla-dias" class="grilla-dias"></ul>
+
+                <section class="resumen">
+                    <article class="resumen-item">
+                        <p id="resumen-actual" class="numero"></p>
+                        <p class="texto">Racha actual</p>
+                    </article>
+                    <article class="resumen-item">
+                        <p id="resumen-mejor" class="numero"></p>
+                        <p class="texto">Mejor racha</p>
+                    </article>
+                    <article class="resumen-item">
+                        <p id="resumen-mes" class="numero"></p>
+                        <p class="texto">Días practicados este mes</p>
+                    </article>
+                </section>
+
+                <a href="../cursos/mis-cursos.html" class="btn-cerrar">Volver a mis cursos</a>
             </section>
+        </main>
 
-            <ul class="grilla-dias">
-                <li class="dia vacio"></li>
-                <li class="dia">1</li>
-                <li class="dia">2</li>
-                <li class="dia">3</li>
-                <li class="dia">4</li>
-                <li class="dia">5</li>
-                <li class="dia">6</li>
-                <li class="dia">7</li>
-                <li class="dia">8</li>
-                <li class="dia">9</li>
-                <li class="dia">10</li>
-                <li class="dia">11</li>
-                <li class="dia">12</li>
-                <li class="dia">13</li>
-                <li class="dia">14</li>
-                <li class="dia">15</li>
-                <li class="dia">16</li>
-                <li class="dia">17</li>
-                <li class="dia">18</li>
-                <li class="dia">19</li>
-                <li class="dia">20</li>
-                <li class="dia">21</li>
-                <li class="dia racha">22</li>
-                <li class="dia racha">23</li>
-                <li class="dia racha">24</li>
-                <li class="dia racha">25</li>
-                <li class="dia racha hoy">26</li>
-                <li class="dia">27</li>
-                <li class="dia">28</li>
-                <li class="dia">29</li>
-                <li class="dia">30</li>
-            </ul>
-
-            <section class="resumen">
-                <article class="resumen-item">
-                    <p class="numero">5</p>
-                    <p class="texto">Racha actual</p>
-                </article>
-                <article class="resumen-item">
-                    <p class="numero">12</p>
-                    <p class="texto">Mejor racha</p>
-                </article>
-                <article class="resumen-item">
-                    <p class="numero">26</p>
-                    <p class="texto">Días de este mes</p>
-                </article>
-            </section>
-
-            <a href="../cursos/mis-cursos.html" class="btn-cerrar">Cerrar</a>
-        </section>            
-    </main>
-</body>
+        <footer id="footer"></footer>
+    </body>
 </html>

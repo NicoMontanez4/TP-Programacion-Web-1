@@ -1,0 +1,46 @@
+/* Botón del ojito para mostrar u ocultar la contraseña (ver-contrasenia.js) */
+.envoltorio-contrasenia {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem; /* el margen que antes tenía el input */
+}
+
+.envoltorio-contrasenia input {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 0; /* así el ojito queda centrado en el input */
+    padding-right: 2.8rem; /* lugar para el ojito */
+}
+
+/* En el perfil los campos van en fila (label | input) */
+.campo.horizontal .envoltorio-contrasenia {
+    width: min(100%, 15rem);
+    margin-bottom: 0;
+}
+
+.boton-ver-contrasenia {
+    position: absolute;
+    top: 50%;
+    right: 0.6rem;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: transparent;
+    color: #555;
+    cursor: pointer;
+}
+
+.boton-ver-contrasenia:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+}
+
+.boton-ver-contrasenia:focus-visible {
+    outline: 0.15rem solid #1f6feb;
+}

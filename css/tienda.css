@@ -1,14 +1,20 @@
 .tienda-contenedor{
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    padding: 0 1.25rem;
-    box-sizing: border-box;
+    width: 80%;                              /* igual que el main de perfil */
+    margin: calc(1.5rem + 1vh) auto;
 }
 
-.tienda-titulo h1 {
-    color: #0e7f96;
+.tienda-header{
+    width: 100%;
+    max-width: 50rem;
+}
+
+.tienda-header h1{                           /* mismo estilo que main header h1 de perfil */
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    border-bottom: 0.125rem solid #b3e5fc;
+    padding-bottom: 0.4rem;
 }
 
 .tienda-introduccion{
@@ -16,15 +22,14 @@
     align-items: flex-start;
     justify-content: space-between;
     width: 100%;
-    max-width: 50rem;   
-    margin: 3rem 0;      
+    max-width: 50rem;
+    margin: 1.5rem 0;                        /* antes 3rem 0 */
 }
 
 .imagen-tienda-titulo{
-    width: 10rem;
+    width: clamp(6rem, 30vw, 10rem);
     height: auto;
-    padding-left:2rem;
-    
+    padding-left: 1rem;
 }
 
 /*OFERTAS*/
@@ -34,7 +39,7 @@
     display: flex;
     flex-direction: row;
     align-items: stretch;   /* para que ambas tarjetas tengan la misma altura */
-    gap: 1.5rem;
+    gap: 1rem;                    
     width: 100%;
     max-width: 50rem;
     flex-wrap: wrap;
@@ -45,16 +50,16 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 1rem;
-    flex: 1;              
+    gap: 0.8rem;                    
+    flex: 1;
     box-sizing: border-box;
-    padding: 1.2rem;
-    background-color: #4dd0c8; 
-    border-radius: 1.5rem;
+    padding: 0.7rem 1rem;           
+    background-color: #4dd0c8;
+    border-radius: 1.2rem;          
 }
 
 .imagen-oferta{
-    width: 6rem;  
+    width: 4.5rem;                  
     height: auto;
     flex-shrink: 0;
 }
@@ -70,17 +75,16 @@
 .oferta-del-dia h2,
 .oferta-super h2{
     margin: 0;
-    font-size: 1rem;
+    font-size: 0.85rem;            
     font-weight: 700;
     text-transform: uppercase;
     color: #ffffff;
-
 }
 
 .oferta-del-dia h3,
 .oferta-super p{
     margin: 0;
-    font-size: 0.95rem;
+    font-size: 0.85rem;             
     font-weight: 700;
     color: #000000;
 }
@@ -139,9 +143,9 @@
 
 .seccion-tienda h2{
     margin: 0 0 0.6rem;
-    padding-bottom: 0.5rem;
-    font-size: 1.3rem;
-    border-bottom: 0.12rem solid #0e9384;
+    padding-bottom: 0.25rem;
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    border-bottom: 0.125rem solid #80deea;
 }
 
 .icono-item{
@@ -488,10 +492,6 @@
 }
 
 @media screen and (max-width: 420px) {
-    
-    .tienda-contenedor{
-        padding: 0 0.75rem;
-    }
 
     .formulario-pago {
         grid-template-columns: 1fr;
@@ -507,4 +507,62 @@
     .fila-item .boton-item {
         margin-left: calc(3rem + 1.2rem);
     }
+}
+
+/* ===================== Tienda dinámica ===================== */
+.filtro-tienda {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+    max-width: 50rem;
+    margin-top: 2rem;
+}
+
+.filtro-tienda label {
+    font-weight: 700;
+}
+
+.filtro-tienda select {
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.6rem;
+    border: 0.1rem solid #0e9384;
+    font: inherit;
+}
+
+#mensaje-tienda {
+    width: 100%;
+    max-width: 50rem;
+    box-sizing: border-box;
+    margin-top: 1rem;
+}
+
+#productos-tienda {
+    width: 100%;
+    max-width: 50rem;
+}
+
+button.boton-item {
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* Pago simulado */
+.aviso-simulado {
+    margin: 0 0 1rem;
+    padding: 0.6rem 1rem;
+    border-radius: 0.6rem;
+    background-color: #fff4d6;
+    border: 0.1rem solid #f5b301;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.formulario-pago .mensaje-form {
+    grid-column: 1 / -1;
+}
+
+.campo-pago input[aria-invalid="true"] {
+    border-color: #e53935;
 }
