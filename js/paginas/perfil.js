@@ -31,7 +31,7 @@ function cargarDatosPerfil() {
 
     // Si no hay una sesión iniciada, no carga el perfil
     if (!usuario) {
-        window.location.href = "../../index.html";
+        window.location.href = "../cuenta/login.html";
         return;
     }
 
@@ -579,7 +579,7 @@ function confirmarCerrarSesion(evento) {
 function salir() { /* salir() borra la sesión y te lleva al login. 
     Como ya no hay sesión, login.js no te devuelve al inicio */
   cerrarSesion(); // estado.js: borra la sesión de localStorage
-  window.location.href = "../../index.html";
+  window.location.href = "../cuenta/login.html";
 }
 
 /* Si tenías tildado “Recordar mi usuario”, el campo de usuario va a seguir completo en el login. 
@@ -615,7 +615,7 @@ function eliminarCuenta() {
     const usuario = usuarioActual();
 
     if (!usuario) {
-        window.location.href = "../../index.html";
+        window.location.href = "../cuenta/login.html";
         return;
     }
 

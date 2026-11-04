@@ -83,7 +83,7 @@ function actualizarNavbar() {
 /* DOMContentLoaded = cuando la pagina esté lista */
 document.addEventListener("DOMContentLoaded", function () {
     if (!usuarioActual()) { /* Si no hay un usuario cargado */
-        window.location.href = "../../index.html"; /* te manda a iniciar sesion/registrarte */
+        window.location.href = "../cuenta/login.html"; /* te manda a iniciar sesion/registrarte */
         return;
     }
     actualizarNavbar(); /* Si hay usuario, crea el navbar */

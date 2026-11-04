@@ -8,7 +8,7 @@ const CLAVE_RECORDADO = "polilingo_usuario_recordado";
 document.addEventListener("DOMContentLoaded", () => {
   // Si ya hay alguien logueado, no tiene sentido mostrar el login
   if (haySesion()) {
-    window.location.href = "paginas/inicio/inicio.html";
+    window.location.href = "../inicio/inicio.html";
     return;
   }
  
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // 4) Todo bien: avisamos y vamos al inicio
     mostrarMensajeForm(mensaje, resultado.mensaje + " Entrando…", "ok");
     setTimeout(() => {
-      window.location.href = "paginas/inicio/inicio.html";
+      window.location.href = "../inicio/inicio.html";
     }, 800);
   });
 });

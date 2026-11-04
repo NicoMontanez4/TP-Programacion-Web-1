@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   //si no hay sesion activa, volvemos al login
   if (!usuarioActual()) {
-    window.location.href = "../../index.html";
+    window.location.href = "../cuenta/login.html";
     return;
   }
 

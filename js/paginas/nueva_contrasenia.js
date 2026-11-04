@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "ok",
         );
         setTimeout(() => {
-            window.location.href = "../../index.html";
+            window.location.href = "../cuenta/login.html";
         }, 2000);
     });
 });
