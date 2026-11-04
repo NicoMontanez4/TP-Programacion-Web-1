@@ -142,8 +142,8 @@
     }
 
     .catalogo-container {
-        width: 94%;
-        padding: 0.75rem 1rem 1rem;
+        width: 88%;                   
+        padding: 0.75rem 1.1rem 1rem;  
         gap: 0;
     }
 
@@ -191,11 +191,12 @@
         margin-bottom: 0.6rem;
     }
 
-    /* Burbujas: 2 por fila */
+    /* Burbujas: una debajo de la otra */
     .nube-idiomas {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0.6rem;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 0.4rem;
         padding-bottom: 0;
     }
 
@@ -216,7 +217,7 @@
         border-color: #adddfb;
         box-shadow: 0 6px 12px rgba(173, 221, 251, 0.4);
     }
-    
+
     .bandera-burbuja {
         width: 28px;
         height: 28px;
