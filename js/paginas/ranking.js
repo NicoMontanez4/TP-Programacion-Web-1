@@ -122,10 +122,22 @@ function dibujarTabla(filas) {
     }
 
     const tdAvatar = document.createElement("td");
+
+    const AVATAR_POR_DEFECTO = "../../imagenes/avatares/avatar.png";
+
     const avatar = document.createElement("img");
     avatar.className = "avatar";
-    avatar.src = "../../imagenes/avatares/" + datos.avatar;
     avatar.alt = "Avatar de " + datos.usuario;
+
+    // Si la imagen falla, se usa la de por defecto
+    avatar.onerror = () => {
+    avatar.onerror = null; // evita un bucle infinito si avatar.png tampoco existe
+    avatar.src = AVATAR_POR_DEFECTO;
+    };
+
+    avatar.src = "../../imagenes/avatares/" + datos.avatar;
+
+    
     tdAvatar.appendChild(avatar);
 
     const tdPuesto = document.createElement("td");
