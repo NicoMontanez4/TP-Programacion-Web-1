@@ -1,3 +1,5 @@
+/*index.css*/
+
 /* =====================================================
    ESTILOS ESPECÍFICOS DEL CATÁLOGO (catalogo.html)
    ===================================================== */
@@ -142,8 +144,8 @@
     }
 
     .catalogo-container {
-        width: 88%;                   
-        padding: 0.75rem 1.1rem 1rem;  
+        width: 88%;
+        padding: 0.75rem 1.1rem 1rem;
         gap: 0;
     }
 
@@ -207,8 +209,12 @@
         border-width: 1px;
     }
 
-    .idioma-burbuja:nth-child(odd)  { transform: rotate(-1.5deg); }
-    .idioma-burbuja:nth-child(even) { transform: rotate(1.5deg); }
+    .idioma-burbuja:nth-child(odd) {
+        transform: rotate(-1.5deg);
+    }
+    .idioma-burbuja:nth-child(even) {
+        transform: rotate(1.5deg);
+    }
 
     /* Efecto hover/tap: se endereza y crece (tiene que ir DESPUÉS de las dos de arriba) */
     .idioma-burbuja:nth-child(odd):hover,
