@@ -43,6 +43,49 @@
                 <article id="mapa-unidades" class="mapa-unidades-ingles"></article>
             </section>
 
+            <!-- Valoraciones del curso: las completa mapa.js -->
+            <section class="valoraciones" aria-labelledby="titulo-valoraciones">
+                <header class="valoraciones-encabezado">
+                    <h2 id="titulo-valoraciones">Opiniones del curso</h2>
+                    <p id="promedio-curso" class="promedio-curso"></p>
+                </header>
+
+                <ul id="lista-comentarios" class="lista-comentarios"></ul>
+
+                <form id="form-comentario" class="form-comentario" novalidate>
+                    <h3>Dejá tu opinión</h3>
+
+                    <fieldset class="elegir-estrellas">
+                        <legend>¿Cuántas estrellas le das?</legend>
+                        <!-- Van de 5 a 1: el CSS las da vuelta para que se vean de 1 a 5 -->
+                        <input type="radio" id="estrella-5" name="estrellas" value="5" />
+                        <label for="estrella-5" title="5 estrellas">★</label>
+                        <input type="radio" id="estrella-4" name="estrellas" value="4" />
+                        <label for="estrella-4" title="4 estrellas">★</label>
+                        <input type="radio" id="estrella-3" name="estrellas" value="3" />
+                        <label for="estrella-3" title="3 estrellas">★</label>
+                        <input type="radio" id="estrella-2" name="estrellas" value="2" />
+                        <label for="estrella-2" title="2 estrellas">★</label>
+                        <input type="radio" id="estrella-1" name="estrellas" value="1" />
+                        <label for="estrella-1" title="1 estrella">★</label>
+                    </fieldset>
+
+                    <label for="texto-comentario">Tu comentario:</label>
+                    <textarea
+                        id="texto-comentario"
+                        rows="3"
+                        maxlength="300"
+                        placeholder="¿Qué te pareció el curso?"
+                    ></textarea>
+
+                    <p id="mensaje-comentario" class="mensaje-form" role="alert" hidden></p>
+
+                    <button type="submit" class="boton-publicar">Publicar opinión</button>
+                </form>
+
+                <p id="ya-opinaste" class="ya-opinaste" hidden>¡Gracias! Ya dejaste tu opinión sobre este curso.</p>
+            </section>
+
             <nav class="volver">
                 <a class="volver-a-cursos" href="mis-cursos.html">Volver a mis cursos</a>
             </nav>

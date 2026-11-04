@@ -634,3 +634,182 @@
         font-size: 0.95rem;
     }
 }
+
+/* =====================================================
+   VALORACIONES DEL CURSO (mapa.html)
+   ===================================================== */
+.valoraciones {
+    width: calc(100% - 2rem); /* deja aire a los costados en el celular */
+    max-width: 45rem;
+    box-sizing: border-box;
+    margin: 2rem auto 0;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    background-color: #ffffff;
+    border: 0.15rem solid #8fc97f;
+}
+
+.valoraciones-encabezado {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.valoraciones-encabezado h2 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.promedio-curso {
+    margin: 0;
+    font-weight: 700;
+}
+
+.estrellas-texto {
+    color: #f5b301;
+    letter-spacing: 0.1rem;
+}
+
+/* ---- lista de comentarios ---- */
+.lista-comentarios {
+    list-style: none;
+    margin: 0 0 1.5rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.comentario {
+    display: flex;
+    gap: 0.8rem;
+    padding: 0.8rem;
+    border-radius: 1rem;
+    background-color: #eef7ea;
+}
+
+.comentario img {
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.comentario-cabecera {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: baseline;
+}
+
+.comentario-cabecera strong {
+    font-size: 0.95rem;
+}
+
+.comentario-fecha {
+    font-size: 0.8rem;
+    color: #6b6b6b;
+}
+
+.comentario p {
+    margin: 0.3rem 0 0;
+    font-size: 0.9rem;
+}
+
+.sin-comentarios {
+    color: #6b6b6b;
+}
+
+/* ---- formulario ---- */
+.form-comentario {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-comentario h3 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.form-comentario textarea {
+    font: inherit;
+    padding: 0.6rem;
+    border-radius: 0.6rem;
+    border: 0.1rem solid #b7b7b7;
+    resize: vertical;
+}
+
+.form-comentario textarea[aria-invalid="true"] {
+    border-color: #e53935;
+}
+
+.boton-publicar {
+    align-self: flex-start;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 999px;
+    background-color: #2e9e44;
+    color: #ffffff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.boton-publicar:hover {
+    background-color: #237a35;
+}
+
+/* ---- estrellas para elegir ----
+   Los inputs van de 5 a 1 en el HTML y row-reverse los muestra de 1 a 5.
+   Así "la marcada y las de su izquierda" son "la marcada y sus hermanas siguientes" (~). */
+.elegir-estrellas {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 0.2rem;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.elegir-estrellas legend {
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+}
+
+/* el círculo del radio no se ve, pero sigue andando con teclado */
+.elegir-estrellas input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+}
+
+.elegir-estrellas label {
+    font-size: 2rem;
+    line-height: 1;
+    color: #c9c9c9;
+    cursor: pointer;
+}
+
+.elegir-estrellas input:checked ~ label,
+.elegir-estrellas label:hover,
+.elegir-estrellas label:hover ~ label {
+    color: #f5b301;
+}
+
+.elegir-estrellas input:focus-visible + label {
+    outline: 0.15rem solid #1f6feb;
+    border-radius: 0.3rem;
+}
+
+.ya-opinaste {
+    margin: 0;
+    font-weight: 700;
+    color: #2f7d3b;
+}

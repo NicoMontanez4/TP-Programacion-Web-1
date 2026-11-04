@@ -41,6 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   mostrarEncabezado(usuario, curso);
   mostrarUnidades(usuario, curso);
+  mostrarValoraciones(usuario, curso);
+  prepararFormularioComentario(curso);
 });
 
 // Bandera, nombre, mensaje con la próxima lección, progreso e imagen de Poli
@@ -134,4 +136,99 @@ function armarUnidad(usuario, idCurso, unidad) {
         <section class="progreso-curso estado-unidad">${detalle}</section>
       </article>
     </article>`;
+}
+
+/* ===================== Valoraciones ===================== */
+
+// "★★★★☆" para 4 estrellas
+function estrellasEnTexto(cantidad) {
+  const llenas = Math.round(cantidad);
+  return "★".repeat(llenas) + "☆".repeat(5 - llenas);
+}
+
+// "2026-10-20" -> "20/10/2026"
+function formatearFechaCorta(fecha) {
+  const partes = fecha.split("-");
+  return partes[2] + "/" + partes[1] + "/" + partes[0];
+}
+
+function mostrarValoraciones(usuario, curso) {
+  const comentarios = obtenerComentarios(curso.id);
+  const promedio = promedioEstrellas(curso.id);
+
+  // Promedio arriba a la derecha
+  const textoPromedio = document.getElementById("promedio-curso");
+  if (comentarios.length === 0) {
+    textoPromedio.textContent = "Sin valoraciones todavía";
+  } else {
+    const cuantas = comentarios.length === 1 ? "1 opinión" : comentarios.length + " opiniones";
+    textoPromedio.innerHTML =
+      `<span class="estrellas-texto" aria-hidden="true">${estrellasEnTexto(promedio)}</span> ` +
+      `${promedio} de 5 · ${cuantas}`;
+  }
+
+  // Lista de comentarios (el texto lo escribió un usuario: va con textContent)
+  const lista = document.getElementById("lista-comentarios");
+  lista.innerHTML = "";
+
+  if (comentarios.length === 0) {
+    lista.innerHTML = '<li class="sin-comentarios">Nadie opinó todavía. ¡Sé el primero!</li>';
+  }
+
+  comentarios.forEach((c) => {
+    const item = document.createElement("li");
+    item.className = "comentario";
+    item.innerHTML = `
+      <img src="../../imagenes/avatares/${c.avatar}" alt="" />
+      <article>
+        <header class="comentario-cabecera">
+          <strong></strong>
+          <span class="estrellas-texto" aria-label="${c.estrellas} de 5 estrellas">${estrellasEnTexto(c.estrellas)}</span>
+          <span class="comentario-fecha">${formatearFechaCorta(c.fecha)}</span>
+        </header>
+        <p></p>
+      </article>`;
+    item.querySelector("strong").textContent = c.usuario;
+    item.querySelector("p").textContent = c.texto;
+    lista.appendChild(item);
+  });
+
+  // Si ya opinó, en vez del formulario mostramos el agradecimiento
+  const yaOpino = comentarios.some((c) => c.usuario === usuario.usuario);
+  document.getElementById("form-comentario").hidden = yaOpino;
+  document.getElementById("ya-opinaste").hidden = !yaOpino;
+}
+
+function prepararFormularioComentario(curso) {
+  const formulario = document.getElementById("form-comentario");
+  const texto = document.getElementById("texto-comentario");
+
+  formulario.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const elegida = formulario.querySelector('input[name="estrellas"]:checked');
+    const estrellas = elegida ? elegida.value : 0;
+
+    // estado.js valida: de 1 a 5 estrellas y texto no vacío
+    const resultado = agregarComentario(curso.id, estrellas, texto.value);
+
+    if (!resultado.ok) {
+      if (resultado.campo === "texto") {
+        texto.setAttribute("aria-invalid", "true");
+        texto.focus();
+      }
+      mostrarMensaje("mensaje-comentario", resultado.mensaje, "error");
+      return;
+    }
+
+    formulario.reset();
+    ocultarMensaje("mensaje-comentario");
+    mostrarValoraciones(usuarioActual(), curso); // redibuja con el comentario nuevo
+  });
+
+  // Al escribir o elegir estrellas, se limpia el error
+  formulario.addEventListener("input", () => {
+    texto.removeAttribute("aria-invalid");
+    ocultarMensaje("mensaje-comentario");
+  });
 }
