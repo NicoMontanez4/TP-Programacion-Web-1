@@ -913,20 +913,6 @@ const LOGROS = [
     { id: "unidad-aleman", nombre: "Unidad de alemán", descripcion: "Completá una unidad de alemán", imagen: "Logro-15.png", meta: 1, valor: function (u) { return contarUnidadesCompletadas(u, "aleman"); } },
     { id: "unidad-chino",  nombre: "Unidad de chino",  descripcion: "Completá una unidad de chino",  imagen: "Logro-15.png", meta: 1, valor: function (u) { return contarUnidadesCompletadas(u, "chino"); } },
 
-    {id: "unidades-1",
-    nombre: "Primera unidad",
-    descripcion: "Completá 1 unidad",
-    imagen: "Logro-15.png",
-    meta: 1,
-    valor: function (u) { return contarUnidadesCompletadas(u); },},
-
-    {id: "unidades-5",
-        nombre: "Gran explorador",
-        descripcion: "Completá 5 unidades",
-        imagen: "Logro-16.png",
-        meta: 5,
-        valor: function (u) { return contarUnidadesCompletadas(u); },},
-
     { id: "racha-5", nombre: "Resciliente", descripcion: "Alcanzá una racha de 5 días", imagen: "Logro-9.png", meta: 5, valor: function (u) { return u.mejorRacha; } },
     { id: "racha-10", nombre: "Constante", descripcion: "Alcanzá una racha de 10 días", imagen: "Logro-10.png", meta: 10, valor: function (u) { return u.mejorRacha; } },
     { id: "racha-15", nombre: "Imparable", descripcion: "Alcanzá una racha de 15 días", imagen: "Logro-11.png", meta: 15, valor: function (u) { return u.mejorRacha; } },
