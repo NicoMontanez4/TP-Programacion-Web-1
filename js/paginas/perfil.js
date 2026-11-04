@@ -279,7 +279,7 @@ function formatearFecha(fecha) {
 const INFORMACION_LOGROS = {
     "en-llamas": {
         nombre: "En llamas",
-        descripcion: "Alcanzaste una racha de 5 días",
+        descripcion: "Alcanzaste una racha de 2 días",
         imagen: "Logro-1.png"
     },
     "hechicero": {
@@ -287,11 +287,33 @@ const INFORMACION_LOGROS = {
         descripcion: "Ganaste 120 XP",
         imagen: "Logro-2.png"
     },
-    "insuperable": {
-        nombre: "Insuperable",
-        descripcion: "Completaste 10 lecciones",
+    "leccion-superada-1": {
+        nombre: "Primeros Pasos",
+        descripcion: "Completá 1 leccion",
         imagen: "Logro-3.png"
     },
+    "leccion-superada-2": {
+        nombre: "Aprendiz",
+        descripcion: "Completá 5 lecciones",
+        imagen: "Logro-23.png"
+    },
+    "leccion-superada-3": {
+        nombre: "Aplicado",
+        descripcion: "Completá 10 lecciones",
+        imagen: "Logro-24.png"
+    },
+    "leccion-superada-4": {
+        nombre: "Sabio",
+        descripcion: "Completá 15 lecciones",
+        imagen: "Logro-25.png"
+    },
+    "leccion-superada-5": {
+        nombre: "Erudito",
+        descripcion: "Completá 20 lecciones",
+        imagen: "Logro-26.png"
+    },
+    
+
     "corazon-roto": {
         nombre: "Corazón roto",
         descripcion: "Perdiste una vida",
@@ -313,53 +335,100 @@ const INFORMACION_LOGROS = {
         imagen: "Logro-7.png"
     },
     "maestro-ingles": {
-        nombre: "Maestro de Inglés",
-        descripcion: "Completá 20 lecciones de inglés"
-    },
-    "maestro-chino": {
-        nombre: "Maestro de Chino",
-        descripcion: "Completá 20 lecciones de chino"
+    nombre: "Maestro de Inglés",
+    descripcion: "Completá el curso de inglés",
+    imagen: "Logro-20.png"
     },
     "maestro-aleman": {
         nombre: "Maestro de Alemán",
-        descripcion: "Completá 20 lecciones de alemán"
+        descripcion: "Completá el curso de alemán",
+        imagen: "Logro-21.png"
+    },
+    "maestro-chino": {
+        nombre: "Maestro de Chino",
+        descripcion: "Completá el curso de chino",
+        imagen: "Logro-22.png"
     },
     "millonario": {
         nombre: "Millonario",
-        descripcion: "Conseguí 600 PoliGemas"
+        descripcion: "Conseguí 600 PoliGemas",
+        imagen: "Logro-19.png"
     },
     "comprador": {
         nombre: "Comprador",
-        descripcion: "Hacé 2 compras en la tienda"
+        descripcion: "Hacé 2 compras en la tienda",
+        imagen: "Logro-17.png"
     },
     "cliente-vip": {
         nombre: "Cliente VIP",
-        descripcion: "Hacé 5 compras en la tienda"
+        descripcion: "Hacé 5 compras en la tienda",
+        imagen: "Logro-18.png"
     },
     "sin-corazones": {
         nombre: "Sin corazones",
-        descripcion: "Perdé todas tus vidas"
+        descripcion: "Perdé todas tus vidas",
+        imagen: "Logro-8.png"
+    },
+    "racha-5": {
+        nombre: "Racha de 5 días",
+        descripcion: "Alcanzá una racha de 5 días",
+        imagen: "Logro-9.png"
     },
     "racha-10": {
         nombre: "Racha de 10 días",
-        descripcion: "Alcanzá una racha de 10 días"
+        descripcion: "Alcanzá una racha de 10 días",
+        imagen: "Logro-10.png"
     },
     "racha-15": {
         nombre: "Racha de 15 días",
-        descripcion: "Alcanzá una racha de 15 días"
+        descripcion: "Alcanzá una racha de 15 días",
+        imagen: "Logro-11.png"
     },
     "racha-20": {
         nombre: "Racha de 20 días",
-        descripcion: "Alcanzá una racha de 20 días"
+        descripcion: "Alcanzá una racha de 20 días",
+        imagen: "Logro-12.png"
     },
     "racha-25": {
         nombre: "Racha de 25 días",
-        descripcion: "Alcanzá una racha de 25 días"
+        descripcion: "Alcanzá una racha de 25 días",
+        imagen: "Logro-13.png"
     },
     "racha-30": {
         nombre: "Racha de 30 días",
-        descripcion: "Alcanzá una racha de 30 días"
+        descripcion: "Alcanzá una racha de 30 días",
+        imagen: "Logro-14.png"
+    },
+    "unidad-ingles": { 
+        nombre: "Unidad de inglés", 
+        descripcion: "Completá una unidad de inglés", 
+        imagen: "Logro-20.png" 
+    },
+
+    "unidad-aleman": { 
+        nombre: "Unidad de alemán", 
+        descripcion: "Completá una unidad de alemán", 
+        imagen: "Logro-21.png" 
+    },
+
+    "unidad-chino":  { 
+        nombre: "Unidad de chino",  
+        descripcion: "Completá una unidad de chino",  
+        imagen: "Logro-22.png" 
+    },
+
+     "unidades-1": {
+        nombre: "Primera unidad",
+        descripcion: "Completá 1 unidad",
+        imagen: "Logro-15.png"
+    },
+
+    "unidades-5": {
+        nombre: "Gran explorador",
+        descripcion: "Completá 5 unidades",
+        imagen: "Logro-16.png"
     }
+
 };
 
 
@@ -438,7 +507,15 @@ function crearElementoLogro(logro, progreso, desbloqueado) {
 
         const candado = document.createElement("span");
 
-        candado.textContent = "🔒";
+        candado.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="currentColor"
+                viewBox="0 0 24 24">
+                <path d="M6 22h12c1.1 0 2-.9 2-2v-9c0-1.1-.9-2-2-2h-1V7c0-2.76-2.24-5-5-5S7 4.24 7 7v2H6c-1.1 0-2 .9-2 2v9c0 1.1.9 2 2 2M9 7c0-1.65 1.35-3 3-3s3 1.35 3 3v2H9z"></path>
+            </svg>
+        `;
         candado.setAttribute("aria-label", "Logro bloqueado");
 
         elemento.appendChild(candado);

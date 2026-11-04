@@ -744,11 +744,12 @@ const LOGROS = [
     {
         id: "en-llamas",
         nombre: "En llamas",
-        descripcion: "Alcanzá una racha de 5 días",
+        descripcion: "Alcanzá una racha de 2 días",
         imagen: "Logro-1.png",
-        meta: 5,
+        meta: 2,
         valor: function (u) { return u.mejorRacha; },
     },
+    
     {
         id: "hechicero",
         nombre: "Hechicero",
@@ -758,13 +759,50 @@ const LOGROS = [
         valor: function (u) { return u.xpTotal; },
     },
     {
-        id: "insuperable",
-        nombre: "Insuperable",
-        descripcion: "Completá 10 lecciones",
+        id: "leccion-superada-1",
+        nombre: "Primeros Pasos",
+        descripcion: "Completá 1 leccion",
         imagen: "Logro-3.png",
+        meta: 1,
+        valor: function (u) { return contarLeccionesCompletadas(u); },
+    },
+
+    {
+        id: "leccion-superada-2",
+        nombre: "Aprendiz",
+        descripcion: "Completá 5 leccion",
+        imagen: "Logro-23.png",
+        meta: 5,
+        valor: function (u) { return contarLeccionesCompletadas(u); },
+    },
+
+    {
+        id: "leccion-superada-3",
+        nombre: "Aplicado",
+        descripcion: "Completá 10 lecciones",
+        imagen: "Logro-24.png",
         meta: 10,
         valor: function (u) { return contarLeccionesCompletadas(u); },
     },
+
+    {
+        id: "leccion-superada-4",
+        nombre: "Sabio",
+        descripcion: "Completá 15 lecciones",
+        imagen: "Logro-25.png",
+        meta: 15,
+        valor: function (u) { return contarLeccionesCompletadas(u); },
+    },
+
+    {
+        id: "leccion-superada-5",
+        nombre: "Erudito",
+        descripcion: "Completá 20 lecciones",
+        imagen: "Logro-26.png",
+        meta: 20,
+        valor: function (u) { return contarLeccionesCompletadas(u); },
+    },
+
     {
         id: "corazon-roto",
         nombre: "Corazón roto",
@@ -773,6 +811,7 @@ const LOGROS = [
         meta: 1,
         valor: function (u) { return u.vidasPerdidas; },
     },
+
     {
         id: "coleccionista",
         nombre: "Coleccionista de Gemas",
@@ -789,6 +828,7 @@ const LOGROS = [
         meta: 1,
         valor: function (u) { return u.compras; },
     },
+
     {
         id: "fotogenico",
         nombre: "Fotogénico",
@@ -801,32 +841,32 @@ const LOGROS = [
     {
         id: "maestro-ingles",
         nombre: "Maestro del inglés",
-        descripcion: "Completá 20 lecciones de inglés",
-        imagen: null,
-        meta: 20,
-        valor: function (u) { return contarLeccionesCompletadas(u, "ingles"); },
+        descripcion: "Completá el curso de inglés",
+        imagen: "Logro-20.png",
+        meta: 1,
+        valor: function (u) { return u.cursosCompletados.includes("ingles") ? 1 : 0; },
     },
     {
         id: "maestro-aleman",
         nombre: "Maestro del alemán",
-        descripcion: "Completá 20 lecciones de alemán",
-        imagen: null,
-        meta: 20,
-        valor: function (u) { return contarLeccionesCompletadas(u, "aleman"); },
+        descripcion: "Completá el curso de alemán",
+        imagen: "Logro-21.png",
+        meta: 1,
+        valor: function (u) { return u.cursosCompletados.includes("aleman") ? 1 : 0; },
     },
     {
         id: "maestro-chino",
         nombre: "Maestro del chino",
-        descripcion: "Completá 20 lecciones de chino",
-        imagen: null,
-        meta: 20,
-        valor: function (u) { return contarLeccionesCompletadas(u, "chino"); },
+        descripcion: "Completá el curso de chino",
+        imagen: "Logro-22.png",
+        meta: 1,
+        valor: function (u) { return u.cursosCompletados.includes("chino") ? 1 : 0; },
     },
     {
         id: "millonario",
         nombre: "Millonario",
         descripcion: "Conseguí 600 PoliGemas",
-        imagen: null,
+        imagen: "Logro-19.png",
         meta: 600,
         valor: function (u) { return u.gemas; },
     },
@@ -834,7 +874,7 @@ const LOGROS = [
         id: "comprador",
         nombre: "Comprador",
         descripcion: "Hacé 2 compras en la tienda",
-        imagen: null,
+        imagen: "Logro-17.png",
         meta: 2,
         valor: function (u) { return u.compras; },
     },
@@ -842,7 +882,7 @@ const LOGROS = [
         id: "cliente-vip",
         nombre: "Cliente VIP",
         descripcion: "Hacé 5 compras en la tienda",
-        imagen: null,
+        imagen: "Logro-18.png",
         meta: 5,
         valor: function (u) { return u.compras; },
     },
@@ -850,15 +890,49 @@ const LOGROS = [
         id: "sin-corazones",
         nombre: "Sin corazones",
         descripcion: "Quedate sin vidas",
-        imagen: null,
+        imagen: "Logro-8.png",
         meta: 1,
         valor: function (u) { return u.vecesSinVidas; },
     },
-    { id: "racha-10", nombre: "Constante", descripcion: "Llegá a una racha de 10 días", imagen: null, meta: 10, valor: function (u) { return u.mejorRacha; } },
-    { id: "racha-15", nombre: "Imparable", descripcion: "Llegá a una racha de 15 días", imagen: null, meta: 15, valor: function (u) { return u.mejorRacha; } },
-    { id: "racha-20", nombre: "Disciplinado", descripcion: "Llegá a una racha de 20 días", imagen: null, meta: 20, valor: function (u) { return u.mejorRacha; } },
-    { id: "racha-25", nombre: "Leyenda", descripcion: "Llegá a una racha de 25 días", imagen: null, meta: 25, valor: function (u) { return u.mejorRacha; } },
-    { id: "racha-30", nombre: "Un mes entero", descripcion: "Llegá a una racha de 30 días", imagen: null, meta: 30, valor: function (u) { return u.mejorRacha; } },
+
+    { id: "unidades-1", 
+    nombre: "Primera unidad",  
+    descripcion: "Completá 1 unidad",   
+    imagen: "Logro-15.png", 
+    meta: 1, 
+    valor: function (u) { return contarUnidadesCompletadas(u); } },
+
+    { id: "unidades-5", 
+    nombre: "Gran explorador", 
+    descripcion: "Completá 5 unidades", 
+    imagen: "Logro-16.png", 
+    meta: 5, 
+    valor: function (u) { return contarUnidadesCompletadas(u); } },
+
+    { id: "unidad-ingles", nombre: "Unidad de inglés", descripcion: "Completá una unidad de inglés", imagen: "Logro-15.png", meta: 1, valor: function (u) { return contarUnidadesCompletadas(u, "ingles"); } },
+    { id: "unidad-aleman", nombre: "Unidad de alemán", descripcion: "Completá una unidad de alemán", imagen: "Logro-15.png", meta: 1, valor: function (u) { return contarUnidadesCompletadas(u, "aleman"); } },
+    { id: "unidad-chino",  nombre: "Unidad de chino",  descripcion: "Completá una unidad de chino",  imagen: "Logro-15.png", meta: 1, valor: function (u) { return contarUnidadesCompletadas(u, "chino"); } },
+
+    {id: "unidades-1",
+    nombre: "Primera unidad",
+    descripcion: "Completá 1 unidad",
+    imagen: "Logro-15.png",
+    meta: 1,
+    valor: function (u) { return contarUnidadesCompletadas(u); },},
+
+    {id: "unidades-5",
+        nombre: "Gran explorador",
+        descripcion: "Completá 5 unidades",
+        imagen: "Logro-16.png",
+        meta: 5,
+        valor: function (u) { return contarUnidadesCompletadas(u); },},
+
+    { id: "racha-5", nombre: "Resciliente", descripcion: "Alcanzá una racha de 5 días", imagen: "Logro-9.png", meta: 5, valor: function (u) { return u.mejorRacha; } },
+    { id: "racha-10", nombre: "Constante", descripcion: "Alcanzá una racha de 10 días", imagen: "Logro-10.png", meta: 10, valor: function (u) { return u.mejorRacha; } },
+    { id: "racha-15", nombre: "Imparable", descripcion: "Alcanzá una racha de 15 días", imagen: "Logro-11.png", meta: 15, valor: function (u) { return u.mejorRacha; } },
+    { id: "racha-20", nombre: "Disciplinado", descripcion: "Alcanzá una racha de 20 días", imagen: "Logro-12.png", meta: 20, valor: function (u) { return u.mejorRacha; } },
+    { id: "racha-25", nombre: "Leyenda", descripcion: "Alcanzá una racha de 25 días", imagen: "Logro-13.png", meta: 25, valor: function (u) { return u.mejorRacha; } },
+    { id: "racha-30", nombre: "Un mes entero", descripcion: "Alcanzá una racha de 30 días", imagen: "Logro-14.png", meta: 30, valor: function (u) { return u.mejorRacha; } },
 ];
  
 // Cuenta lecciones completadas (de un curso o de todos). La usan los logros.
@@ -868,6 +942,19 @@ function contarLeccionesCompletadas(usuario, idCurso) {
         if (idCurso && curso !== idCurso) continue;
         total += Object.keys(usuario.progreso[curso]).length;
     }
+    return total;
+}
+
+// Cuenta unidades completadas (de un curso o de todos). La usan los logros.
+// Usa estadoUnidad() de estado.js; se llama recién cuando ya están cargados los dos archivos.
+function contarUnidadesCompletadas(usuario, idCurso) {
+    let total = 0;
+    const cursos = idCurso ? [idCurso] : Object.keys(CURSOS);
+    cursos.forEach(function (id) {
+        CURSOS[id].unidades.forEach(function (unidad) {
+            if (estadoUnidad(usuario, id, unidad.numero) === "completada") total++;
+        });
+    });
     return total;
 }
  

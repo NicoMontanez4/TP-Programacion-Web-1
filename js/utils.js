@@ -124,9 +124,25 @@ const INFORMACION_POPUP_LOGROS = {
         nombre: "Hechicero",
         imagen: "Logro-2.png"
     },
-    "insuperable": {
-        nombre: "Insuperable",
+    "leccion-superada-1": {
+        nombre: "Primeros Pasos",
         imagen: "Logro-3.png"
+    },
+    "leccion-superada-2": {
+        nombre: "Aprendiz",
+        imagen: "Logro-23.png"
+    },
+    "leccion-superada-3": {
+        nombre: "Aplicado",
+        imagen: "Logro-24.png"
+    },
+    "leccion-superada-4": {
+        nombre: "Sabio",
+        imagen: "Logro-25.png"
+    },
+    "leccion-superada-5": {
+        nombre: "Erudito",
+        imagen: "Logro-26.png"
     },
     "corazon-roto": {
         nombre: "Corazón roto",
@@ -143,7 +159,83 @@ const INFORMACION_POPUP_LOGROS = {
     "fotogenico": {
         nombre: "Fotogénico",
         imagen: "Logro-7.png"
-    }
+    },
+
+    "sin-corazones": {
+    nombre: "Sin corazones",
+    imagen: "Logro-8.png"
+    },
+
+    "unidad-ingles": { 
+    nombre: "Unidad de inglés", 
+    imagen: "Logro-20.png" },
+
+    "unidad-aleman": { 
+    nombre: "Unidad de alemán", 
+    imagen: "Logro-21.png" },
+
+    "unidad-chino":  { 
+    nombre: "Unidad de chino",  
+    imagen: "Logro-22.png" },
+
+    "unidades-1": {
+        nombre: "Primera unidad",
+        imagen: "Logro-15.png"
+    },
+
+    "unidades-5": {
+        nombre: "Gran explorador",
+        imagen: "Logro-16.png"
+    },
+    
+    "maestro-ingles": { 
+    nombre: "Maestro del inglés", 
+    imagen: "Logro-20.png" },
+
+    "maestro-aleman": { 
+    nombre: "Maestro del alemán", 
+    imagen: "Logro-21.png" },
+
+    "maestro-chino":  { 
+    nombre: "Maestro del chino",  
+    imagen: "Logro-22.png" },
+
+    "millonario": { 
+    nombre: "Millonario", 
+    imagen: "Logro-19.png" },
+
+    "comprador":{ 
+    nombre: "Comprador",   
+    imagen: "Logro-17.png" },
+    
+    "cliente-vip":    { 
+    nombre: "Cliente VIP", 
+    imagen: "Logro-18.png" },
+
+    "racha-5":  { 
+    nombre: "Resiliente",    
+    imagen: "Logro-9.png" },
+
+    "racha-10": { 
+    nombre: "Constante",     
+    imagen: "Logro-10.png" },
+
+    "racha-15": { 
+    nombre: "Imparable",     
+    imagen: "Logro-11.png" },
+
+    "racha-20": { 
+    nombre: "Disciplinado", 
+    imagen: "Logro-12.png" },
+
+    "racha-25": { 
+    nombre: "Leyenda",     
+    imagen: "Logro-13.png" },
+
+    "racha-30": { 
+    nombre: "Un mes entero", 
+    imagen: "Logro-14.png" },
+
 };
 
 let colaLogros = [];
