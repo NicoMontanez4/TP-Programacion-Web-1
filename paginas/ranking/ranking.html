@@ -11,6 +11,7 @@
         <script src="../../js/estado.js" defer></script>
         <script src="../../js/utils.js" defer></script>
         <script src="../../js/navbar.js" defer></script>
+        <script src="../../js/paginas/ranking.js" defer></script>
     </head>
 
     <body>
@@ -29,19 +30,19 @@
                 </header>
 
                 <article class="liga-actual">
-                    <h2>
-                        ¡Felicidades, <strong>Carlos</strong>! Estás en la liga
-                        de <strong>bronce</strong>.
-                    </h2>
+                    <h2 id="mensaje-liga"></h2>
+                    <p id="indicacion-liga" role="status"></p>
                 </article>
 
-                <article class="ranking-liga-bronce">
+                <form class="selector-liga" onsubmit="return false">
+                    <label for="selector-liga">Elegí una liga:</label>
+                    <select id="selector-liga" name="liga"></select>
+                </form>
+
+                <article id="banner-liga">
                     <header class="titulo-liga">
-                        <h2>Ranking Liga de bronce</h2>
-                        <p>
-                            Los primeros ascienden a la Liga de Plata esta
-                            semana.
-                        </p>
+                        <h2 id="titulo-liga"></h2>
+                        <p id="texto-liga"></p>
                     </header>
 
                     <img
@@ -51,7 +52,11 @@
                     />
                 </article>
 
-                <section class="tabla-ranking">
+                <p id="mensaje-vacio" class="mensaje-vacio" hidden>
+                    Todavía no hay participantes en esta liga.
+                </p>
+
+                <section class="tabla-ranking" id="tabla-ranking">
                     <table>
                         <thead>
                             <tr>
@@ -63,180 +68,8 @@
                             </tr>
                         </thead>
 
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <img
-                                        class="avatar"
-                                        src="../../imagenes/avatares/Avatar1.png"
-                                        alt="Avatar1"
-                                    />
-                                </td>
-                                <td>
-                                    <img
-                                        class="medalla"
-                                        src="../../imagenes/logros/medalla-oro.png"
-                                        alt="medalla"
-                                    />
-                                    1
-                                </td>
-                                <td>MariaG-22</td>
-                                <td>850 XP</td>
-                                <td>Zona de Ascenso</td>
-                            </tr>
-
-                            <tr class="tu-fila">
-                                <td>
-                                    <img
-                                        class="avatar"
-                                        src="../../imagenes/avatares/Avatar2.png"
-                                        alt="Avatar1"
-                                    />
-                                </td>
-                                <td>
-                                    <img
-                                        class="medalla"
-                                        src="../../imagenes/logros/medalla-plata.png"
-                                        alt=""
-                                    />
-                                    2
-                                </td>
-                                <td>carlosperez12 (Tú)</td>
-                                <td>720 XP</td>
-                                <td>Zona de Ascenso</td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <img
-                                        class="avatar"
-                                        src="../../imagenes/avatares/Avatar3.png"
-                                        alt="Avatar1"
-                                    />
-                                </td>
-                                <td>
-                                    <img
-                                        class="medalla"
-                                        src="../../imagenes/logros/medalla-bronce.png"
-                                        alt=""
-                                    />
-                                    3
-                                </td>
-                                <td>JuanLopez62</td>
-                                <td>610 XP</td>
-                                <td>Zona de Ascenso</td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <img
-                                        class="avatar"
-                                        src="../../imagenes/avatares/Avatar4.png"
-                                        alt="Avatar1"
-                                    />
-                                </td>
-                                <td>4</td>
-                                <td>Lara43</td>
-                                <td>360 XP</td>
-                                <td>Zona neutral</td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <img
-                                        class="avatar"
-                                        src="../../imagenes/avatares/Avatar5.png"
-                                        alt="Avatar1"
-                                    />
-                                </td>
-                                <td>5</td>
-                                <td>Santi123</td>
-                                <td>290 XP</td>
-                                <td>Zona neutral</td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <img
-                                        class="avatar"
-                                        src="../../imagenes/avatares/Avatar6.png"
-                                        alt="Avatar1"
-                                    />
-                                </td>
-                                <td>6</td>
-                                <td>AgusTI</td>
-                                <td>200 XP</td>
-                                <td>Zona neutral</td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <img
-                                        class="avatar"
-                                        src="../../imagenes/avatares/Avatar19.png"
-                                        alt="Avatar1"
-                                    />
-                                </td>
-                                <td>7</td>
-                                <td>Kans</td>
-                                <td>180 XP</td>
-                                <td>Zona neutral</td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <img
-                                        class="avatar"
-                                        src="../../imagenes/avatares/Avatar20.png"
-                                        alt="Avatar1"
-                                    />
-                                </td>
-                                <td>8</td>
-                                <td>Miri</td>
-                                <td>150 XP</td>
-                                <td>Zona neutral</td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <img
-                                        class="avatar"
-                                        src="../../imagenes/avatares/Avatar21.png"
-                                        alt="Avatar1"
-                                    />
-                                </td>
-                                <td>9</td>
-                                <td>Jaimito77</td>
-                                <td>130 XP</td>
-                                <td>Zona neutral</td>
-                            </tr>
-
-                            <tr>
-                                <td>
-                                    <img
-                                        class="avatar"
-                                        src="../../imagenes/avatares/Avatar22.png"
-                                        alt="Avatar1"
-                                    />
-                                </td>
-                                <td>10</td>
-                                <td>Pochio</td>
-                                <td>120 XP</td>
-                                <td>Zona neutral</td>
-                            </tr>
-                        </tbody>
+                        <tbody id="cuerpo-ranking"></tbody>
                     </table>
-                </section>
-
-                <section class="otras-ligas">
-                    <h2>Conoce el ranking de otras ligas</h2>
-
-                    <nav>
-                        <a class="liga-plata" href="ranking.html?liga=plata"
-                            >Liga de plata</a
-                        >
-                        <a class="liga-oro" href="ranking.html?liga=oro">Liga de oro</a>
-                    </nav>
                 </section>
 
                 <nav class="volver">

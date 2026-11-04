@@ -1,19 +1,36 @@
+html,
 body {
-    margin: 0;
-    font-family: "Nunito", "Segoe UI", Tahoma, sans-serif;
+    min-height: 100vh;
+    background-color: #f4f5f7;
+    color: #1f2937;
+    line-height: 1.5;
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        sans-serif;
 }
 
 main {
+    width: 82%;
     max-width: 70rem;
     min-width: 0;
-    margin: 0 auto;
+    margin: calc(1.5rem + 1vh) auto;
     padding: clamp(1rem, 3vw, 2rem);
+    
 }
 
-h1 {
+/* -------- TÍTULO PRINCIPAL -------- */
+
+main header h1 {
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    color: #1f2937;
+    border-bottom: 0.125rem solid #b3e5fc;
+    padding-bottom: 0.4rem;
     margin: 0 0 0.5rem;
-    color: #0e7f96;
-    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    
 }
 
 h2 {
@@ -25,6 +42,22 @@ h2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.titulo-ranking h1 {
+    margin-bottom: 0.5rem;
+}
+
+.tabla-ranking h2 {
+    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    border-bottom: 0.125rem solid #80deea;
+    padding-bottom: 0.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.titulo-ranking p {
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
+    color: #1f2937;
 }
 
 .liga-actual {
@@ -178,28 +211,6 @@ td {
     border-radius: 0 1rem 1rem 0;
 }
 
-.otras-ligas {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 2rem;
-}
-
-.otras-ligas nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.otras-ligas a {
-    padding: 0.6rem 1.75rem;
-    border-radius: 1rem;
-    color: #000000;
-    font-weight: 700;
-    text-decoration: none; /* saca el subrayado */
-}
-
 /* Un color para cada liga */
 
 .liga-bronce {
@@ -212,12 +223,45 @@ td {
     background-color: #ffc93c;
 }
 
-.otras-ligas a:hover {
-    background-color: #0e7f96;
-    color: white;
+/* Selector de liga y mensaje de liga vacía */
+.selector-liga {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 1rem 0;
+    font-weight: 700;
+}
+
+.selector-liga select {
+    padding: 0.5rem 1rem;
+    border: 2px solid #0e7f96;
+    border-radius: 1rem;
+    background-color: #ffffff;
+    font: inherit;
+    cursor: pointer;
+}
+
+.mensaje-vacio {
+    padding: 1.5rem;
+    border-radius: 1rem;
+    background-color: rgb(247, 242, 242);
+    text-align: center;
+    font-weight: 700;
 }
 
 @media screen and (max-width: 768px) {
+
+    main {
+        width: 82%;
+        margin: calc(1.5rem + 1vh) auto;
+        padding: 1rem 0;
+    }
+
+    main header h1 {
+        font-size: 1.5rem;
+    }
+
     .ranking-liga-bronce,
     .ranking-liga-oro,
     .ranking-liga-plata {
@@ -226,13 +270,7 @@ td {
     }
 
     .titulo-liga,
-    .titulo-liga p,
-    .otras-ligas h2 {
+    .titulo-liga p {
         text-align: center;
-    }
-
-    .otras-ligas nav {
-        flex-direction: column;
-        align-items: center;
     }
 }
